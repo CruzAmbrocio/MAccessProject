@@ -1,6 +1,6 @@
 # MAccessProject
 
-  ### To execute the page:
+  ### To execute the page
 
   ## install the followings tools
     ### npm the last version
