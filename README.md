@@ -4,7 +4,7 @@
 
 ## install the followings tools
 ### npm the last version
-'''npm install'''
+´´´npm install ´´´
 
 #node the last version
 #### https://nodejs.org/es/
