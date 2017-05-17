@@ -6,17 +6,11 @@ import { Router, NavigationEnd } from '@angular/router';
   templateUrl: './access.component.html',
   styleUrls: ['./access.component.css']
 })
+
 export class AccessComponent implements OnInit {
 
- constructor(private router: Router) {
+  constructor() { }
 
-    router.events
-      .filter(event => event instanceof NavigationEnd)
-      .subscribe((event: NavigationEnd) => {
-        window.scroll(0, 0);
-      });
-
-  }
   ngOnInit() {
   }
 
