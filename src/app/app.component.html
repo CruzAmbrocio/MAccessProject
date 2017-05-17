@@ -1,18 +1,18 @@
-<h1>
-  {{title}}
-</h1>
-<div class="container hola">
-	<div class="row">
-		<div class="col-md-10">
-			<h1>holaaa</h1>
-		</div>
-		<div class="row">
-			<div class="col-md-8">
-				<img src="src/assets/iconos/logo-maccess-01.png">
-			</div>
-		</div>
-	</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+
+      <form>
+          <div id="imgcontainer" class="form-group hola">
+            <input type="email" class="form-control" id="inputEmail" placeholder="Username / Correo Electronico">     
+          </div>
+          <div id="hola2" class="form-group">
+              <input type="password" class="form-control" id="inputPass" placeholder="Contraseña">
+            </div>
+        </form>
+          <button type="button" class="cancelbtn">Cancel</button>
+    </div>
+    <div class="col-md-2"></div>
+  </div>
 </div>
-    <a [routerLink]="['/main']" class="btn">to Main</a>
-    <button type="button" class="btn btn-danger">Danger</button>
-<router-outlet></router-outlet>
