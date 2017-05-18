@@ -1,3 +1,23 @@
 .hellos {
   background-color: blue;
 }
+.moveIconBar {
+    vertical-align: middle;
+    height: 70%;
+    width: 70%;
+    margin-top: 20%
+}
+.containerImage {
+    max-height: 80%;  
+    max-width: 10%; 
+    width: auto;
+    height: auto;
+    position: absolute;  
+    top: 0;  
+    bottom: 0;  
+    margin: auto;
+}
+
+.toTop {
+
+}
