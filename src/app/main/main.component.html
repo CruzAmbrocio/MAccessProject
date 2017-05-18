@@ -22,20 +22,20 @@
             <li><a href="#">Another action</a></li>
             <li><a href="#">Something else here</a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="#">Log out</a> </li>
+            <li><a [routerLink]="['/login']" class="btn">Log Out</a></li>
           </ul>
         </li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
-<div>
 
-<a [routerLink]="[{outlets: {aside: ['/control']}}]">Open an auxiliary route</a>
-      <a [routerLink]="['/control']" class="btn">to control</a>v
-      <a [routerLink]="['/users']" class="btn">to Users</a>
-      <a [routerLink]="['/main']" class="btn">to Main</a>
-      <a [routerLink]="['/main']" class="btn">to Main</a>
-      <a [routerLink]="['/main']" class="btn">to Main</a>
+<!--To go anotrer view in the navBar menu-->
+<div>
+  <a [routerLink]="['/main', {outlets: {aside: ['control']}}]" class="btn"> to Control </a>
+  <a [routerLink]="['/main', {outlets: {aside: ['users']}}]" class="btn">to Users</a>
+  <a [routerLink]="['/main', {outlets: {aside: ['locations']}}]" class="btn">to Locations</a>
+  <a [routerLink]="['/main', {outlets: {aside: ['access']}}]" class="btn">to Access</a>
+  <a [routerLink]="['/main', {outlets: {aside: ['roles']}}]" class="btn">to Roles</a>
 </div>
 <router-outlet name ="aside"></router-outlet>

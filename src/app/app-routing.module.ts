@@ -3,7 +3,6 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { BrowserModule } from '@angular/platform-browser';
 
-
 import { MainComponent } from './main/main.component';
 import { LoginComponent } from './login/login.component';
 import { ControlComponent } from './control/control.component';
@@ -20,28 +19,34 @@ const routes: Routes = [
   {
     path: 'main',
     component : MainComponent,
+    children : [
+        {
+          path: 'control',
+          component : ControlComponent,
+          outlet: 'aside'
+        },
+        {
+          path: 'users',
+          component : UsersComponent,
+          outlet: 'aside'
+        },
+        {
+          path: 'locations',
+          component : LocationsComponent,
+          outlet: 'aside'
+        },
+        {
+          path: 'access',
+          component : AccessComponent,
+          outlet: 'aside'
+        },
+        {
+          path: 'roles',
+          component : RolesComponent,
+          outlet: 'aside'
+        }
+    ]
   },
-  {
-    path: 'control',
-    component : ControlComponent,
-    outlet: 'aside'
-  },
-  {
-    path: 'users',
-    component : UsersComponent
-  },
-  {
-    path: 'locations',
-    component : LocationsComponent
-  },
-  {
-    path: 'access',
-    component : AccessComponent
-  },
-  {
-    path: 'roles',
-    component : RolesComponent
-  } ,
    // otherwise redirect to home
   { path: '**', redirectTo: '/login', pathMatch: 'full' },
 ];
