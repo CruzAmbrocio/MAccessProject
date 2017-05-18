@@ -1,0 +1,93 @@
+/* Routes of the typography of the project */
+@font-face {
+  font-family: robotoRegular;
+  src:url(../RobotoFont/Roboto-Regular.ttf);
+}
+@font-face {
+  font-family: robotoBoldItalic;
+  src:url(../RobotoFont/Roboto-BoldItalic.ttf);
+}
+@font-face {
+  font-family: robotoBold;
+  src:url(../RobotoFont/Roboto-Bold.ttf);
+}
+/* Properties of the main login container */
+.contentLogin {
+	width: 50%;
+	margin-right: auto;
+	margin-left: auto;
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.login {
+	width: 100%;
+}
+
+/* Image properties for the login view */
+.szImgLogin {
+	height: 75%;
+	width: 75%;
+	display:block;
+  	margin-left: auto;
+  	margin-right: auto;
+}
+/* Login subtitle properties */
+.subAdmin {
+	font-family: robotoRegular;
+	font-size: 15px;
+	color: #868686;
+	text-align: center;
+}
+input {
+	width: 70%;
+	opacity: 0.7;
+	font-family: "robotoRegular";
+	font-size: 
+}
+.posInputs {
+	padding-top: 10%;
+}
+.inputEmail, .inputPass {
+	width: 80%;
+	font-family: robotoRegular;
+	opacity: 0.7;
+  	margin-right: auto;
+	margin-left: auto;
+}
+p {
+	font-size: 11px;
+	font-family: robotoBoldItalic;
+	color: #33A0D9;
+	text-align: right;
+	margin: 0 10% 8% 0;	
+}
+.btnLogin {
+  	margin-left: auto;
+  	margin-right: auto;
+  	text-align: center;
+  	display: flex;
+	align-items: center;
+	justify-content: center;
+  	border-radius: 15px;
+  	width: 40%;
+  	height: 33px;
+  	background-color: #00C6AF;
+  	text-decoration: none;
+  	font-family: robotoBold;
+  	font-size: 13px;
+  	color: #FFF;
+}
+.txtLogin {
+	color: #565656;
+	font-size: 11px;
+	font-family: robotoRegular;
+	text-align: center;
+	padding-top: 5%;
+}
+span {
+	color: #33A0D9;
+	font-family: robotoBoldItalic;
+	font-size: 14px;
+}

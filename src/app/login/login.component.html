@@ -1,4 +1,28 @@
-<p>
-  login works!
-</p>
-<a [routerLink]="['/main']" class="btn">to Main</a>
+<div class="container">	
+	<div class="row">
+		<div class="col-md-2 col-lg-2"></div>
+		<div  class="col-sm-12 col-md-8 col-lg-8">
+			<div class="contentLogin">
+				<div class="login">
+					<img class="szImgLogin" src="./assets/iconos/logo-maccess-01.png">
+					<h5 class="subAdmin">Admin Plataform</h5>
+					<form class="posInputs">
+						<div class="form-group">
+							<input type="email" class="form-control inputEmail" id="inputMail" placeholder="Username / Correo Electronico">			
+						</div>
+						<div class="form-group">
+					    	<input type="password" class="form-control inputPass" id="inputPassw" placeholder="Contraseña">
+		  				</div>
+		  				<p>¿Olvidaste tu contraseña?</p>
+		  				<!-- Standard button -->
+		  				<a [routerLink]="['/main']" class="btnLogin">Iniciar Sesión</a>
+						<p class="txtLogin">¿Aun no tienes cuenta?&nbsp;&nbsp;&nbsp;<span>Regístrate</span></p>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-2 col-lg-2"></div>
+	</div>
+</div>
+<router-outlet></router-outlet>
+
