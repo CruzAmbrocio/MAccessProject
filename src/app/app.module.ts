@@ -2,12 +2,28 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { RouterModule } from '@angular/router';
+//route of the component -- main
+import { MainComponent } from './main/main.component';
 
-//route of the component 
-import  {MainComponent} from './main/main.component';
+//route of the component -- login
+import { LoginComponent } from './login/login.component';
 
-//route of the component 
-import  {LoginComponent} from './login/login.component';
+//route of the component -- control
+import { ControlComponent } from './control/control.component';
+
+//route of the component -- users
+import { UsersComponent } from './users/users.component';
+
+//route of the component -- locations
+import { LocationsComponent } from './locations/locations.component';
+
+//route of the component -- access
+import { AccessComponent } from './access/access.component';
+
+//route of the component -- roles
+import { RolesComponent } from './roles/roles.component';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,7 +32,13 @@ import { AppComponent } from './app.component';
   declarations: [
     AppComponent,
     MainComponent,
-    LoginComponent
+    LoginComponent,  
+    ControlComponent,
+    UsersComponent,
+    LocationsComponent,
+    AccessComponent,
+    RolesComponent
+    
   ],
   imports: [
     BrowserModule,

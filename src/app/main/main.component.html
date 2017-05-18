@@ -29,3 +29,13 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
+<div>
+
+<a [routerLink]="[{outlets: {aside: ['/control']}}]">Open an auxiliary route</a>
+      <a [routerLink]="['/control']" class="btn">to control</a>v
+      <a [routerLink]="['/users']" class="btn">to Users</a>
+      <a [routerLink]="['/main']" class="btn">to Main</a>
+      <a [routerLink]="['/main']" class="btn">to Main</a>
+      <a [routerLink]="['/main']" class="btn">to Main</a>
+</div>
+<router-outlet name ="aside"></router-outlet>
