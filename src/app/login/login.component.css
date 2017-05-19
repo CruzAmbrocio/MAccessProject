@@ -1,16 +1,3 @@
-/* Routes of the typography of the project */
-@font-face {
-  font-family: robotoRegular;
-  src:url(../RobotoFont/Roboto-Regular.ttf);
-}
-@font-face {
-  font-family: robotoBoldItalic;
-  src:url(../RobotoFont/Roboto-BoldItalic.ttf);
-}
-@font-face {
-  font-family: robotoBold;
-  src:url(../RobotoFont/Roboto-Bold.ttf);
-}
 /* Properties of the main login container */
 .contentLogin {
 	width: 50%;

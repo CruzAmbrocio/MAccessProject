@@ -1,41 +1,54 @@
-<nav class="navbar navbar-default ">
-  <div class="col-sm-6 col-sm-offset-3 navBarMain">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-
-      <img class= "img-responsive moveIconBar Brand" src="./assets/iconos/logo-maccess-02.png">
-
+<div class="container">
+  <div class="row">
+    <nav class="navbar navbar-default navbar-fixed-top navBG">
+      <div class="col-sm-2 col-md-2"></div>
+      <div class="col-sm-4 col-md-4">
+        <div class="contentNavbar">
+          <img class= "img-responsive moveIconBar Brand" src="./assets/iconos/logo-maccess-02.png">
+        </div>
+      </div>
+      <div class="col-sm-4 col-md-4">
+        <div class="dropdown">
+          <a class="dropbtn">Juan Pérez<img class="imgDropdown" src="./assets/iconos/dropdown-icon.png"></a>
+          <div class="dropdown-content">
+            <a class="nameData" href="#">Juan Pérez</a>
+            <a class="emailData" href="#">jperez@me.comspan&nbsp;&nbsp;&nbsp;<span>Editar</span></a>
+            <hr/>
+            <a class="closeData" href="#">Cerrar Sesión</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-2 col-md-2"></div>
+    </nav>
+  </div>
+</div>
+<div class=" navbar-default text-center navMenu">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <!--To go anotrer view in the navBar menu-->
+        <div [routerLink]="['/main', {outlets: {aside: ['control']}}]" class="btnContentMenu">
+          <a class="btn heightBtn"><img class="sizeImageHeader" src="./assets/iconos/icon_control_hover.png"></a>
+          <p class="descButon">Control</p>
+        </div>
+        <div [routerLink]="['/main', {outlets: {aside: ['users']}}]" class="btnContentMenu">
+          <a class="btn heightBtn"><img class="sizeImageHeader" src="./assets/iconos/icon_usuarios.png"></a>
+          <p class="descButon">Usuarios</p>
+        </div>
+        <div [routerLink]="['/main', {outlets: {aside: ['locations']}}]" class="btnContentMenu">
+          <a class="btn heightBtn"><img class="sizeImageHeader" src="./assets/iconos/icon_ubicaciones.png"></a>
+          <p class="descButon">Ubicaciones</p>
+        </div>
+        <div [routerLink]="['/main', {outlets: {aside: ['access']}}]" class="btnContentMenu">
+          <a class="btn heightBtn"><img class="sizeImageHeader" src="./assets/iconos/icon_accesos.png"></a>
+          <p class="descButon">Accesos</p>
+        </div>
+        <div [routerLink]="['/main', {outlets: {aside: ['roles']}}]" class="btnContentMenu">
+          <a class="btn heightBtn"><img class="sizeImageHeader" src="./assets/iconos/icon_roles.png"></a>
+          <p class="descButon">Roles</p>
+        </div>
+      </div>
     </div>
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-right">
-        <li class="dropdown">
-          <a href="#" class="toTop dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Juan Perez <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a [routerLink]="['/login']" class="btn">Log Out</a></li>
-          </ul>
-        </li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
-
-<!--To go anotrer view in the navBar menu-->
-<div>
-  <a [routerLink]="['/main', {outlets: {aside: ['control']}}]" class="btn"> to Control </a>
-  <a [routerLink]="['/main', {outlets: {aside: ['users']}}]" class="btn">to Users</a>
-  <a [routerLink]="['/main', {outlets: {aside: ['locations']}}]" class="btn">to Locations</a>
-  <a [routerLink]="['/main', {outlets: {aside: ['access']}}]" class="btn">to Access</a>
-  <a [routerLink]="['/main', {outlets: {aside: ['roles']}}]" class="btn">to Roles</a>
+  </div>
 </div>
 <router-outlet name ="aside"></router-outlet>

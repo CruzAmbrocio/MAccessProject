@@ -1,1 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* Routes of the typography of the project */
+@font-face {
+  font-family: robotoRegular;
+  src:url(./app/RobotoFont/Roboto-Regular.ttf);
+}
+@font-face {
+  font-family: robotoBoldItalic;
+  src:url(./app/RobotoFont/Roboto-BoldItalic.ttf);
+}
+@font-face {
+  font-family: robotoBold;
+  src:url(./app/RobotoFont/Roboto-Bold.ttf);
+}
