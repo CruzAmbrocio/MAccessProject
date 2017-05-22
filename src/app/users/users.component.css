@@ -1,0 +1,33 @@
+.contentMainViews{
+  padding:0pX;
+  margin-top: 15px;
+}
+
+.search{
+  display: inline-block;
+  float: right;
+  position: relative;
+}
+.containerTitle{
+  display: inline-block;
+  float: left;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.myInput {
+  border-radius: 20px;
+    background-image: url('../../assets/iconos/icon_buscar.png');
+    background-position:right center;
+    background-repeat: no-repeat;
+    font-size: 16px;
+    padding: 5px 5px 5px 15px;
+    border-color: white;
+    border-width: 0px;
+}
+
+
+table, td {
+    border-bottom: 1px solid #ddd;
+}
