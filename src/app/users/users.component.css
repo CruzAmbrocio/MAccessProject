@@ -1,8 +1,9 @@
 .contentMainViews{
-  padding:0pX;
   margin-top: 15px;
 }
-
+.contAllNewView{
+  background: #f6f6f6;
+}
 .search{
   display: inline-block;
   float: right;

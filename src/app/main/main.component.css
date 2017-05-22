@@ -6,8 +6,10 @@
     align-items: center;
     justify-content: center;  
 }
+
+
 .navBG {
-    background-color: #FFF;
+    background: #ffffff;
     box-shadow: 2px 2px 2px #F1F1F1;
 }
 .dropbtn {
@@ -99,13 +101,19 @@ hr {
 }
 .navMenu {
     height: 100px;
-    margin-top: 75px;  
+    margin-top: 75px; 
+    background: #ffffff; 
 }
 .btnContentMenu {
     display: inline-block;
-    width: 100px;
-}
+    width: 19%;
+    margin-left: 0%;
 
+}
+.containerBtns{
+    padding-left: 0px;
+    padding-right: 0px;
+}
 /* Menu button icons size */
 .sizeImageHeader{
     height: 50%;

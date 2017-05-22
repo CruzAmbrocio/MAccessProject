@@ -22,10 +22,11 @@
     </nav>
   </div>
 </div>
-<div class=" navbar-default text-center navMenu">
-  <div class="container">
+<div class="container-fluid">
+  <div class=" navbar-default text-center navMenu">
     <div class="row">
-      <div class="col-md-12">
+      <div class="col-sm-4 col-md-4"></div>
+      <div class="col-sm-4 col-md-4 containerBtns">
         <!--To go anotrer view in the navBar menu-->
         <div [routerLink]="['/main', {outlets: {aside: ['control']}}]" class="btnContentMenu">
           <a class="btn heightBtn"><img class="sizeImageHeader" src="./assets/iconos/icon_control_hover.png"></a>
@@ -48,6 +49,7 @@
           <p class="descButon">Roles</p>
         </div>
       </div>
+      <div class="col-sm-4 col-md-4"></div>
     </div>
   </div>
 </div>
