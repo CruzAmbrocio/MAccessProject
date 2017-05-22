@@ -6,8 +6,6 @@
     align-items: center;
     justify-content: center;  
 }
-
-
 .navBG {
     background: #ffffff;
     box-shadow: 2px 2px 2px #F1F1F1;
@@ -24,7 +22,7 @@
 }
 .imgDropdown {
     height: 8%;
-    width: 11%;
+    width: 8%;
     margin-left: 3%;
     margin-top: 3%;
 }
@@ -100,7 +98,7 @@ hr {
     text-decoration: none;
 }
 .navMenu {
-    height: 100px;
+    height: 115px;
     margin-top: 75px; 
     background: #ffffff; 
 }
@@ -133,4 +131,11 @@ hr {
     font-family: robotoRegular;
     font-size: 12px;
     color: #9D9D9C;
+}
+.imgArrowButtons {
+    height: 8%;
+    width: 12%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: -30%;
 }
