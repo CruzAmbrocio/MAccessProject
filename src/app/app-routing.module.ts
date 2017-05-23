@@ -10,6 +10,8 @@ import { UsersComponent } from './users/users.component';
 import { LocationsComponent } from './locations/locations.component';
 import { AccessComponent } from './access/access.component';
 import { RolesComponent } from './roles/roles.component';
+import { AddUsersComponent } from './add-users/add-users.component';
+import { HeaderAddUsersComponent } from './header-add-users/header-add-users.component';
 
 const routes: Routes = [
   {
@@ -45,6 +47,17 @@ const routes: Routes = [
           component : RolesComponent,
           outlet: 'aside'
         }
+    ]
+  },
+  {
+    path: 'addUsers',
+    component : HeaderAddUsersComponent,
+    children: [
+      {
+        path: 'photoUser',
+        component : AddUsersComponent,
+        outlet: 'editUserOutlet'
+      }
     ]
   },
    // otherwise redirect to home

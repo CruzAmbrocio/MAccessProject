@@ -1,0 +1,30 @@
+.iconHeaderUser {
+	height: 15px;
+    width: 15px;
+    float: right;
+    margin-top: 5%;
+    margin-right: 21px;
+}
+.dotsSlider {
+	margin-top: 12%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.circulo1 {
+	width: 8px;
+    height: 8px;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    background: #51CCD5;
+}
+.circulo2 {
+	width: 8px;
+    height: 8px;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    background: #97E7DE;
+    margin-left: 8px;
+}

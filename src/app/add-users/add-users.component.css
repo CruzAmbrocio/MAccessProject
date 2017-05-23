@@ -1,0 +1,28 @@
+.centerTitle {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 3%;
+}
+p {
+	font-family: robotoBold;
+	color: #575757;
+	font-size: 12px;
+}
+.imgContent {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+img {
+	height: 20%;
+	width: 28%;
+	margin-top: 10px;
+	border-radius: 2%;
+}
+.imgOpacity {
+	position: absolute;
+	height: 100%;
+	width: 28%;
+}

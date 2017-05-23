@@ -25,6 +25,11 @@ import { AccessComponent } from './access/access.component';
 //route of the component -- roles
 import { RolesComponent } from './roles/roles.component';
 
+//route of the component -- addUsers
+import { AddUsersComponent } from './add-users/add-users.component';
+
+//route of the component -- HeaderaddUsers
+import { HeaderAddUsersComponent } from './header-add-users/header-add-users.component';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -38,8 +43,9 @@ import { AppComponent } from './app.component';
     UsersComponent,
     LocationsComponent,
     AccessComponent,
-    RolesComponent
-    
+    RolesComponent,
+    AddUsersComponent,
+    HeaderAddUsersComponent
   ],
   imports: [
     BrowserModule,
