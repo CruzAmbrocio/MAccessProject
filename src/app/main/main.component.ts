@@ -10,11 +10,6 @@ import { Router, NavigationEnd } from '@angular/router';
 export class MainComponent {
 
 }
-
-
-
-
-
-
-//    ng generate module home --routing true
-//    ng generate component home
+//Commands to generate the modules of routes and components
+//ng generate module home --routing true
+//ng generate component home

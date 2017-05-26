@@ -1,0 +1,33 @@
+<div class="container">
+	<div class="row">
+	<div class="col-xs-2 col-md-2"></div>
+		<div class="col-xs-8 col-md-8">
+			<div class="centerTitles">
+				<p class="userRegister">REGISTRAR NUEVO USUARIO</p>
+				<p class="desNewUser">Completa la información del nuevo usuario.</p>
+			</div>
+			<!--div class="imgContent">
+				<img class="imgPerfil" src="./assets/iconos/fotd-miamibeach.jpg">
+				<img class="imgOpacity" src="./assets/iconos/opacity_circle.png">
+			</div-->
+			<form class="inputForm">
+				<div class="form-group">
+					<input type="name" class="form-control nameInput" id="nameUser" placeholder="Nombre">			
+				</div>
+				<div class="form-group">
+			    	<input type="DPI" class="form-control dpiInput" id="dpiUser" placeholder="DPI">
+  				</div>
+  				<div class="form-group">
+			    	<input type="rolSelection" class="form-control rolInput" id="roleUser" placeholder="Seleciona un Rol">
+  				</div>
+			</form>
+			<div class="contImgUser">
+				<img class="imgUserProfile" src="./assets/iconos/Alemania.png">
+			</div>
+			<p class="titleAccess"><img class="iconAdd" src="./assets/iconos/icon_agregar.png">&nbsp;&nbsp;&nbsp;Agregar acceso directo?</p>
+			<p class="desAccessUser">El acceso directo asigna permisos de acceso independientes del<br/>rol, a un usuario especifico.</p>
+			<a [routerLink]="['/addUsers', {outlets: {editUserOutlet: ['createUser']}}]" class="btnLogin">Tomar Fotografía</a>
+		</div>
+	<div class="col-xs-2 col-md-2"></div>
+	</div>
+</div>

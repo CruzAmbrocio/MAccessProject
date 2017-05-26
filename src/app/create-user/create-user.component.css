@@ -1,0 +1,82 @@
+.centerTitles {
+	text-align: center;
+	margin-top: 4%;
+}
+.userRegister {
+	font-family: robotoBold;
+	color: #575757;
+	font-size: 12px;
+}
+.desNewUser {
+	font-family: robotoRegular;
+	margin-top: -5px;
+	color: #AFAFAF;
+	font-size: 10px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.topDesPhoto {
+	margin-top: -1.5%;
+}
+.btnLogin {
+  	margin-left: auto;
+  	margin-right: auto;
+  	margin-top: 23%;
+  	display: flex;
+	align-items: center;
+	justify-content: center;
+  	border-radius: 15px;
+  	width: 23%;
+  	height: 32px;
+  	background-color: #00C6AF;
+  	text-align: center;
+  	text-decoration: none;
+  	font-family: robotoBold;
+  	font-size: 12px;
+  	color: #FFF;
+}
+.inputForm {
+	padding-top: 25px;
+}
+.nameInput, .dpiInput, .rolInput {
+	width: 37%;
+	font-size: 11px;
+	font-family: robotoRegular;
+	opacity: 0.7;
+	margin-left: 38%;
+	margin-bottom: -10px;
+}
+.titleAccess {
+	margin-left: 38%;
+	margin-top: 21%;
+	font-family: robotoBold;
+	color: #01CDFF;
+	font-size: 11px;
+}
+.desAccessUser {
+	font-family: robotoRegular;
+	color: #AFAFAF;
+	font-size: 9px;
+	margin-left: 38%;
+	margin-top: -1%;
+}
+.contImgUser {
+	height: 100%;
+    width: 100%;
+    margin-top: -31%;
+    margin-left: 18%;
+}
+.imgUserProfile {
+	height: 80px;
+	width: 80px;
+}
+.iconAdd {
+	height: 12px;
+}
+/*.imgContent {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}*/
