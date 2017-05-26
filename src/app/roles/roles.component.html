@@ -1,3 +1,63 @@
-<p>
-  roles works!
-</p>
+<div class="container-fluid contAllNewView">
+  <div class="row">
+    <div class="col-sm-4 col-md-4"></div>
+    <div class="col-sm-4 col-md-4 contentMainViews">
+      <div class="row">
+        <div class="containerTitle">
+          <p class="nameTable">Usuarios Registrados</p>
+        </div>
+         <div class="search">
+            <input type="text" placeholder="" class ="myInput">
+         </div>
+      </div>
+      <div class="row">
+        <div class="containerTable">
+          <table class="tableStyle">
+            <tr class="cellFormat">
+              <td>c Level</td>
+              <td>Edit</td>
+            </tr>
+            <tr class="cellFormat">
+              <td>Gerente L1</td>
+              <td>Edit</td>
+            </tr>
+            <tr class="cellFormat">
+              <td>Gerente L2</td>
+              <td>Edit</td>
+            </tr>
+            <tr class="cellFormat">
+              <td>Marketing</td>
+              <td>Edit</td>
+            </tr>
+            <tr class="cellFormat">
+              <td>IT</td>
+              <td>Edit</td>
+            </tr>
+            <tr class="cellFormat">
+              <td>Desarrollo</td>
+              <td>Edit</td>
+            </tr>
+            <tr class="cellFormat">
+              <td>Manteniminto</td>
+              <td>Edit</td>
+            </tr>
+            <tr class="cellFormat">
+              <td>Visitante</td>
+              <td>Edit</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="row">
+        <div class="containerBtnAdd">
+          <div class="IconPlus" [routerLink]="['/addUsers', {outlets: {editUserOutlet: ['photoUser']}}]">
+            <img class="img-responsive imgPlus" alt="icon plus" src="./assets/iconos/floating_agregar.png">
+          </div>
+            <a class="txtAddUser" [routerLink]="['/addUsers', {outlets: {editUserOutlet: ['photoUser']}}]">Agregar Usuario</a>
+        </div>
+      </div>
+
+    </div>
+    <div class="col-sm-4 col-md-4"></div>
+  </div>
+</div>
