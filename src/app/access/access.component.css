@@ -1,0 +1,137 @@
+.contAllNewView{
+  background: #f6f6f6;
+  min-height: 100vh;
+}
+
+.contentMainViews{
+  margin-top: 190px;
+}
+
+.containerTitle{
+  display: inline-block;
+  float: left;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nameTable{
+  font-family: "robotoBold";
+  color: #5B5B5B;
+  font-size: 15px;
+}
+
+.search{
+  display: inline-block;
+  float: right;
+  position: relative;
+}
+
+.myInput {
+  border-radius: 5px;
+  background-image: url('../../assets/iconos/icon_buscar.png');
+  background-position:right center;
+  background-repeat: no-repeat;
+  font-size: 12px;
+  padding: 5px 5px 5px 5px;
+  border-color: white;
+  border-width: 0px;
+}
+
+input {
+  font-family: "robotoRegular";
+    color: #a2a2a2;
+}
+
+
+.containerTable{
+  height: 380px;
+  overflow-y: scroll;
+  margin-top: 10px;
+}
+
+.tableStyle{
+  width: 100%;
+}
+
+.cellFormat > td:nth-child(1){
+  padding-left: 3%;
+  font-size: 12px;
+  font-family: "robotoRegular";
+  color: #a2a2a2;
+  width: 20%;
+}
+
+.cellFormat > td:nth-child(2){
+  padding-left: 3%;
+  font-size: 12px;
+  font-family: "robotoRegular";
+  color: #a2a2a2;
+  width: 20%;
+}
+
+.cellFormat > td:nth-child(3){
+  padding-left: 3%;
+  font-size: 12px;
+  font-family: "robotoRegular";
+  color: #a2a2a2;
+  width: 20%;
+}
+
+.cellFormat > td:nth-child(4){
+  padding-left: 3%;
+  font-size: 12px;
+  font-family: "robotoRegular";
+  color: #5B5B5B;
+  width: 20%;
+}
+
+.cellFormat > td:nth-child(5){
+  padding-left: 3%;
+  font-size: 11px;
+  font-family: "robotoRegular";
+  color: #8ed2ec;
+  cursor: pointer;
+  width: 20%;
+}
+
+table, td {
+  border-bottom: 7px solid #f6f6f6;
+  background-color: #ffffff;
+  height: 40px;
+}
+
+.containerBtnAdd {
+  width: 105px;
+  height: 80px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.IconPlus{
+  height: 40px;
+  width: 40px;
+  border-radius: 100%;
+  background-color: #00C6AF;
+  margin-top: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  cursor: pointer;
+}
+.imgPlus {
+  height: 50%;
+  width: 50%;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-left: auto;
+  margin-right: auto;
+
+}
+.txtAddUser{
+  text-decoration: none;
+  font-family: robotoBold;
+  font-size: 12px;
+  color: #5B5B5B;
+}

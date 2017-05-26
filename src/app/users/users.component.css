@@ -1,14 +1,12 @@
-.contentMainViews{
-  margin-top: 15px;
-}
 .contAllNewView{
   background: #f6f6f6;
+  min-height: 100vh;
 }
-.search{
-  display: inline-block;
-  float: right;
-  position: relative;
+
+.contentMainViews{
+  margin-top: 170px;
 }
+
 .containerTitle{
   display: inline-block;
   float: left;
@@ -17,18 +15,111 @@
   justify-content: center;
 }
 
+.nameTable{
+  font-family: "robotoBold";
+  color: #5B5B5B;
+  font-size: 13px;
+}
+
+.search{
+  display: inline-block;
+  float: right;
+  position: relative;
+}
+
 .myInput {
-  border-radius: 20px;
-    background-image: url('../../assets/iconos/icon_buscar.png');
-    background-position:right center;
-    background-repeat: no-repeat;
-    font-size: 16px;
-    padding: 5px 5px 5px 15px;
-    border-color: white;
-    border-width: 0px;
+  border-radius: 5px;
+  background-image: url('../../assets/iconos/icon_buscar.png');
+  background-position:95% center;
+  background-repeat: no-repeat;
+  font-size: 12px;
+  padding: 5px 5px 5px 5px;
+  border-color: white;
+  border-width: 0px;
+  height: 20px;
+}
+
+input {
+  font-family: "robotoRegular";
+  color: #a2a2a2;
 }
 
 
+.containerTable{
+  max-height: 330px;
+  overflow-y: auto;
+  margin-top: 10px;
+}
+
+.tableStyle{
+  width: 100%;
+}
+
+.tr {
+}
+
+.cellFormat > td:nth-child(1){
+  padding-left: 3%;
+  font-size: 12px;
+  font-family: "robotoRegular";
+  color: #5B5B5B;
+  width: 25%;
+}
+
+.cellFormat > td:nth-child(2){
+  padding-left: 3%;
+  font-size: 12px;
+  font-family: "robotoRegular";
+  color: #a2a2a2;
+  width: 55%;
+}
+
+.cellFormat > td:nth-child(3){
+  padding-left: 3%;
+  font-size: 11px;
+  font-family: "robotoRegular";
+  color: #8ed2ec;
+  cursor: pointer;
+  width: 20%;
+}
+
 table, td {
-    border-bottom: 1px solid #ddd;
+  border-bottom: 5px solid #f6f6f6;
+  background-color: #ffffff;
+  height: 33px;
+}
+
+.containerBtnAdd {
+  width: 105px;
+  height: 80px;   
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.IconPlus{
+  height: 40px;
+  width: 40px;
+  border-radius: 100%;
+  background-color: #00C6AF;
+  margin-top: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  cursor: pointer;
+}
+.imgPlus {
+  height: 50%;
+  width: 50%;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-left: auto;
+  margin-right: auto;
+
+}
+.txtAddUser{
+  text-decoration: none;
+  font-family: robotoBold;
+  font-size: 12px;
+  color: #5B5B5B;
 }

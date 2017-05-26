@@ -1,61 +1,59 @@
-<div class="container">
-  <div class="row">
+<div class="container-fluid">
+  <div class="containerMain">
     <nav class="navbar navbar-default navbar-fixed-top navBG">
-      <div class="col-sm-2 col-md-2"></div>
-      <div class="col-sm-4 col-md-4">
-        <div class="contentNavbar">
-          <img class= "img-responsive moveIconBar Brand" src="./assets/iconos/logo-maccess-02.png">
-        </div>
-      </div>
-      <div class="col-sm-4 col-md-4">
-        <div class="dropdown">
-          <a class="dropbtn">Juan Pérez<img class="imgDropdown" src="./assets/iconos/dropdown-icon.png"></a>
-          <div class="dropdown-content">
-            <a class="nameData" href="#">Juan Pérez</a>
-            <a class="emailData" href="#">jperez@me.comspan&nbsp;&nbsp;&nbsp;<span>Editar</span></a>
-            <hr/>
-            <a class="closeData" href="#">Cerrar Sesión</a>
+      <div class="row stylePrimaryHeader">
+        <div class="col-sm-2 col-md-2 col-lg-2"></div>
+        <div class="col-sm-8 col-md-8 col-lg-8 containerBrand">
+          <div class="contentNavbar">
+            <img class= "img-responsive brandImg" src="./assets/iconos/logo-maccess-02.png">
+          </div>
+          <div class="dropdown">
+            <a class="dropbtn">Juan Pérez<img class="imgDropdown" src="./assets/iconos/dropdown-icon.png"></a>
+            <div class="dropdown-content">
+              <a class="nameData" href="#">Juan Pérez</a>
+              <a class="emailData" href="#">jperez@me.comspan&nbsp;&nbsp;&nbsp;<span>Editar</span></a>
+              <hr/>
+              <a class="closeData" href="#">Cerrar Sesión</a>
+            </div>
           </div>
         </div>
+        <div class="col-sm-2 col-md-2 col-lg-2"></div>
       </div>
-      <div class="col-sm-2 col-md-2"></div>
+      <div class="row">
+        <div class="col-sm-2 col-md-4 col-lg-4"></div>
+        <div class="col-sm-8 col-md-4 col-lg-4 containerBtns">
+          <!--To go anotrer view in the navBar menu-->
+          <div [routerLink]="['/main', {outlets: {aside: ['control']}}]" class="btnContentMenu">
+            <a class="heightBtn"><img class="sizeImageHeader" src="./assets/iconos/icon_control_hover.png"></a>
+            <p class="descButon">Control</p>
+            <img class="imgArrowButtons" src="./assets/iconos/flecha_abajo.png">
+          </div>
+          <div [routerLink]="['/main', {outlets: {aside: ['users']}}]" class="btnContentMenu">
+            <a class="heightBtn"><img class="sizeImageHeader" src="./assets/iconos/icon_usuarios.png"></a>
+            <p class="descButon">Usuarios</p>
+            <img class="imgArrowButtons" src="./assets/iconos/flecha_abajo.png">
+          </div>
+          <div [routerLink]="['/main', {outlets: {aside: ['locations']}}]" class="btnContentMenu">
+            <a class="heightBtn"><img class="sizeImageHeader" src="./assets/iconos/icon_ubicaciones.png"></a>
+            <p class="descButon">Ubicaciones</p>
+            <img class="imgArrowButtons" src="./assets/iconos/flecha_abajo.png">
+          </div>
+          <div [routerLink]="['/main', {outlets: {aside: ['access']}}]" class="btnContentMenu">
+            <a class="heightBtn"><img class="sizeImageHeader" src="./assets/iconos/icon_accesos.png"></a>
+            <p class="descButon">Accesos</p>
+            <img class="imgArrowButtons" src="./assets/iconos/flecha_abajo.png">
+          </div>
+          <div [routerLink]="['/main', {outlets: {aside: ['roles']}}]" class="btnContentMenu">
+            <a class="heightBtn"><img class="sizeImageHeader" src="./assets/iconos/icon_roles.png"></a>
+            <p class="descButon">Roles</p>
+            <img class="imgArrowButtons" src="./assets/iconos/flecha_abajo.png">
+          </div>
+        </div>
+        <div class="col-sm-2 col-md-4 col-lg-4"></div>
+      </div>
     </nav>
+  <router-outlet name ="aside"></router-outlet>
   </div>
+
 </div>
-<div class="container-fluid">
-  <div class=" navbar-default text-center navMenu">
-    <div class="row">
-      <div class="col-sm-4 col-md-4"></div>
-      <div class="col-sm-4 col-md-4 containerBtns">
-        <!--To go anotrer view in the navBar menu-->
-        <div [routerLink]="['/main', {outlets: {aside: ['control']}}]" class="btnContentMenu">
-          <a class="btn heightBtn"><img class="sizeImageHeader" src="./assets/iconos/icon_control_hover.png"></a>
-          <p class="descButon">Control</p>
-          <img class="imgArrowButtons" src="./assets/iconos/flecha_abajo.png">
-        </div>
-        <div [routerLink]="['/main', {outlets: {aside: ['users']}}]" class="btnContentMenu">
-          <a class="btn heightBtn"><img class="sizeImageHeader" src="./assets/iconos/icon_usuarios.png"></a>
-          <p class="descButon">Usuarios</p>
-          <img class="imgArrowButtons" src="./assets/iconos/flecha_abajo.png">
-        </div>
-        <div [routerLink]="['/main', {outlets: {aside: ['locations']}}]" class="btnContentMenu">
-          <a class="btn heightBtn"><img class="sizeImageHeader" src="./assets/iconos/icon_ubicaciones.png"></a>
-          <p class="descButon">Ubicaciones</p>
-          <img class="imgArrowButtons" src="./assets/iconos/flecha_abajo.png">
-        </div>
-        <div [routerLink]="['/main', {outlets: {aside: ['access']}}]" class="btnContentMenu">
-          <a class="btn heightBtn"><img class="sizeImageHeader" src="./assets/iconos/icon_accesos.png"></a>
-          <p class="descButon">Accesos</p>
-          <img class="imgArrowButtons" src="./assets/iconos/flecha_abajo.png">
-        </div>
-        <div [routerLink]="['/main', {outlets: {aside: ['roles']}}]" class="btnContentMenu">
-          <a class="btn heightBtn"><img class="sizeImageHeader" src="./assets/iconos/icon_roles.png"></a>
-          <p class="descButon">Roles</p>
-          <img class="imgArrowButtons" src="./assets/iconos/flecha_abajo.png">
-        </div>
-      </div>
-      <div class="col-sm-4 col-md-4"></div>
-    </div>
-  </div>
-</div>
-<router-outlet name ="aside"></router-outlet>
+
