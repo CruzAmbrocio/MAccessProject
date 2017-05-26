@@ -16,14 +16,59 @@
 	align-items: center;
 	justify-content: center;
 }
-.topDesPhoto {
-	margin-top: -1.5%;
+.contentRegister {
+	padding-top: 25px;
+}
+.nameInput, .dpiInput {
+	width: 37%;
+	font-size: 11px;
+	font-family: robotoRegular;
+	opacity: 0.7;
+	margin-left: 38%;
+	margin-bottom: -10px;
+	color: #C9C9C9;
+}
+.rolInput {
+	width: 37%;
+	height: 34px;
+	font-size: 11px;
+	font-family: robotoRegular;
+	background-color: transparent;
+	border-color: #DBDBDB;
+    border-radius: 5%;
+    margin-left: 38%;
+    text-align: left;
+    color: #C9C9C9;
+}
+.lineDivision {
+	border-bottom: 1px solid #EBEBEB;
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+}
+.lineNone {
+	border-bottom: none;
+}
+.alignDrop {
+	left: inherit;
+	right: 25%;
+	font-size: 10px;
+	font-family: robotoRegular;
+}
+.iconDrop {
+	float: right;
+}
+.contentInfoRegister {
+	margin-left: 38%;
+	margin-top: 3%;
+}
+.iconAdd {
+	height: 12px;
 }
 .btnLogin {
-  	margin-left: auto;
-  	margin-right: auto;
-  	margin-top: 23%;
-  	display: flex;
+  	margin-left: 38%;
+    margin-top: 5%;
+    display: flex;
 	align-items: center;
 	justify-content: center;
   	border-radius: 15px;
@@ -36,20 +81,7 @@
   	font-size: 12px;
   	color: #FFF;
 }
-.inputForm {
-	padding-top: 25px;
-}
-.nameInput, .dpiInput, .rolInput {
-	width: 37%;
-	font-size: 11px;
-	font-family: robotoRegular;
-	opacity: 0.7;
-	margin-left: 38%;
-	margin-bottom: -10px;
-}
 .titleAccess {
-	margin-left: 38%;
-	margin-top: 21%;
 	font-family: robotoBold;
 	color: #01CDFF;
 	font-size: 11px;
@@ -58,25 +90,17 @@
 	font-family: robotoRegular;
 	color: #AFAFAF;
 	font-size: 9px;
-	margin-left: 38%;
-	margin-top: -1%;
-}
-.contImgUser {
-	height: 100%;
-    width: 100%;
-    margin-top: -31%;
-    margin-left: 18%;
 }
 .imgUserProfile {
-	height: 80px;
-	width: 80px;
+	height: 75px;
+    width: 75px;
+    position: absolute;
+    margin-top: -15%;
+    margin-left: 23%;
+    -webkit-border-radius: 150px; 
+   -moz-border-radius: 150px; 
+   -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .3); 
+   -moz-box-shadow: 0 0 8px rgba(0, 0, 0, .3);
 }
-.iconAdd {
-	height: 12px;
-}
-/*.imgContent {
-	position: relative;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}*/
+
+
