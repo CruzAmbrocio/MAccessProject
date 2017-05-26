@@ -46,8 +46,8 @@ input {
 
 
 .containerTable{
-  height: 380px;
-  overflow-y: scroll;
+  max-height: 330px;
+  overflow-y: auto;
   margin-top: 10px;
 }
 
