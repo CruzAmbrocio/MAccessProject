@@ -1,13 +1,15 @@
-.contAllNewView{
+/*   The contanier height */
+.contAllNewView {
   background: #f6f6f6;
   min-height: 100vh;
 }
 
-.contentMainViews{
-  margin-top: 190px;
+.contentMainViews {
+  margin-top: 170px;
 }
 
-.containerTitle{
+/*   Aling the title container */
+.containerTitle {
   display: inline-block;
   float: left;
   display: flex;
@@ -15,45 +17,97 @@
   justify-content: center;
 }
 
-.nameTable{
+.nameTable {
   font-family: "robotoBold";
   color: #5B5B5B;
-  font-size: 15px;
+  font-size: 13px;
 }
 
-.search{
+.search {
   display: inline-block;
   float: right;
   position: relative;
 }
 
+/*   Style input search */
 .myInput {
   border-radius: 5px;
   background-image: url('../../assets/iconos/icon_buscar.png');
-  background-position:right center;
+  background-position:95% center;
   background-repeat: no-repeat;
   font-size: 12px;
   padding: 5px 5px 5px 5px;
   border-color: white;
   border-width: 0px;
+  height: 20px;
 }
 
 input {
   font-family: "robotoRegular";
-    color: #a2a2a2;
+  color: #a2a2a2;
 }
 
-
-.containerTable{
-  height: 380px;
-  overflow-y: scroll;
+/*   Size container table */
+.containerTable {
+  max-height: 350px;
+  overflow-y: auto;
   margin-top: 10px;
 }
 
-.tableStyle{
+.tableStyle {
   width: 100%;
 }
 
+/*   Style of the table */
+table, td {
+  border-bottom: 5px solid #f6f6f6;
+  background-color: #ffffff;
+  height: 35px;
+}
+/*   style scroll bar of the table */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-button {
+  width: 0px;
+  height: 0px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cfcfcf;
+  border: 0px none #ffffff;
+  border-radius: 50px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #cfcfcf;
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: #cfcfcf;
+}
+
+::-webkit-scrollbar-track {
+  background: #ffffff;
+  border: 0px none #ffffff;
+  border-radius: 50px;
+}
+
+::-webkit-scrollbar-track:hover {
+  background: #fcfcfc;
+}
+
+::-webkit-scrollbar-track:active {
+  background: #f6f6f6;
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+/*  .Style for each column of the table */
 .cellFormat > td:nth-child(1){
   padding-left: 3%;
   font-size: 12px;
@@ -71,11 +125,7 @@ input {
   width: 15%;
 }
 
-table, td {
-  border-bottom: 7px solid #f6f6f6;
-  background-color: #ffffff;
-  height: 40px;
-}
+/*   Style container Add button */
 .containerBtnAdd {
   width: 105px;
   height: 80px;
@@ -84,7 +134,7 @@ table, td {
   text-align: center;
 }
 
-.IconPlus{
+.IconPlus {
   height: 40px;
   width: 40px;
   border-radius: 100%;
@@ -104,7 +154,7 @@ table, td {
   margin-right: auto;
 
 }
-.txtAddUser{
+.txtAddUser {
   text-decoration: none;
   font-family: robotoBold;
   font-size: 12px;
