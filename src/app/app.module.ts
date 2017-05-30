@@ -31,6 +31,9 @@ import { AddUsersComponent } from './add-users/add-users.component';
 //route of the component -- HeaderaddUsers
 import { HeaderAddUsersComponent } from './header-add-users/header-add-users.component';
 
+//route of the component -- UserCreate
+import { CreateUserComponent } from './create-user/create-user.component';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
@@ -45,7 +48,8 @@ import { AppComponent } from './app.component';
     AccessComponent,
     RolesComponent,
     AddUsersComponent,
-    HeaderAddUsersComponent
+    HeaderAddUsersComponent,
+    CreateUserComponent
   ],
   imports: [
     BrowserModule,

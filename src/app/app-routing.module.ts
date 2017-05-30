@@ -12,6 +12,7 @@ import { AccessComponent } from './access/access.component';
 import { RolesComponent } from './roles/roles.component';
 import { AddUsersComponent } from './add-users/add-users.component';
 import { HeaderAddUsersComponent } from './header-add-users/header-add-users.component';
+import { CreateUserComponent } from './create-user/create-user.component';
 
 const routes: Routes = [
   {
@@ -56,6 +57,11 @@ const routes: Routes = [
       {
         path: 'photoUser',
         component : AddUsersComponent,
+        outlet: 'editUserOutlet'
+      },
+      {
+        path: 'createUser',
+        component : CreateUserComponent,
         outlet: 'editUserOutlet'
       }
     ]

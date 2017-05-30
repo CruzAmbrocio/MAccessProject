@@ -1,0 +1,41 @@
+<div class="container">
+	<div class="row">
+	<div class="col-md-2"></div>
+		<div class="col-xs-12 col-md-8 col-lg-8">
+			<div class="centerTitles">
+				<p class="userRegister">REGISTRAR NUEVO USUARIO</p>
+				<p class="desNewUser">Completa la información del nuevo usuario.</p>
+			</div>
+			<div class="contentRegister">
+				<form class="inputForm">
+					<div class="form-group">
+						<input type="name" class="form-control nameInput" id="nameUser" placeholder="Nombre">			
+					</div>
+					<div class="form-group">
+				    	<input type="DPI" class="form-control dpiInput" id="dpiUser" placeholder="DPI">
+	  				</div>
+	  				<div class="dropdown">
+					  <a class="btn dropdown-toggle rolInput" data-toggle="dropdown"><span class="iconDrop"><img src="./assets/iconos/dropdown.png"></span>Seleciona un Rol
+					  </a>
+					  <ul class="dropdown-menu alignDrop">
+					    <li class="lineDivision"><a href="#">C-Level</a></li>
+					    <li class="lineDivision"><a href="#">IT</a></li>
+					    <li class="lineDivision"><a href="#">Marketing</a></li>
+					    <li class="lineDivision"><a href="#">Mantenimiento</a></li>
+					    <li class="lineNone"><a href="#">Ventas</a></li>
+					  </ul>
+					</div>
+				</form>
+				<img class="imgUserProfile" src="./assets/iconos/foto_previw.jpg">
+			</div>
+			<div class="contentInfoRegister">
+				<p class="titleAccess"><img class="iconAdd" src="./assets/iconos/icon_agregar.png">&nbsp;&nbsp;&nbsp;Agregar acceso directo?</p>
+				<p class="desAccessUser">El acceso directo asigna permisos de acceso independientes del<br/>rol, a un usuario especifico.</p>
+			</div>
+			<a [routerLink]="['/addUsers', {outlets: {editUserOutlet: ['createUser']}}]" class="btnLogin">Crear Nuevo Usuario</a>
+		</div>
+	<div class="col-md-2"></div>
+	</div>
+</div>
+
+<!--input type="rolSelection" class="form-control rolInput" id="roleUser" placeholder="Seleciona un Rol"-->

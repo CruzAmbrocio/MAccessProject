@@ -20,7 +20,6 @@ export class MainComponent  implements OnInit {
   showStyle9 :any;
   constructor() { 
   }
-
   ngOnInit() {
     this.showStyle0 = true;
     this.showStyle1 = false;
