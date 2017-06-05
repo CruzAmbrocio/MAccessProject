@@ -29,10 +29,11 @@
 				<img class="imgUserProfile" src="./assets/iconos/foto_previw.jpg">
 			</div>
 			<div class="contentInfoRegister">
-				<p class="titleAccess"><img class="iconAdd" src="./assets/iconos/icon_agregar.png">&nbsp;&nbsp;&nbsp;Agregar acceso directo?</p>
+				<a class="titleAccess" [routerLink]="['/addShortcut', {outlets: {editUserOutlet: ['AddShortcutComponent']}}]"><img class="iconAdd" src="./assets/iconos/icon_agregar.png">&nbsp;&nbsp;&nbsp;Agregar acceso directo?</a>
+
 				<p class="desAccessUser">El acceso directo asigna permisos de acceso independientes del<br/>rol, a un usuario especifico.</p>
 			</div>
-			<a [routerLink]="['/addUsers', {outlets: {editUserOutlet: ['createUser']}}]" class="btnLogin">Crear Nuevo Usuario</a>
+			<a [routerLink]="['/addUsers', {outlets: {editUserOutlet: ['userRegistered']}}]" class="btnLogin">Crear Nuevo Usuario</a>
 		</div>
 	<div class="col-md-2"></div>
 	</div>
