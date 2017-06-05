@@ -1,0 +1,25 @@
+<div class="container">
+	<div class="row">
+	<div class="col-md-2"></div>
+		<div class="col-xs-12 col-md-8 col-lg-8">
+			<div class="centerTitles">
+				<p class="userRegistered">USUARIO CREADO</p>
+				<p class="desRegistered">El usuario fue creado con éxito.</p>
+			</div>
+			<div class="contentRegistered">
+				<div class="boxContent">
+					<img class="imgUserProfile" src="./assets/iconos/foto_previw.jpg">	
+					<div class="contentText">
+						<p class="namePerson">Regina Doe</p>
+						<p class="infoPerson">2071-25842-0101</p>
+						<p class="infoPerson">IT</p>
+					</div>
+				</div>
+			</div>
+			<a [routerLink]="['/main', {outlets: {aside: ['users']}}]" class="btnLogin">Aceptar</a>
+		</div>
+	<div class="col-md-2"></div>
+	</div>
+</div>
+
+<!--input type="rolSelection" class="form-control rolInput" id="roleUser" placeholder="Seleciona un Rol"-->

@@ -13,6 +13,8 @@ import { RolesComponent } from './roles/roles.component';
 import { AddUsersComponent } from './add-users/add-users.component';
 import { HeaderAddUsersComponent } from './header-add-users/header-add-users.component';
 import { CreateUserComponent } from './create-user/create-user.component';
+import { NewUserComponent } from './new-user/new-user.component';
+import { AddShortcutComponent } from './add-shortcut/add-shortcut.component';
 
 const routes: Routes = [
   {
@@ -62,6 +64,16 @@ const routes: Routes = [
       {
         path: 'createUser',
         component : CreateUserComponent,
+        outlet: 'editUserOutlet'
+      },
+      {
+        path: 'userRegistered',
+        component : NewUserComponent,
+        outlet: 'editUserOutlet'
+      },
+      {
+        path: 'addShortcut',
+        component : AddShortcutComponent,
         outlet: 'editUserOutlet'
       }
     ]

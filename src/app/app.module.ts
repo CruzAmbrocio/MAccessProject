@@ -34,6 +34,12 @@ import { HeaderAddUsersComponent } from './header-add-users/header-add-users.com
 //route of the component -- UserCreate
 import { CreateUserComponent } from './create-user/create-user.component';
 
+//route of the component -- UserRegistered
+import { NewUserComponent } from './new-user/new-user.component';
+
+//route of the component -- AddShortCut
+import { AddShortcutComponent } from './add-shortcut/add-shortcut.component';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
@@ -49,7 +55,9 @@ import { AppComponent } from './app.component';
     RolesComponent,
     AddUsersComponent,
     HeaderAddUsersComponent,
-    CreateUserComponent
+    CreateUserComponent,
+    NewUserComponent,
+    AddShortcutComponent
   ],
   imports: [
     BrowserModule,
