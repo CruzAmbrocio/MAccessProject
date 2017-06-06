@@ -15,6 +15,7 @@ import { HeaderAddUsersComponent } from './header-add-users/header-add-users.com
 import { CreateUserComponent } from './create-user/create-user.component';
 import { NewUserComponent } from './new-user/new-user.component';
 import { AddShortcutComponent } from './add-shortcut/add-shortcut.component';
+//import { UbicationEditComponent } from './ubication-edit/ubication-edit.component';
 
 const routes: Routes = [
   {
