@@ -1,3 +1,32 @@
-<p>
-  add-shortcut works!
-</p>
+<div class="container">
+	<div class="row">
+	<div class="col-md-2"></div>
+		<div class="col-xs-12 col-md-8 col-lg-8">
+			<div class="centerTitles">
+				<p class="userNewRegistered">REGISTRAR NUEVO USUARIO</p>
+				<p class="desNewRegistered">Agregar acceso directo para este usuario</p>
+			</div>
+			<div class="contentNewRegister">
+				<div class="boxContentData">	
+					<div class="contentRows">
+						<table class="table table-hover">
+						  <tbody>
+					      	<tr>
+						      <td class="placedsName">Zona Pradera<img class="iconArrow" src="./assets/iconos/arrow-icon.png"></td>
+						    </tr>
+						    <tr>
+						      <td class="placedsName">Europlaza<img class="iconArrow" src="./assets/iconos/arrow-icon.png"></td>
+						    </tr>
+						    <hr class="lineRow">
+						  </tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+			<a [routerLink]="['/main', {outlets: {aside: ['users']}}]" class="btnLogin">Aceptar</a>
+		</div>
+	<div class="col-md-2"></div>
+	</div>
+</div>
+
+<!--input type="rolSelection" class="form-control rolInput" id="roleUser" placeholder="Seleciona un Rol"-->
