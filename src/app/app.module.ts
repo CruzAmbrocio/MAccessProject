@@ -40,6 +40,12 @@ import { NewUserComponent } from './new-user/new-user.component';
 //route of the component -- AddShortCut
 import { AddShortcutComponent } from './add-shortcut/add-shortcut.component';
 
+//route of the component -- editUbication
+import { UbicationEditComponent } from './ubication-edit/ubication-edit.component';
+
+//route of the component -- ubicationChange
+import { UbicationChangeComponent } from './ubication-change/ubication-change.component';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
@@ -57,7 +63,9 @@ import { AppComponent } from './app.component';
     HeaderAddUsersComponent,
     CreateUserComponent,
     NewUserComponent,
-    AddShortcutComponent
+    AddShortcutComponent,
+    UbicationEditComponent,
+    UbicationChangeComponent
   ],
   imports: [
     BrowserModule,
