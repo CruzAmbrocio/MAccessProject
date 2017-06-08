@@ -49,7 +49,7 @@ input {
 
 /*   Size container table */
 .containerTable {
-  max-height: 350px;
+  max-height: 335px;
   overflow-y: auto;
   margin-top: 10px;
 }

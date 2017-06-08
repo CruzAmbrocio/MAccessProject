@@ -2,13 +2,13 @@
 	<div class="row">
 		<div class="col-xs-2 col-md-2"></div>
 		<div class="col-xs-8 col-md-8">
-		<a [routerLink]="['/main', {outlets: {aside: ['users']}}]"><img class="iconHeaderUser" src="./assets/iconos/icon_cerrar.png"></a>
+			<a [routerLink]="['/main', {outlets: {aside: ['users']}}]"><img class="iconHeaderUser" src="./assets/iconos/icon_cerrar.png"></a>
 			<div class="dotsSlider">
 				<div class="circuloActive">
-					<div class="circulo1"></div>
+					<div [ngClass]="{'circulo1': isActive, 'circulo2': isDisabled}"></div>
 				</div>
 				<div class="circuloDesactive">
-					<div class="circulo2"></div>
+					<div [ngClass]="{'circulo1': isActive1, 'circulo2': isDisabled1}"></div>
 				</div>
 			</div>
 		</div>

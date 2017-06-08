@@ -39,7 +39,7 @@ export class MainComponent implements OnInit {
 
   activeButtons(gd: GlobalDataService){
     this.currentRoute=this.gd.shareObj['global'].url
-    console.log(this.gd.shareObj['global'].url);
+    //console.log(this.gd.shareObj['global'].url);
 
     this.showStyle0 = false;
     this.showStyle1 = true;
