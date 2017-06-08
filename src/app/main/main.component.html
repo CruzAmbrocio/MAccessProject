@@ -33,7 +33,7 @@
             <img class="imgArrowButtons"  src="./assets/iconos/flecha_abajo.png">
           </div>
           <!--Inactive Button Control-->
-          <div [routerLink]="['/main', {outlets: {aside: ['control']}}]" class="btnContentMenu" *ngIf="showStyle1" (click)="changingActiveBtns(true, false , false, false, false)">
+          <div [routerLink]="['/main', {outlets: {aside: ['control']}}]" class="btnContentMenu" *ngIf="showStyle1">
             <a class="heightBtn"><img class="sizeImageHeader" src="./assets/iconos/icon_control.png"></a>
             <p class="descButonInactive">Control</p>
             <img class="imgArrowButtons"  src="./assets/iconos/icon_check.png">
@@ -45,7 +45,7 @@
             <img class="imgArrowButtons" src="./assets/iconos/flecha_abajo.png">
           </div>
           <!--Inactive Button User-->
-          <div [routerLink]="['/main', {outlets: {aside: ['users']}}]" class="btnContentMenu" *ngIf="showStyle3" (click)="changingActiveBtns(false, true , false, false, false)">
+          <div [routerLink]="['/main', {outlets: {aside: ['users']}}]" class="btnContentMenu" *ngIf="showStyle3"(click)="active()">
             <a class="heightBtn"><img class="sizeImageHeader" src="./assets/iconos/icon_usuarios.png"></a>
             <p class="descButonInactive">Usuarios</p>
             <img class="imgArrowButtons"  src="./assets/iconos/icon_check.png">
@@ -57,7 +57,7 @@
             <img class="imgArrowButtons" src="./assets/iconos/flecha_abajo.png">
           </div>
           <!--Inactive Button Locations-->
-          <div [routerLink]="['/main', {outlets: {aside: ['locations']}}]" class="btnContentMenu" *ngIf="showStyle5" (click)="changingActiveBtns(false, false , true, false, false)">
+          <div [routerLink]="['/main', {outlets: {aside: ['locations']}}]" class="btnContentMenu" *ngIf="showStyle5">
             <a class="heightBtn"><img class="sizeImageHeader" src="./assets/iconos/icon_ubicaciones.png"></a>
             <p class="descButonInactive">Ubicaciones</p>
             <img class="imgArrowButtons"  src="./assets/iconos/icon_check.png">
@@ -69,7 +69,7 @@
             <img class="imgArrowButtons" src="./assets/iconos/flecha_abajo.png">
           </div>
           <!--Inactive Button Access-->
-          <div [routerLink]="['/main', {outlets: {aside: ['access']}}]" class="btnContentMenu" *ngIf="showStyle7" (click)="changingActiveBtns(false, false , false, true, false)">
+          <div [routerLink]="['/main', {outlets: {aside: ['access']}}]" class="btnContentMenu" *ngIf="showStyle7">
             <a class="heightBtn"><img class="sizeImageHeader" src="./assets/iconos/icon_accesos.png"></a>
             <p class="descButonInactive">Accesos</p>
             <img class="imgArrowButtons" src="./assets/iconos/icon_check.png">
@@ -81,7 +81,7 @@
             <img class="imgArrowButtons" src="./assets/iconos/flecha_abajo.png">
           </div>
           <!--Inactive Button Rol-->
-          <div [routerLink]="['/main', {outlets: {aside: ['roles']}}]" class="btnContentMenu" *ngIf="showStyle9" (click)="changingActiveBtns(false, false , false, false, true)">
+          <div [routerLink]="['/main', {outlets: {aside: ['roles']}}]" class="btnContentMenu" *ngIf="showStyle9">
             <a class="heightBtn"><img class="sizeImageHeader" src="./assets/iconos/icon_roles.png"></a>
             <p class="descButonInactive">Roles</p>
             <img class="imgArrowButtons" src="./assets/iconos/icon_check.png">
