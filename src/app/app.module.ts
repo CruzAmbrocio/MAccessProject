@@ -67,7 +67,11 @@ import { AppComponent } from './app.component';
     HttpModule,
     AppRoutingModule
   ],
-  providers: [GlobalDataService],
-  bootstrap: [AppComponent]
+  providers: [
+    GlobalDataService
+  ],
+  bootstrap: [
+    AppComponent
+  ]
 })
 export class AppModule { }
