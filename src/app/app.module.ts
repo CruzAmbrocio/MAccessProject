@@ -40,6 +40,9 @@ import { NewUserComponent } from './new-user/new-user.component';
 //route of the component -- AddShortCut
 import { AddShortcutComponent } from './add-shortcut/add-shortcut.component';
 
+// to import global data
+import { GlobalDataService } from './global.service';
+
 //route of the component -- editUbication
 import { UbicationEditComponent } from './ubication-edit/ubication-edit.component';
 
@@ -73,7 +76,11 @@ import { AppComponent } from './app.component';
     HttpModule,
     AppRoutingModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+    GlobalDataService
+  ],
+  bootstrap: [
+    AppComponent
+  ]
 })
 export class AppModule { }
