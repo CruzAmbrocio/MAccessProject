@@ -1,13 +1,13 @@
-.centerTitles {
+.cenTitlesLoc {
 	text-align: center;
 	margin-top: 4%;
 }
-.userNewRegistered {
+.editLoc {
 	font-family: robotoBold;
 	color: #575757;
 	font-size: 12px;
 }
-.desNewRegistered {
+.desEditLoc {
 	font-family: robotoRegular;
 	margin-top: -5px;
 	color: #AFAFAF;
@@ -16,21 +16,44 @@
 	align-items: center;
 	justify-content: center;
 }
-.contentNewRegister {
+/* table Subheader navegation */
+.boxContSub {
+	height: 18px;
+    width: 90%;
+    margin-top: 2%;
+}
+.editNav {
+	font-family: robotoRegular;
+	color: #989898;
+	font-size: 10px;
+	margin-left: 8px;
+}
+.marginText {
+	margin-left: 4px;
+}
+.colorText {
+	color: #575757; 
+	font-family: robotoBold;
+}
+.iconArrowNav {
+	height: 10px;
+    width: 10px;
+}
+.contentEditLoc, .contentSubtitItle {
 	display: flex;
 	align-items: center;
 	justify-content: center;
 }
-.boxContentData {
+.boxContentDataLoc {
 	height: 270px;
     width: 90%;
-    margin-top: 2%;
+    margin-top: 1%;
 	-webkit-border-radius: 1%; 
     -moz-border-radius: 1%; 
     -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .3); 
     -moz-box-shadow: 0 0 8px rgba(0, 0, 0, .3);
 }
-.contentRows {
+.contentRowsLoc {
     width: 20%;
     height: 100%;
    	border-right: 1px solid #DCDCDC;
@@ -70,4 +93,7 @@
   	font-family: robotoBold;
   	font-size: 12px;
   	color: #FFF;
+}
+.holis {
+	width: 10%;
 }

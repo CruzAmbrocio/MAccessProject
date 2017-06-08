@@ -15,7 +15,8 @@ import { HeaderAddUsersComponent } from './header-add-users/header-add-users.com
 import { CreateUserComponent } from './create-user/create-user.component';
 import { NewUserComponent } from './new-user/new-user.component';
 import { AddShortcutComponent } from './add-shortcut/add-shortcut.component';
-//import { UbicationEditComponent } from './ubication-edit/ubication-edit.component';
+import { UbicationEditComponent } from './ubication-edit/ubication-edit.component';
+import { UbicationChangeComponent } from './ubication-change/ubication-change.component';
 
 const routes: Routes = [
   {
@@ -75,6 +76,22 @@ const routes: Routes = [
       {
         path: 'addShortcut',
         component : AddShortcutComponent,
+        outlet: 'editUserOutlet'
+      }
+    ]
+  },
+  {
+    path: 'editLocationView',
+    component : HeaderAddUsersComponent,
+    children: [
+      {
+        path: 'viewLocation',
+        component : UbicationEditComponent,
+        outlet: 'editUserOutlet'
+      },
+      {
+        path: 'ubicationEdit',
+        component : UbicationChangeComponent,
         outlet: 'editUserOutlet'
       }
     ]
