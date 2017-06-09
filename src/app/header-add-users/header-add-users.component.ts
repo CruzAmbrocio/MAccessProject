@@ -20,6 +20,7 @@ export class HeaderAddUsersComponent implements OnInit {
   currentRoute: any;
   changeIndicator:any;
   changeIndicatorInit:any;
+  BackUser: any;
   constructor( private router: Router, private gd: GlobalDataService){
     router.events.subscribe(
       (url:any) => {
@@ -35,6 +36,7 @@ export class HeaderAddUsersComponent implements OnInit {
     this.isDisabled = false;
     this.isActive1 = false;
     this.isDisabled1 = true;
+    this.BackUser = false;
   }
 
   changeIndicatiors(gd: GlobalDataService){
@@ -50,6 +52,9 @@ export class HeaderAddUsersComponent implements OnInit {
       this.isDisabled = true;
       this.isActive1 = true;
       this.isDisabled1 = false;
+      this.BackUser = true;
+    }else{
+      this.BackUser = false;
     }
   }
 }

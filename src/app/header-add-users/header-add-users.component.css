@@ -5,12 +5,30 @@
     margin-top: 5%;
     margin-right: 21px;
 }
+
 .dotsSlider {
-	margin-top: 12%;
-    display: flex;
+    display: block;
     align-items: center;
     justify-content: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
 }
+
+.headerCl{
+    display: block;
+}
+.btnBackUser{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.circleDots{
+    display: inline-block;
+}
+
 .circulo1 {
 	width: 8px;
     height: 8px;
@@ -20,6 +38,7 @@
     background: #51CCD5;
     margin-left: 8px;
 }
+
 .circulo2 {
 	width: 8px;
     height: 8px;
@@ -28,4 +47,26 @@
     border-radius: 50%;
     background: #97E7DE;
     margin-left: 8px;
+}
+
+.btnBackUser{
+    display: inline-block;
+    height: 24px;
+    margin-top: 5%;
+}
+
+.imgBackUser{
+    display: inline-block;
+    height: 70%;
+    width: 20px;
+    padding-right: 7%;
+    cursor: pointer;
+}
+
+.txtBackUser{
+    display: inline-block;
+    font-family: robotoBold;
+    color: #b7b7b7;
+    font-size: 11px;
+    cursor: pointer;
 }
