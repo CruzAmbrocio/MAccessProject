@@ -7,14 +7,14 @@
 					<img src="./assets/iconos/icon_volver.png" class="imgBackUser">
 					<p class="txtBackUser"> Volver</p>
 				</div>
-				<a [routerLink]="['/main', {outlets: {aside: ['users']}}]"><img class="iconHeaderUser" src="./assets/iconos/icon_cerrar.png"></a>
+				<a [routerLink]="['/main', {outlets: {aside: ['users']}}]">
+					<img src="./assets/iconos/icon_cerrar.png" class="iconHeaderUser">
+				</a>
 			</div>
 			<div class="dotsSlider">
-				<div class="circleDots">
-					<div [ngClass]="{'circulo1': isActive, 'circulo2': isDisabled}"></div>
-				</div>
-				<div class="circleDots">
-					<div [ngClass]="{'circulo1': isActive1, 'circulo2': isDisabled1}"></div>
+				<div class="contIndicators" *ngIf="dotsIndicators">
+					<div class="DotLeft" [ngClass]="{'circulo1': isActive, 'circulo2': isDisabled}"></div>
+					<div class="DotRigth" [ngClass]="{'circulo1': isActive1, 'circulo2': isDisabled1}"></div>
 				</div>
 			</div>
 		</div>

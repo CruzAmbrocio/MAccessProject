@@ -1,65 +1,20 @@
-.iconHeaderUser {
-	height: 15px;
-    width: 15px;
-    float: right;
-    margin-top: 5%;
-    margin-right: 21px;
-}
-
-.dotsSlider {
-    display: block;
-    align-items: center;
-    justify-content: center;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-}
 
 .headerCl{
-    display: block;
-}
-.btnBackUser{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.circleDots{
-    display: inline-block;
-}
-
-.circulo1 {
-	width: 8px;
-    height: 8px;
-    -moz-border-radius: 50%;
-    -webkit-border-radius: 50%;
-    border-radius: 50%;
-    background: #51CCD5;
-    margin-left: 8px;
-}
-
-.circulo2 {
-	width: 8px;
-    height: 8px;
-    -moz-border-radius: 50%;
-    -webkit-border-radius: 50%;
-    border-radius: 50%;
-    background: #97E7DE;
-    margin-left: 8px;
+    width: 100%;
+    float: left;
 }
 
 .btnBackUser{
-    display: inline-block;
-    height: 24px;
+    height: 18px;
+    float: left;
     margin-top: 5%;
+    display: inline-block;
 }
 
 .imgBackUser{
     display: inline-block;
-    height: 70%;
+    height: 100%;
     width: 20px;
-    padding-right: 7%;
     cursor: pointer;
 }
 
@@ -69,4 +24,53 @@
     color: #b7b7b7;
     font-size: 11px;
     cursor: pointer;
+}
+
+.iconHeaderUser {
+    height: 18px;
+    width: 18px;
+    float: right;
+    margin-top: 5%;
+    display: inline-block;
+}
+
+.dotsSlider {
+    display: inline-block;
+    width: 100%;
+    height: 25px;
+    margin-top: 5%;
+}
+
+.contIndicators{
+    width: 25px;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.DotRigth{
+    float: right;
+}
+
+.DotLeft{
+    float: left;
+}
+
+.circulo1 {
+    width: 8px;
+    height: 8px;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    background: #51CCD5;
+    display: inline-block;
+}
+
+.circulo2 {
+    width: 8px;
+    height: 8px;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    background: #97E7DE;
+    display: inline-block;
 }

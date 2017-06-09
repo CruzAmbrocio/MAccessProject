@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, NgModule ,OnInit} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {FormsModule} from '@angular/forms';
 
 @Component({
   selector: 'app-create-user',
@@ -12,4 +14,18 @@ export class CreateUserComponent implements OnInit {
   ngOnInit() {
   }
 
+  types:any[]=[
+        {id:'C-Level',Name:'C-Level'},
+        {id:'IT',Name:'IT'},
+        {id:'Marketing',Name:'Marketing'},
+        {id:'Mantenimiento',Name:'Mantenimiento'},
+        {id:'Ventas',Name:'ventas'}
+  ];
+  /*item to be preselected should be in the below object which 
+  *is returned by the web  service
+  */
+  selectedElement:any= {id:'IT',Name:'IT'};
+  load(val){
+    console.log(val)
+  }
 }

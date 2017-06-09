@@ -7,7 +7,7 @@
 				<p class="desNewUser">Completa la información del nuevo usuario.</p>
 			</div>
 			<div class="contentRegister">
-				<form class="inputForm">
+				<!--<form class="inputForm">-->
 					<div class="form-group">
 						<input type="name" class="form-control nameInput" id="nameUser" placeholder="Nombre">			
 					</div>
@@ -15,6 +15,12 @@
 				    	<input type="DPI" class="form-control dpiInput" id="dpiUser" placeholder="DPI">
 	  				</div>
 	  				<div class="dropdown">
+
+      			<select [(ngModel)]="selectedElement.id" >
+     					<option *ngFor="let type of types" [ngValue]="type.id"> {{type.Name}}</option>
+    				</select>
+    				<input type="text" [(ngModel)]="selectedElement.id" />
+
 					  <a class="btn dropdown-toggle rolInput" data-toggle="dropdown"><span class="iconDrop"><img src="./assets/iconos/dropdown.png"></span>Seleciona un Rol
 					  </a>
 					  <ul class="dropdown-menu alignDrop">
@@ -25,7 +31,7 @@
 					    <li class="lineNone"><a href="#">Ventas</a></li>
 					  </ul>
 					</div>
-				</form>
+				<!--</form>-->
 				<img class="imgUserProfile" src="./assets/iconos/foto_previw.jpg">
 			</div>
 			<div class="contentInfoRegister">
