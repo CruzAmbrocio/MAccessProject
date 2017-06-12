@@ -9,7 +9,8 @@ import { GlobalDataService } from './global.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-
+//ng generate module home --routing true
+//ng generate component home
 export class AppComponent {
   constructor(router: Router, private gd: GlobalDataService) { 
     router.events.subscribe(
