@@ -10,14 +10,12 @@
             <div class="dropdown">
               <a class="dropdown-toggle  dropbtn" data-toggle="dropdown">Juan Perez<span><img src="./assets/iconos/dropdown-icon.png" class="imgDropdown"></span>
               </a>
-
-          <div class="dropdown-menu holis dropdown-contentassas">
-            <a class="nameData" href="#">Juan Pérez</a>
-            <a class="emailData" href="#">jperez@me.comspan&nbsp;&nbsp;&nbsp;<span>Editar</span></a>
-            <hr/>
-            <a class="closeData" href="#">Cerrar Sesión</a>
-          </div>
-
+              <div class="dropdown-menu holis dropdown-contentassas">
+                <p class="nameData" >Juan Pérez</p>
+                <p class="emailData" >jperez@me.comspan&nbsp;&nbsp;&nbsp;<span>Editar</span></p>
+                <hr/>
+                <p class="closeData" routerLink="/crisis-center">Cerrar Sesión</p>
+              </div>
             </div>
         </div>
         <div class="col-sm-2 col-md-2 col-lg-2"></div>
@@ -33,7 +31,7 @@
             <img class="imgArrowButtons"  src="./assets/iconos/flecha_abajo.png">
           </div>
           <!--Inactive Button Control-->
-          <div [routerLink]="['/main', {outlets: {aside: ['control']}}]" class="btnContentMenu" *ngIf="showStyle1" (click)="changingActiveBtns(true, false , false, false, false)">
+          <div [routerLink]="['/main', {outlets: {aside: ['control']}}]" class="btnContentMenu" *ngIf="showStyle1" (click)="activeButtons()">
             <a class="heightBtn"><img class="sizeImageHeader" src="./assets/iconos/icon_control.png"></a>
             <p class="descButonInactive">Control</p>
             <img class="imgArrowButtons"  src="./assets/iconos/icon_check.png">
@@ -45,7 +43,7 @@
             <img class="imgArrowButtons" src="./assets/iconos/flecha_abajo.png">
           </div>
           <!--Inactive Button User-->
-          <div [routerLink]="['/main', {outlets: {aside: ['users']}}]" class="btnContentMenu" *ngIf="showStyle3" (click)="changingActiveBtns(false, true , false, false, false)">
+          <div [routerLink]="['/main', {outlets: {aside: ['users']}}]" class="btnContentMenu" *ngIf="showStyle3" (click)="activeButtons()">
             <a class="heightBtn"><img class="sizeImageHeader" src="./assets/iconos/icon_usuarios.png"></a>
             <p class="descButonInactive">Usuarios</p>
             <img class="imgArrowButtons"  src="./assets/iconos/icon_check.png">
@@ -57,7 +55,7 @@
             <img class="imgArrowButtons" src="./assets/iconos/flecha_abajo.png">
           </div>
           <!--Inactive Button Locations-->
-          <div [routerLink]="['/main', {outlets: {aside: ['locations']}}]" class="btnContentMenu" *ngIf="showStyle5" (click)="changingActiveBtns(false, false , true, false, false)">
+          <div [routerLink]="['/main', {outlets: {aside: ['locations']}}]" class="btnContentMenu" *ngIf="showStyle5" (click)="activeButtons()">
             <a class="heightBtn"><img class="sizeImageHeader" src="./assets/iconos/icon_ubicaciones.png"></a>
             <p class="descButonInactive">Ubicaciones</p>
             <img class="imgArrowButtons"  src="./assets/iconos/icon_check.png">
@@ -69,7 +67,7 @@
             <img class="imgArrowButtons" src="./assets/iconos/flecha_abajo.png">
           </div>
           <!--Inactive Button Access-->
-          <div [routerLink]="['/main', {outlets: {aside: ['access']}}]" class="btnContentMenu" *ngIf="showStyle7" (click)="changingActiveBtns(false, false , false, true, false)">
+          <div [routerLink]="['/main', {outlets: {aside: ['access']}}]" class="btnContentMenu" *ngIf="showStyle7" (click)="activeButtons()">
             <a class="heightBtn"><img class="sizeImageHeader" src="./assets/iconos/icon_accesos.png"></a>
             <p class="descButonInactive">Accesos</p>
             <img class="imgArrowButtons" src="./assets/iconos/icon_check.png">
@@ -81,19 +79,15 @@
             <img class="imgArrowButtons" src="./assets/iconos/flecha_abajo.png">
           </div>
           <!--Inactive Button Rol-->
-          <div [routerLink]="['/main', {outlets: {aside: ['roles']}}]" class="btnContentMenu" *ngIf="showStyle9" (click)="changingActiveBtns(false, false , false, false, true)">
+          <div [routerLink]="['/main', {outlets: {aside: ['roles']}}]" class="btnContentMenu" *ngIf="showStyle9" (click)="activeButtons()">
             <a class="heightBtn"><img class="sizeImageHeader" src="./assets/iconos/icon_roles.png"></a>
             <p class="descButonInactive">Roles</p>
             <img class="imgArrowButtons" src="./assets/iconos/icon_check.png">
           </div>
-
-
         </div>
         <div class="col-sm-2 col-md-4 col-lg-4"></div>
       </div>
     </nav>
   <router-outlet name ="aside"></router-outlet>
   </div>
-
 </div>
-
