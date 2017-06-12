@@ -11,5 +11,11 @@ export class UbicationEditComponent implements OnInit {
 
   ngOnInit() {
   }
+ on() {
+    document.getElementById("overlay").style.display = "block";
+}
 
+ off() {
+    document.getElementById("overlay").style.display = "none";
+}
 }

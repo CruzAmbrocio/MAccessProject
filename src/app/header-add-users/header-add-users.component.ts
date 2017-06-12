@@ -1,9 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { ActivatedRoute,RouterModule } from '@angular/router';
+import { ActivatedRoute, RouterModule } from '@angular/router';
 import { NavigationEnd } from '@angular/router';
 
-import {Directive} from '@angular/core';
-import {Router, RouterOutlet} from '@angular/router';
+import { Directive } from '@angular/core';
+import { Router, RouterOutlet } from '@angular/router';
 import { GlobalDataService } from '../global.service';
 
 
@@ -18,12 +18,14 @@ export class HeaderAddUsersComponent implements OnInit {
   isActive1: any;
   isDisabled1: any;
   currentRoute: any;
-  changeIndicator:any;
-  changeIndicatorInit:any;
-  constructor( private router: Router, private gd: GlobalDataService){
+  changeIndicator: any;
+  changeIndicatorInit: any;
+  BackUser: any;
+  dotsIndicators: any
+  constructor( private router: Router, private gd: GlobalDataService ){
     router.events.subscribe(
       (url:any) => {
-        this.gd.shareReg['global']=url;
+        this.gd.shareReg['global'] = url;
         this.changeIndicator = this.changeIndicatiors
         this.changeIndicator();
       }
@@ -35,21 +37,28 @@ export class HeaderAddUsersComponent implements OnInit {
     this.isDisabled = false;
     this.isActive1 = false;
     this.isDisabled1 = true;
+    this.BackUser = false;
+    this.dotsIndicators = true;
   }
 
-  changeIndicatiors(gd: GlobalDataService){
-    this.currentRoute=this.gd.shareReg['global'].url
-    if(this.currentRoute =="/addUsers/(editUserOutlet:photoUser)"){
+  changeIndicatiors( gd: GlobalDataService ){
+    this.currentRoute = this.gd.shareReg['global'].url
+    if (this.currentRoute == "/addUsers/(editUserOutlet:photoUser)"){
       this.isActive = true;
       this.isDisabled = false;
       this.isActive1 = false;
       this.isDisabled1 = true;
-    }
-    if(this.currentRoute =="/addUsers/(editUserOutlet:createUser)"){
+      this.dotsIndicators = true;
+    } else if(this.currentRoute == "/addUsers/(editUserOutlet:createUser)"){
       this.isActive = false;
       this.isDisabled = true;
       this.isActive1 = true;
       this.isDisabled1 = false;
+      this.BackUser = true;
+      this.dotsIndicators = true;
+    } else {
+      this.BackUser = false;
+      this.dotsIndicators = false;
     }
   }
 }

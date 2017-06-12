@@ -19,7 +19,7 @@
             </tr>
             <tr class="cellFormat">
               <td>Gerente L1</td>
-              <td>Edit</td>
+              <td><a [routerLink]="['/editRolView', {outlets: {editUserOutlet: ['rolEdit']}}]">Editar</a></td>
             </tr>
             <tr class="cellFormat">
               <td>Gerente L2</td>
@@ -51,6 +51,7 @@
       <div class="row">
         <div class="containerBtnAdd">
           <div class="IconPlus" >
+
             <img class="img-responsive imgPlus" alt="icon plus" src="./assets/iconos/floating_agregar.png">
           </div>
             <a class="txtAddUser" >Agregar Usuario</a>

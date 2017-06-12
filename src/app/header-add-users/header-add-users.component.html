@@ -2,13 +2,19 @@
 	<div class="row">
 		<div class="col-xs-2 col-md-2"></div>
 		<div class="col-xs-8 col-md-8">
-			<a [routerLink]="['/main', {outlets: {aside: ['users']}}]"><img class="iconHeaderUser" src="./assets/iconos/icon_cerrar.png"></a>
-			<div class="dotsSlider">
-				<div class="circuloActive">
-					<div [ngClass]="{'circulo1': isActive, 'circulo2': isDisabled}"></div>
+			<div class="headerCl">
+				<div class="btnBackUser" *ngIf="BackUser" [routerLink]="['/addUsers', {outlets: {editUserOutlet: ['photoUser']}}]">
+					<img src="./assets/iconos/icon_volver.png" class="imgBackUser">
+					<p class="txtBackUser"> Volver</p>
 				</div>
-				<div class="circuloDesactive">
-					<div [ngClass]="{'circulo1': isActive1, 'circulo2': isDisabled1}"></div>
+				<a [routerLink]="['/main', {outlets: {aside: ['users']}}]">
+					<img src="./assets/iconos/icon_cerrar.png" class="iconHeaderUser">
+				</a>
+			</div>
+			<div class="dotsSlider">
+				<div class="contIndicators" *ngIf="dotsIndicators">
+					<div class="DotLeft" [ngClass]="{'circulo1': isActive, 'circulo2': isDisabled}"></div>
+					<div class="DotRigth" [ngClass]="{'circulo1': isActive1, 'circulo2': isDisabled1}"></div>
 				</div>
 			</div>
 		</div>
