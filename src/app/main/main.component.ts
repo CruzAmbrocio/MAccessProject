@@ -81,5 +81,4 @@ export class MainComponent  implements OnInit {
 
 
 
-//    ng generate module home --routing true
-//    ng generate component home
+

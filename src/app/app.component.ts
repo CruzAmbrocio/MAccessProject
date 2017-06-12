@@ -8,3 +8,6 @@ import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
 })
 
 export class AppComponent {}
+
+//ng generate module home --routing true
+//ng generate component home
