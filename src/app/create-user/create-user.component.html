@@ -7,7 +7,7 @@
 				<p class="desNewUser">Completa la información del nuevo usuario.</p>
 			</div>
 			<div class="contentRegister">
-				<!--<form class="inputForm">-->
+				<form class="inputForm" name="country">
 					<div class="form-group">
 						<input type="name" class="form-control nameInput" id="nameUser" placeholder="Nombre">			
 					</div>
@@ -16,22 +16,12 @@
 	  				</div>
 	  				<div class="dropdown">
 
-      			<select [(ngModel)]="selectedElement.id" >
-     					<option *ngFor="let type of types" [ngValue]="type.id"> {{type.Name}}</option>
+      			<select [(ngModel)]="selectedElement.id"  [ngModelOptions]="{standalone: true}" class=" form-control nameInput">
+     					<option *ngFor="let type of types" [ngValue]="type.id" class="alignDrop">{{type.Name}}</option>
     				</select>
-    				<input type="text" [(ngModel)]="selectedElement.id" />
 
-					  <a class="btn dropdown-toggle rolInput" data-toggle="dropdown"><span class="iconDrop"><img src="./assets/iconos/dropdown.png"></span>Seleciona un Rol
-					  </a>
-					  <ul class="dropdown-menu alignDrop">
-					    <li class="lineDivision"><a href="#">C-Level</a></li>
-					    <li class="lineDivision"><a href="#">IT</a></li>
-					    <li class="lineDivision"><a href="#">Marketing</a></li>
-					    <li class="lineDivision"><a href="#">Mantenimiento</a></li>
-					    <li class="lineNone"><a href="#">Ventas</a></li>
-					  </ul>
 					</div>
-				<!--</form>-->
+				</form>
 				<img class="imgUserProfile" src="./assets/iconos/foto_previw.jpg">
 			</div>
 			<div class="contentInfoRegister">

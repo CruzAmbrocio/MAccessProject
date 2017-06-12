@@ -49,6 +49,13 @@ import { UbicationEditComponent } from './ubication-edit/ubication-edit.componen
 //route of the component -- ubicationChange
 import { UbicationChangeComponent } from './ubication-change/ubication-change.component';
 
+//route of the component -- ubicationChange
+import { EditRolComponent } from './edit-rol/edit-rol.component';
+
+//route of the component -- ubicationChange
+import { EditRolCheckComponent } from './edit-rol-check/edit-rol-check.component';
+
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
@@ -68,7 +75,9 @@ import { AppComponent } from './app.component';
     NewUserComponent,
     AddShortcutComponent,
     UbicationEditComponent,
-    UbicationChangeComponent
+    UbicationChangeComponent,
+    EditRolComponent,
+    EditRolCheckComponent,
   ],
   imports: [
     BrowserModule,

@@ -77,3 +77,6 @@ span {
 	font-family: robotoBoldItalic;
 	font-size: 14px;
 }
+.forgotPass{
+  cursor: pointer;
+}

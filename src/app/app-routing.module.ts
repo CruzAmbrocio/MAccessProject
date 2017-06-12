@@ -17,6 +17,8 @@ import { NewUserComponent } from './new-user/new-user.component';
 import { AddShortcutComponent } from './add-shortcut/add-shortcut.component';
 import { UbicationEditComponent } from './ubication-edit/ubication-edit.component';
 import { UbicationChangeComponent } from './ubication-change/ubication-change.component';
+import { EditRolComponent } from './edit-rol/edit-rol.component';
+import { EditRolCheckComponent } from './edit-rol-check/edit-rol-check.component';
 
 const routes: Routes = [
   {
@@ -92,6 +94,21 @@ const routes: Routes = [
       {
         path: 'ubicationEdit',
         component : UbicationChangeComponent,
+        outlet: 'editUserOutlet'
+      }
+    ]
+  }, {
+    path: 'editRolView',
+    component : HeaderAddUsersComponent,
+    children: [
+      {
+        path: 'rolEditCheck',
+        component : EditRolCheckComponent,
+        outlet: 'editUserOutlet'
+      },
+      {
+        path: 'rolEdit',
+        component : EditRolComponent,
         outlet: 'editUserOutlet'
       }
     ]

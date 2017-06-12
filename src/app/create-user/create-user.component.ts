@@ -19,7 +19,7 @@ export class CreateUserComponent implements OnInit {
         {id:'IT',Name:'IT'},
         {id:'Marketing',Name:'Marketing'},
         {id:'Mantenimiento',Name:'Mantenimiento'},
-        {id:'Ventas',Name:'ventas'}
+        {id:'Ventas',Name:'ventasddd'}
   ];
   /*item to be preselected should be in the below object which 
   *is returned by the web  service
