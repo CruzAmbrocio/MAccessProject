@@ -18,14 +18,14 @@
               <td>Torre3</td> 
               <td>Oficina 512</td>
               <td>Oficinas IT</td>
-              <td><a [routerLink]="['/editLocationView', {outlets: {editUserOutlet: ['viewLocation']}}]">Editar</a></td>
+              <td>Editar</td>
             </tr>
             <tr class="cellFormat">
               <td>Zona Pradera</td>
               <td>Torre3</td> 
               <td>Oficina 514</td>
               <td>Oficinas Mkt</td>
-              <td>Editar</td>
+              <td><a [routerLink]="['/editLocationView', {outlets: {editUserOutlet: ['viewLocation']}}]">Editar</a></td>
             </tr>
             <tr class="cellFormat">
               <td>Europlaza</td>
@@ -49,9 +49,7 @@
           <div class="IconPlus">
             <img class="img-responsive imgPlus" alt="icon plus" src="./assets/iconos/floating_agregar.png">
           </div>
-
-            <a class="txtAddUser" >Agregar Ubicacion</a>
-
+            <a [routerLink]="['/editLocationView', {outlets: {editUserOutlet: ['locationRegister']}}]" class="txtAddUser">Agregar Ubicacion</a>
         </div>
       </div>
 

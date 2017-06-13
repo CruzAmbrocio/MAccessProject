@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RolesViewComponent } from './roles-view.component';
+import { InputCoordinatesComponent } from './input-coordinates.component';
 
-describe('RolesViewComponent', () => {
-  let component: RolesViewComponent;
-  let fixture: ComponentFixture<RolesViewComponent>;
+describe('InputCoordinatesComponent', () => {
+  let component: InputCoordinatesComponent;
+  let fixture: ComponentFixture<InputCoordinatesComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ RolesViewComponent ]
+      declarations: [ InputCoordinatesComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(RolesViewComponent);
+    fixture = TestBed.createComponent(InputCoordinatesComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
