@@ -1,0 +1,206 @@
+.centerTitlesRoles {
+  text-align: center;
+  margin-top: 4%;
+}
+
+.rolEdit {
+  font-family: robotoBold;
+  color: #575757;
+  font-size: 12px;
+}
+
+.rolDesEdit {
+  font-family: robotoRegular;
+  margin-top: -5px;
+  color: #AFAFAF;
+  font-size: 10px;
+}
+
+.contInside{
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3%;
+}
+
+.containerButtons{
+  width: 200px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.btnCheckAll {
+  display: block;
+  align-items: center;
+  justify-content: center;
+  border-radius: 7px;
+  width: 90px;
+  height: 30px;
+  background-color:#ededed;
+  text-align: center;
+  text-decoration: none;
+  font-family: robotoBold;
+  font-size: 12px;
+  color: #575757;
+  float: left;
+  padding-top: 3%;
+  cursor: pointer;
+}
+
+.btnUnCheckAll {
+  display: block;
+  align-items: center;
+  justify-content: center;
+  border-radius: 7px;
+  width: 90px;
+  height: 30px;
+  background-color:#ededed;
+  text-align: center;
+  text-decoration: none;
+  font-family: robotoBold;
+  font-size: 12px;
+  color: #575757;
+  float: right;
+  padding-top: 3%;
+  cursor: pointer;
+}
+
+.contentDataRol {
+  width: 100%;
+  display: inline-block;
+}
+
+.boxContentRol {
+  height: 90px;
+  width: 55%;
+  margin-top: 4%;
+  margin-left: auto;
+  margin-right: auto;
+}
+/*   Size container table */
+.containerTable {
+  max-height: 300px;
+  overflow-y: auto;
+  margin-top: 10px;
+}
+.tableStyle {
+  width: 100%;
+}
+
+/*   Style of the table */
+table, td {
+  border-bottom: 5px solid #f6f6f6;
+  background-color: #ffffff;
+  height: 35px;
+}
+/*   style scroll bar of the table */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-button {
+  width: 0px;
+  height: 0px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cfcfcf;
+  border: 0px none #ffffff;
+  border-radius: 50px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #cfcfcf;
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: #cfcfcf;
+}
+
+::-webkit-scrollbar-track {
+  background: #ffffff;
+  border: 0px none #ffffff;
+  border-radius: 50px;
+}
+
+::-webkit-scrollbar-track:hover {
+  background: #fcfcfc;
+}
+
+::-webkit-scrollbar-track:active {
+  background: #f6f6f6;
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+/*  .Style for each column of the table */
+.cellFormat > td:nth-child(1){
+  padding-left: 3%;
+  font-size: 12px;
+  font-family: "robotoRegular";
+  color: #a2a2a2;
+  width: 30%;
+}
+
+.cellFormat > td:nth-child(2){
+  padding-left: 3%;
+  font-size: 12px;
+  font-family: "robotoRegular";
+  color: #a2a2a2;
+  width: 20%;
+}
+
+.cellFormat > td:nth-child(3){
+  padding-left: 3%;
+  font-size: 12px;
+  font-family: "robotoRegular";
+  color: #a2a2a2;
+  width: 20%;
+}
+
+.cellFormat > td:nth-child(4){
+  padding-left: 3%;
+  font-size: 12px;
+  font-family: "robotoBold";
+  color: #5B5B5B;
+  width: 30%;
+}
+
+.btnNextRol {
+  margin-left: 38%;
+  margin-top: 2%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px;
+  width: 22%;
+  height: 32px;
+  background-color: #00C6AF;
+  text-align: center;
+  text-decoration: none;
+  font-family: robotoBold;
+  font-size: 12px;
+  color: #FFF;
+}
+
+input[type="checkbox"]{
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  border: 1px solid #00C6AF;
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  margin: 0 7px 0 0;
+}
+
+input[type="checkbox"]#checkbox1:checked{
+  background: #00C6AF;
+}
+
+input[type="checkbox"]#checkbox1:focus{
+  outline: none;
+}
