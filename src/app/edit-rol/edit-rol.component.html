@@ -1,3 +1,42 @@
-<p>
-  edit-rol works!
-</p>
+  <div id="overlay">
+  <div id="text">
+    <div class="cirleImgDel">
+      <img class="imgDelete" src="../assets/iconos/icon_eliminar.png">
+    </div>
+    <p class="textGrayBold">¿Eliminar Rol Definitivamente?</p>
+    <p class="textGrayReg">El rol se eliminará permanentemente.</p>
+    <div class="containerButtons">
+      <a (click)="off()" class="btnDelete">Eliminar</a>
+      <a (click)="off()" class="btnCancel">Cancelar</a>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+  <div class="col-md-2"></div>
+    <div class="col-xs-12 col-md-8 col-lg-8">
+      <div class="centerTitlesRoles">
+        <p class="rolEdit">EDITAR ROL</p>
+        <p class="rolDesEdit">Realizar modifícaciones en la información</p>
+      </div>
+      <div class="contentDataRol">
+        <div class="boxContentRol">
+          <form class="posInputsUbication">
+            <div class="row form-group">
+              <p class="lblInputRol">Nombre</p>
+              <input type="contentText" class="form-control inputName" id="name" placeholder="Gerente L1">
+            </div>
+            <div class="row form-group">
+              <p class="lblInputRol">Descripción</p>
+                <input type="contentText" class="form-control inputDesc" id="desc" placeholder="Descripción">
+              </div>
+          </form>
+        </div>
+      </div>
+      <a [routerLink]="['/editRolView', {outlets: {editUserOutlet: ['rolEditCheck']}}]" class="btnUbication">Siguiente</a>
+      <a (click)="on()"><img class="delIcon" src="../assets/iconos/icon_eliminar.png"></a>
+    </div>
+  <div class="col-md-2"></div>
+  </div>
+</div>

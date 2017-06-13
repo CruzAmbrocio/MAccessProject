@@ -19,9 +19,11 @@ import { UbicationEditComponent } from './ubication-edit/ubication-edit.componen
 import { UbicationChangeComponent } from './ubication-change/ubication-change.component';
 import { EditRolComponent } from './edit-rol/edit-rol.component';
 import { EditRolCheckComponent } from './edit-rol-check/edit-rol-check.component';
+import { EditUserComponent } from './edit-user/edit-user.component';
 import { LocationRegisterComponent } from './location-register/location-register.component';
 import { LocationNewRegisterComponent } from './location-new-register/location-new-register.component';
 import { InputCoordinatesComponent } from './input-coordinates/input-coordinates.component';
+
 
 const routes: Routes = [
   {
@@ -115,7 +117,7 @@ const routes: Routes = [
         outlet: 'editUserOutlet'
       }
     ]
-  }, {
+  },{
     path: 'editRolView',
     component : HeaderAddUsersComponent,
     children: [
@@ -127,6 +129,16 @@ const routes: Routes = [
       {
         path: 'rolEdit',
         component : EditRolComponent,
+        outlet: 'editUserOutlet'
+      }
+    ]
+  },{
+    path: 'editUserView',
+    component : HeaderAddUsersComponent,
+    children: [
+      {
+        path: 'editUser',
+        component : EditUserComponent,
         outlet: 'editUserOutlet'
       }
     ]

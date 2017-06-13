@@ -55,6 +55,10 @@ import { EditRolComponent } from './edit-rol/edit-rol.component';
 //route of the component -- ubicationChange
 import { EditRolCheckComponent } from './edit-rol-check/edit-rol-check.component';
 
+
+//route of the component -- Edit User
+import { EditUserComponent } from './edit-user/edit-user.component';
+
 //route of the component -- LocationRegister
 import { LocationRegisterComponent } from './location-register/location-register.component';
 
@@ -63,6 +67,7 @@ import { LocationNewRegisterComponent } from './location-new-register/location-n
 
 //route of the component -- addCoordenadas
 import { InputCoordinatesComponent } from './input-coordinates/input-coordinates.component';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -86,9 +91,11 @@ import { AppComponent } from './app.component';
     UbicationChangeComponent,
     EditRolComponent,
     EditRolCheckComponent,
+    EditUserComponent,
     LocationRegisterComponent,
     LocationNewRegisterComponent,
     InputCoordinatesComponent
+
   ],
   imports: [
     BrowserModule,
