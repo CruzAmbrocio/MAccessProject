@@ -19,6 +19,9 @@ import { UbicationEditComponent } from './ubication-edit/ubication-edit.componen
 import { UbicationChangeComponent } from './ubication-change/ubication-change.component';
 import { EditRolComponent } from './edit-rol/edit-rol.component';
 import { EditRolCheckComponent } from './edit-rol-check/edit-rol-check.component';
+import { LocationRegisterComponent } from './location-register/location-register.component';
+import { LocationNewRegisterComponent } from './location-new-register/location-new-register.component';
+import { InputCoordinatesComponent } from './input-coordinates/input-coordinates.component';
 
 const routes: Routes = [
   {
@@ -94,6 +97,21 @@ const routes: Routes = [
       {
         path: 'ubicationEdit',
         component : UbicationChangeComponent,
+        outlet: 'editUserOutlet'
+      },
+      {
+        path: 'locationRegister',
+        component : LocationRegisterComponent,
+        outlet: 'editUserOutlet'
+      },
+      {
+        path: 'locationNewRegister',
+        component : LocationNewRegisterComponent,
+        outlet: 'editUserOutlet'
+      },
+       {
+        path: 'addCoordenates',
+        component : InputCoordinatesComponent,
         outlet: 'editUserOutlet'
       }
     ]
