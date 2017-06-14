@@ -15,23 +15,20 @@
 	<div class="row">
 	<div class="col-md-2"></div>
 		<div class="col-xs-12 col-md-8 col-lg-8">
-			<div class="centerTitlesUbication">
-				<p class="ubicactionEdit">REGISTRAR NUEVA UBICACIÓN</p>
-				<p class="ubicactionDesEdit">Completa la información de ubicación</p>
+			<div class="centerTitleCoord">
+				<p class="coordEdit">REGISTRAR NUEVA UBICACIÓN</p>
+				<p class="coordDesEdit">Ingresa las coordenadas</p>
 			</div>
-			<div class="contentDataUbication">
-				<div class="boxContentUbication">
-					<form class="posInputsUbication">
+			<div class="contentDataCoord">
+				<div class="boxContentCoord">
+					<form class="posInputCoord">
 						<div class="row form-group">
-							<input type="contentText" class="form-control inputName" id="name" placeholder="Nombre de ubicación">
+							<input type="contentText" class="form-control inputCoord" id="coordenate" placeholder="00.000000, 00.000000">
 						</div>
-						<div class="row form-group">
-					    	<input type="contentText" class="form-control inputDesc" id="desc" placeholder="Descripción">
-		  				</div>
 					</form>
 				</div>
 			</div>
-			<a [routerLink]="['/editLocationView', {outlets: {editUserOutlet: ['locationNewRegister']}}]" class="btnRegisterLocat">Siguiente</a>
+			<a [routerLink]="['/editLocationView', {outlets: {editUserOutlet: ['createdLocation']}}]" class="btnRegisterLocat">Crear Ubicación</a>
 			<a (click)="on()"></a>
 		</div>
 	<div class="col-md-2"></div>

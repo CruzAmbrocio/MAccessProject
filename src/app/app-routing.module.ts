@@ -22,6 +22,7 @@ import { EditRolCheckComponent } from './edit-rol-check/edit-rol-check.component
 import { LocationRegisterComponent } from './location-register/location-register.component';
 import { LocationNewRegisterComponent } from './location-new-register/location-new-register.component';
 import { InputCoordinatesComponent } from './input-coordinates/input-coordinates.component';
+import { CreatedLocationComponent } from './created-location/created-location.component';
 
 const routes: Routes = [
   {
@@ -112,6 +113,11 @@ const routes: Routes = [
        {
         path: 'addCoordenates',
         component : InputCoordinatesComponent,
+        outlet: 'editUserOutlet'
+      },
+      {
+        path: 'createdLocation',
+        component : CreatedLocationComponent,
         outlet: 'editUserOutlet'
       }
     ]

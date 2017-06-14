@@ -64,6 +64,10 @@ import { LocationNewRegisterComponent } from './location-new-register/location-n
 //route of the component -- addCoordenadas
 import { InputCoordinatesComponent } from './input-coordinates/input-coordinates.component';
 
+//route of the component -- addCoordenadas
+import { CreatedLocationComponent } from './created-location/created-location.component';
+
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
@@ -88,7 +92,9 @@ import { AppComponent } from './app.component';
     EditRolCheckComponent,
     LocationRegisterComponent,
     LocationNewRegisterComponent,
-    InputCoordinatesComponent
+    InputCoordinatesComponent,
+    CreatedLocationComponent,
+    CreatedLocationComponent
   ],
   imports: [
     BrowserModule,

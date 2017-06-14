@@ -1,13 +1,13 @@
-.centerTitlesUbication {
+.centerTitleCoord {
   text-align: center;
   margin-top: 4%;
 }
-.ubicactionEdit {
+.coordEdit {
   font-family: robotoBold;
   color: #575757;
   font-size: 12px;
 }
-.ubicactionDesEdit {
+.coordDesEdit {
   font-family: robotoRegular;
   margin-top: -5px;
   color: #AFAFAF;
@@ -16,12 +16,12 @@
   align-items: center;
   justify-content: center;
 }
-.contentDataUbication {
+.contentDataCoord {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.boxContentUbication {
+.boxContentCoord {
   height: 140px;
   width: 55%;
   margin-top: 4%;
@@ -29,13 +29,13 @@
   align-items: center;
   justify-content: center;
 }
-.posInputsUbication {
+.posInputCoord {
   width: 100%;
 }
-.inputName, .inputDesc, .inputCoordinate {
+.inputCoord {
   display: flex;
   align-items: center;
-  margin-bottom: 2%;
+  margin-bottom: 33%;
   font-family: robotoRegular;
   font-size: 12px;
   color: #6A6A6A;
@@ -51,12 +51,12 @@
 }
 .btnRegisterLocat {
   margin-left: 38%;
-  margin-top: 2%;
+  margin-top: -10%;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 15px;
-  width: 22%;
+  width: 23%;
   height: 32px;
   background-color: #00C6AF;
   text-align: center;
