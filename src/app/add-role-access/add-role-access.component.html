@@ -1,0 +1,75 @@
+<div class="container">
+  <div class="row">
+  <div class="col-md-2"></div>
+    <div class="col-xs-12 col-md-8 col-lg-8">
+      <div class="cenTitlesLoc">
+        <p class="editLoc">REGISTRAR NUEVO ROL</p>
+        <p class="desEditLoc">Marca los accesos permitidos para este rol</p>
+      </div>
+      <div class="contentSubtitItle">
+        <div class="boxContSub">
+          <p class="editNav">Zona Pradera<img class="iconArrowNav marginText" src="./assets/iconos/arrow-icon.png"><span class="marginText">Torre 3<img class="iconArrowNav marginText" src="./assets/iconos/arrow-icon.png"></span><span class="marginText colorText">Oficina 510</span></p>
+        </div>
+      </div>
+      <div class="contentEditLoc">
+        <div class="boxContentDataLoc"> 
+              <div class="row contentTable">
+                <div class="contentRow">
+                  <div class="activeCellRow">
+                    <h1 class="textActive">Zona Pradera</h1>
+                    <img class="activeIconArrow" src="./assets/iconos/arrow-icon-left.png">
+                  </div>
+                  <div class="desactiveCellRow">
+                    <h1 class="textDesactive">Europlaza</h1>
+                    <img class="desactiveIconArrow" src="./assets/iconos/arrow-icon.png">
+                  </div>
+                </div>
+                <div class="locationNew">
+                  <p class="locationsText"><img class="imgAgree" src="./assets/iconos/icon_agregar.png">&nbsp;&nbsp;Nueva Ubicación</p>
+                </div>
+              </div>
+              <div class="row contentTable margenRow">
+                <div class="contentRow">  
+                  <div class="desactiveCellRow">
+                    <h1 class="textDesactive">Torre 2</h1>
+                    <img class="desactiveIconArrow" src="./assets/iconos/arrow-icon.png">
+                  </div>
+                  <div class="activeCellRow">
+                    <h1 class="textActive">Torre 3</h1>
+                    <img class="activeIconArrow" src="./assets/iconos/arrow-icon-left.png">
+                  </div>
+                  <div class="desactiveCellRow">
+                    <h1 class="textDesactive">Torre 4</h1>
+                    <img class="desactiveIconArrow" src="./assets/iconos/arrow-icon.png">
+                  </div>
+                </div>
+                <div class="locationNew">
+                  <p class="locationsText"><img class="imgAgree" src="./assets/iconos/icon_agregar.png">&nbsp;&nbsp;Nueva Ubicación</p>
+                </div>
+              </div>
+              <div class="row contentTable margenRow">
+                <div class="contentRow">    
+                  <div class="desactiveCellRow">
+                    <h1 class="textDesactive">Oficina 512</h1>
+                    <img class="desactiveIconArrow" src="./assets/iconos/arrow-icon.png">
+                  </div>
+                  <div class="desactiveCellRow">
+                    <h1 class="textDesactive">Oficina 514</h1>
+                    <img class="desactiveIconArrow" src="./assets/iconos/arrow-icon.png">
+                  </div>
+                  <div class="activeCellRow">
+                    <h1 class="textActive">Oficina 510</h1>
+                    <img class="activeIconArrow" src="./assets/iconos/arrow-icon-left.png">
+                  </div>
+                </div>
+                <div class="locationNew">
+                  <p class="locationsText"><img class="imgAgree" src="./assets/iconos/icon_agregar.png">&nbsp;&nbsp;Nueva Ubicación</p>
+                </div>
+              </div>  
+        </div>
+      </div>
+      <a [routerLink]="['/addRolView', {outlets: {editUserOutlet: ['rolCreated']}}]" class="btnNext">Crear rol</a>
+    </div>
+  <div class="col-md-2"></div>
+  </div>
+</div>

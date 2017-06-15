@@ -68,6 +68,16 @@ import { LocationNewRegisterComponent } from './location-new-register/location-n
 //route of the component -- addCoordenadas
 import { InputCoordinatesComponent } from './input-coordinates/input-coordinates.component';
 
+//route of the component -- addRole
+import { AddRolComponent } from './add-rol/add-rol.component';
+
+//route of the component -- addRoleAccess
+import { AddRoleAccessComponent } from './add-role-access/add-role-access.component';
+
+//route of the component -- addRoleAccess
+import { RolCreatedComponent } from './rol-created/rol-created.component';
+
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -94,7 +104,10 @@ import { AppComponent } from './app.component';
     EditUserComponent,
     LocationRegisterComponent,
     LocationNewRegisterComponent,
-    InputCoordinatesComponent
+    InputCoordinatesComponent,
+    AddRolComponent,
+    AddRoleAccessComponent,
+    RolCreatedComponent
 
   ],
   imports: [

@@ -23,7 +23,9 @@ import { EditUserComponent } from './edit-user/edit-user.component';
 import { LocationRegisterComponent } from './location-register/location-register.component';
 import { LocationNewRegisterComponent } from './location-new-register/location-new-register.component';
 import { InputCoordinatesComponent } from './input-coordinates/input-coordinates.component';
-
+import { AddRolComponent } from './add-rol/add-rol.component';
+import { AddRoleAccessComponent } from './add-role-access/add-role-access.component';
+import { RolCreatedComponent } from './rol-created/rol-created.component';
 
 const routes: Routes = [
   {
@@ -133,6 +135,30 @@ const routes: Routes = [
       }
     ]
   },{
+    path: 'addRolView',
+    component : HeaderAddUsersComponent,
+    children: [
+      {
+        path: 'addRoleReg',
+        component : AddRolComponent,
+        outlet: 'editUserOutlet'
+      },
+      {
+        path: 'rolEditAccess',
+        component : AddRoleAccessComponent,
+        outlet: 'editUserOutlet'
+      },
+      {
+        path: 'rolCreated',
+        component : RolCreatedComponent,
+        outlet: 'editUserOutlet'
+      }
+    ]
+  },
+
+
+
+  {
     path: 'editUserView',
     component : HeaderAddUsersComponent,
     children: [

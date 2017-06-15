@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row">
+  <div class="col-md-2"></div>
+    <div class="col-xs-12 col-md-8 col-lg-8">
+      <div class="centerTitlesView">
+        <p class="titleView">REGISTRAR NUEVO ROL</p>
+        <p class="subTitleView">Completa la información del rol</p>
+      </div>
+      <div class="contentDataView">
+        <div class="boxContentView">
+          <form class="formViewInputs">
+            <div class="row form-group">
+              <input type="contentText" class="form-control inputName" id="name" placeholder="Nombre del rol ">
+            </div>
+            <div class="row form-group">
+                <input type="contentText" class="form-control inputDesc" id="desc" placeholder="Descripción">
+              </div>
+          </form>
+        </div>
+      </div>
+      <a [routerLink]="['/addRolView', {outlets: {editUserOutlet: ['rolEditAccess']}}]" class="btnSigRol">Siguiente</a>
+      <a (click)="on()"></a>
+    </div>
+  <div class="col-md-2"></div>
+  </div>
+</div>
