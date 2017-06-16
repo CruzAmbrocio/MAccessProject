@@ -23,6 +23,13 @@ import { LocationRegisterComponent } from './location-register/location-register
 import { LocationNewRegisterComponent } from './location-new-register/location-new-register.component';
 import { InputCoordinatesComponent } from './input-coordinates/input-coordinates.component';
 import { CreatedLocationComponent } from './created-location/created-location.component';
+import { AccessViewComponent } from './access-view/access-view.component';
+import { TableAccessComponent } from './table-access/table-access.component';
+import { AddAccessComponent } from './add-access/add-access.component';
+import { AccessEditComponent } from './access-edit/access-edit.component';
+import { RegisterAccessViewComponent } from './register-access-view/register-access-view.component';
+import { AccessNewViewComponent } from './access-new-view/access-new-view.component';
+import { CreatedAccessViewComponent } from './created-access-view/created-access-view.component';
 
 const routes: Routes = [
   {
@@ -121,7 +128,8 @@ const routes: Routes = [
         outlet: 'editUserOutlet'
       }
     ]
-  }, {
+  }, 
+  {
     path: 'editRolView',
     component : HeaderAddUsersComponent,
     children: [
@@ -137,6 +145,47 @@ const routes: Routes = [
       }
     ]
   },
+  {
+    path: 'editAccessView',
+    component : HeaderAddUsersComponent,
+    children: [
+      {
+        path: 'editAccess',
+        component : AccessViewComponent,
+        outlet: 'editUserOutlet'
+      },
+      {
+        path: 'allowAccess',
+        component : TableAccessComponent,
+        outlet: 'editUserOutlet'
+      },
+      {
+        path: 'newAccess',
+        component : AddAccessComponent,
+        outlet: 'editUserOutlet'
+      },
+      {
+        path: 'registerAccess',
+        component : RegisterAccessViewComponent,
+        outlet: 'editUserOutlet'
+      },
+      {
+        path: 'editAccessView',
+        component : AccessEditComponent,
+        outlet: 'editUserOutlet'
+      },
+       {
+        path: 'registerNewAccess',
+        component : AccessNewViewComponent,
+        outlet: 'editUserOutlet'
+      },
+      {
+        path: 'createdAccess',
+        component : CreatedAccessViewComponent,
+        outlet: 'editUserOutlet'
+      },
+    ]
+  },
    // otherwise redirect to home
   { path: '**', redirectTo: '/login', pathMatch: 'full' },
 ];
@@ -150,7 +199,6 @@ const routes: Routes = [
   exports: [RouterModule],
   providers: []
 })
-
 export class AppRoutingModule { }
 export const routing = RouterModule.forRoot(routes);
 export default RouterModule.forRoot(routes);

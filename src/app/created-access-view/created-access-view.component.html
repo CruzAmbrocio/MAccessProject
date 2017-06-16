@@ -1,0 +1,27 @@
+<!--VISTA EDITAR ACCESO-->
+<div class="container">
+	<div class="row">
+	<div class="col-md-2"></div>
+		<div class="col-xs-12 col-md-8 col-lg-8">
+			<div class="centerTitlesEdit">
+				<p class="editAccess">ACCESO CREADO</p>
+				<p class="desEditAccess">El acceso fue creado con éxito.</p>
+			</div>
+			<div class="contentEditAccess">
+				<div class="boxContentAcces">	
+					<div class="contentDataImg">
+						<a><img class="imgSize" src="./assets/iconos/icon_access02_on.png"></a>
+					</div>
+					<div class="dataAccess">
+						<p class="styleTextData">Bodega 2 -&nbsp;<span class="sTextData">Molinete</span></p>
+						<p class="sTextData">Zona Pradera</p>
+						<p class="sTextData">Torre 4</p>
+						<p class="sTextData">Oficina 310</p>
+					</div>
+				</div>
+			</div>
+			<a [routerLink]="['/main', {outlets: {aside: ['access']}}]" class="btnAccessCreate">Crear Acceso</a>
+		</div>
+	<div class="col-md-2"></div>
+	</div>
+</div>

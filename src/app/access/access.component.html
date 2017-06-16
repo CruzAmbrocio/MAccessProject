@@ -25,7 +25,7 @@
               <td>Torre3</td> 
               <td>Oficina 512</td>
               <td>Salon B5</td>
-              <td>Edit</td>
+              <td><a [routerLink]="['/editAccessView', {outlets: {editUserOutlet: ['editAccess']}}]">Editar</a></td>
             </tr>
             <tr class="cellFormat">
               <td>Zona Pradera</td>
@@ -84,7 +84,7 @@
           <div class="IconPlus">
             <img class="img-responsive imgPlus" alt="icon plus" src="./assets/iconos/floating_agregar.png">
           </div>
-            <a class="txtAddUser">Agregar Acceso</a>
+            <a [routerLink]="['/editAccessView', {outlets: {editUserOutlet: ['newAccess']}}]" class="txtAddUser">Agregar Acceso</a>
 
         </div>
       </div>
