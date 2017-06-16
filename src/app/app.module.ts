@@ -83,6 +83,17 @@ import { RolCreatedComponent } from './rol-created/rol-created.component';
 //route of the component -- addUserTemaplate
 import { AddUserTemplateComponent } from './add-user-template/add-user-template.component';
 
+//route of the component -- addCoordenadas
+import { CreatedLocationComponent } from './created-location/created-location.component';
+import { AccessViewComponent } from './access-view/access-view.component';
+import { TableAccessComponent } from './table-access/table-access.component';
+import { AddAccessComponent } from './add-access/add-access.component';
+import { AccessEditComponent } from './access-edit/access-edit.component';
+import { RegisterAccessViewComponent } from './register-access-view/register-access-view.component';
+import { AccessNewViewComponent } from './access-new-view/access-new-view.component';
+import { CreatedAccessViewComponent } from './created-access-view/created-access-view.component';
+
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
@@ -120,11 +131,24 @@ import { AdditionCalculateWindow } from './add-user-template/add-user-template.c
     LocationRegisterComponent,
     LocationNewRegisterComponent,
     InputCoordinatesComponent,
+
     AddRolComponent,
     AddRoleAccessComponent,
     RolCreatedComponent,
     AddUserTemplateComponent,
     AdditionCalculateWindow
+
+
+    CreatedLocationComponent,
+    CreatedLocationComponent,
+    AccessViewComponent,
+    TableAccessComponent,
+    AccessEditComponent,
+    AddAccessComponent,
+    RegisterAccessViewComponent,
+    AccessNewViewComponent,
+    CreatedAccessViewComponent,
+    InputCoordinatesComponent
 
   ],
   imports: [

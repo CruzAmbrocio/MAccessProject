@@ -1,0 +1,69 @@
+<!--VISTA NUEVO ACCESO-->
+<div id="overlay">
+  <div id="text">
+  	<div class="cirleImgDel">
+  		<img class="imgDelete" src="../assets/iconos/icon_eliminar.png">
+  	</div>
+		<p class="textGrayBold">¿Eliminar Usuario Definitivamente?</p>
+  	<p class="textGrayReg">El usuario se eliminará permanentemente.</p>
+  	<div class="containerButtons">
+  		<a (click)="off()" class="btnDelete">Eliminar</a>
+  		<a (click)="off()" class="btnCancel">Cancelar</a>
+  	</div>
+  </div>
+</div>
+<div class="container">
+	<div class="row">
+	<div class="col-md-2"></div>
+		<div class="col-xs-12 col-md-8 col-lg-8">
+			<div class="centerTitlesAccess">
+				<p class="AccessEdit">REGISTRAR NUEVO ACCESO</p>
+				<p class="accessDesEdit">Completa la información del acceso.</p>
+			</div>
+			<div class="accessContentData">
+				<div class="boxAccessContent">
+					<form class="posAccessInputs">
+						<div class="row form-group">
+							<input type="contentText" class="form-control inputRegisName" id="registerName" placeholder="Nombre">
+						</div>
+						<div class="row form-group">
+					    	<input type="number" class="form-control inputRegistID" id="registerID" placeholder="ID">
+		  				</div>
+		  				<div class="row form-group">	
+					    	<input type="contentText" class="form-control inputRegistDesc" id="registerDesc" placeholder="Descripción">
+		  				</div>
+					</form>
+					<hr class="accessLine">
+					<p class="lblAccess">¿Qué permite el acceso?</p>
+					<div class="contentSelection">
+						<div class="row">
+							<ul>
+							  <li class="buttonSelecction">
+							    <input type="radio" id="f-option" name="selector">
+							    <label for="f-option">Entrada</label>
+							    
+							    <div class="check"></div>
+							  </li>
+							  
+							  <li class="buttonSelecction">
+							    <input type="radio" id="s-option" name="selector">
+							    <label for="s-option">Salida</label>
+							    
+							    <div class="check"><div class="inside"></div></div>
+							  </li>
+							  <li class="buttonSelecction">
+							    <input type="radio" id="t-option" name="selector">
+							    <label for="t-option">Entrada y Salida</label>
+							    <div class="check"><div class="inside"></div></div>
+							  </li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<a [routerLink]="['/editAccessView', {outlets: {editUserOutlet: ['registerAccess']}}]" class="btnAccessNext">Siguiente</a>
+			<a (click)="on()"><img class="delIcon" src="../assets/iconos/icon_eliminar.png"></a>
+		</div>
+	<div class="col-md-2"></div>
+	</div>
+</div>

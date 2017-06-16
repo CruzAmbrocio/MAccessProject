@@ -1,0 +1,71 @@
+<div id="overlay">
+  <div id="text">
+  	<div class="cirleImgDel">
+  		<img class="imgDelete" src="../assets/iconos/icon_eliminar.png">
+  	</div>
+		<p class="textGrayBold">¿Eliminar Usuario Definitivamente?</p>
+  	<p class="textGrayReg">El usuario se eliminará permanentemente.</p>
+  	<div class="containerButtons">
+  		<a (click)="off()" class="btnDelete">Eliminar</a>
+  		<a (click)="off()" class="btnCancel">Cancelar</a>
+  	</div>
+  </div>
+</div>
+<div class="container">
+	<div class="row">
+	<div class="col-md-2"></div>
+		<div class="col-xs-12 col-md-8 col-lg-8">
+			<div class="centerTitlesAccess">
+				<p class="AccessEdit">EDITAR ACCESO</p>
+				<p class="accessDesEdit">Realizar modifícaciones en la información</p>
+			</div>
+			<div class="accessContentData">
+				<div class="boxAccessContent">
+					<form class="posAccessInputs">
+						<div class="row form-group">
+							<p class="lblAccessInput">Nombre</p>
+							<input type="contentText" class="form-control inputCellarName" id="cellarName" placeholder="Bodega 2">
+						</div>
+						<div class="row form-group">
+							<p class="lblAccessInput">ID</p>
+					    	<input type="number" class="form-control inputCellarID" id="cellarID" placeholder="125-14258">
+		  				</div>
+		  				<div class="row form-group">	
+		  					<p class="lblAccessInput">Descripción</p>
+					    	<input type="contentText" class="form-control inputCellarDesc" id="cellarDesc" placeholder="Descripción">
+		  				</div>
+					</form>
+					<hr class="accessLine">
+					<p class="lblAccess">¿Qué permite el acceso?</p>
+					<div class="contentSelection">
+						<div class="container">
+							<ul>
+							  <li class="buttonSelecction">
+							    <input type="radio" id="f-option" name="selector">
+							    <label for="f-option">Entrada</label>
+							    
+							    <div class="check"></div>
+							  </li>
+							  
+							  <li class="buttonSelecction">
+							    <input type="radio" id="s-option" name="selector">
+							    <label for="s-option">Salida</label>
+							    
+							    <div class="check"><div class="inside"></div></div>
+							  </li>
+							  <li class="buttonSelecction">
+							    <input type="radio" id="t-option" name="selector">
+							    <label for="t-option">Entrada y Salida</label>
+							    <div class="check"><div class="inside"></div></div>
+							  </li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<a [routerLink]="['/editAccessView', {outlets: {editUserOutlet: ['allowAccess']}}]" class="btnAccessNext">Siguiente</a>
+			<a (click)="on()"><img class="delIcon" src="../assets/iconos/icon_eliminar.png"></a>
+		</div>
+	<div class="col-md-2"></div>
+	</div>
+</div>

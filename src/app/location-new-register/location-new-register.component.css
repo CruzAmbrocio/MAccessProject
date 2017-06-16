@@ -19,8 +19,8 @@
 /* table Subheader navegation */
 .boxContSub {
 	height: 18px;
-    width: 90%;
-    margin-top: 2%;
+  width: 90%;
+  margin-top: 2%;
 }
 .editNav {
 	font-family: robotoRegular;
@@ -37,7 +37,7 @@
 }
 .iconArrowNav {
 	height: 10px;
-    width: 10px;
+  width: 10px;
 }
 .contentEditLoc, .contentSubtitItle {
 	display: flex;
@@ -46,120 +46,120 @@
 }
 .boxContentDataLoc {
 	height: 270px;
-    width: 90%;
-    display: flex;
-    margin-top: 1%;
+  width: 90%;
+  display: flex;
+  margin-top: 1%;
 	-webkit-border-radius: 1%; 
-    -moz-border-radius: 1%; 
-    -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .3); 
-    -moz-box-shadow: 0 0 8px rgba(0, 0, 0, .3);
+  -moz-border-radius: 1%; 
+  -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .3); 
+  -moz-box-shadow: 0 0 8px rgba(0, 0, 0, .3);
 }
 .contentTable {
-    width: 25%;
-    height: 100%;
-    margin-left: 0;
-    border-right: 1px solid #DCDCDC;
+  width: 25%;
+  height: 100%;
+  margin-left: 0;
+  border-right: 1px solid #DCDCDC;
 }
 .contentRow {
-    height: 88%;
-    max-height: 335px;
-    overflow-y: auto;
+  height: 88%;
+  max-height: 335px;
+  overflow-y: auto;
 }
 .margenRow {
 	margin: 0;
 }
 .activeCellRow {
-    background-color: #00C6AF;
-    height: 13%;
-    margin-top: -12%;
+  background-color: #00C6AF;
+  height: 13%;
+  margin-top: -12%;
 }
 .textActive {
 	font-family: robotoRegular;
-    font-size: 11px;
-    color: #FFFFFF;
-    position: relative;
-    top: 50%;
-    -webkit-transform: translateY(-50%);
-    transform: translateY(-50%);
-    padding-left: 5%;
-    display: block;
+  font-size: 11px;
+  color: #FFFFFF;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  padding-left: 5%;
+  display: block;
 }
 .desactiveCellRow {
-    height: 12%;
-    margin-top: -12%;
-    border-bottom: 1px solid #DCDCDC;
+  height: 12%;
+  margin-top: -12%;
+  border-bottom: 1px solid #DCDCDC;
 }
 .textDesactive {
 	font-family: robotoRegular;
-    font-size: 11px;
-    color: #575757;;
-    position: relative;
-    top: 50%;
-    -webkit-transform: translateY(-50%);
-    transform: translateY(-50%);
-    padding-left: 5%;
-    display: block;
+  font-size: 11px;
+  color: #575757;;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  padding-left: 5%;
+  display: block;
 }
 .activeIconArrow {
 	height: 7px;
-    width: 5px;
-    float: right;
-    margin-right: 9%;
-    position: relative;
-    top: -14%;
-    -webkit-transform: translateY(-50%);
-    transform: translateY(-50%);
+  width: 5px;
+  float: right;
+  margin-right: 9%;
+  position: relative;
+  top: -14%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
 }
 .desactiveIconArrow {
 	height: 10px;
-    width: 12px;
-    float: right;
-    margin-right: 7%;
-    position: relative;
-    top: -14%;
-    -webkit-transform: translateY(-50%);
-    transform: translateY(-50%);
+  width: 12px;
+  float: right;
+  margin-right: 7%;
+  position: relative;
+  top: -14%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
 }
 .btnNext {
-  	margin-left: auto;
-  	margin-right: auto;
-    margin-top: 8%;
-    display: flex;
+	margin-left: auto;
+	margin-right: auto;
+  margin-top: 8%;
+  display: flex;
 	align-items: center;
 	justify-content: center;
-  	border-radius: 15px;
-  	width: 22%;
-  	height: 32px;
-  	background-color: #00C6AF;
-  	text-align: center;
-  	text-decoration: none;
-  	font-family: robotoBold;
-  	font-size: 12px;
-  	color: #FFF;
+	border-radius: 15px;
+	width: 22%;
+	height: 32px;
+	background-color: #00C6AF;
+	text-align: center;
+	text-decoration: none;
+	font-family: robotoBold;
+	font-size: 12px;
+	color: #FFF;
 }
 .iconCheck {
 	width: 12px;
-    height: 10px;
+  height: 10px;
 }
 .delIcon {
 	width: 13px;
-    height: 15px;
-    float: right;
-    margin-top: -3%;
-    display: flex;
-    margin-right: 33%;
+  height: 15px;
+  float: right;
+  margin-top: -3%;
+  display: flex;
+  margin-right: 33%;
 }
 .locationNew {
-    margin-top: 2%;
+  margin-top: 2%;
 }
 .locationsText {
-    margin-left: 5%;
-    font-size: 11px;
-    color: #01D9FE;
+  margin-left: 5%;
+  font-size: 11px;
+  color: #01D9FE;
 }
 .imgAgree {
-    width: 12px;
-    height: 12px;
+  width: 12px;
+  height: 12px;
 }
 ::-webkit-scrollbar {
   width: 5px;

@@ -1,0 +1,77 @@
+.cenTitlesLoc {
+	text-align: center;
+	margin-top: 4%;
+}
+.editLoc {
+	font-family: robotoBold;
+	color: #575757;
+	font-size: 12px;
+}
+.desEditLoc {
+	font-family: robotoRegular;
+	margin-top: -5px;
+	color: #AFAFAF;
+	font-size: 10px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.contentEditLoc {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.boxContentDataLoc {
+	height: 280px;
+  width: 35%;
+  margin-top: 1%;
+	-webkit-border-radius: 1%; 
+  -moz-border-radius: 1%; 
+  -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .3); 
+  -moz-box-shadow: 0 0 8px rgba(0, 0, 0, .3);
+}
+.contentLocaData {
+  margin-top: -8%;
+  height: 30%;
+}
+.mapSize {
+  width: 238px;
+  height: 190px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 5%;
+}
+.titleLocation {
+  font-family: robotoBold;
+  color: #575757;
+  font-size: 11px;
+  padding-top: 5%;
+  padding-left: 5%;
+}
+.txtData {
+  font-family: robotoRegular;
+  color: #AFAFAF;
+  font-size: 10px;
+  margin-top: -4%;
+  padding-left: 5%;
+}
+.btnAccept {
+	margin-left: auto;
+	margin-right: auto;
+  margin-top: 5%;
+  display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 15px;
+	width: 18%;
+	height: 32px;
+	background-color: #00C6AF;
+	text-align: center;
+	text-decoration: none;
+	font-family: robotoBold;
+	font-size: 12px;
+	color: #FFF;
+}
