@@ -136,7 +136,7 @@ import { AdditionCalculateWindow } from './add-user-template/add-user-template.c
     AddRoleAccessComponent,
     RolCreatedComponent,
     AddUserTemplateComponent,
-    AdditionCalculateWindow
+    AdditionCalculateWindow,
 
 
     CreatedLocationComponent,
