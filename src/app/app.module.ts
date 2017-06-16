@@ -79,6 +79,10 @@ import { RolCreatedComponent } from './rol-created/rol-created.component';
 
 
 
+
+//route of the component -- addUserTemaplate
+import { AddUserTemplateComponent } from './add-user-template/add-user-template.component';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
@@ -107,7 +111,10 @@ import { AppComponent } from './app.component';
     InputCoordinatesComponent,
     AddRolComponent,
     AddRoleAccessComponent,
-    RolCreatedComponent
+    RolCreatedComponent,
+
+
+AddUserTemplateComponent
 
   ],
   imports: [
