@@ -8,7 +8,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { JsonpModule } from '@angular/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import {  NgbdModalContent } from './users.component';
 
 
 import { NgbModal, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
@@ -25,8 +24,7 @@ import { NgbModal, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
   ],
   declarations: [
     UsersComponent,
-    NgbdModalContent
   ],
-  entryComponents: [NgbdModalContent],
+  entryComponents: [],
 })
 export class UsersModule { }

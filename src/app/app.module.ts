@@ -90,12 +90,13 @@ import { AppComponent } from './app.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { JsonpModule } from '@angular/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { NgbdModalContent } from './users/users.component';
 
 import { NgbModal, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
+import { ModalModule } from 'angular2-modal';
+import { BootstrapModalModule } from 'angular2-modal/plugins/bootstrap';
 
-
+import { AdditionCalculateWindow } from './add-user-template/add-user-template.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -122,11 +123,8 @@ import { NgbModal, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
     AddRolComponent,
     AddRoleAccessComponent,
     RolCreatedComponent,
-
-
-AddUserTemplateComponent,
-
-    NgbdModalContent
+    AddUserTemplateComponent,
+    AdditionCalculateWindow
 
   ],
   imports: [
@@ -137,12 +135,15 @@ AddUserTemplateComponent,
     ReactiveFormsModule,
     JsonpModule,
     NgbModule.forRoot(),
+    ModalModule.forRoot(),
+    BootstrapModalModule,
+    
   ],
   providers: [
     GlobalDataService,
     NgbActiveModal
   ],
-  entryComponents: [NgbdModalContent],
+  entryComponents: [AdditionCalculateWindow],
   bootstrap: [
     AppComponent
   ]

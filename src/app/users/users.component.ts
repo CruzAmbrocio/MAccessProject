@@ -1,39 +1,17 @@
-import { Component, OnInit, NgModule, Input } from '@angular/core';
+import { Component, OnInit, NgModule, Input, ViewContainerRef, ViewEncapsulation } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { JsonpModule } from '@angular/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { NgbModal, NgbActiveModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModal, NgbActiveModal, ModalDismissReasons, } from '@ng-bootstrap/ng-bootstrap';
 import { AddUserTemplateComponent } from '../add-user-template/add-user-template.component';
-@Component({
-  selector: 'ngbd',
-  templateUrl: '../add-user-template/add-user-template.component.html',
-})
-export class NgbdModalContent {
 
-  closeResult: string;
 
-  constructor(private modalService: NgbModal) {
+import { Overlay, overlayConfigFactory } from 'angular2-modal';
+import { Modal, BSModalContext } from 'angular2-modal/plugins/bootstrap';
 
-  }
-  open(content) {
-    console.log("adfjkasdlkjfahsdlkj")
-    this.modalService.open(content).result.then((result) => {
-      this.closeResult = `Closed with: ${result}`;
-    }, (reason) => {
-      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
-    });
-  }
-  private getDismissReason(reason: any): string {
-    if (reason === ModalDismissReasons.ESC) {
-      return 'by pressing ESC';
-    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
-      return 'by clicking on a backdrop';
-    } else {
-      return `with: ${reason}`;
-    }
-  }
-}
+import { AdditionCalculateWindow, AdditionCalculateWindowData } from '../add-user-template/add-user-template.component';
+  //templateUrl: '../add-user-template/add-user-template.component.html',
 
 declare var swal: any;
 @Component({
@@ -42,13 +20,19 @@ declare var swal: any;
   styleUrls: ['./users.component.css']
 })
 export class UsersComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
+  constructor(private modalService: NgbModal, overlay: Overlay, vcRef: ViewContainerRef, public modal: Modal) {
+    overlay.defaultViewContainer = vcRef;
   }
 
+  ngOnInit() {
 
+  }
+
+  openCustom() {
+    this.modal.open(AdditionCalculateWindow, new AdditionCalculateWindowData(2, 3));
+  }
+
+  closeResult: string;
 
 
 

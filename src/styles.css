@@ -95,8 +95,25 @@
   padding-top: 2% !important;
   cursor: pointer !important;
 }
+
 .swal2-container.swal2-shown {
   background-color: #fff !important;
 }
+
 .fade {
-    opacity: 1; }
+  opacity: 1!important;
+  background-color: #ffffff!important;
+
+}
+
+.swal2-container {
+  z-index: 1600;
+}
+`
+    .dark-modal .modal-content {
+      background-color: #292b2c;
+      color: white;
+    }
+    .dark-modal .close {
+      color: white;   
+    }

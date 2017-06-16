@@ -1,15 +1,46 @@
 import { Component, OnInit } from '@angular/core';
-declare var swal: any;
+
+import { DialogRef, ModalComponent } from 'angular2-modal';
+import { BSModalContext } from 'angular2-modal/plugins/bootstrap';
+
+
+
+export class AdditionCalculateWindowData extends BSModalContext {
+  constructor(public num1: number, public num2: number) {
+    super();
+  }
+}
+
+/**
+ * A Sample of how simple it is to create a new window, with its own injects.
+ */
 @Component({
-  selector: 'app-add-user-template',
+  selector: 'modal-content',
   templateUrl: './add-user-template.component.html',
   styleUrls: ['./add-user-template.component.css']
 })
-export class AddUserTemplateComponent implements OnInit {
+export class AdditionCalculateWindow implements ModalComponent<AdditionCalculateWindowData> {
+  context: AdditionCalculateWindowData;
 
-  constructor() { }
+  public wrongAnswer: boolean;
 
-  ngOnInit() {
+  constructor(public dialog: DialogRef<AdditionCalculateWindowData>) {
+    this.context = dialog.context;
+    this.wrongAnswer = true;
+  }
+
+  onKeyUp(value) {
+    this.wrongAnswer = value != 5;
+    this.dialog.close();
+  }
+
+
+  beforeDismiss(): boolean {
+    return true;
+  }
+
+  beforeClose(): boolean {
+    return this.wrongAnswer;
   }
   deleteRow() {
     swal({
@@ -27,5 +58,19 @@ export class AddUserTemplateComponent implements OnInit {
       cancelButtonText:
       'Cancelar'
     })
+  }
+}
+
+declare var swal: any;
+@Component({
+  selector: 'app-add-user-template',
+  templateUrl: './add-user-template.component.html',
+  styleUrls: ['./add-user-template.component.css']
+})
+export class AddUserTemplateComponent implements OnInit {
+
+  constructor() { }
+
+  ngOnInit() {
   }
 }
