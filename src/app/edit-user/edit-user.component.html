@@ -11,18 +11,19 @@
     </div>
   </div>
 </div>
+
 <div class="container">
   <div class="row">
   <div class="col-md-2"></div>
     <div class="col-xs-12 col-md-8 col-lg-8">
       <div class="centerTitles">
-        <p class="userRegister">EDITAR USUARIO</p>
-        <p class="desNewUser">Realizar modificaciones en la informacion.</p>
+        <p class="editUserReg">EDITAR USUARIO</p>
+        <p class="desEditUser">Realizar modificaciones en la informacion.</p>
       </div>
       <div class="contentRegister">
-        <form class="inputForm" name="country">
+        <form class="inputForm" name="EditUser">
           <div class="form-group">
-            <input type="name" class="form-control nameInput" id="nameUser" placeholder="Nombre">     
+            <input type="name" class="form-control nameInput" id="nameUser" placeholder="Nombre">
           </div>
           <div class="form-group">
               <input type="DPI" class="form-control dpiInput" id="dpiUser" placeholder="DPI">
@@ -37,14 +38,11 @@
       </div>
       <div class="contentInfoRegister">
         <a class="titleAccess" [routerLink]="['/addUsers', {outlets: {editUserOutlet: ['addShortcut']}}]"><img class="iconAdd" src="./assets/iconos/icon_agregar.png">&nbsp;&nbsp;&nbsp;Agregar acceso directo?</a>
-
         <p class="desAccessUser">El acceso directo asigna permisos de acceso independientes del<br/>rol, a un usuario especifico.</p>
       </div>
-      <a [routerLink]="['/addUsers', {outlets: {editUserOutlet: ['userRegistered']}}]" class="btnLogin">Crear Nuevo Usuario</a>
+      <a [routerLink]="['/main', {outlets: {aside: ['users']}}]" class="btnChangesDone">&#10004; &nbsp;&nbsp;Realizar Cambios</a>
       <a (click)="on()"><img class="delIcon" src="../assets/iconos/icon_eliminar.png"></a>
     </div>
   <div class="col-md-2"></div>
   </div>
 </div>
-
-<!--input type="rolSelection" class="form-control rolInput" id="roleUser" placeholder="Seleciona un Rol"-->

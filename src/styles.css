@@ -13,3 +13,107 @@
   font-family: robotoBold;
   src:url(./app/RobotoFont/Roboto-Bold.ttf);
 }
+.imgDelete{
+  display: block;
+  height: 20px;
+  width: 20px;
+  margin-right: auto;
+  margin-left: auto;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-left: auto;
+  margin-right: auto;
+}
+.cirleImgDel{
+  align-items: center;
+  height: 50px;
+  width: 50px;
+  border-radius: 100%;
+  border: solid 2px;
+  border-color: #f64f2b;
+  margin-left: auto;
+  margin-right: auto;
+}
+.textGrayBold {
+  font-family: robotoBold;
+  color: #575757;
+  font-size: 12px;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+  margin-top: 5%;
+}
+.textGrayReg {
+  font-family: robotoRegular;
+  margin-top: -5px;
+  color: #AFAFAF;
+  font-size: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.containerButtons{
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10%;
+}
+.btnDelete{
+  display: block!important;
+  align-items: center!important;
+  justify-content: center!important;
+  border-radius: 15px !important;
+  width: 30% !important;
+  height: 30px !important;
+  background-color: #f64f2b !important;
+  text-align: center !important;
+  text-decoration: none !important;
+  font-family: robotoBold !important;
+  font-size: 12px !important;
+  color: #FFF !important;
+  float: left !important;
+  margin-left: 15% !important;
+  padding-top: 2% !important;
+  cursor: pointer !important;
+}
+.btnCancel {
+  display: block !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 15px !important;
+  width: 30% !important;
+  height: 30px !important;
+  background-color:#ededed !important;
+  text-align: center !important;
+  text-decoration: none !important;
+  font-family: robotoBold !important;
+  font-size: 12px !important;
+  color: #575757 !important;
+  float: right !important;
+  margin-right: 15% !important;
+  padding-top: 2% !important;
+  cursor: pointer !important;
+}
+
+.swal2-container.swal2-shown {
+  background-color: #fff !important;
+}
+
+.fade {
+  opacity: 1!important;
+  background-color: #ffffff!important;
+
+}
+
+.swal2-container {
+  z-index: 1600;
+}
+`
+    .dark-modal .modal-content {
+      background-color: #292b2c;
+      color: white;
+    }
+    .dark-modal .close {
+      color: white;   
+    }

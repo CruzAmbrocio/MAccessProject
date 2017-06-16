@@ -8,7 +8,7 @@
         </div>
          <div class="search">
             <input type="text" placeholder="" class ="myInput">
-         </div>
+         </div> 
       </div>
       <div class="row">
         <div class="containerTable">
@@ -102,9 +102,21 @@
             <img class="img-responsive imgPlus" alt="icon plus" src="./assets/iconos/floating_agregar.png">
           </div>
             <a class="txtAddUser" [routerLink]="['/addUsers', {outlets: {editUserOutlet: ['photoUser']}}]">Agregar Usuario</a>
+<!--
+<button class="btn btn-lg btn-outline-primary" (click)="openCustom()">Launch demo modal</button>
+            <a class="txtAddUser" data-toggle = "modal" data-target="#holissssss">Agregar Usuario</a>
+            -->
         </div>
       </div>
+
     </div>
     <div class="col-sm-2 col-md-4 col-lg-4"></div>
   </div>
+</div>
+
+<div class="modal" id="holissssss">
+  <p (click)="deleteRow()">
+    hola que hace
+  </p>
+
 </div>

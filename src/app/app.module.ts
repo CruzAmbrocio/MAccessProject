@@ -67,6 +67,22 @@ import { LocationNewRegisterComponent } from './location-new-register/location-n
 
 //route of the component -- addCoordenadas
 import { InputCoordinatesComponent } from './input-coordinates/input-coordinates.component';
+
+//route of the component -- addRole
+import { AddRolComponent } from './add-rol/add-rol.component';
+
+//route of the component -- addRoleAccess
+import { AddRoleAccessComponent } from './add-role-access/add-role-access.component';
+
+//route of the component -- addRoleAccess
+import { RolCreatedComponent } from './rol-created/rol-created.component';
+
+
+
+
+//route of the component -- addUserTemaplate
+import { AddUserTemplateComponent } from './add-user-template/add-user-template.component';
+
 //route of the component -- addCoordenadas
 import { CreatedLocationComponent } from './created-location/created-location.component';
 import { AccessViewComponent } from './access-view/access-view.component';
@@ -77,9 +93,21 @@ import { RegisterAccessViewComponent } from './register-access-view/register-acc
 import { AccessNewViewComponent } from './access-new-view/access-new-view.component';
 import { CreatedAccessViewComponent } from './created-access-view/created-access-view.component';
 
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+
+import { ReactiveFormsModule } from '@angular/forms';
+import { JsonpModule } from '@angular/http';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
+import { NgbModal, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+
+import { ModalModule } from 'angular2-modal';
+import { BootstrapModalModule } from 'angular2-modal/plugins/bootstrap';
+
+import { AdditionCalculateWindow } from './add-user-template/add-user-template.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -103,6 +131,14 @@ import { AppComponent } from './app.component';
     LocationRegisterComponent,
     LocationNewRegisterComponent,
     InputCoordinatesComponent,
+
+    AddRolComponent,
+    AddRoleAccessComponent,
+    RolCreatedComponent,
+    AddUserTemplateComponent,
+    AdditionCalculateWindow
+
+
     CreatedLocationComponent,
     CreatedLocationComponent,
     AccessViewComponent,
@@ -113,16 +149,25 @@ import { AppComponent } from './app.component';
     AccessNewViewComponent,
     CreatedAccessViewComponent,
     InputCoordinatesComponent
+
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    JsonpModule,
+    NgbModule.forRoot(),
+    ModalModule.forRoot(),
+    BootstrapModalModule,
+    
   ],
   providers: [
-    GlobalDataService
+    GlobalDataService,
+    NgbActiveModal
   ],
+  entryComponents: [AdditionCalculateWindow],
   bootstrap: [
     AppComponent
   ]
