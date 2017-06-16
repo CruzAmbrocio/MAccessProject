@@ -98,3 +98,5 @@
 .swal2-container.swal2-shown {
   background-color: #fff !important;
 }
+.fade {
+    opacity: 1; }

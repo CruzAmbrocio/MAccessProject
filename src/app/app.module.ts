@@ -86,6 +86,16 @@ import { AddUserTemplateComponent } from './add-user-template/add-user-template.
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+
+import { ReactiveFormsModule } from '@angular/forms';
+import { JsonpModule } from '@angular/http';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbdModalContent } from './users/users.component';
+
+import { NgbModal, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -114,18 +124,25 @@ import { AppComponent } from './app.component';
     RolCreatedComponent,
 
 
-AddUserTemplateComponent
+AddUserTemplateComponent,
+
+    NgbdModalContent
 
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    JsonpModule,
+    NgbModule.forRoot(),
   ],
   providers: [
-    GlobalDataService
+    GlobalDataService,
+    NgbActiveModal
   ],
+  entryComponents: [NgbdModalContent],
   bootstrap: [
     AppComponent
   ]
