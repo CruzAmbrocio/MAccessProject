@@ -32,6 +32,7 @@ export class CustomModalContext extends BSModalContext {
 export class CustomModal implements CloseGuard, ModalComponent<CustomModalContext> {
   context: CustomModalContext;
 
+
   public wrongAnswer: boolean;
   public shouldUseMyClass: boolean;
 
@@ -40,7 +41,6 @@ export class CustomModal implements CloseGuard, ModalComponent<CustomModalContex
     this.wrongAnswer = true;
     dialog.setCloseGuard(this);
   }
-
   onKeyUp(value) {
     this.wrongAnswer = value != 5;
     this.dialog.close();
@@ -72,6 +72,7 @@ export class CustomModal implements CloseGuard, ModalComponent<CustomModalContex
       'Cancelar'
     })
   }
+
 }
 declare var swal: any;
 @Component({
@@ -80,19 +81,31 @@ declare var swal: any;
   styleUrls: ['./users.component.css']
 })
 export class UsersComponent implements OnInit {
-@Input()  name;
+  @Input()  name;
+  takePictureUser: any;
+  registerUser: any;
+  createdUser: any; 
+  callFunctionUsers: any;
 
   constructor(public modal: Modal, ) {
 
   }
 
-  ngOnInit() {
+   ngOnInit() {
+     this.callFunctionUsers = this.changeStepsAddUser;
+     this.callFunctionUsers();
   }
 
   open() {
     this.modal.open(CustomModal, overlayConfigFactory({ num1: 2, num2: 3 }, BSModalContext));
   }
-
+  changeStepsAddUser() {
+    this.takePictureUser = true;
+    this.registerUser = false;
+    this.createdUser = false;
+    alert("this.takePictureUser")
+    
+  }
 }
 //------------------------------------------------------------------------------------------------------------------------------
 /*

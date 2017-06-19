@@ -21,7 +21,7 @@
         <div class="col-xs-2 col-md-2"></div>
     </div>
 </div>
-<div class="container">
+<div *ngIf="takePictureUser" class="container">
     <div class="row">
     <div class="col-md-2"></div>
         <div class="col-xs-12 col-md-8 col-lg-8">
@@ -33,7 +33,7 @@
                 <img class="imgOpacity" src="./assets/iconos/opacity_circle.png">
             </div>
             <div>
-                <p class="titlePhoto centerTitle">Fotografía</p>
+                <p class="titlePhoto centerTitle" (click)="changeStepsAddUser()">Fotografía</p>
                 <p class="desPhoto">Pide al nuevo usuario que voltee a la cámara.</p>
                 <p class="desPhoto topDesPhoto">Cuando este listo, toma la fotogría.</p>
                 <a [routerLink]="['/addUsers', {outlets: {editUserOutlet: ['createUser']}}]" class="btnLogin"><img class="iconCamera" src="../assets/iconos/icon_camara.png">Tomar Fotografía</a>
@@ -42,4 +42,39 @@
     <div class="col-md-2"></div>
     </div>
 </div>
-                                 <button class="btn btn-primary" (click)="deleteRow()">HOla que hacvsdddddddddddddddddddddddddde</button>
+<button class="btn btn-primary" (click)="deleteRow()">HOla que hacvsdddddddddddddddddddddddddde </button>
+<p (click)="showModal = true" ></p>
+<!-- Vista Registro usuario nuevo -->
+<div *ngIf="takePictureUser2" class="container" >
+    <div class="row">
+    <div class="col-md-2"></div>
+        <div class="col-xs-12 col-md-8 col-lg-8">
+            <div class="centerTitles">
+                <p class="userRegister">REGISTRAR NUEVO USUARIO</p>
+                <p class="desNewUser">Completa la información del nuevo usuario.</p>
+            </div>
+            <div class="contentRegister">
+                <form class="inputForm" name="country">
+                    <div class="form-group">
+                        <input type="name" class="form-control nameInput" id="nameUser" placeholder="Nombre">           
+                    </div>
+                    <div class="form-group">
+                        <input type="DPI" class="form-control dpiInput" id="dpiUser" placeholder="DPI">
+                    </div>
+                    <div class="dropdown">
+                    <select [(ngModel)]="selectedElement.id"  [ngModelOptions]="{standalone: true}" class=" form-control nameInput">
+                        <option *ngFor="let type of types" [ngValue]="type.id" class="alignDrop">{{type.Name}}</option>
+                    </select>
+                    </div>
+                </form>
+                <img class="imgUserProfile" src="./assets/iconos/foto_previw.jpg">
+            </div>
+            <div class="contentInfoRegister">
+                <a class="titleAccess" [routerLink]="['/addUsers', {outlets: {editUserOutlet: ['addShortcut']}}]"><img class="iconAdd" src="./assets/iconos/icon_agregar.png">&nbsp;&nbsp;&nbsp;Agregar acceso directo?</a>
+                <p class="desAccessUser">El acceso directo asigna permisos de acceso independientes del<br/>rol, a un usuario especifico.</p>
+            </div>
+            <a [routerLink]="['/addUsers', {outlets: {editUserOutlet: ['userRegistered']}}]" class="btnLogin">Crear Nuevo Usuario</a>
+        </div>
+    <div class="col-md-2"></div>
+    </div>
+</div>
