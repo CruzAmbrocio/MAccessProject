@@ -34,21 +34,17 @@
     height: 25px;
     margin-top: 5%;
 }
-
 .contIndicators{
     width: 25px;
     height: 100%;
     margin: 0 auto;
 }
-
 .DotRigth{
     float: right;
 }
-
 .DotLeft{
     float: left;
 }
-
 .circulo1 {
     width: 8px;
     height: 8px;
@@ -58,7 +54,6 @@
     background: #51CCD5;
     display: inline-block;
 }
-
 .circulo2 {
     width: 8px;
     height: 8px;
@@ -68,40 +63,51 @@
     background: #97E7DE;
     display: inline-block;
 }
-
+/* Contenedor donde se encuentran los titulos de usuarios */
 .centerTitle {
     display: flex;
     align-items: center;
     justify-content: center;
     margin-top: 3%;
 }
+/* Propiedad general para centrar los titulos de las vistas de usuarios */
+.centerTitleUsers {
+    font-family: robotoBold;
+    color: #575757;
+    font-size: 12px;
+}
 p {
     font-family: robotoBold;
     color: #575757;
     font-size: 12px;
 }
+/* Contenedor de la imagen principal de la vista de registro de usuarios */
 .imgContent {
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
 }
+/* Propiedades de la imagen de perfil del usuario */
 .imgPerfil {
     height: 20%;
     width: 28%;
     margin-top: 10px;
     border-radius: 2%;
 }
+/* Propiedades de la imagen que contiene la opacidad de la foto de perfil del usuario */
 .imgOpacity {
     position: absolute;
     height: 100%;
     width: 28%;
 }
+/* Propiedades del titulo de la fotografia */
 .titlePhoto {
     font-family: robotoRegular;
     color: #575757;
     font-size: 13px;
 }
+/* Propiedades de la descripcion de la fotografia */
 .desPhoto {
     font-family: robotoRegular;
     color: #AFAFAF;
@@ -110,13 +116,15 @@ p {
     align-items: center;
     justify-content: center;
 }
+/* Propiedades para el centrado de la descripcion de la fotografia*/
 .topDesPhoto {
     margin-top: -1.5%;
 }
-.btnLogin {
+/* Propiedades generales de los botones de todas las vistas de usuarios */
+.btnGeneralUser {
     margin-left: auto;
     margin-right: auto;
-    margin-top: 18px;
+    margin-top: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -129,23 +137,22 @@ p {
     font-family: robotoBold;
     font-size: 12px;
     color: #FFF;
+    cursor: pointer;
 }
+/* Propiedades del icono de camara dentro del boton */
 .iconCamera {
     display: block;
     width: 18px;
     height: 16px;
     margin-right: 14px;
 }
-.centerTitles {
+/* Contenedor general de la vista de ingreso de datos de registro de usuario */
+.contentCenterUsers {
     text-align: center;
     margin-top: 4%;
 }
-.userRegister {
-    font-family: robotoBold;
-    color: #575757;
-    font-size: 12px;
-}
-.desNewUser {
+/* Propiedades general de los subtitulos de los registros de usuarios */
+.subtitlesUserViews {
     font-family: robotoRegular;
     margin-top: -5px;
     color: #AFAFAF;
@@ -154,9 +161,13 @@ p {
     align-items: center;
     justify-content: center;
 }
+/* VISTA INGRESO DE REGISTRO DE DATOS DE NUEVO USUARIO */
+/* Propiedades que se encarga de dejar espacio entre el titulo y el contenedor 
+de los inputs de registro de usuario */
 .contentRegister {
     padding-top: 25px;
 }
+/* Propiedades de los inputs de registro de usuarios */
 .nameInput, .dpiInput {
     width: 37%;
     font-size: 11px;
@@ -166,6 +177,7 @@ p {
     margin-bottom: -10px;
     color: #C9C9C9;
 }
+/* Propiedades del input de asignar roles al usuario */
 .rolInput {
     width: 37%;
     height: 34px;
@@ -178,6 +190,91 @@ p {
     text-align: left;
     color: #C9C9C9;
 }
+/* Propiedades de la imagen de ingreso de datos de nuevo usuario */
+.imgNewUser {
+    height: 70px;
+    width: 70px;
+    position: absolute;
+    margin-top: -13%;
+    margin-left: 24%;
+    -webkit-border-radius: 150px; 
+   -moz-border-radius: 150px; 
+   -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .3); 
+   -moz-box-shadow: 0 0 8px rgba(0, 0, 0, .3);
+}
+/* Contenedir donde se encuentra el link para agregar accesos directos al usuario */
+.contentInfoRegister {
+    margin-left: 38%;
+    margin-top: 3%;
+}
+/* Propiedades del texto de accesos directos de usuarios */
+.titleAccess {
+    font-family: robotoBold;
+    color: #01CDFF;
+    font-size: 11px;
+}
+/* Propiedades de la descripcion de agregar accesos directos */
+.desAccessUser {
+    font-family: robotoRegular;
+    color: #AFAFAF;
+    font-size: 9px;
+}
+/* Propiedades del dropdown */
+.alignDrop {
+    left: inherit;
+    right: 25%;
+    font-size: 10px;
+    font-family: robotoRegular;
+}
+.iconAdd {
+    height: 12px;
+}
+/* VISTA USUARIO CREADO */
+/* Contenedor que se encuentra centrado
+ en donde se encuentra el conenido de la vista usuario creado */
+.contentRegistered {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* Contenedor al que se le asignaron las propiedades de borde y sombra */
+.boxContent {
+    height: 125px;
+    width: 36%;
+    margin-top: 2%;
+    display: flex;
+    align-items: center;
+    -webkit-border-radius: 2%; 
+    -moz-border-radius: 2%; 
+    -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .3); 
+    -moz-box-shadow: 0 0 8px rgba(0, 0, 0, .3);
+}
+/* Propiedades de la imagen de perfil de usuario creado */
+.imgCreatedUser {
+    height: 70px;
+    width: 70px;
+    margin-left: 11%;
+    -webkit-border-radius: 150px; 
+    -moz-border-radius: 150px; 
+    -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .3); 
+    -moz-box-shadow: 0 0 8px rgba(0, 0, 0, .3);
+}
+/* Contenedor en donde se encuentra la informacion del usuario */
+.contentText {
+    padding-top: 3%;
+    margin-left: 10%;
+}
+.namePerson {
+    font-family: robotoBold;
+    color: #6F6F6F;
+    font-size: 12px;
+}
+.infoPerson {
+    margin-top: -10%;
+    font-family: robotoRegular;
+    color: #6E6E6E;
+    font-size: 11px;
+}
 .lineDivision {
     border-bottom: 1px solid #EBEBEB;
     width: 90%;
@@ -187,30 +284,18 @@ p {
 .lineNone {
     border-bottom: none;
 }
-.alignDrop {
-    left: inherit;
-    right: 25%;
-    font-size: 10px;
-    font-family: robotoRegular;
-}
 .iconDrop {
     float: right;
 }
-.contentInfoRegister {
-    margin-left: 38%;
-    margin-top: 3%;
-}
-.iconAdd {
-    height: 12px;
-}
-.btnLogin {
-    margin-left: 38%;
+/* Boton de aceptar en la vista de usuario creado */
+.btnAcceptUsers {
+    margin-left: 42%;
     margin-top: 5%;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 15px;
-    width: 23%;
+    width: 15%;
     height: 32px;
     background-color: #00C6AF;
     text-align: center;
@@ -218,27 +303,45 @@ p {
     font-family: robotoBold;
     font-size: 12px;
     color: #FFF;
+    cursor: pointer;
 }
-.titleAccess {
+/**/
+.contentNewRegister {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.boxContentData {
+    height: 270px;
+    width: 90%;
+    margin-top: 2%;
+    -webkit-border-radius: 1%; 
+    -moz-border-radius: 1%; 
+    -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .3); 
+    -moz-box-shadow: 0 0 8px rgba(0, 0, 0, .3);
+}
+.contentRows {
+    width: 20%;
+    height: 100%;
+    border-right: 1px solid #DCDCDC;
+}
+.lineRow {
+    height: 1px;
+    width: 98%;
+    margin-top: auto;
+    margin-right: -2%;
+    background-color: #DCDCDC;
+}
+.iconArrow {
+    height: 8%;
+    width: 10%;
+    float: right;
+    padding-top: 3%;
+}
+.placedsName {
     font-family: robotoBold;
-    color: #01CDFF;
-    font-size: 11px;
+    color: #6F6F6F;
+    font-size: 10px;
+    border-top: transparent;
 }
-.desAccessUser {
-    font-family: robotoRegular;
-    color: #AFAFAF;
-    font-size: 9px;
-}
-.imgUserProfile {
-    height: 75px;
-    width: 75px;
-    position: absolute;
-    margin-top: -15%;
-    margin-left: 23%;
-    -webkit-border-radius: 150px; 
-   -moz-border-radius: 150px; 
-   -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .3); 
-   -moz-box-shadow: 0 0 8px rgba(0, 0, 0, .3);
-}
-
 

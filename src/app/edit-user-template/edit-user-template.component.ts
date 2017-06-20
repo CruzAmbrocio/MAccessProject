@@ -11,5 +11,5 @@ export class EditUserTemplateComponent implements OnInit {
 
   ngOnInit() {
   }
-
 }
+
