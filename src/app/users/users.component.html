@@ -16,7 +16,7 @@
             <tr class="cellFormat">
               <td>Alex Doe</td>
               <td>C-level</td> 
-              <td><a [routerLink]="['/editUserView', {outlets: {editUserOutlet: ['editUser']}}]">Editar</a></td>
+              <td><a (click)="openEditUser()">Editar</a></td>
             </tr>
             <tr class="cellFormat">
               <td>Betty Doe</td>

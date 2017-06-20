@@ -45,7 +45,7 @@
 <button class="btn btn-primary" (click)="deleteRow()">HOla que hacvsdddddddddddddddddddddddddde </button>
 <p (click)="showModal = true" ></p>
 <!-- Vista Registro usuario nuevo -->
-<div *ngIf="takePictureUser2" class="container" >
+<div *ngIf="registerUserAdd" class="container" >
     <div class="row">
     <div class="col-md-2"></div>
         <div class="col-xs-12 col-md-8 col-lg-8">
@@ -62,7 +62,7 @@
                         <input type="DPI" class="form-control dpiInput" id="dpiUser" placeholder="DPI">
                     </div>
                     <div class="dropdown">
-                    <select [(ngModel)]="selectedElement.id"  [ngModelOptions]="{standalone: true}" class=" form-control nameInput">
+                    <select [ngModel]="selectedElement?.id"  [ngModelOptions]="{standalone: true}" class=" form-control nameInput">
                         <option *ngFor="let type of types" [ngValue]="type.id" class="alignDrop">{{type.Name}}</option>
                     </select>
                     </div>

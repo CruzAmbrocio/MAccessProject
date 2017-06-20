@@ -127,14 +127,22 @@
     background-color: #fff;
     -webkit-background-clip: padding-box;
     background-clip: padding-box; 
-    border:0;
-    border: 0px ;
-    border-radius: 0px; 
+    border: 0px !important;
+    border-radius: 0px !important; 
     outline: 0; 
-    -webkit-box-shadow: 0 ; 
-    box-shadow: 0 ; 
+-webkit-box-shadow: 0px 0px 0px -200px rgba(0,0,0,0);
+-moz-box-shadow: 0px 0px 0px -200px rgba(0,0,0,0);
+box-shadow: 0px 0px 0px -200px rgba(0,0,0,0);
     height: 100%!important
 }
 .modal-dialog{
   margin: 0px;
+}
+@media (min-width: 768px){
+.modal-content {
+-webkit-box-shadow: 0px 0px 0px -200px rgba(0,0,0,0);
+-moz-box-shadow: 0px 0px 0px -200px rgba(0,0,0,0);
+box-shadow: 0px 0px 0px -200px rgba(0,0,0,0);
+
+}
 }
