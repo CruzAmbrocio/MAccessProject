@@ -1,23 +1,19 @@
-
 .headerCl{
     width: 100%;
     float: left;
 }
-
 .btnBackUser{
     height: 18px;
     float: left;
     margin-top: 5%;
     display: inline-block;
 }
-
 .imgBackUser{
     display: inline-block;
     height: 100%;
     width: 20px;
     cursor: pointer;
 }
-
 .txtBackUser{
     display: inline-block;
     font-family: robotoBold;
@@ -25,7 +21,6 @@
     font-size: 11px;
     cursor: pointer;
 }
-
 .iconHeaderUser {
     height: 18px;
     width: 18px;
@@ -33,7 +28,6 @@
     margin-top: 5%;
     display: inline-block;
 }
-
 .dotsSlider {
     display: inline-block;
     width: 100%;
@@ -74,3 +68,177 @@
     background: #97E7DE;
     display: inline-block;
 }
+
+.centerTitle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 3%;
+}
+p {
+    font-family: robotoBold;
+    color: #575757;
+    font-size: 12px;
+}
+.imgContent {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.imgPerfil {
+    height: 20%;
+    width: 28%;
+    margin-top: 10px;
+    border-radius: 2%;
+}
+.imgOpacity {
+    position: absolute;
+    height: 100%;
+    width: 28%;
+}
+.titlePhoto {
+    font-family: robotoRegular;
+    color: #575757;
+    font-size: 13px;
+}
+.desPhoto {
+    font-family: robotoRegular;
+    color: #AFAFAF;
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.topDesPhoto {
+    margin-top: -1.5%;
+}
+.btnLogin {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    width: 23%;
+    height: 32px;
+    background-color: #00C6AF;
+    text-align: center;
+    text-decoration: none;
+    font-family: robotoBold;
+    font-size: 12px;
+    color: #FFF;
+}
+.iconCamera {
+    display: block;
+    width: 18px;
+    height: 16px;
+    margin-right: 14px;
+}
+.centerTitles {
+    text-align: center;
+    margin-top: 4%;
+}
+.userRegister {
+    font-family: robotoBold;
+    color: #575757;
+    font-size: 12px;
+}
+.desNewUser {
+    font-family: robotoRegular;
+    margin-top: -5px;
+    color: #AFAFAF;
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.contentRegister {
+    padding-top: 25px;
+}
+.nameInput, .dpiInput {
+    width: 37%;
+    font-size: 11px;
+    font-family: robotoRegular;
+    opacity: 0.7;
+    margin-left: 38%;
+    margin-bottom: -10px;
+    color: #C9C9C9;
+}
+.rolInput {
+    width: 37%;
+    height: 34px;
+    font-size: 11px;
+    font-family: robotoRegular;
+    background-color: transparent;
+    border-color: #DBDBDB;
+    border-radius: 5%;
+    margin-left: 38%;
+    text-align: left;
+    color: #C9C9C9;
+}
+.lineDivision {
+    border-bottom: 1px solid #EBEBEB;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.lineNone {
+    border-bottom: none;
+}
+.alignDrop {
+    left: inherit;
+    right: 25%;
+    font-size: 10px;
+    font-family: robotoRegular;
+}
+.iconDrop {
+    float: right;
+}
+.contentInfoRegister {
+    margin-left: 38%;
+    margin-top: 3%;
+}
+.iconAdd {
+    height: 12px;
+}
+.btnLogin {
+    margin-left: 38%;
+    margin-top: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    width: 23%;
+    height: 32px;
+    background-color: #00C6AF;
+    text-align: center;
+    text-decoration: none;
+    font-family: robotoBold;
+    font-size: 12px;
+    color: #FFF;
+}
+.titleAccess {
+    font-family: robotoBold;
+    color: #01CDFF;
+    font-size: 11px;
+}
+.desAccessUser {
+    font-family: robotoRegular;
+    color: #AFAFAF;
+    font-size: 9px;
+}
+.imgUserProfile {
+    height: 75px;
+    width: 75px;
+    position: absolute;
+    margin-top: -15%;
+    margin-left: 23%;
+    -webkit-border-radius: 150px; 
+   -moz-border-radius: 150px; 
+   -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .3); 
+   -moz-box-shadow: 0 0 8px rgba(0, 0, 0, .3);
+}
+
+

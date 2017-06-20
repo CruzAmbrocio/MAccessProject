@@ -14,7 +14,7 @@ import { LoginComponent } from './login/login.component';
 import { ControlComponent } from './control/control.component';
 
 //route of the component -- users
-import { UsersComponent } from './users/users.component';
+import { UsersComponent, CustomModal, EditModal } from './users/users.component';
 
 //route of the component -- locations
 import { LocationsComponent } from './locations/locations.component';
@@ -107,7 +107,8 @@ import { NgbModal, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalModule } from 'angular2-modal';
 import { BootstrapModalModule } from 'angular2-modal/plugins/bootstrap';
 
-import { AdditionCalculateWindow } from './add-user-template/add-user-template.component';
+
+//import { AdditionCalculateWindow } from './add-user-template/add-user-template.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -136,7 +137,7 @@ import { AdditionCalculateWindow } from './add-user-template/add-user-template.c
     AddRoleAccessComponent,
     RolCreatedComponent,
     AddUserTemplateComponent,
-    AdditionCalculateWindow,
+    //AdditionCalculateWindow,
 
 
     CreatedLocationComponent,
@@ -148,7 +149,8 @@ import { AdditionCalculateWindow } from './add-user-template/add-user-template.c
     RegisterAccessViewComponent,
     AccessNewViewComponent,
     CreatedAccessViewComponent,
-    InputCoordinatesComponent
+    InputCoordinatesComponent,
+    CustomModal, EditModal
 
   ],
   imports: [
@@ -165,11 +167,13 @@ import { AdditionCalculateWindow } from './add-user-template/add-user-template.c
   ],
   providers: [
     GlobalDataService,
-    NgbActiveModal
+    NgbActiveModal,
+    
   ],
-  entryComponents: [AdditionCalculateWindow],
+  entryComponents: [CustomModal, EditModal],
   bootstrap: [
     AppComponent
-  ]
+  ],
+  exports: [CustomModal, EditModal],
 })
 export class AppModule { }
