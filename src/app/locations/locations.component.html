@@ -25,7 +25,7 @@
               <td>Torre3</td> 
               <td>Oficina 514</td>
               <td>Oficinas Mkt</td>
-              <td><a [routerLink]="['/editLocationView', {outlets: {editUserOutlet: ['viewLocation']}}]">Editar</a></td>
+              <td><a (click)="openEditUser()">Editar</a></td>
             </tr>
             <tr class="cellFormat">
               <td>Europlaza</td>
@@ -47,9 +47,9 @@
       <div class="row">
         <div class="containerBtnAdd">
           <div class="IconPlus">
-            <img class="img-responsive imgPlus" alt="icon plus" src="./assets/iconos/floating_agregar.png">
+            <img (click)="openAddUser()" class="img-responsive imgPlus" alt="icon plus" src="./assets/iconos/floating_agregar.png">
           </div>
-            <a [routerLink]="['/editLocationView', {outlets: {editUserOutlet: ['locationRegister']}}]" class="txtAddUser">Agregar Ubicacion</a>
+            <a (click)="openAddUser()" class="txtAddUser">Agregar Ubicacion</a>
         </div>
       </div>
 
@@ -57,3 +57,5 @@
     <div class="col-sm-4 col-md-4"></div>
   </div>
 </div>
+<span defaultOverlayTarget> 
+</span>

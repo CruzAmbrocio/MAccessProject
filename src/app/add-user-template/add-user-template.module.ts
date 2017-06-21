@@ -9,7 +9,7 @@ import { AddUserTemplateComponent } from './add-user-template.component';
     CommonModule,
     AddUserTemplateRoutingModule
   ],
-  declarations: [AddUserTemplateComponent],
-  entryComponents: [ ]
+  declarations: [AddUserTemplateComponent]
 })
 export class AddUserTemplateModule { }
+

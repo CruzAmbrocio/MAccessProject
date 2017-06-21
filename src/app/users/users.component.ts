@@ -22,7 +22,7 @@ export class CustomModalContext extends BSModalContext {
 
 /**
  * A Sample of how simple it is to create a new window, with its own injects.
- */
+ */ 
 @Component({
   selector: 'modal-content',
   styleUrls: ['../add-user-template/add-user-template.component.css'],
@@ -221,7 +221,7 @@ declare var swal: any;
 export class UsersComponent implements OnInit {
   @Input()  name;
 
-  constructor(public modal: Modal, ) {
+  constructor(public modal: Modal) {
   }
 
    ngOnInit() {
@@ -234,5 +234,4 @@ export class UsersComponent implements OnInit {
   openEditUser() {
     this.modal.open(EditModal, overlayConfigFactory({ num1: 2, num2: 3 }));
   }
-
 }

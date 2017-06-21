@@ -17,13 +17,13 @@ import { ControlComponent } from './control/control.component';
 import { UsersComponent, CustomModal, EditModal } from './users/users.component';
 
 //route of the component -- locations
-import { LocationsComponent } from './locations/locations.component';
+import { LocationsComponent, EditModalLoc, AddModalLoc } from './locations/locations.component';
 
 //route of the component -- access
-import { AccessComponent } from './access/access.component';
+import { AccessComponent, AddModalAccess, editModalAccess } from './access/access.component';
 
 //route of the component -- roles
-import { RolesComponent } from './roles/roles.component';
+import { RolesComponent, AddModalRol, EditModalRol} from './roles/roles.component';
 
 //route of the component -- addUsers
 import { AddUsersComponent } from './add-users/add-users.component';
@@ -108,6 +108,7 @@ import { ModalModule } from 'angular2-modal';
 import { BootstrapModalModule } from 'angular2-modal/plugins/bootstrap';
 
 
+
 //import { AdditionCalculateWindow } from './add-user-template/add-user-template.component';
 @NgModule({
   declarations: [
@@ -150,7 +151,14 @@ import { BootstrapModalModule } from 'angular2-modal/plugins/bootstrap';
     AccessNewViewComponent,
     CreatedAccessViewComponent,
     InputCoordinatesComponent,
-    CustomModal, EditModal
+    CustomModal,
+    EditModal,
+    EditModalLoc ,
+    AddModalLoc,
+    AddModalAccess,
+    editModalAccess,
+    AddModalRol,
+    EditModalRol
 
   ],
   imports: [
@@ -170,10 +178,28 @@ import { BootstrapModalModule } from 'angular2-modal/plugins/bootstrap';
     NgbActiveModal,
     
   ],
-  entryComponents: [CustomModal, EditModal],
+  entryComponents: [
+    CustomModal,
+    EditModal,
+    EditModalLoc,
+    AddModalLoc,
+    AddModalAccess,
+  editModalAccess,
+  AddModalRol,
+  EditModalRol
+  ],
   bootstrap: [
     AppComponent
   ],
-  exports: [CustomModal, EditModal],
+  exports: [
+    CustomModal,
+    EditModal,
+    EditModalLoc,
+    AddModalLoc,
+    AddModalAccess,
+    editModalAccess,
+    AddModalRol,
+    EditModalRol
+  ],
 })
 export class AppModule { }

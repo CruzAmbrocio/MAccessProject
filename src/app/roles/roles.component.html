@@ -19,7 +19,7 @@
             </tr>
             <tr class="cellFormat">
               <td>Gerente L1</td>
-              <td><a [routerLink]="['/editRolView', {outlets: {editUserOutlet: ['rolEdit']}}]">Editar</a></td>
+              <td><a (click)="openEditUser()">Editar</a></td>
             </tr>
             <tr class="cellFormat">
               <td>Gerente L2</td>
@@ -52,9 +52,9 @@
         <div class="containerBtnAdd">
           <div class="IconPlus" >
 
-            <img [routerLink]="['/addRolView', {outlets: {editUserOutlet: ['addRoleReg']}}]" class="img-responsive imgPlus" alt="icon plus" src="./assets/iconos/floating_agregar.png">
+            <img (click)="openAddUser()" class="img-responsive imgPlus" alt="icon plus" src="./assets/iconos/floating_agregar.png">
           </div>
-            <a class="txtAddUser" [routerLink]="['/addRolView', {outlets: {editUserOutlet: ['addRoleReg']}}]">Agregar Rol</a>
+            <a class="txtAddUser" (click)="openAddUser()">Agregar Rol</a>
         </div>
       </div>
 
@@ -62,3 +62,5 @@
     <div class="col-sm-4 col-md-4"></div>
   </div>
 </div>
+<span defaultOverlayTarget> 
+</span>
