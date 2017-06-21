@@ -10,32 +10,21 @@ import { UsersComponent } from './users/users.component';
 import { LocationsComponent } from './locations/locations.component';
 import { AccessComponent } from './access/access.component';
 import { RolesComponent } from './roles/roles.component';
-import { AddUsersComponent } from './add-users/add-users.component';
 import { HeaderAddUsersComponent } from './header-add-users/header-add-users.component';
-import { CreateUserComponent } from './create-user/create-user.component';
-import { NewUserComponent } from './new-user/new-user.component';
-import { AddShortcutComponent } from './add-shortcut/add-shortcut.component';
-import { UbicationEditComponent } from './ubication-edit/ubication-edit.component';
-import { UbicationChangeComponent } from './ubication-change/ubication-change.component';
+
 import { EditRolComponent } from './edit-rol/edit-rol.component';
 import { EditRolCheckComponent } from './edit-rol-check/edit-rol-check.component';
-import { EditUserComponent } from './edit-user/edit-user.component';
-import { LocationRegisterComponent } from './location-register/location-register.component';
-import { LocationNewRegisterComponent } from './location-new-register/location-new-register.component';
-import { InputCoordinatesComponent } from './input-coordinates/input-coordinates.component';
+
 
 import { AddRolComponent } from './add-rol/add-rol.component';
 import { AddRoleAccessComponent } from './add-role-access/add-role-access.component';
 import { RolCreatedComponent } from './rol-created/rol-created.component';
 
-import { CreatedLocationComponent } from './created-location/created-location.component';
-import { AccessViewComponent } from './access-view/access-view.component';
-import { TableAccessComponent } from './table-access/table-access.component';
-import { AddAccessComponent } from './add-access/add-access.component';
-import { AccessEditComponent } from './access-edit/access-edit.component';
-import { RegisterAccessViewComponent } from './register-access-view/register-access-view.component';
-import { AccessNewViewComponent } from './access-new-view/access-new-view.component';
-import { CreatedAccessViewComponent } from './created-access-view/created-access-view.component';
+
+
+
+
+
 
 
 
@@ -79,62 +68,12 @@ const routes: Routes = [
     path: 'addUsers',
     component : HeaderAddUsersComponent,
     children: [
-      {
-        path: 'photoUser',
-        component : AddUsersComponent,
-        outlet: 'editUserOutlet'
-      },
-      {
-        path: 'createUser',
-        component : CreateUserComponent,
-        outlet: 'editUserOutlet'
-      },
-      {
-        path: 'userRegistered',
-        component : NewUserComponent,
-        outlet: 'editUserOutlet'
-      },
-      {
-        path: 'addShortcut',
-        component : AddShortcutComponent,
-        outlet: 'editUserOutlet'
-      }
     ]
   },
   {
     path: 'editLocationView',
     component : HeaderAddUsersComponent,
     children: [
-      {
-        path: 'viewLocation',
-        component : UbicationEditComponent,
-        outlet: 'editUserOutlet'
-      },
-      {
-        path: 'ubicationEdit',
-        component : UbicationChangeComponent,
-        outlet: 'editUserOutlet'
-      },
-      {
-        path: 'locationRegister',
-        component : LocationRegisterComponent,
-        outlet: 'editUserOutlet'
-      },
-      {
-        path: 'locationNewRegister',
-        component : LocationNewRegisterComponent,
-        outlet: 'editUserOutlet'
-      },
-       {
-        path: 'addCoordenates',
-        component : InputCoordinatesComponent,
-        outlet: 'editUserOutlet'
-      },
-      {
-        path: 'createdLocation',
-        component : CreatedLocationComponent,
-        outlet: 'editUserOutlet'
-      }
     ]
   }, 
   {
@@ -180,52 +119,13 @@ const routes: Routes = [
     path: 'editUserView',
     component : HeaderAddUsersComponent,
     children: [
-      {
-        path: 'editUser',
-        component : EditUserComponent,
-        outlet: 'editUserOutlet'
-      }
+
     ]
   },
   {
     path: 'editAccessView',
     component : HeaderAddUsersComponent,
     children: [
-      {
-        path: 'editAccess',
-        component : AccessViewComponent,
-        outlet: 'editUserOutlet'
-      },
-      {
-        path: 'allowAccess',
-        component : TableAccessComponent,
-        outlet: 'editUserOutlet'
-      },
-      {
-        path: 'newAccess',
-        component : AddAccessComponent,
-        outlet: 'editUserOutlet'
-      },
-      {
-        path: 'registerAccess',
-        component : RegisterAccessViewComponent,
-        outlet: 'editUserOutlet'
-      },
-      {
-        path: 'editAccessView',
-        component : AccessEditComponent,
-        outlet: 'editUserOutlet'
-      },
-       {
-        path: 'registerNewAccess',
-        component : AccessNewViewComponent,
-        outlet: 'editUserOutlet'
-      },
-      {
-        path: 'createdAccess',
-        component : CreatedAccessViewComponent,
-        outlet: 'editUserOutlet'
-      },
     ]
   },
    // otherwise redirect to home

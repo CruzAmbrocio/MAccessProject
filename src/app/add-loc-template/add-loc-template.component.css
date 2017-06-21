@@ -193,7 +193,7 @@
 }
 .boxContentDataLoc {
   height: 270px;
-  width: 100%;
+  width: 900px;
   display: flex;
   margin-top: 1%;
   -webkit-border-radius: 1%; 
@@ -217,8 +217,8 @@
 }
 .activeCellRow {
   background-color: #00C6AF;
-  height: 13%;
-  margin-top: -12%;
+  height: 35px;
+  margin-top: -20px;
 }
 .textActive {
   font-family: robotoRegular;
@@ -232,8 +232,8 @@
   display: block;
 }
 .desactiveCellRow {
-  height: 12%;
-  margin-top: -12%;
+  height: 35px;
+  margin-top: -20px;
   border-bottom: 1px solid #DCDCDC;
 }
 .textDesactive {
@@ -253,7 +253,7 @@
   float: right;
   margin-right: 9%;
   position: relative;
-  top: -14%;
+  top: -20%;
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
 }

@@ -143,6 +143,10 @@ table, td {
   margin-left: auto;
   margin-right: auto;
   cursor: pointer;
+  transition :all ease 0.3s
+}
+.IconPlus:hover{
+  background-color: #00A096;
 }
 .imgPlus {
   height: 50%;

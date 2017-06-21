@@ -25,29 +25,18 @@ import { AccessComponent, AddModalAccess, editModalAccess } from './access/acces
 //route of the component -- roles
 import { RolesComponent, AddModalRol, EditModalRol} from './roles/roles.component';
 
-//route of the component -- addUsers
-import { AddUsersComponent } from './add-users/add-users.component';
 
 //route of the component -- HeaderaddUsers
 import { HeaderAddUsersComponent } from './header-add-users/header-add-users.component';
 
-//route of the component -- UserCreate
-import { CreateUserComponent } from './create-user/create-user.component';
 
-//route of the component -- UserRegistered
-import { NewUserComponent } from './new-user/new-user.component';
 
-//route of the component -- AddShortCut
-import { AddShortcutComponent } from './add-shortcut/add-shortcut.component';
+
 
 // to import global data
 import { GlobalDataService } from './global.service';
 
-//route of the component -- editUbication
-import { UbicationEditComponent } from './ubication-edit/ubication-edit.component';
 
-//route of the component -- ubicationChange
-import { UbicationChangeComponent } from './ubication-change/ubication-change.component';
 
 //route of the component -- ubicationChange
 import { EditRolComponent } from './edit-rol/edit-rol.component';
@@ -56,17 +45,8 @@ import { EditRolComponent } from './edit-rol/edit-rol.component';
 import { EditRolCheckComponent } from './edit-rol-check/edit-rol-check.component';
 
 
-//route of the component -- Edit User
-import { EditUserComponent } from './edit-user/edit-user.component';
 
-//route of the component -- LocationRegister
-import { LocationRegisterComponent } from './location-register/location-register.component';
 
-//route of the component -- LocationNew
-import { LocationNewRegisterComponent } from './location-new-register/location-new-register.component';
-
-//route of the component -- addCoordenadas
-import { InputCoordinatesComponent } from './input-coordinates/input-coordinates.component';
 
 //route of the component -- addRole
 import { AddRolComponent } from './add-rol/add-rol.component';
@@ -83,15 +63,8 @@ import { RolCreatedComponent } from './rol-created/rol-created.component';
 //route of the component -- addUserTemaplate
 import { AddUserTemplateComponent } from './add-user-template/add-user-template.component';
 
-//route of the component -- addCoordenadas
-import { CreatedLocationComponent } from './created-location/created-location.component';
-import { AccessViewComponent } from './access-view/access-view.component';
-import { TableAccessComponent } from './table-access/table-access.component';
-import { AddAccessComponent } from './add-access/add-access.component';
-import { AccessEditComponent } from './access-edit/access-edit.component';
-import { RegisterAccessViewComponent } from './register-access-view/register-access-view.component';
-import { AccessNewViewComponent } from './access-new-view/access-new-view.component';
-import { CreatedAccessViewComponent } from './created-access-view/created-access-view.component';
+
+
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -120,37 +93,15 @@ import { BootstrapModalModule } from 'angular2-modal/plugins/bootstrap';
     LocationsComponent,
     AccessComponent,
     RolesComponent,
-    AddUsersComponent,
     HeaderAddUsersComponent,
-    CreateUserComponent,
-    NewUserComponent,
-    AddShortcutComponent,
-    UbicationEditComponent,
-    UbicationChangeComponent,
     EditRolComponent,
     EditRolCheckComponent,
-    EditUserComponent,
-    LocationRegisterComponent,
-    LocationNewRegisterComponent,
-    InputCoordinatesComponent,
 
     AddRolComponent,
     AddRoleAccessComponent,
     RolCreatedComponent,
     AddUserTemplateComponent,
     //AdditionCalculateWindow,
-
-
-    CreatedLocationComponent,
-    CreatedLocationComponent,
-    AccessViewComponent,
-    TableAccessComponent,
-    AccessEditComponent,
-    AddAccessComponent,
-    RegisterAccessViewComponent,
-    AccessNewViewComponent,
-    CreatedAccessViewComponent,
-    InputCoordinatesComponent,
     CustomModal,
     EditModal,
     EditModalLoc ,
