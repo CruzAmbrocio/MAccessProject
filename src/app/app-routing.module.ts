@@ -10,12 +10,31 @@ import { LocationsComponent } from './locations/locations.component';
 import { AccessComponent } from './access/access.component';
 import { RolesComponent } from './roles/roles.component';
 import { HeaderAddUsersComponent } from './header-add-users/header-add-users.component';
+<<<<<<< HEAD
 import { EditRolComponent } from './edit-rol/edit-rol.component';
 import { EditRolCheckComponent } from './edit-rol-check/edit-rol-check.component';
+=======
+
+import { EditRolComponent } from './edit-rol/edit-rol.component';
+import { EditRolCheckComponent } from './edit-rol-check/edit-rol-check.component';
+
+
+>>>>>>> 9849712736ac5c9f15da9459cc7156225e87b4c8
 import { AddRolComponent } from './add-rol/add-rol.component';
 import { AddRoleAccessComponent } from './add-role-access/add-role-access.component';
 import { RolCreatedComponent } from './rol-created/rol-created.component';
 
+<<<<<<< HEAD
+=======
+
+
+
+
+
+
+
+
+>>>>>>> 9849712736ac5c9f15da9459cc7156225e87b4c8
 const routes: Routes = [
   {
     path: 'login',
@@ -104,6 +123,10 @@ const routes: Routes = [
     path: 'editUserView',
     component : HeaderAddUsersComponent,
     children: [
+<<<<<<< HEAD
+=======
+
+>>>>>>> 9849712736ac5c9f15da9459cc7156225e87b4c8
     ]
   },
   {
