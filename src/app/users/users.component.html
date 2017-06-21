@@ -16,107 +16,98 @@
             <tr class="cellFormat">
               <td>Alex Doe</td>
               <td>C-level</td> 
-              <td><a (click)="openEditUser()">Editar</a></td>
+              <td (click)="openEditUser()">Editar</td>
             </tr>
             <tr class="cellFormat">
               <td>Betty Doe</td>
               <td>C-level</td> 
-              <td>Edit</td>
+              <td>Editar</td>
             </tr>
             <tr class="cellFormat">
               <td>Carl Doe</td>
               <td>C-level</td> 
-              <td>Edit</td>
+              <td>Editar</td>
             </tr>
             <tr class="cellFormat">
               <td>Diego Doe</td>
               <td>IT</td> 
-              <td>Edit</td>
+              <td>Editar</td>
             </tr>
             <tr class="cellFormat">
               <td>John Doe</td>
               <td>IT</td> 
-              <td>Edit</td>
+              <td>Editar</td>
             </tr>
             <tr class="cellFormat">
               <td>Karla Doe</td>
               <td>IT</td> 
-              <td>Edit</td>
+              <td>Editar</td>
             </tr>
             <tr class="cellFormat">
               <td>Nelson Doe</td>
               <td>Marketing</td> 
-              <td>Edit</td>
+              <td>Editar</td>
             </tr>
             <tr class="cellFormat">
               <td>Oscar Doe</td>
               <td>Marketing</td> 
-              <td>Edit</td>
+              <td>Editar</td>
             </tr>
             <tr class="cellFormat">
               <td>Pedro Doe</td>
               <td>mantenimiento</td> 
-              <td>Edit</td>
+              <td>Editar</td>
             </tr>
             <tr class="cellFormat">
               <td>Karla Doe</td>
               <td>IT</td> 
-              <td>Edit</td>
+              <td>Editar</td>
             </tr>
             <tr class="cellFormat">
               <td>Diego Doe</td>
               <td>IT</td> 
-              <td>Edit</td>
+              <td>Editar</td>
             </tr>
             <tr class="cellFormat">
               <td>Diego Doe</td>
               <td>IT</td> 
-              <td>Edit</td>
+              <td>Editar</td>
             </tr>
             <tr class="cellFormat">
               <td>Diego Doe</td>
               <td>IT</td> 
-              <td>Edit</td>
+              <td>Editar</td>
             </tr>
             <tr class="cellFormat">
               <td>Diego Doe</td>
               <td>IT</td> 
-              <td>Edit</td>
+              <td>Editar</td>
             </tr>
             <tr class="cellFormat">
               <td>Diego Doe</td>
               <td>IT</td> 
-              <td>Edit</td>
+              <td>Editar</td>
             </tr>
             <tr class="cellFormat">
               <td>Karla Doe</td>
               <td>IT</td> 
-              <td>Edit</td>
+              <td>Editar</td>
             </tr>
           </table>
         </div>
       </div>
       <div class="row">
         <div class="containerBtnAdd">
-          <div class="IconPlus" [routerLink]="['/addUsers', {outlets: {editUserOutlet: ['photoUser']}}]">
+          <div (click)="open()" class="IconPlus">
             <img class="img-responsive imgPlus" alt="icon plus" src="./assets/iconos/floating_agregar.png">
           </div>
-            <a class="txtAddUser" [routerLink]="['/addUsers', {outlets: {editUserOutlet: ['photoUser']}}]">Agregar Usuario</a>
-            <button class="btn btn-lg btn-outline-primary" (click)="open()">Launch demo modal</button>
-            <a class="txtAddUser" data-toggle = "modal" data-target="#holissssss">Agregar Usuario</a>
+            <a (click)="open()" class="txtAddUser">Agregar Usuario</a>
         </div>
       </div>
 
     </div>
     <div class="col-sm-2 col-md-4 col-lg-4"></div>
   </div>
-</div>
-
-<div class="modal" id="holissssss">
-  <p (click)="deleteRow()">
-    hola que hace
-  </p>
-
 </div>
 <span defaultOverlayTarget> 
 </span>

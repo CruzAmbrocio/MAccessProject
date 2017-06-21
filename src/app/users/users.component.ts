@@ -41,30 +41,48 @@ export class CustomModal implements CloseGuard, ModalComponent<CustomModalContex
   public registerUserAdd: any;
   public createdUser: any;
   public callFunctionUsers: any;
+  public shortcutAddUser:any;
+
+  isActive: any;
+  isDisabled: any;
+  isActive1: any;
+  isDisabled1: any;
+  currentRoute: any;
+  changeIndicator: any;
+  changeIndicatorInit: any;
+  BackUser: any;
+  dotsIndicators: any
 
   constructor(public modal: Modal, private compiler: Compiler, private injector: Injector, public dialog: DialogRef<CustomModalContext>) {
     this.context = dialog.context;
     this.wrongAnswer = true;
     dialog.setCloseGuard(this);
+            this.changeIndicator = this.changeIndicatiors
+        this.changeIndicator(true, false, false);
   }
   ngOnInit() {
     this.callFunctionUsers = this.changeStepsAddUser;
-    this.callFunctionUsers();
+    this.callFunctionUsers(true, false, false, false);
+
+
+    this.isActive = true;
+    this.isDisabled = false;
+    this.isActive1 = false;
+    this.isDisabled1 = true;
+    this.BackUser = false;
+    this.dotsIndicators = true;
+
   }
   onKeyUp(value) {
     this.wrongAnswer = value != 5;
     this.dialog.close();
   }
-
-
   beforeDismiss(): boolean {
     return true;
   }
-
   beforeClose(): boolean {
     return this.wrongAnswer;
   }
-
   deleteRow() {
     console.log("asdfasdfasdfasdfasdfasdf")
     swal({
@@ -84,12 +102,48 @@ export class CustomModal implements CloseGuard, ModalComponent<CustomModalContex
     })
   }
 
-  changeStepsAddUser() {
-    this.registerUserAdd = true;
-    this.takePictureUser = false;
-    this.createdUser = false;
-    //alert("this.takePictureUser")
+changeIndicatiors(statOne, statTwo, statThree){
+    this.currentRoute = "hola"
+    if (statOne){
+      this.isActive = true;
+      this.isDisabled = false;
+      this.isActive1 = false;
+      this.isDisabled1 = true;
+      this.dotsIndicators = true;
+    } else if(statTwo){
+      this.isActive = false;
+      this.isDisabled = true;
+      this.isActive1 = true;
+      this.isDisabled1 = false;
+      this.BackUser = true;
+      this.dotsIndicators = true;
+    } else if(statThree){
+      this.BackUser = false;
+      this.dotsIndicators = false;
+    }
+  }
 
+
+  changeStepsAddUser(param1, param2, param3, param4) {
+    this.takePictureUser = param1;
+    this.registerUserAdd = param2;
+    this.createdUser = param3;
+    this.shortcutAddUser = param4;
+    //alert("this.takePictureUser")
+  }
+    types:any[]=[
+        {id:'C-Level',Name:'C-Level'},
+        {id:'IT',Name:'IT'},
+        {id:'Marketing',Name:'Marketing'},
+        {id:'Mantenimiento',Name:'Mantenimiento'},
+        {id:'Ventas',Name:'ventasddd'}
+  ];
+  /*item to be preselected should be in the below object which 
+  *is returned by the web  service
+  */
+  selectedElement:any= {id:'IT',Name:'IT'};
+  load(val){
+    console.log(val)
   }
 }
 //------------------------------------------------------------------------------
@@ -102,9 +156,11 @@ export class CustomModal implements CloseGuard, ModalComponent<CustomModalContex
 export class EditModal implements CloseGuard, ModalComponent<CustomModalContext>, OnInit {
   context: CustomModalContext;
 
-
-   wrongAnswer: boolean;
-   shouldUseMyClass: boolean;
+  wrongAnswer: boolean;
+  shouldUseMyClass: boolean;
+   shortcutEditUser:any;
+   shortcutUserTable:any;
+   callFunctionUserseEdit:any;
 
   constructor(public modal: Modal, private compiler: Compiler, private injector: Injector, public dialog: DialogRef<CustomModalContext>) {
     this.context = dialog.context;
@@ -112,6 +168,8 @@ export class EditModal implements CloseGuard, ModalComponent<CustomModalContext>
     dialog.setCloseGuard(this);
   }
   ngOnInit() {
+    this.callFunctionUserseEdit = this.changeStepsEditUser;
+    this.callFunctionUserseEdit(true, false);    
   }
   closeSecond(value) {
     this.wrongAnswer = value != 5;
@@ -145,7 +203,13 @@ export class EditModal implements CloseGuard, ModalComponent<CustomModalContext>
       'Cancelar'
     })
   }
-
+  changeStepsEditUser(param1, para2) {
+    console.log("alkdfalsdkjflaksdjflaks");
+    this.shortcutEditUser = param1;
+    this.shortcutUserTable = para2;
+    
+    //alert("this.takePictureUser")
+  }
 }
 //------------------------------------------------------------------------------
 declare var swal: any;
@@ -170,5 +234,4 @@ export class UsersComponent implements OnInit {
   openEditUser() {
     this.modal.open(EditModal, overlayConfigFactory({ num1: 2, num2: 3 }));
   }
-
 }

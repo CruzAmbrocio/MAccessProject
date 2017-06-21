@@ -12,3 +12,4 @@ import { AddUserTemplateComponent } from './add-user-template.component';
   declarations: [AddUserTemplateComponent]
 })
 export class AddUserTemplateModule { }
+

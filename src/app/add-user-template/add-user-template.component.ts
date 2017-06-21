@@ -18,5 +18,18 @@ export class AddUserTemplateComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  types:any[]=[
+        {id:'C-Level',Name:'C-Level'},
+        {id:'IT',Name:'IT'},
+        {id:'Marketing',Name:'Marketing'},
+        {id:'Mantenimiento',Name:'Mantenimiento'},
+        {id:'Ventas',Name:'ventasddd'}
+  ];
+  /*item to be preselected should be in the below object which 
+  *is returned by the web  service
+  */
+  selectedElement:any= {id:'IT',Name:'IT'};
+  load(val){
+    console.log(val)
+  }
 }

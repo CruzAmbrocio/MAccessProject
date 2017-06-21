@@ -21,8 +21,8 @@
         <div class="col-xs-2 col-md-2"></div>
     </div>
 </div>
-
-<div class="container">
+<!-- Vista -->
+<div  *ngIf="shortcutEditUser" class="container">
   <div class="row">
   <div class="col-md-2"></div>
     <div class="col-xs-12 col-md-8 col-lg-8">
@@ -47,7 +47,7 @@
         <img class="imgUserProfile" src="./assets/iconos/foto_previw.jpg">
       </div>
       <div class="contentInfoRegister">
-        <a class="titleAccess" [routerLink]="['/addUsers', {outlets: {editUserOutlet: ['addShortcut']}}]"><img class="iconAdd" src="./assets/iconos/icon_agregar.png">&nbsp;&nbsp;&nbsp;Agregar acceso directo?</a>
+        <a class="titleAccess" (click)="changeStepsEditUser(false, true)" ><img class="iconAdd" src="./assets/iconos/icon_agregar.png">&nbsp;&nbsp;&nbsp;Agregar acceso directo?</a>
         <p class="desAccessUser">El acceso directo asigna permisos de acceso independientes del<br/>rol, a un usuario especifico.</p>
       </div>
       <a (click)="closeSecond(5)" class="btnChangesDone">&#10004; &nbsp;&nbsp;Realizar Cambios</a>
@@ -55,4 +55,34 @@
     </div>
   <div class="col-md-2"></div>
   </div>
+</div>
+<div *ngIf="shortcutUserTable" class="container">
+    <div class="row">
+    <div class="col-md-2"></div>
+        <div class="col-xs-12 col-md-8 col-lg-8">
+            <div class="contentCenterUsers">
+                <p class="centerTitleUsers">REGISTRAR NUEVO USUARIO</p>
+                <p class="subtitlesUserViews">Agregar acceso directo para este usuario</p>
+            </div>
+            <div class="contentNewRegister">
+                <div class="boxContentData">    
+                    <div class="contentRows">
+                        <table class="table table-hover">
+                          <tbody>
+                            <tr>
+                              <td class="placedsName">Zona Pradera<img class="iconArrow" src="./assets/iconos/arrow-icon.png"></td>
+                            </tr>
+                            <tr>
+                              <td class="placedsName">Europlaza<img class="iconArrow" src="./assets/iconos/arrow-icon.png"></td>
+                            </tr>
+                            <hr class="lineRow">
+                          </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <a (click)="onKeyUp(5)" class="btnGeneralUser">Aceptar</a>
+        </div>
+    <div class="col-md-2"></div>
+    </div>
 </div>
