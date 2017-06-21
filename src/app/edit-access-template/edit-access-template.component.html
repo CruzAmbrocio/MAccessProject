@@ -1,0 +1,82 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-2 col-md-2"></div>
+        <div class="col-xs-8 col-md-8">
+            <div class="headerCl">
+                <div class="btnBackUser" *ngIf="BackUser" [routerLink]="['/addUsers', {outlets: {editUserOutlet: ['photoUser']}}]">
+                    <img src="./assets/iconos/icon_volver.png" class="imgBackUser">
+                    <p class="txtBackUser"> Volver</p>
+                </div>
+                <a (click)="closeEditAccess(5)" >
+                    <img src="./assets/iconos/icon_cerrar.png" class="iconHeaderUser">
+                </a>
+            </div>
+            <div class="dotsSlider">
+                <div class="contIndicators" *ngIf="dotsIndicators">
+                    <div class="DotLeft" [ngClass]="{'circulo1': isActive, 'circulo2': isDisabled}"></div>
+                    <div class="DotRigth" [ngClass]="{'circulo1': isActive1, 'circulo2': isDisabled1}"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-2 col-md-2"></div>
+    </div>
+</div>
+
+<div class="container">
+  <div class="row">
+  <div class="col-md-2"></div>
+    <div class="col-xs-12 col-md-8 col-lg-8">
+      <div class="centerTitlesAccess">
+        <p class="AccessEdit">EDITAR ACCESO</p>
+        <p class="accessDesEdit">Realizar modifícaciones en la información</p>
+      </div>
+      <div class="accessContentData">
+        <div class="boxAccessContent">
+          <form class="posAccessInputs">
+            <div class="row form-group">
+              <p class="lblAccessInput">Nombre</p>
+              <input type="contentText" class="form-control inputCellarName" id="cellarName" placeholder="Bodega 2">
+            </div>
+            <div class="row form-group">
+              <p class="lblAccessInput">ID</p>
+                <input type="number" class="form-control inputCellarID" id="cellarID" placeholder="125-14258">
+              </div>
+              <div class="row form-group">  
+                <p class="lblAccessInput">Descripción</p>
+                <input type="contentText" class="form-control inputCellarDesc" id="cellarDesc" placeholder="Descripción">
+              </div>
+          </form>
+          <hr class="accessLine">
+          <p class="lblAccess">¿Qué permite el acceso?</p>
+          <div class="contentSelection">
+            <div class="container">
+              <ul>
+                <li class="buttonSelecction">
+                  <input type="radio" id="f-option" name="selector">
+                  <label for="f-option">Entrada</label>
+                  
+                  <div class="check"></div>
+                </li>
+                
+                <li class="buttonSelecction">
+                  <input type="radio" id="s-option" name="selector">
+                  <label for="s-option">Salida</label>
+                  
+                  <div class="check"><div class="inside"></div></div>
+                </li>
+                <li class="buttonSelecction">
+                  <input type="radio" id="t-option" name="selector">
+                  <label for="t-option">Entrada y Salida</label>
+                  <div class="check"><div class="inside"></div></div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a [routerLink]="['/editAccessView', {outlets: {editUserOutlet: ['allowAccess']}}]" class="btnAccessNext">Siguiente</a>
+      <a (click)="on()"><img class="delIcon" src="../assets/iconos/icon_eliminar.png"></a>
+    </div>
+  <div class="col-md-2"></div>
+  </div>
+</div>

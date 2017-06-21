@@ -1,0 +1,69 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-2 col-md-2"></div>
+        <div class="col-xs-8 col-md-8">
+            <div class="headerCl">
+                <div class="btnBackUser" *ngIf="BackUser" [routerLink]="['/addUsers', {outlets: {editUserOutlet: ['photoUser']}}]">
+                    <img src="./assets/iconos/icon_volver.png" class="imgBackUser">
+                    <p class="txtBackUser"> Volver</p>
+                </div>
+                <a (click)="closeEditLoc(5)" >
+                    <img src="./assets/iconos/icon_cerrar.png" class="iconHeaderUser">
+                </a>
+            </div>
+            <div class="dotsSlider">
+                <div class="contIndicators" *ngIf="dotsIndicators">
+                    <div class="DotLeft" [ngClass]="{'circulo1': isActive, 'circulo2': isDisabled}"></div>
+                    <div class="DotRigth" [ngClass]="{'circulo1': isActive1, 'circulo2': isDisabled1}"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-2 col-md-2"></div>
+    </div>
+</div>
+
+<div id="overlay">
+  <div id="text">
+    <div class="cirleImgDel">
+      <img class="imgDelete" src="../assets/iconos/icon_eliminar.png">
+    </div>
+    <p class="textGrayBold">¿Eliminar Usuario Definitivamente?</p>
+    <p class="textGrayReg">El usuario se eliminará permanentemente.</p>
+    <div class="containerButtons">
+      <a (click)="off()" class="btnDelete">Eliminar</a>
+      <a (click)="off()" class="btnCancel">Cancelar</a>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+  <div class="col-md-2"></div>
+    <div class="col-xs-12 col-md-8 col-lg-8">
+      <div class="centerTitlesUbication">
+        <p class="ubicactionEdit">EDITAR UBICACIÓN</p>
+        <p class="ubicactionDesEdit">Realizar modifícaciones en la información</p>
+      </div>
+      <div class="contentDataUbication">
+        <div class="boxContentUbication">
+          <form class="posInputsUbication">
+            <div class="row form-group">
+              <p class="lblInputLocat">Nombre</p>
+              <input type="contentText" class="form-control inputName" id="name" placeholder="Oficinas IT">
+            </div>
+            <div class="row form-group">
+              <p class="lblInputLocat">Descripción</p>
+                <input type="contentText" class="form-control inputDesc" id="desc" placeholder="Descripción">
+              </div>
+              <div class="row form-group">  
+                <p class="lblInputLocat">Coordenadas</p>
+                <input type="contentText" class="form-control inputCoordinate" id="coord" placeholder="14.581608, -90.495403">
+              </div>
+          </form>
+        </div>
+      </div>
+      <a [routerLink]="['/editLocationView', {outlets: {editUserOutlet: ['ubicationEdit']}}]" class="btnUbication">Siguiente</a>
+      <a (click)="deleteWarningEdit()"><img class="delIcon" src="../assets/iconos/icon_eliminar.png"></a>
+    </div>
+  <div class="col-md-2"></div>
+  </div>
+</div>

@@ -22,7 +22,7 @@ export class CustomModalContext extends BSModalContext {
 
 /**
  * A Sample of how simple it is to create a new window, with its own injects.
- */
+ */ 
 @Component({
   selector: 'modal-content',
   styleUrls: ['../add-user-template/add-user-template.component.css'],
@@ -157,7 +157,7 @@ declare var swal: any;
 export class UsersComponent implements OnInit {
   @Input()  name;
 
-  constructor(public modal: Modal, ) {
+  constructor(public modal: Modal) {
   }
 
    ngOnInit() {
@@ -172,63 +172,3 @@ export class UsersComponent implements OnInit {
   }
 
 }
-//------------------------------------------------------------------------------------------------------------------------------
-/*
-import { Component, OnInit, NgModule, Input } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { JsonpModule } from '@angular/http';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { NgbModal, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
-import { AddUserTemplateComponent } from '../add-user-template/add-user-template.component';
-@Component({
-  selector: 'ngbd',
-  templateUrl: '../add-user-template/add-user-template.component.html',
-})
-export class NgbdModalContent {
-  @Input() name;
-  constructor(public activeModal: NgbActiveModal) { }
-}
-
-declare var swal: any;
-@Component({
-  selector: 'app-users',
-  templateUrl: './users.component.html',
-  styleUrls: ['./users.component.css']
-})
-export class UsersComponent implements OnInit {
-
-  constructor(private modalService: NgbModal) { }
-
-  ngOnInit() {
-  }
-  open() {
-    console.log("sdfsdfsdfsdfsdfsdfs");
-    const modalRef = this.modalService.open(NgbdModalContent);
-    modalRef.componentInstance.name = 'World';
-  }
-
-
-
-
-  // ------------------------------------------------------
-  deleteRow() {
-    swal({
-      html: `
-            <div class="cirleImgDel">  
-              <img class="imgDelete" src="../assets/iconos/icon_eliminar.png">
-            </div>
-            <p class="textGrayBold">¿Eliminar Usuario Definitivamente?</p>
-            <p class="textGrayReg">El usuario se eliminará permanentemente.</p>`,
-      showCancelButton: true,
-      confirmButtonClass: "btnDelete",
-      cancelButtonClass: "btnCancel",
-      confirmButtonText:
-      'Eliminar',
-      cancelButtonText:
-      'Cancelar'
-    })
-  }
-  //-------------------------------------------------------
-}
-*/
