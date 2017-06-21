@@ -1,9 +1,14 @@
+<!--VISTA HEADER acceso -->
 <div class="container">
     <div class="row">
         <div class="col-xs-2 col-md-2"></div>
         <div class="col-xs-8 col-md-8">
             <div class="headerCl">
-                <div class="btnBackUser" *ngIf="BackUser" [routerLink]="['/addUsers', {outlets: {editUserOutlet: ['photoUser']}}]">
+                <div class="btnBackUser" *ngIf="BackAddLoc" (click)="changeStepsAccessNew(true, false, false, false)" (click)="changeIndicatiors(true, false, false, false)" >
+                    <img src="./assets/iconos/icon_volver.png" class="imgBackUser">
+                    <p class="txtBackUser"> Volver</p>
+                </div>
+                <div class="btnBackUser" *ngIf="BackAddLoc2" (click)="changeStepsAccessNew(false, true, false, false)" (click)="changeIndicatiors(false, true, false, false)">
                     <img src="./assets/iconos/icon_volver.png" class="imgBackUser">
                     <p class="txtBackUser"> Volver</p>
                 </div>
@@ -14,22 +19,77 @@
             <div class="dotsSlider">
                 <div class="contIndicators" *ngIf="dotsIndicators">
                     <div class="DotLeft" [ngClass]="{'circulo1': isActive, 'circulo2': isDisabled}"></div>
-                    <div class="DotRigth" [ngClass]="{'circulo1': isActive1, 'circulo2': isDisabled1}"></div>
+                    <div class="DotRigth" [ngClass]="{  'circulo1': isActive1, 'circulo2': isDisabled1}"></div>
+                   <div class="DotCenter" [ngClass]="{'circulo1': isActive2, 'circulo2': isDisabled2}"></div>
                 </div>
             </div>
         </div>
         <div class="col-xs-2 col-md-2"></div>
     </div>
 </div>
-
-<!--Tabla de edicion de acceso-->
-<div class="container">
+<!--VISTA REGISTRO NUEVO ACCESO-->
+<div *ngIf="registerAccessNew" class="container">
   <div class="row">
   <div class="col-md-2"></div>
     <div class="col-xs-12 col-md-8 col-lg-8">
-      <div class="cenTitlesLoc">
-        <p class="editLoc">EDITAR ACCESO</p>
-        <p class="desEditLoc">Modifica la ubicación</p>
+      <div class="centerBoxDataAccess">
+        <p class="titleAccessViews">REGISTRAR NUEVO ACCESO</p>
+        <p class="descAccessViews">Completa la información del acceso.</p>
+      </div>
+      <div class="accessContentData">
+        <div class="boxAccessContent">
+          <form class="posAccessInputs">
+            <div class="row rowCheckbox form-group">
+              <input type="contentText" class="form-control inputRegisName" id="registerName" placeholder="Nombre">
+            </div>
+            <div class="row rowCheckbox form-group">
+                <input type="number" class="form-control inputRegistID" id="registerID" placeholder="ID">
+              </div>
+              <div class="row rowCheckbox form-group">  
+                <input type="contentText" class="form-control inputRegistDesc" id="registerDesc" placeholder="Descripción">
+              </div>
+          </form>
+          <hr class="accessLine">
+          <p class="lblAccess">¿Qué permite el acceso?</p>
+          <div class="contentSelection">
+            <div class="row">
+              <ul>
+                <li class="buttonSelecction">
+                  <input type="radio" id="f-option" name="selector">
+                  <label for="f-option">Entrada</label>
+                  
+                  <div class="check"></div>
+                </li>
+                
+                <li class="buttonSelecction">
+                  <input type="radio" id="s-option" name="selector">
+                  <label for="s-option">Salida</label>
+                  
+                  <div class="check"><div class="inside"></div></div>
+                </li>
+                <li class="buttonSelecction">
+                  <input type="radio" id="t-option" name="selector">
+                  <label for="t-option">Entrada y Salida</label>
+                  <div class="check"><div class="inside"></div></div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a (click)="changeStepsAccessNew(false, true, false, false)" (click)="changeIndicatiors(false, true, false, false)" class="btnGeneralAllAccess">Siguiente</a>
+    </div>
+  <div class="col-md-2"></div>
+  </div>
+</div>
+<!--Tabla de acceso de registro-->
+<div *ngIf="tableAccessAddData" class="container">
+  <div class="row">
+  <div class="col-md-2"></div>
+    <div class="col-xs-12 col-md-8 col-lg-8">
+      <div class="centerBoxDataAccess">
+        <p class="titleAccessViews">REGISTRAR NUEVO ACCESSO</p>
+        <p class="descAccessViews">Selecciona la ubicación del acceso.</p>
       </div>
       <div class="contentSubtitItle">
         <div class="boxContSub">
@@ -74,8 +134,68 @@
               </div>  
         </div>
       </div>
-      <a [routerLink]="['/editAccessView', {outlets: {editUserOutlet: ['editAccessView']}}]" class="btnChangerLocation">Siguiente</a>
-      <a><img class="delIcon" src="../assets/iconos/icon_eliminar.png"></a>
+      <a (click)="changeStepsAccessNew(false, false, true, false)" (click)="changeIndicatiors(false, false, true, false)" class="btnAccessCreate">Siguiente</a>
+    </div>
+  <div class="col-md-2"></div>
+  </div>
+</div>
+<!-- Vista seleccionar tipo de accesso -->
+<div *ngIf="selectionAccessType" class="container">
+  <div class="row">
+  <div class="col-md-2"></div>
+    <div class="col-xs-12 col-md-8 col-lg-8">
+      <div class="centerBoxDataAccess">
+        <p class="titleAccessViews">REGISTRAR NUEVO ACCESO</p>
+        <p class="descAccessViews">Selecciona el tipo de acceso.</p>
+      </div>
+      <div class="accessContentData">
+        <div class="boxContentAcces"> 
+          <div (click)="changeText='Crear Acceso'" class="contentDataAccess">
+            <a><img class="imgSize" src="./assets/iconos/icon_access01_off.png"></a>
+            <p class="textAccessTypeDesactive">Puerta</p>
+          </div>
+          <div class="contentDataAccess">
+            <a><img class="imgMolinete" src="./assets/iconos/icon_access02_on.png"></a>
+            <p class="textAccessTypeActive">Molinete</p>
+          </div>
+          <div class="contentDataAccess">
+            <a><img class="imgTalanquera" src="./assets/iconos/icon_access03_off.png"></a>
+            <p class="textAccessTypeDesactive">Talanquera</p>
+          </div>
+          <div class="contentDataAccess">
+            <a><img class="imgMore" src="./assets/iconos/icon_access04_off.png"></a>
+            <p class="textAccessTypeDesactive">Otros</p>
+          </div>
+        </div>
+      </div>
+      <a (click)="changeStepsAccessNew(false, false, false, true)" (click)="changeIndicatiors(false, false, false, true)" class="btnAccessCreate">{{changeText}}</a>
+    </div>
+  <div class="col-md-2"></div>
+  </div>
+</div>
+<!--VISTA EDITAR ACCESO-->
+<div *ngIf="createdAccess" class="container">
+  <div class="row">
+  <div class="col-md-2"></div>
+    <div class="col-xs-12 col-md-8 col-lg-8">
+      <div class="centerBoxDataAccess">
+        <p class="titleAccessViews">ACCESO CREADO</p>
+        <p class="descAccessViews">El acceso fue creado con éxito.</p>
+      </div>
+      <div class="accessContentData">
+        <div class="boxCreatedAccess"> 
+          <div class="contentDataImg">
+            <a><img class="imgSize" src="./assets/iconos/icon_access02_on.png"></a>
+          </div>
+          <div class="dataAccess">
+            <p class="styleTextData">Bodega 2 -&nbsp;<span class="sTextData">Molinete</span></p>
+            <p class="sTextData">Zona Pradera</p>
+            <p class="sTextData">Torre 4</p>
+            <p class="sTextData">Oficina 310</p>
+          </div>
+        </div>
+      </div>
+      <a (click)="closeAddAccess(5)" (click)="changeIndicatiors(false, true, false)" class="btnCreatedAccess">Aceptar</a>
     </div>
   <div class="col-md-2"></div>
   </div>

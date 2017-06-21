@@ -23,12 +23,36 @@ export class AddModalAccess implements CloseGuard, ModalComponent<CustomModalCon
    wrongAnswer: boolean;
    shouldUseMyClass: boolean;
 
+  public registerAccessNew: any;
+  public tableAccessAddData: any;
+  public selectionAccessType: any;
+  public createdAccess: any;
+  public callFunctionAccess: any;
+  public changeText:any;
+
+ isActive: any;
+ isDisabled: any;
+ isActive1: any;
+ isDisabled1: any;
+ isActive2: any;
+ isDisabled2: any;
+ changeIndicator: any;
+ BackAddLoc: any;
+ BackAddLoc2: any;
+ dotsIndicators: any
+
   constructor(public modal: Modal, private compiler: Compiler, private injector: Injector, public dialog: DialogRef<CustomModalContext>) {
     this.context = dialog.context;
     this.wrongAnswer = true;
     dialog.setCloseGuard(this);
+
+    this.changeIndicator = this.changeIndicatiors
+    this.changeIndicator(true, false, false);
   }
   ngOnInit() {
+    this.callFunctionAccess = this.changeStepsAccessNew;
+    this.callFunctionAccess(true, false, false, false);
+    this.changeText = "Siguiente";
   }
   closeAddAccess(value) {
     this.wrongAnswer = value != 5;
@@ -61,6 +85,53 @@ export class AddModalAccess implements CloseGuard, ModalComponent<CustomModalCon
       'Cancelar'
     })
   }
+  changeIndicatiors(statOne, statTwo, statThree, statFour) {
+    if (statOne) {
+      this.isActive = true;
+      this.isDisabled = false;
+      this.isActive1 = false;
+      this.isDisabled1 = true;
+      this.isActive2 = false;
+      this.isDisabled2 = true;
+
+      this.BackAddLoc = false;
+      this.BackAddLoc2 = false;
+      this.dotsIndicators = true;
+    } else if (statTwo) {
+      this.isActive = false;
+      this.isDisabled = true;
+      this.isActive1 = true;
+      this.isDisabled1 = false;
+      this.isActive2 = false;
+      this.isDisabled2 = true;
+
+      this.BackAddLoc = true;
+      this.BackAddLoc2 = false;
+      this.dotsIndicators = true;
+    } else if ( statThree) {
+      this.isActive = false;
+      this.isDisabled = true;
+      this.isActive1 = false;
+      this.isDisabled1 = true;
+      this.isActive2 = true;
+      this.isDisabled2 = false;
+
+      this.BackAddLoc = false;
+      this.BackAddLoc2 = true
+      this.dotsIndicators = true;
+    } else if (statFour) {
+      this.BackAddLoc = false;
+      this.BackAddLoc2 = false;
+      this.dotsIndicators = false;
+    }
+  }
+   changeStepsAccessNew(viewRegAccess, viewTabAddAccess, viewSelAccess, viewCreaAccess) {
+    this.registerAccessNew = viewRegAccess;
+    this.tableAccessAddData = viewTabAddAccess;
+    this.selectionAccessType = viewSelAccess;
+    this.createdAccess = viewCreaAccess;
+    console.log("holis");
+  }
 
 }
 //------------------------------------------------------------------------------
@@ -77,12 +148,34 @@ export class editModalAccess implements CloseGuard, ModalComponent<CustomModalCo
    wrongAnswer: boolean;
    shouldUseMyClass: boolean;
 
+  public accessEdit: any;
+  public tableAccessEdit: any;
+  public editSelectionAccessType: any;
+  public callFunctionAccessEdit: any;
+  //public changeText:any;
+
+  isActive: any;
+  isDisabled: any;
+  isActive1: any;
+  isDisabled1: any;
+  isActive2: any;
+  isDisabled2: any;
+  changeIndicator: any;
+  BackAddLoc: any;
+  BackAddLoc2: any;
+  dotsIndicators: any
+
   constructor(public modal: Modal, private compiler: Compiler, private injector: Injector, public dialog: DialogRef<CustomModalContext>) {
     this.context = dialog.context;
     this.wrongAnswer = true;
     dialog.setCloseGuard(this);
+
+    this.changeIndicator = this.changeIndicatiors
+    this.changeIndicator(true, false, false);
   }
   ngOnInit() {
+    this.callFunctionAccessEdit = this.changeStepsAccessEdit;
+    this.callFunctionAccessEdit(true, false, false, false);
   }
   closeEditAccess(value) {
     this.wrongAnswer = value != 5;
@@ -114,6 +207,51 @@ export class editModalAccess implements CloseGuard, ModalComponent<CustomModalCo
       cancelButtonText:
       'Cancelar'
     })
+  }
+   changeStepsAccessEdit(viewEdit, viewTabAccessEdit, viewAccessEdit) {
+    this.accessEdit = viewEdit;
+    this.tableAccessEdit = viewTabAccessEdit;
+    this.editSelectionAccessType = viewAccessEdit;
+  }
+  changeIndicatiors(statOne, statTwo, statThree, statFour) {
+    if (statOne) {
+      this.isActive = true;
+      this.isDisabled = false;
+      this.isActive1 = false;
+      this.isDisabled1 = true;
+      this.isActive2 = false;
+      this.isDisabled2 = true;
+
+      this.BackAddLoc = false;
+      this.BackAddLoc2 = false;
+      this.dotsIndicators = true;
+    } else if (statTwo) {
+      this.isActive = false;
+      this.isDisabled = true;
+      this.isActive1 = true;
+      this.isDisabled1 = false;
+      this.isActive2 = false;
+      this.isDisabled2 = true;
+
+      this.BackAddLoc = true;
+      this.BackAddLoc2 = false;
+      this.dotsIndicators = true;
+    } else if ( statThree) {
+      this.isActive = false;
+      this.isDisabled = true;
+      this.isActive1 = false;
+      this.isDisabled1 = true;
+      this.isActive2 = true;
+      this.isDisabled2 = false;
+
+      this.BackAddLoc = false;
+      this.BackAddLoc2 = true
+      this.dotsIndicators = true;
+    } else if (statFour) {
+      this.BackAddLoc = false;
+      this.BackAddLoc2 = false;
+      this.dotsIndicators = false;
+    }
   }
 
 }
