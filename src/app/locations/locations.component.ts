@@ -51,8 +51,8 @@ export class AddModalLoc implements CloseGuard, ModalComponent<CustomModalContex
             <div class="cirleImgDel">  
               <img class="imgDelete" src="../assets/iconos/icon_eliminar.png">
             </div>
-            <p class="textGrayBold">¿Eliminar Usuario Definitivamente?</p>
-            <p class="textGrayReg">El usuario se eliminará permanentemente.</p>`,
+            <p class="textGrayBold">¿Eliminar Ubicacion Definitivamente?</p>
+            <p class="textGrayReg">La ubicacion se eliminará permanentemente.</p>`,
       showCancelButton: true,
       confirmButtonClass: "btnDelete",
       cancelButtonClass: "btnCancel",
@@ -78,12 +78,28 @@ export class EditModalLoc implements CloseGuard, ModalComponent<CustomModalConte
    wrongAnswer: boolean;
    shouldUseMyClass: boolean;
 
+   public callFunctionAddLoc: any;
+   public enterlocation: any;
+   public selectLocation: any;
+
+   isActive: any;
+   isDisabled: any;
+   isActive1: any;
+   isDisabled1: any;
+   changeIndicator: any;
+   BackUser: any;
+   dotsIndicators: any
+
   constructor(public modal: Modal, private compiler: Compiler, private injector: Injector, public dialog: DialogRef<CustomModalContext>) {
     this.context = dialog.context;
     this.wrongAnswer = true;
     dialog.setCloseGuard(this);
+    this.changeIndicator = this.changeIndicatiors
+    this.changeIndicator(true, false, false);
   }
   ngOnInit() {
+    this.callFunctionAddLoc = this.changeStepsEditLoc;
+    this.callFunctionAddLoc(true, false);
   }
   closeEditLoc(value) {
     this.wrongAnswer = value != 5;
@@ -99,14 +115,13 @@ export class EditModalLoc implements CloseGuard, ModalComponent<CustomModalConte
   }
 
   deleteWarningEdit() {
-    console.log("asdfasdfasdfasdfasdfasdf")
     swal({
       html: `
             <div class="cirleImgDel">  
               <img class="imgDelete" src="../assets/iconos/icon_eliminar.png">
             </div>
-            <p class="textGrayBold">¿Eliminar Usuario Definitivamente?</p>
-            <p class="textGrayReg">El usuario se eliminará permanentemente.</p>`,
+            <p class="textGrayBold">¿Eliminar Ubicacion Definitivamente?</p>
+            <p class="textGrayReg">La ubicacion se eliminará permanentemente.</p>`,
       showCancelButton: true,
       confirmButtonClass: "btnDelete",
       cancelButtonClass: "btnCancel",
@@ -117,6 +132,30 @@ export class EditModalLoc implements CloseGuard, ModalComponent<CustomModalConte
     })
   }
 
+  changeStepsEditLoc(param1, param2) {
+    this.enterlocation = param1;
+    this.selectLocation = param2;
+  }
+
+  changeIndicatiors(statOne, statTwo, statThree) {
+    if (statOne) {
+      this.isActive = true;
+      this.isDisabled = false;
+      this.isActive1 = false;
+      this.isDisabled1 = true;
+      this.dotsIndicators = true;
+    } else if (statTwo) {
+      this.isActive = false;
+      this.isDisabled = true;
+      this.isActive1 = true;
+      this.isDisabled1 = false;
+      this.BackUser = false;
+      this.dotsIndicators = true;
+    } else if (statThree) {
+      this.BackUser = false;
+      this.dotsIndicators = false;
+    }
+  }
 }
 //------------------------------------------------------------------------------
 @Component({
@@ -133,7 +172,7 @@ export class LocationsComponent implements OnInit {
   openEditUser() {
     this.modal.open(EditModalLoc, overlayConfigFactory({ num1: 2, num2: 3 }));
   }
-  openAddUser() {
+  openAddLoc() {
     this.modal.open(AddModalLoc, overlayConfigFactory({ num1: 2, num2: 3 }));
   }
 }

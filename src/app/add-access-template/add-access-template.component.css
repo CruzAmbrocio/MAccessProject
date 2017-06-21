@@ -75,16 +75,16 @@
     display: inline-block;
 }
 /*----------------------------------------------------------*/
-.centerTitlesAccess {
+.centerTitlesEdit {
   text-align: center;
   margin-top: 4%;
 }
-.AccessEdit {
+.editAccess {
   font-family: robotoBold;
   color: #575757;
   font-size: 12px;
 }
-.accessDesEdit {
+.desEditAccess {
   font-family: robotoRegular;
   margin-top: -5px;
   color: #AFAFAF;
@@ -93,38 +93,54 @@
   align-items: center;
   justify-content: center;
 }
-.accessContentData {
+.contentEditAccess {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.boxAccessContent {
+.boxContentAcces {
   height: 140px;
-  width: 55%;
-  margin-top: 4%;
-}
-.posAccessInputs {
-  width: 100%;
-}
-.inputRegisName, .inputRegistID, .inputRegistDesc {
+  width: 35%;
+  margin-top: 2%;
   display: flex;
   align-items: center;
-  margin-bottom: 2%;
+  -webkit-border-radius: 1%; 
+  -moz-border-radius: 1%; 
+  -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .3); 
+  -moz-box-shadow: 0 0 8px rgba(0, 0, 0, .3);
+}
+.contentDataImg {
+  height: 100%;
+  width: 50%;
+}
+.dataAccess {
+  height: 100%;
+  width: 50%;
+}
+.styleTextData {
+  font-family: robotoBold;
+  color: #575757;
+  font-size: 11px;
+  padding-top: 33%;
+}
+.sTextData {
+  color: #AFAFAF;
   font-family: robotoRegular;
-  font-size: 12px;
-  color: #6A6A6A;
-  border-color: #F0F0F0;
-  width: 80%;
+  font-size: 11px;
+  margin-top: -5%;
 }
-.form-group {
+.imgSize {
+  height: 40%;
+  width: 40%;
   display: flex;
-  align-items: center;
-  margin: 0;
-  padding: 0 15px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 32%;
 }
-.btnAccessNext {
-  margin-left: 38%;
-  margin-top: 18%;
+.btnAccessCreate {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 8%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -138,76 +154,47 @@
   font-size: 12px;
   color: #FFF;
 }
-.delIcon {
-  width: 13px;
-  height: 15px;
+
+.rolInput {
+  width: 37%;
+  height: 34px;
+  font-size: 11px;
+  font-family: robotoRegular;
+  background-color: transparent;
+  border-color: #DBDBDB;
+    border-radius: 5%;
+    margin-left: 38%;
+    text-align: left;
+    color: #C9C9C9;
+}
+.lineDivision {
+  border-bottom: 1px solid #EBEBEB;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.lineNone {
+  border-bottom: none;
+}
+.alignDrop {
+  left: inherit;
+  right: 25%;
+  font-size: 10px;
+  font-family: robotoRegular;
+}
+.iconDrop {
   float: right;
-  margin-top: -3%;
-  display: flex;
-  margin-right: 35%;
-  cursor: pointer;
 }
-#overlay {
-  position: fixed;
-  display: none;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ffffff;
-  z-index: 2;
+.cenTitlesLoc {
+  text-align: center;
+  margin-top: 4%;
 }
-#text{
-  display: block;
-  height: 20px;
-  width: 20px;
-  margin-right: auto;
-  margin-left: auto;
- position: relative;
-  top: 50%;
-  transform: translateY(-50%);
-  margin-left: auto;
-  margin-right: auto;
-}
-#text{
-  height: 300px;
-  width: 400px;
-  background-color: #ffffff;
-}
-.imgDelete{
-  display: block;
-  height: 20px;
-  width: 20px;
-  margin-right: auto;
-  margin-left: auto;
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
-  margin-left: auto;
-  margin-right: auto;
-}
-.cirleImgDel{
-  align-items: center;
-  height: 50px;
-  width: 50px;
-  border-radius: 100%;
-  border: solid 2px;
-  border-color: #f64f2b;
-  margin-left: auto;
-  margin-right: auto;
-}
-.textGrayBold {
+.editLoc {
   font-family: robotoBold;
   color: #575757;
   font-size: 12px;
-  margin-right: auto;
-  margin-left: auto;
-  text-align: center;
-  margin-top: 5%;
 }
-.textGrayReg {
+.desEditLoc {
   font-family: robotoRegular;
   margin-top: -5px;
   color: #AFAFAF;
@@ -216,118 +203,127 @@
   align-items: center;
   justify-content: center;
 }
-.containerButtons{
-  width: 70%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 10%;
+/* table Subheader navegation */
+.boxContSub {
+  height: 18px;
+    width: 90%;
+    margin-top: 2%;
 }
-.btnDelete {
-  display: block;
-  align-items: center;
-  justify-content: center;
-  border-radius: 15px;
-  width: 45%;
-  height: 30px;
-  background-color: #f64f2b;
-  text-align: center;
-  text-decoration: none;
-  font-family: robotoBold;
-  font-size: 12px;
-  color: #FFF;
-  float: left;
-  padding-top: 2%;
-  cursor: pointer;
-}
-.accessLine {
-  margin-left: 3%;
-  width: 105%;
-}
-.lblAccess {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.editNav {
   font-family: robotoRegular;
-  color: #9F9F9F;
-  font-size: 11px;
+  color: #989898;
+  font-size: 10px;
+  margin-left: 8px;
 }
-.btnCancel {
-  display: block;
-  align-items: center;
-  justify-content: center;
-  border-radius: 15px;
-  width: 45%;
-  height: 30px;
-  background-color:#ededed;
-  text-align: center;
-  text-decoration: none;
+.marginText {
+  margin-left: 4px;
+}
+.colorText {
+  color: #575757; 
   font-family: robotoBold;
-  font-size: 12px;
-  color: #575757;
-  float: right;
-  padding-top: 2%;
-  cursor: pointer;
 }
-.row {
+.iconArrowNav {
+  height: 10px;
+    width: 10px;
+}
+.contentEditLoc, .contentSubtitItle {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-ul .buttonSelecction{
-  color: #AAAAAA;
-  display: block;
-  position: relative;
-  float: left;
-  margin-top: -5%;
-  margin-left: -7%;
+.boxContentDataLoc {
+  height: 270px;
+    width: 90%;
+    display: flex;
+    margin-top: 1%;
+  -webkit-border-radius: 1%; 
+    -moz-border-radius: 1%; 
+    -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .3); 
+    -moz-box-shadow: 0 0 8px rgba(0, 0, 0, .3);
 }
-ul .buttonSelecction input[type=radio]{
-  position: absolute;
-  visibility: hidden;
+.contentRow {
+    width: 25%;
+    height: 100%;
+    margin-left: 0;
+    border-right: 1px solid #DCDCDC;
 }
-ul .buttonSelecction label{
-  display: block;
-  position: relative;
-  font-family: robotoBold;
-  color: #747474;
-  font-size: 11px;
-  padding: 25px 8px 25px 80px;
-  margin: 9px auto;
-  z-index: 9;
-  cursor: pointer;
-  -webkit-transition: all 0.25s linear;
+.margenRow {
+  margin-left: 2%;
 }
-ul .buttonSelecction .check{
-  display: block;
-  position: absolute;
-  border: 2px solid #AAAAAA;
-  border-radius: 100%;
-  height: 15px;
-  width: 15px;
-  top: 34px;
-  left: 55px;
-  z-index: 5;
-  transition: border .25s linear;
-  -webkit-transition: border .25s linear;
+.activeCellRow {
+    background-color: #00C6AF;
+    height: 12%;
+    margin-top: -12%;
 }
-ul .buttonSelecction .check::before {
-  display: block;
-  position: absolute;
-  content: '';
-  height: 3px;
-  width: 3px;
-  top: 1px;
-  left: 1px;
-  transition: background 0.25s linear;
-  -webkit-transition: background 0.25s linear;
+.textActive {
+  font-family: robotoRegular;
+    font-size: 11px;
+    color: #FFFFFF;
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    padding-left: 5%;
+    display: block;
 }
-input[type=radio]:checked ~ .check {
-  border: 5px solid #0DFF92;
+.desactiveCellRow {
+    height: 12%;
+    margin-top: -12%;
+    border-bottom: 1px solid #DCDCDC;
 }
-input[type=radio]:checked ~ .check::before{
-  background: #0DFF92;
+.textDesactive {
+  font-family: robotoRegular;
+    font-size: 11px;
+    color: #575757;;
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    padding-left: 5%;
+    display: block;
 }
-input[type=radio]:checked ~ label{
-  color: #0DFF92;
+.activeIconArrow {
+  height: 7px;
+    width: 5px;
+    float: right;
+    margin-right: 9%;
+    position: relative;
+    top: -14%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
 }
-
+.desactiveIconArrow {
+  height: 10px;
+    width: 12px;
+    float: right;
+    margin-right: 7%;
+    position: relative;
+    top: -14%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+.btnChangerLocation {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 8%;
+    display: flex;
+  align-items: center;
+  justify-content: center;
+    border-radius: 15px;
+    width: 22%;
+    height: 32px;
+    background-color: #00C6AF;
+    text-align: center;
+    text-decoration: none;
+    font-family: robotoBold;
+    font-size: 12px;
+    color: #FFF;
+}
+.delIcon {
+  width: 13px;
+    height: 15px;
+    float: right;
+    margin-top: -3%;
+    display: flex;
+    margin-right: 33%;
+}

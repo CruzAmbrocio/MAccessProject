@@ -22,71 +22,60 @@
     </div>
 </div>
 
-<!--VISTA NUEVO ACCESO-->
-<div id="overlay">
-  <div id="text">
-    <div class="cirleImgDel">
-      <img class="imgDelete" src="../assets/iconos/icon_eliminar.png">
-    </div>
-    <p class="textGrayBold">¿Eliminar Usuario Definitivamente?</p>
-    <p class="textGrayReg">El usuario se eliminará permanentemente.</p>
-    <div class="containerButtons">
-      <a (click)="off()" class="btnDelete">Eliminar</a>
-      <a (click)="off()" class="btnCancel">Cancelar</a>
-    </div>
-  </div>
-</div>
+<!--Tabla de edicion de acceso-->
 <div class="container">
   <div class="row">
   <div class="col-md-2"></div>
     <div class="col-xs-12 col-md-8 col-lg-8">
-      <div class="centerTitlesAccess">
-        <p class="AccessEdit">REGISTRAR NUEVO ACCESO</p>
-        <p class="accessDesEdit">Completa la información del acceso.</p>
+      <div class="cenTitlesLoc">
+        <p class="editLoc">EDITAR ACCESO</p>
+        <p class="desEditLoc">Modifica la ubicación</p>
       </div>
-      <div class="accessContentData">
-        <div class="boxAccessContent">
-          <form class="posAccessInputs">
-            <div class="row form-group">
-              <input type="contentText" class="form-control inputRegisName" id="registerName" placeholder="Nombre">
-            </div>
-            <div class="row form-group">
-                <input type="number" class="form-control inputRegistID" id="registerID" placeholder="ID">
-              </div>
-              <div class="row form-group">  
-                <input type="contentText" class="form-control inputRegistDesc" id="registerDesc" placeholder="Descripción">
-              </div>
-          </form>
-          <hr class="accessLine">
-          <p class="lblAccess">¿Qué permite el acceso?</p>
-          <div class="contentSelection">
-            <div class="row">
-              <ul>
-                <li class="buttonSelecction">
-                  <input type="radio" id="f-option" name="selector">
-                  <label for="f-option">Entrada</label>
-                  
-                  <div class="check"></div>
-                </li>
-                
-                <li class="buttonSelecction">
-                  <input type="radio" id="s-option" name="selector">
-                  <label for="s-option">Salida</label>
-                  
-                  <div class="check"><div class="inside"></div></div>
-                </li>
-                <li class="buttonSelecction">
-                  <input type="radio" id="t-option" name="selector">
-                  <label for="t-option">Entrada y Salida</label>
-                  <div class="check"><div class="inside"></div></div>
-                </li>
-              </ul>
-            </div>
-          </div>
+      <div class="contentSubtitItle">
+        <div class="boxContSub">
+          <p class="editNav">Zona Pradera<img class="iconArrowNav marginText" src="./assets/iconos/arrow-icon.png"><span class="marginText">Torre 3<img class="iconArrowNav marginText" src="./assets/iconos/arrow-icon.png"></span><span class="marginText colorText">Oficina 514</span></p>
         </div>
       </div>
-      <a [routerLink]="['/editAccessView', {outlets: {editUserOutlet: ['registerAccess']}}]" class="btnAccessNext">Siguiente</a>
-      <a (click)="on()"><img class="delIcon" src="../assets/iconos/icon_eliminar.png"></a>
+      <div class="contentEditLoc">
+        <div class="boxContentDataLoc"> 
+              <div class="row contentRow">  
+                <div class="activeCellRow">
+                  <h1 class="textActive">Zona Pradera</h1>
+                  <img class="activeIconArrow" src="./assets/iconos/arrow-icon-left.png">
+                </div>
+                <div class="desactiveCellRow">
+                  <h1 class="textDesactive">Europlaza</h1>
+                  <img class="desactiveIconArrow" src="./assets/iconos/arrow-icon.png">
+                </div>
+              </div>
+              <div class="row contentRow margenRow">  
+                <div class="desactiveCellRow">
+                  <h1 class="textDesactive">Torre 2</h1>
+                  <img class="desactiveIconArrow" src="./assets/iconos/arrow-icon.png">
+                </div>
+                <div class="activeCellRow">
+                  <h1 class="textActive">Torre 3</h1>
+                  <img class="activeIconArrow" src="./assets/iconos/arrow-icon-left.png">
+                </div>
+                <div class="desactiveCellRow">
+                  <h1 class="textDesactive">Torre 4</h1>
+                  <img class="desactiveIconArrow" src="./assets/iconos/arrow-icon.png">
+                </div>
+              </div>
+              <div class="row contentRow margenRow">  
+                <div class="desactiveCellRow">
+                  <h1 class="textDesactive">Oficina 512</h1>
+                  <img class="desactiveIconArrow" src="./assets/iconos/arrow-icon.png">
+                </div>
+                <div class="activeCellRow">
+                  <h1 class="textActive">Oficina 514</h1>
+                  <img class="activeIconArrow" src="./assets/iconos/arrow-icon-left.png">
+                </div>
+              </div>  
+        </div>
+      </div>
+      <a [routerLink]="['/editAccessView', {outlets: {editUserOutlet: ['editAccessView']}}]" class="btnChangerLocation">Siguiente</a>
+      <a><img class="delIcon" src="../assets/iconos/icon_eliminar.png"></a>
     </div>
   <div class="col-md-2"></div>
   </div>
