@@ -20,8 +20,14 @@ declare var swal: any;
 export class AddModalRol implements CloseGuard, ModalComponent<CustomModalContext>, OnInit {
   context: CustomModalContext;
 
-   wrongAnswer: boolean;
-   shouldUseMyClass: boolean;
+  wrongAnswer: boolean;
+  shouldUseMyClass: boolean;
+
+  public informationRolView: any;
+  public registerNewRol: any;
+  public registerUserAdd: any;
+  public createdRol: any;
+  public callFunctionRols: any;
 
   constructor(public modal: Modal, private compiler: Compiler, private injector: Injector, public dialog: DialogRef<CustomModalContext>) {
     this.context = dialog.context;
