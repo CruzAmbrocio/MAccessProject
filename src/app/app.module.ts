@@ -14,16 +14,16 @@ import { LoginComponent } from './login/login.component';
 import { ControlComponent } from './control/control.component';
 
 //route of the component -- users
-import { UsersComponent } from './users/users.component';
+import { UsersComponent, CustomModal, EditModal } from './users/users.component';
 
 //route of the component -- locations
-import { LocationsComponent } from './locations/locations.component';
+import { LocationsComponent, EditModalLoc, AddModalLoc } from './locations/locations.component';
 
 //route of the component -- access
-import { AccessComponent } from './access/access.component';
+import { AccessComponent, AddModalAccess, editModalAccess } from './access/access.component';
 
 //route of the component -- roles
-import { RolesComponent } from './roles/roles.component';
+import { RolesComponent, AddModalRol, EditModalRol} from './roles/roles.component';
 
 //route of the component -- addUsers
 import { AddUsersComponent } from './add-users/add-users.component';
@@ -107,7 +107,9 @@ import { NgbModal, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalModule } from 'angular2-modal';
 import { BootstrapModalModule } from 'angular2-modal/plugins/bootstrap';
 
-import { AdditionCalculateWindow } from './add-user-template/add-user-template.component';
+
+
+//import { AdditionCalculateWindow } from './add-user-template/add-user-template.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -136,7 +138,7 @@ import { AdditionCalculateWindow } from './add-user-template/add-user-template.c
     AddRoleAccessComponent,
     RolCreatedComponent,
     AddUserTemplateComponent,
-    AdditionCalculateWindow,
+    //AdditionCalculateWindow,
 
 
     CreatedLocationComponent,
@@ -148,7 +150,15 @@ import { AdditionCalculateWindow } from './add-user-template/add-user-template.c
     RegisterAccessViewComponent,
     AccessNewViewComponent,
     CreatedAccessViewComponent,
-    InputCoordinatesComponent
+    InputCoordinatesComponent,
+    CustomModal,
+    EditModal,
+    EditModalLoc ,
+    AddModalLoc,
+    AddModalAccess,
+    editModalAccess,
+    AddModalRol,
+    EditModalRol
 
   ],
   imports: [
@@ -165,11 +175,31 @@ import { AdditionCalculateWindow } from './add-user-template/add-user-template.c
   ],
   providers: [
     GlobalDataService,
-    NgbActiveModal
+    NgbActiveModal,
+    
   ],
-  entryComponents: [AdditionCalculateWindow],
+  entryComponents: [
+    CustomModal,
+    EditModal,
+    EditModalLoc,
+    AddModalLoc,
+    AddModalAccess,
+  editModalAccess,
+  AddModalRol,
+  EditModalRol
+  ],
   bootstrap: [
     AppComponent
-  ]
+  ],
+  exports: [
+    CustomModal,
+    EditModal,
+    EditModalLoc,
+    AddModalLoc,
+    AddModalAccess,
+    editModalAccess,
+    AddModalRol,
+    EditModalRol
+  ],
 })
 export class AppModule { }

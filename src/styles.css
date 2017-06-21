@@ -117,3 +117,32 @@
     .dark-modal .close {
       color: white;   
     }
+
+    .modal-dialog {
+    width: 100%!important;
+      height: 100%!important;
+    }
+    .modal-content {
+    position: relative;
+    background-color: #fff;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box; 
+    border: 0px !important;
+    border-radius: 0px !important; 
+    outline: 0; 
+-webkit-box-shadow: 0px 0px 0px -200px rgba(0,0,0,0);
+-moz-box-shadow: 0px 0px 0px -200px rgba(0,0,0,0);
+box-shadow: 0px 0px 0px -200px rgba(0,0,0,0);
+    height: 100%!important
+}
+.modal-dialog{
+  margin: 0px;
+}
+@media (min-width: 768px){
+.modal-content {
+-webkit-box-shadow: 0px 0px 0px -200px rgba(0,0,0,0);
+-moz-box-shadow: 0px 0px 0px -200px rgba(0,0,0,0);
+box-shadow: 0px 0px 0px -200px rgba(0,0,0,0);
+
+}
+}

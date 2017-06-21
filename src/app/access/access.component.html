@@ -25,7 +25,7 @@
               <td>Torre3</td> 
               <td>Oficina 512</td>
               <td>Salon B5</td>
-              <td><a [routerLink]="['/editAccessView', {outlets: {editUserOutlet: ['editAccess']}}]">Editar</a></td>
+              <td><a (click)="openEditAccess()" >Editar</a></td>
             </tr>
             <tr class="cellFormat">
               <td>Zona Pradera</td>
@@ -82,9 +82,9 @@
       <div class="row">
         <div class="containerBtnAdd">
           <div class="IconPlus">
-            <img class="img-responsive imgPlus" alt="icon plus" src="./assets/iconos/floating_agregar.png">
+            <img (click)="openAddAccess()" class="img-responsive imgPlus" alt="icon plus" src="./assets/iconos/floating_agregar.png">
           </div>
-            <a [routerLink]="['/editAccessView', {outlets: {editUserOutlet: ['newAccess']}}]" class="txtAddUser">Agregar Acceso</a>
+            <a (click)="openAddAccess()" class="txtAddUser">Agregar Acceso</a>
 
         </div>
       </div>
@@ -93,3 +93,5 @@
     <div class="col-sm-4 col-md-4"></div>
   </div>
 </div>
+<span defaultOverlayTarget> 
+</span>
