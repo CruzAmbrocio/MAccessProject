@@ -3,38 +3,34 @@
         <div class="col-xs-2 col-md-2"></div>
         <div class="col-xs-8 col-md-8">
             <div class="headerCl">
-                <div class="btnBackUser" *ngIf="BackUser" [routerLink]="['/addUsers', {outlets: {editUserOutlet: ['photoUser']}}]">
+                <div class="btnBackUser" *ngIf="BackAddLoc" (click)="changeStepsAddLoc(true, false, false, false)" (click)="changeIndicatiors(true, false, false, false)" >
                     <img src="./assets/iconos/icon_volver.png" class="imgBackUser">
                     <p class="txtBackUser"> Volver</p>
                 </div>
-                <a (click)="closeSecond(5)" >
+                <div class="btnBackUser" *ngIf="BackAddLoc2" (click)="changeStepsAddLoc(false, true, false, false)" (click)="changeIndicatiors(false, true, false, false)">
+                    <img src="./assets/iconos/icon_volver.png" class="imgBackUser">
+                    <p class="txtBackUser"> Volver</p>
+                </div>
+                <a (click)="closeEditLoc(5)" >
                     <img src="./assets/iconos/icon_cerrar.png" class="iconHeaderUser">
                 </a>
             </div>
             <div class="dotsSlider">
                 <div class="contIndicators" *ngIf="dotsIndicators">
+
                     <div class="DotLeft" [ngClass]="{'circulo1': isActive, 'circulo2': isDisabled}"></div>
-                    <div class="DotRigth" [ngClass]="{'circulo1': isActive1, 'circulo2': isDisabled1}"></div>
+                    <div class="DotRigth" [ngClass]="{  'circulo1': isActive1, 'circulo2': isDisabled1}"></div>
+                   <div class="DotCenter" [ngClass]="{'circulo1': isActive2, 'circulo2': isDisabled2}"></div>
+
+
                 </div>
             </div>
         </div>
         <div class="col-xs-2 col-md-2"></div>
     </div>
 </div>
-<div id="overlay">
-  <div id="text">
-    <div class="cirleImgDel">
-      <img class="imgDelete" src="../assets/iconos/icon_eliminar.png">
-    </div>
-    <p class="textGrayBold">¿Eliminar Usuario Definitivamente?</p>
-    <p class="textGrayReg">El usuario se eliminará permanentemente.</p>
-    <div class="containerButtons">
-      <a (click)="off()" class="btnDelete">Eliminar</a>
-      <a (click)="off()" class="btnCancel">Cancelar</a>
-    </div>
-  </div>
-</div>
-<div class="container">
+
+<div *ngIf="regNewLoc" class="container">
   <div class="row">
   <div class="col-md-2"></div>
     <div class="col-xs-12 col-md-8 col-lg-8">
@@ -54,9 +50,140 @@
           </form>
         </div>
       </div>
-      <a [routerLink]="['/editLocationView', {outlets: {editUserOutlet: ['locationNewRegister']}}]" class="btnRegisterLocat">Siguiente</a>
-      <a (click)="on()"></a>
+      <a (click)="changeStepsAddLoc(false, true, false, false)" (click)="changeIndicatiors(false, true, false, false)" class="btnRegisterLocat">Siguiente</a>
     </div>
   <div class="col-md-2"></div>
   </div>
 </div>
+
+<div *ngIf="regNewLocTable"  class="container">
+  <div class="row">
+  <div class="col-md-2"></div>
+    <div class="col-xs-12 col-md-8 col-lg-8">
+      <div class="cenTitlesLoc">
+        <p class="editLoc">EDITAR UBICACIÓN</p>
+        <p class="desEditLoc">Cambio de ubicación</p>
+      </div>
+      <div class="contentSubtitItle">
+        <div class="boxContSub">
+          <p class="editNav">Zona Pradera<img class="iconArrowNav marginText" src="./assets/iconos/arrow-icon.png"><span class="marginText">Torre 3<img class="iconArrowNav marginText" src="./assets/iconos/arrow-icon.png"></span><span class="marginText colorText">Oficina 510</span></p>
+        </div>
+      </div>
+      <div class="contentEditLoc">
+        <div class="boxContentDataLoc"> 
+              <div class="row contentTable margenRow">
+                <div class="contentRow">
+                  <div class="activeCellRow">
+                    <h1 class="textActive">Zona Pradera</h1>
+                    <img class="activeIconArrow" src="./assets/iconos/arrow-icon-left.png">
+                  </div>
+                  <div class="desactiveCellRow">
+                    <h1 class="textDesactive">Europlaza</h1>
+                    <img class="desactiveIconArrow" src="./assets/iconos/arrow-icon.png">
+                  </div>
+                </div>
+                <div class="locationNew">
+                  <p class="locationsText"><img class="imgAgree" src="./assets/iconos/icon_agregar.png">&nbsp;&nbsp;Nueva Ubicación</p>
+                </div>
+              </div>
+              <div class="row contentTable margenRow">
+                <div class="contentRow">  
+                  <div class="desactiveCellRow">
+                    <h1 class="textDesactive">Torre 2</h1>
+                    <img class="desactiveIconArrow" src="./assets/iconos/arrow-icon.png">
+                  </div>
+                  <div class="activeCellRow">
+                    <h1 class="textActive">Torre 3</h1>
+                    <img class="activeIconArrow" src="./assets/iconos/arrow-icon-left.png">
+                  </div>
+                  <div class="desactiveCellRow">
+                    <h1 class="textDesactive">Torre 4</h1>
+                    <img class="desactiveIconArrow" src="./assets/iconos/arrow-icon.png">
+                  </div>
+                </div>
+                <div class="locationNew">
+                  <p class="locationsText"><img class="imgAgree" src="./assets/iconos/icon_agregar.png">&nbsp;&nbsp;Nueva Ubicación</p>
+                </div>
+              </div>
+              <div class="row contentTable margenRow">
+                <div class="contentRow">    
+                  <div class="desactiveCellRow">
+                    <h1 class="textDesactive">Oficina 512</h1>
+                    <img class="desactiveIconArrow" src="./assets/iconos/arrow-icon.png">
+                  </div>
+                  <div class="desactiveCellRow">
+                    <h1 class="textDesactive">Oficina 514</h1>
+                    <img class="desactiveIconArrow" src="./assets/iconos/arrow-icon.png">
+                  </div>
+                  <div class="activeCellRow">
+                    <h1 class="textActive">Oficina 510</h1>
+                    <img class="activeIconArrow" src="./assets/iconos/arrow-icon-left.png">
+                  </div>
+                </div>
+                <div class="locationNew">
+                  <p class="locationsText"><img class="imgAgree" src="./assets/iconos/icon_agregar.png">&nbsp;&nbsp;Nueva Ubicación</p>
+                </div>
+              </div>  
+        </div>
+      </div>
+      <a (click)="changeStepsAddLoc(false, false, true, false)" (click)="changeIndicatiors(false, false, true, false)" class="btnNext">Siguiente</a>
+    </div>
+  <div class="col-md-2"></div>
+  </div>
+</div>
+
+<div *ngIf="regNewLocCoord"  class="container">
+  <div class="row">
+  <div class="col-md-2"></div>
+    <div class="col-xs-12 col-md-8 col-lg-8">
+      <div class="centerTitleCoord">
+        <p class="coordEdit">REGISTRAR NUEVA UBICACIÓN</p>
+        <p class="coordDesEdit">Ingresa las coordenadas</p>
+      </div>
+      <div class="contentDataCoord">
+        <div class="boxContentCoord">
+          <form class="posInputCoord">
+            <div class="row form-group">
+              <input type="contentText" class="form-control inputCoord" id="coordenate" placeholder="00.000000, 00.000000">
+            </div>
+          </form>
+        </div>
+      </div>
+      <a (click)="changeStepsAddLoc(false, false, false, true)" (click)="changeIndicatiors(false, false, false, true)" class="btnRegisterLocat">Crear Ubicación</a>
+    </div>
+  <div class="col-md-2"></div>
+  </div>
+</div>
+
+<div *ngIf="NewLocCreated"  class="container">
+  <div class="row">
+  <div class="col-md-2"></div>
+    <div class="col-xs-12 col-md-8 col-lg-8">
+      <div class="cenTitlesLoc">
+        <p class="editLoc">UBICACIÓN CREADA</p>
+        <p class="desEditLoc">La ubicación fue creada con éxito</p>
+      </div>
+      <div class="contentEditLoc">
+        <div class="boxContentDataLocmap"> 
+              <div class="contentMap">
+                <iframe class="mapSize"
+              frameborder="0" style="border:0" 
+              scrolling="auto" marginheight="0" marginwidth="0"
+              src="https://www.google.com/maps/embed/v1/place?key=AIzaSyD8jLJ2iXJGYBbfzk24Mzv2I8EXUmEl
+              " src="https://maps.google.com/?ie=UTF8&amp;t=m&amp;daddr=14.581543, -90.495525&amp;spn=0.018486,0.027466&amp;z=15&amp;output=embed" allowfullscreen>
+            </iframe>
+              </div>
+              <div class="contentLocaData">
+                <h1 class="titleLocation">Oficinas IT</h1>
+                <p class="txtData">Zona Pradera</p>
+                <p class="txtData">Torre 4</p>
+                <p class="txtData">Oficina 310</p>
+              </div>
+        </div>
+      </div>
+      <a (click)="closeEditLoc(5)" class="btnAccept">Aceptar</a>
+    </div>
+  <div class="col-md-2"></div>
+  </div>
+</div>
+

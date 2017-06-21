@@ -24,12 +24,36 @@ export class AddModalLoc implements CloseGuard, ModalComponent<CustomModalContex
    wrongAnswer: boolean;
    shouldUseMyClass: boolean;
 
+   public regNewLoc: any;
+   public regNewLocTable: any;
+   public regNewLocCoord: any;
+   public NewLocCreated: any;
+   public callFunctionAdd: any;
+
+   isActive: any;
+   isDisabled: any;
+   isActive1: any;
+   isDisabled1: any;
+   isActive2: any;
+   isDisabled2: any;
+   changeIndicator: any;
+   BackAddLoc: any;
+   BackAddLoc2: any;
+   dotsIndicators: any
+
+
+
   constructor(public modal: Modal, private compiler: Compiler, private injector: Injector, public dialog: DialogRef<CustomModalContext>) {
     this.context = dialog.context;
     this.wrongAnswer = true;
     dialog.setCloseGuard(this);
+
+    this.changeIndicator = this.changeIndicatiors
+    this.changeIndicator(true, false, false);
   }
   ngOnInit() {
+    this.callFunctionAdd = this.changeStepsAddLoc;
+    this.callFunctionAdd(true, false, false, false, false);
   }
   closeEditLoc(value) {
     this.wrongAnswer = value != 5;
@@ -43,7 +67,52 @@ export class AddModalLoc implements CloseGuard, ModalComponent<CustomModalContex
   beforeClose(): boolean {
     return this.wrongAnswer;
   }
+  changeIndicatiors(statOne, statTwo, statThree, statFour) {
+    if (statOne) {
+      this.isActive = true;
+      this.isDisabled = false;
+      this.isActive1 = false;
+      this.isDisabled1 = true;
+      this.isActive2 = false;
+      this.isDisabled2 = true;
 
+      this.BackAddLoc = false;
+      this.BackAddLoc2 = false;
+      this.dotsIndicators = true;
+    } else if (statTwo) {
+      this.isActive = false;
+      this.isDisabled = true;
+      this.isActive1 = true;
+      this.isDisabled1 = false;
+      this.isActive2 = false;
+      this.isDisabled2 = true;
+
+      this.BackAddLoc = true;
+      this.BackAddLoc2 = false;
+      this.dotsIndicators = true;
+    } else if ( statThree) {
+      this.isActive = false;
+      this.isDisabled = true;
+      this.isActive1 = false;
+      this.isDisabled1 = true;
+      this.isActive2 = true;
+      this.isDisabled2 = false;
+
+      this.BackAddLoc = false;
+      this.BackAddLoc2 = true
+      this.dotsIndicators = true;
+    } else if (statFour) {
+      this.BackAddLoc = false;
+      this.BackAddLoc2 = false;
+      this.dotsIndicators = false;
+    }
+  }
+  changeStepsAddLoc(param1, param2, param3, param4) {
+    this.regNewLoc = param1;
+    this.regNewLocTable = param2;
+    this.regNewLocCoord = param3;
+    this.NewLocCreated = param4;
+  }
   deleteWarningAddLoc() {
     console.log("asdfasdfasdfasdfasdfasdf")
     swal({
