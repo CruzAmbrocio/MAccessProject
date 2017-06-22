@@ -27,6 +27,7 @@
     float: right;
     margin-top: 5%;
     display: inline-block;
+    cursor: pointer;
 }
 .dotsSlider {
     display: inline-block;
@@ -138,6 +139,10 @@ p {
     font-size: 12px;
     color: #FFF;
     cursor: pointer;
+    transition :all ease 0.3s
+}
+.btnGeneralUser:hover{
+  background-color: #00A096;
 }
 /* Propiedades del icono de camara dentro del boton */
 .iconCamera {
@@ -212,7 +217,13 @@ de los inputs de registro de usuario */
     font-family: robotoBold;
     color: #01CDFF;
     font-size: 11px;
+    cursor: pointer;
+    text-decoration: none;
 }
+.titleAccess:hover {
+  color:#3674e1;
+}
+
 /* Propiedades de la descripcion de agregar accesos directos */
 .desAccessUser {
     font-family: robotoRegular;
@@ -304,6 +315,10 @@ de los inputs de registro de usuario */
     font-size: 12px;
     color: #FFF;
     cursor: pointer;
+    transition :all ease 0.3s
+}
+.btnAcceptUsers:hover{
+  background-color: #00A096;
 }
 /**/
 .contentNewRegister {
