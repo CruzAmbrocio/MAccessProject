@@ -25,30 +25,48 @@ export class AddModalRol implements CloseGuard, ModalComponent<CustomModalContex
 
   public informationRolView: any;
   public registerNewRol: any;
-  public registerUserAdd: any;
   public createdRol: any;
   public callFunctionRols: any;
+
+  isActive: any;
+  isDisabled: any;
+  isActive1: any;
+  isDisabled1: any;
+  currentRoute: any;
+  changeIndicator: any;
+  changeIndicatorInit: any;
+  BackUser: any;
+  dotsIndicators: any
 
   constructor(public modal: Modal, private compiler: Compiler, private injector: Injector, public dialog: DialogRef<CustomModalContext>) {
     this.context = dialog.context;
     this.wrongAnswer = true;
     dialog.setCloseGuard(this);
+
+    this.changeIndicator = this.changeIndicatiors
+    this.changeIndicator(true, false, false);
   }
   ngOnInit() {
+    this.callFunctionRols = this.changeStepsRoles;
+    this.callFunctionRols(true, false, false, false);
+
+    this.isActive = true;
+    this.isDisabled = false;
+    this.isActive1 = false;
+    this.isDisabled1 = true;
+    this.BackUser = false;
+    this.dotsIndicators = true;
   }
   closeEditRol(value) {
     this.wrongAnswer = value != 5;
     this.dialog.close();
   }
-
   beforeDismiss(): boolean {
     return true;
   }
-
   beforeClose(): boolean {
     return this.wrongAnswer;
   }
-
   deleteWarningAddRol() {
     console.log("asdfasdfasdfasdfasdfasdf")
     swal({
@@ -67,7 +85,32 @@ export class AddModalRol implements CloseGuard, ModalComponent<CustomModalContex
       'Cancelar'
     })
   }
-
+  changeStepsRoles(param1, param2, param3) {
+    this.informationRolView = param1;
+    this.registerNewRol = param2;
+    this.createdRol = param3;
+    //alert("this.takePictureUser")
+  }
+  changeIndicatiors(statOne, statTwo, statThree){
+    this.currentRoute = "hola"
+    if (statOne){
+      this.isActive = true;
+      this.isDisabled = false;
+      this.isActive1 = false;
+      this.isDisabled1 = true;
+      this.dotsIndicators = true;
+    } else if(statTwo){
+      this.isActive = false;
+      this.isDisabled = true;
+      this.isActive1 = true;
+      this.isDisabled1 = false;
+      this.BackUser = true;
+      this.dotsIndicators = true;
+    } else if(statThree){
+      this.BackUser = false;
+      this.dotsIndicators = false;
+    }
+  }
 }
 //------------------------------------------------------------------------------
 declare var swal: any;
@@ -83,12 +126,38 @@ export class EditModalRol implements CloseGuard, ModalComponent<CustomModalConte
    wrongAnswer: boolean;
    shouldUseMyClass: boolean;
 
+  public roleEdit: any;
+  public accessAllowed: any;
+  public callFunctionEditRols: any;
+
+  isActive: any;
+  isDisabled: any;
+  isActive1: any;
+  isDisabled1: any;
+  currentRoute: any;
+  changeIndicator: any;
+  changeIndicatorInit: any;
+  BackUser: any;
+  dotsIndicators: any
+
   constructor(public modal: Modal, private compiler: Compiler, private injector: Injector, public dialog: DialogRef<CustomModalContext>) {
     this.context = dialog.context;
     this.wrongAnswer = true;
     dialog.setCloseGuard(this);
+
+    this.changeIndicatiorsEdit = this.changeIndicatiorsEdit
+    this.changeIndicatiorsEdit(true, false, false);
   }
   ngOnInit() {
+    this.callFunctionEditRols = this.changeStepsEditeRoles;
+    this.callFunctionEditRols(true, false, false, false);
+
+    this.isActive = true;
+    this.isDisabled = false;
+    this.isActive1 = false;
+    this.isDisabled1 = true;
+    this.BackUser = false;
+    this.dotsIndicators = true;
   }
   closeEditRol(value) {
     this.wrongAnswer = value != 5;
@@ -121,6 +190,32 @@ export class EditModalRol implements CloseGuard, ModalComponent<CustomModalConte
       'Cancelar'
     })
   }
+  changeStepsEditeRoles(paramRolEdit, paramAllowed, paramEditRol) {
+    this.roleEdit = paramRolEdit;
+    this.accessAllowed = paramAllowed;
+    this.callFunctionEditRols = paramEditRol;
+    //alert("this.takePictureUser")
+  }
+  changeIndicatiorsEdit(statOne, statTwo, statThree){
+    this.currentRoute = "hola"
+    if (statOne){
+      this.isActive = true;
+      this.isDisabled = false;
+      this.isActive1 = false;
+      this.isDisabled1 = true;
+      this.dotsIndicators = true;
+    } else if(statTwo){
+      this.isActive = false;
+      this.isDisabled = true;
+      this.isActive1 = true;
+      this.isDisabled1 = false;
+      this.BackUser = true;
+      this.dotsIndicators = true;
+    } else if(statThree){
+      this.BackUser = false;
+      this.dotsIndicators = false;
+    }
+  }
 
 }
 //------------------------------------------------------------------------------
@@ -135,13 +230,10 @@ export class RolesComponent implements OnInit {
 
   ngOnInit() {
   }
-  
-  openEditUser() {
-    this.modal.open(EditModalRol, overlayConfigFactory({ num1: 2, num2: 3 }));
+  openEditRoles() {
+    this.modal.open(EditModalRol , overlayConfigFactory({ num1: 2, num2: 3 }));
   }
-  
-  openAddUser() {
+  openAddRoles() {
     this.modal.open(AddModalRol, overlayConfigFactory({ num1: 2, num2: 3 }));
   }
-
 }

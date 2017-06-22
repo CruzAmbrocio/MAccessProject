@@ -57,13 +57,12 @@ export class CustomModal implements CloseGuard, ModalComponent<CustomModalContex
     this.context = dialog.context;
     this.wrongAnswer = true;
     dialog.setCloseGuard(this);
-            this.changeIndicator = this.changeIndicatiors
-        this.changeIndicator(true, false, false);
+      this.changeIndicator = this.changeIndicatiors
+      this.changeIndicator(true, false, false);
   }
   ngOnInit() {
     this.callFunctionUsers = this.changeStepsAddUser;
     this.callFunctionUsers(true, false, false, false);
-
 
     this.isActive = true;
     this.isDisabled = false;
@@ -101,7 +100,6 @@ export class CustomModal implements CloseGuard, ModalComponent<CustomModalContex
       'Cancelar'
     })
   }
-
 changeIndicatiors(statOne, statTwo, statThree){
     this.currentRoute = "hola"
     if (statOne){
@@ -122,8 +120,6 @@ changeIndicatiors(statOne, statTwo, statThree){
       this.dotsIndicators = false;
     }
   }
-
-
   changeStepsAddUser(param1, param2, param3, param4) {
     this.takePictureUser = param1;
     this.registerUserAdd = param2;
