@@ -29,7 +29,9 @@ export class AddModalLoc implements CloseGuard, ModalComponent<CustomModalContex
    public regNewLocCoord: any;
    public NewLocCreated: any;
    public callFunctionAdd: any;
-   
+   public appearAllContent: any;
+   public appearCheckIcon: any;
+
    // Almacenan IDS
    public LocationActiveId:any;
    public LocationLevelTwoActiveId:any;   public LocationLevelThreeActiveId:any;
@@ -188,6 +190,18 @@ export class AddModalLoc implements CloseGuard, ModalComponent<CustomModalContex
       this.dotsIndicators = false;
     }
   }
+  appearInputAddNewLoc(){
+    this.appearAllContent= true;
+    this.appearCheckIcon=false;
+  }
+  onKeyUpShow(value){
+    console.log(value)
+    if(value == ''){
+      this.appearCheckIcon= false
+    }else{
+      this.appearCheckIcon= true
+    }
+  }
   changeStepsAddLoc(param1, param2, param3, param4) {
     this.regNewLoc = param1;
     this.regNewLocTable = param2;
@@ -237,15 +251,15 @@ export class AddModalLoc implements CloseGuard, ModalComponent<CustomModalContex
   }
 
   addingNewLoc(inputVal){
-     this.lengthLocArray = this.locationJson.Locations[0][0];
+     this.lengthLocArray = this.locationJson.Locations[0];
      console.log(this.lengthLocArray +"---" +inputVal +"------" +this.locationJson.Locations);
 
 
-            this.locationJson.Locations[0][0].push(
-            {
+            this.locationJson.Locations.push(
+            [{
               id: "Location90",
               Name:"Europlaza90"
-            }
+            }]
      )
   }
 }

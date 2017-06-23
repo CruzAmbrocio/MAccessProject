@@ -342,19 +342,24 @@
 
 .locationNew{
   width: 100%;
+  margin-bottom: 0px;
 }
 /*   Style input search */
 .myInput {
   border-radius: 5px;
-  background-image: url('../../assets/iconos/icon_buscar.png');
+  background-image: url('../../assets/iconos/icon_cerrar.png');
   background-position:95% center;
   background-repeat: no-repeat;
+  background-size: 10px;
   font-size: 12px;
   padding: 5px 5px 5px 5px;
   border-color: white;
   border-width: 0px;
-  height: 20px;
-  color: 
+  border-radius: 10px; 
+  height: 25px;
+  margin-right: auto;
+  margin-left: auto;
+
 }
 ::-webkit-input-placeholder { /* Chrome */
   color: #dadada;
@@ -363,7 +368,24 @@ input {
   font-family: "robotoRegular";
   color: #a2a2a2;
 }
-
+.contAddLocat{
+  margin-top: -55px;
+}
+.contImageDone{
+  background-color: #2ecf68;
+  height: 30px;
+  width: 30px;
+  border-radius: 100%;
+  align-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.imgCheckDone{
+    height: 50%;
+    width: 50%;
+    margin-left: 22%;
+    margin-top: 20%;
+}
 /*----------------------------------------------------------------------------*/
 .centerTitleCoord {
   text-align: center;
