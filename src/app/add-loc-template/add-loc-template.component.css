@@ -204,7 +204,6 @@
 .contentTable {
   width: 25%;
   height: 100%;
-  margin-left: 0;
   border-right: 1px solid #DCDCDC;
 }
 .contentRow {
@@ -212,13 +211,11 @@
   max-height: 335px;
   overflow-y: auto;
 }
-.margenRow {
-  margin: 0;
-}
 .activeCellRow {
   background-color: #00C6AF;
   height: 35px;
   margin-top: -20px;
+  cursor: pointer;
 }
 .textActive {
   font-family: robotoRegular;
@@ -235,6 +232,7 @@
   height: 35px;
   margin-top: -20px;
   border-bottom: 1px solid #DCDCDC;
+  cursor: pointer;
 }
 .textDesactive {
   font-family: robotoRegular;
@@ -253,7 +251,7 @@
   float: right;
   margin-right: 9%;
   position: relative;
-  top: -20%;
+  top: -14%;
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
 }
@@ -297,7 +295,7 @@
   margin-right: 33%;
 }
 .locationNew {
-  margin-top: 2%;
+  margin-top: 4%;
 }
 .locationsText {
   margin-left: 5%;
@@ -340,6 +338,30 @@
 }
 ::-webkit-scrollbar-corner {
   background: transpar3ent;
+}
+
+.locationNew{
+  width: 100%;
+}
+/*   Style input search */
+.myInput {
+  border-radius: 5px;
+  background-image: url('../../assets/iconos/icon_buscar.png');
+  background-position:95% center;
+  background-repeat: no-repeat;
+  font-size: 12px;
+  padding: 5px 5px 5px 5px;
+  border-color: white;
+  border-width: 0px;
+  height: 20px;
+  color: 
+}
+::-webkit-input-placeholder { /* Chrome */
+  color: #dadada;
+}
+input {
+  font-family: "robotoRegular";
+  color: #a2a2a2;
 }
 
 /*----------------------------------------------------------------------------*/

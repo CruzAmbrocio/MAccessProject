@@ -29,6 +29,17 @@ export class AddModalLoc implements CloseGuard, ModalComponent<CustomModalContex
    public regNewLocCoord: any;
    public NewLocCreated: any;
    public callFunctionAdd: any;
+   
+   // Almacenan IDS
+   public LocationActiveId:any;
+   public LocationLevelTwoActiveId:any;   public LocationLevelThreeActiveId:any;
+
+   public viewLocationLevelTwo = false;
+   public viewLocationLevelThree = false;
+   public dataLocation: string;
+   public dataLocationLevelTwo:string;
+   public dataLocationLevelThree:string;
+   public lengthLocArray:any;
 
    isActive: any;
    isDisabled: any;
@@ -39,11 +50,81 @@ export class AddModalLoc implements CloseGuard, ModalComponent<CustomModalContex
    changeIndicator: any;
    BackAddLoc: any;
    BackAddLoc2: any;
-   dotsIndicators: any
+   dotsIndicators: any;
+
+   public locationJson = {
+    "Locations": [
+      [
+        {
+          id: "Location1",
+          Name:"Zona Pradera"
+        },
+        {
+          id: "Location2",
+          Name:"Europlaza"
+        }
+      ],
+      [
+        {
+          id: "Location1",
+          idLevelTwo: "LevelTwo1",
+          Name:"Torre 1"
+        },
+        {
+          id: "Location1",
+          idLevelTwo: "LevelTwo2",
+          Name:"Torre 2"
+        },
+        {
+          id: "Location1",
+          idLevelTwo: "LevelTwo3",
+          Name:"Torre 3"
+        },
+        {
+          id: "Location1",
+          idLevelTwo: "LevelTwo4",
+          Name:"Torre 4"
+        },
+        {
+          id: "Location1",
+          idLevelTwo: "LevelTwo5",
+          Name:"Torre 5"
+        }
+      ],
+      [
+        {
+          idLevelTwo: "LevelTwo1",
+          idLevelThee: "LevelThree1",
+          Name:"Oficina 510"
+        },
+        {
+          idLevelTwo: "LevelTwo1",
+          idLevelThee: "LevelThree2",
+          Name:"Oficina 511"
+        },
+        {
+          idLevelTwo: "LevelTwo1",
+          idLevelThee: "LevelThree3",
+          Name:"Oficina 512"
+        },
+        {
+          idLevelTwo: "LevelTwo2",
+          idLevelThee: "LevelThree4",
+          Name:"Oficina 513"
+        },
+        {
+          idLevelTwo: "LevelTwo2",
+          idLevelThee: "LevelThree5",
+          Name:"Oficina 514"
+        }
+      ]
+    ]
+  };
 
 
 
   constructor(public modal: Modal, private compiler: Compiler, private injector: Injector, public dialog: DialogRef<CustomModalContext>) {
+
     this.context = dialog.context;
     this.wrongAnswer = true;
     dialog.setCloseGuard(this);
@@ -132,6 +213,41 @@ export class AddModalLoc implements CloseGuard, ModalComponent<CustomModalContex
     })
   }
 
+  selectParentLocation(index, locationID) {
+    this.LocationActiveId = index;
+    this.LocationLevelTwoActiveId = -1;
+    this.LocationLevelThreeActiveId = -1;
+    this.viewLocationLevelTwo = true;
+    this.viewLocationLevelThree = false;
+    this.dataLocation = locationID;
+  }
+
+  selectLocationLevelTwo(index, locationID, LevelTwoId) {
+    this.LocationLevelTwoActiveId = index;
+    this.LocationLevelThreeActiveId = -1;
+    this.viewLocationLevelThree = true;
+    this.dataLocation = locationID;
+    this.dataLocationLevelTwo = LevelTwoId;
+  }
+
+  selectLocationLevelThree(index, LevelThreeId){
+    console.log(index + " " + LevelThreeId)
+    this.LocationLevelThreeActiveId = index;
+    this.dataLocationLevelThree = LevelThreeId;
+  }
+
+  addingNewLoc(inputVal){
+     this.lengthLocArray = this.locationJson.Locations[0][0];
+     console.log(this.lengthLocArray +"---" +inputVal +"------" +this.locationJson.Locations);
+
+
+            this.locationJson.Locations[0][0].push(
+            {
+              id: "Location90",
+              Name:"Europlaza90"
+            }
+     )
+  }
 }
 //------------------------------------------------------------------------------
 declare var swal: any;

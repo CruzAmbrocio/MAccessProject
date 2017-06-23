@@ -23,6 +23,7 @@
   color: #b7b7b7;
   font-size: 11px;
   cursor: pointer;
+  color: #06262a
 }
 
 .iconHeaderUser {
@@ -203,13 +204,12 @@
   margin-left: 0;
   border-right: 1px solid #DCDCDC;
 }
-.margenRow {
-  margin-left: 2%;
-}
+
 .activeCellRow {
   background-color: #00C6AF;
   height: 12%;
   margin-top: -12%;
+  cursor: pointer;
 }
 .textActive {
   font-family: robotoRegular;
@@ -226,6 +226,7 @@
   height: 12%;
   margin-top: -12%;
   border-bottom: 1px solid #DCDCDC;
+  cursor: pointer;
 }
 .textDesactive {
   font-family: robotoRegular;
