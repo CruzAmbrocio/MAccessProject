@@ -34,13 +34,20 @@ export class AddModalLoc implements CloseGuard, ModalComponent<CustomModalContex
 
    // Almacenan IDS
    public LocationActiveId:any;
-   public LocationLevelTwoActiveId:any;   public LocationLevelThreeActiveId:any;
+   public LocationLevelTwoActiveId:any;   
+   public LocationLevelThreeActiveId:any;
+   public LocationLevelFourActiveId:any;
+   public arrayToPush:any;
 
+   //Visualizar los niveles
    public viewLocationLevelTwo = false;
    public viewLocationLevelThree = false;
+   public viewLocationLevelFour = false;
+
    public dataLocation: string;
    public dataLocationLevelTwo:string;
    public dataLocationLevelThree:string;
+   public dataLocationLevelFour:string;
    public lengthLocArray:any;
 
    isActive: any;
@@ -55,8 +62,7 @@ export class AddModalLoc implements CloseGuard, ModalComponent<CustomModalContex
    dotsIndicators: any;
 
    public locationJson = {
-    "Locations": [
-      [
+    "ParentLocation": [
         {
           id: "Location1",
           Name:"Zona Pradera"
@@ -66,7 +72,7 @@ export class AddModalLoc implements CloseGuard, ModalComponent<CustomModalContex
           Name:"Europlaza"
         }
       ],
-      [
+    "LocationLevelTwo" : [
         {
           id: "Location1",
           idLevelTwo: "LevelTwo1",
@@ -92,34 +98,62 @@ export class AddModalLoc implements CloseGuard, ModalComponent<CustomModalContex
           idLevelTwo: "LevelTwo5",
           Name:"Torre 5"
         }
-      ],
-      [
-        {
-          idLevelTwo: "LevelTwo1",
-          idLevelThee: "LevelThree1",
-          Name:"Oficina 510"
-        },
-        {
-          idLevelTwo: "LevelTwo1",
-          idLevelThee: "LevelThree2",
-          Name:"Oficina 511"
-        },
-        {
-          idLevelTwo: "LevelTwo1",
-          idLevelThee: "LevelThree3",
-          Name:"Oficina 512"
-        },
-        {
-          idLevelTwo: "LevelTwo2",
-          idLevelThee: "LevelThree4",
-          Name:"Oficina 513"
-        },
-        {
-          idLevelTwo: "LevelTwo2",
-          idLevelThee: "LevelThree5",
-          Name:"Oficina 514"
-        }
-      ]
+    ],
+
+    "LocationLevelThree" : [
+      {
+        idLevelTwo: "LevelTwo1",
+        idLevelThree: "LevelThree1",
+        Name:"Nivel 1"
+      },
+      {
+        idLevelTwo: "LevelTwo1",
+        idLevelThree: "LevelThree2",
+        Name:"Nivel 2"
+      },
+      {
+        idLevelTwo: "LevelTwo1",
+        idLevelThree: "LevelThree3",
+        Name:"Nivel 3"
+      },
+      {
+        idLevelTwo: "LevelTwo2",
+        idLevelThree: "LevelThree4",
+        Name:"Nivel 4"
+      },
+      {
+        idLevelTwo: "LevelTwo2",
+        idLevelThree: "LevelThree5",
+        Name:"Nivel 5"
+      }
+    ],
+
+    "LocationLevelFour" : [
+      {
+        idLevelThree: "LevelThree1",
+        idLevelFour: "LevelFour1",
+        Name:"Oficina 110"
+      },
+      {
+        idLevelThree: "LevelThree1",
+        idLevelFour: "LevelFour2",
+        Name:"Oficina 111"
+      },
+      {
+        idLevelThree: "LevelThree1",
+        idLevelFour: "LevelFour3",
+        Name:"Oficina 112"
+      },
+      {
+        idLevelThree: "LevelThree1",
+        idLevelFour: "LevelFour4",
+        Name:"Oficina 113"
+      },
+      {
+        idLevelThree: "LevelThree1",
+        idLevelFour: "LevelFour5",
+        Name:"Oficina 114"
+      }
     ]
   };
 
@@ -195,7 +229,6 @@ export class AddModalLoc implements CloseGuard, ModalComponent<CustomModalContex
     this.appearCheckIcon=false;
   }
   onKeyUpShow(value){
-    console.log(value)
     if(value == ''){
       this.appearCheckIcon= false
     }else{
@@ -209,7 +242,6 @@ export class AddModalLoc implements CloseGuard, ModalComponent<CustomModalContex
     this.NewLocCreated = param4;
   }
   deleteWarningAddLoc() {
-    console.log("asdfasdfasdfasdfasdfasdf")
     swal({
       html: `
             <div class="cirleImgDel">  
@@ -233,6 +265,7 @@ export class AddModalLoc implements CloseGuard, ModalComponent<CustomModalContex
     this.LocationLevelThreeActiveId = -1;
     this.viewLocationLevelTwo = true;
     this.viewLocationLevelThree = false;
+    this.viewLocationLevelFour = false;
     this.dataLocation = locationID;
   }
 
@@ -240,27 +273,42 @@ export class AddModalLoc implements CloseGuard, ModalComponent<CustomModalContex
     this.LocationLevelTwoActiveId = index;
     this.LocationLevelThreeActiveId = -1;
     this.viewLocationLevelThree = true;
+    this.viewLocationLevelFour = false;
     this.dataLocation = locationID;
     this.dataLocationLevelTwo = LevelTwoId;
   }
 
   selectLocationLevelThree(index, LevelThreeId){
-    console.log(index + " " + LevelThreeId)
     this.LocationLevelThreeActiveId = index;
     this.dataLocationLevelThree = LevelThreeId;
+    this.viewLocationLevelFour = true;
   }
 
-  addingNewLoc(inputVal){
-     this.lengthLocArray = this.locationJson.Locations[0];
-     console.log(this.lengthLocArray +"---" +inputVal +"------" +this.locationJson.Locations);
+  selectLocationLevelFour(index, LevelFourId){
+    this.LocationLevelFourActiveId = index;
+  }
 
 
-            this.locationJson.Locations.push(
-            [{
-              id: "Location90",
-              Name:"Europlaza90"
-            }]
-     )
+  addingNewLoc(btnID,inputVal){
+    var objectLength;
+    var newId;
+    if (btnID == "ParentLocation") {
+      objectLength = this.locationJson.ParentLocation.length;
+      newId = "Location" + objectLength;
+      this.locationJson.ParentLocation.push({"id":"Location3","Name":inputVal});
+    } else if (btnID == "LocationLevelTwo") {
+      objectLength = this.locationJson.LocationLevelTwo.length;
+      newId = "Location" + objectLength;
+      this.locationJson.LocationLevelTwo.push({"id":this.locationJson.ParentLocation[this.LocationActiveId].id,"idLevelTwo":newId,"Name":inputVal});
+    } else if (btnID == "LocationLevelThree") {
+      objectLength = this.locationJson.LocationLevelThree.length;
+      newId = "Location" + objectLength;
+      this.locationJson.LocationLevelThree.push({"idLevelTwo":this.locationJson.LocationLevelTwo[this.LocationLevelTwoActiveId].idLevelTwo,"idLevelThree":newId,"Name":inputVal});
+    } else if (btnID == "LocationLevelFour") {
+      objectLength = this.locationJson.LocationLevelFour.length;
+      newId = "Location" + objectLength;
+      this.locationJson.LocationLevelFour.push({"idLevelThree":this.locationJson.LocationLevelThree[this.LocationLevelThreeActiveId].idLevelThree,"idLevelFour":newId,"Name":inputVal});
+    }
   }
 }
 //------------------------------------------------------------------------------
