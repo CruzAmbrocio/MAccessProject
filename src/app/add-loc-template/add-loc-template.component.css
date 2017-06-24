@@ -214,7 +214,10 @@
   border-right: 1px solid #DCDCDC;
 }
 .contentRow {
-  height: 88%;
+  max-height: 240px;
+  overflow-y: auto;
+}
+.contentRowShow{
   max-height: 178px;
   overflow-y: auto;
 }

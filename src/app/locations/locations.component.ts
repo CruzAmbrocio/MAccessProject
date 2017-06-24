@@ -118,27 +118,27 @@ export class AddModalLoc implements CloseGuard, ModalComponent<CustomModalContex
       {
         idLevelTwo: "LevelTwo1",
         idLevelThree: "LevelThree1",
-        Name:"Nivel 1"
+        Name:"Oficina 101"
       },
       {
         idLevelTwo: "LevelTwo1",
         idLevelThree: "LevelThree2",
-        Name:"Nivel 2"
+        Name:"Oficina 102"
       },
       {
         idLevelTwo: "LevelTwo1",
         idLevelThree: "LevelThree3",
-        Name:"Nivel 3"
+        Name:"Oficina 103"
       },
       {
         idLevelTwo: "LevelTwo2",
         idLevelThree: "LevelThree4",
-        Name:"Nivel 4"
+        Name:"Oficina 201"
       },
       {
         idLevelTwo: "LevelTwo2",
         idLevelThree: "LevelThree5",
-        Name:"Nivel 5"
+        Name:"Oficina 202"
       }
     ],
 
@@ -146,27 +146,27 @@ export class AddModalLoc implements CloseGuard, ModalComponent<CustomModalContex
       {
         idLevelThree: "LevelThree1",
         idLevelFour: "LevelFour1",
-        Name:"Oficina 110"
+        Name:"Salon 1"
       },
       {
         idLevelThree: "LevelThree1",
         idLevelFour: "LevelFour2",
-        Name:"Oficina 111"
+        Name:"Salon 2"
       },
       {
         idLevelThree: "LevelThree1",
         idLevelFour: "LevelFour3",
-        Name:"Oficina 112"
+        Name:"Bodega"
       },
       {
         idLevelThree: "LevelThree1",
         idLevelFour: "LevelFour4",
-        Name:"Oficina 113"
+        Name:"Salon Control"
       },
       {
         idLevelThree: "LevelThree1",
         idLevelFour: "LevelFour5",
-        Name:"Oficina 114"
+        Name:"Sala Reuniones Principal"
       }
     ]
   };

@@ -72,14 +72,14 @@
         <div class="contentEditLoc">
           <div class="boxContentDataLoc"> 
             <div class="contentTable">
-              <div class="contentRow">
+              <div [ngClass]="appearAllContent ? 'contentRowShow' : 'contentRow'">
                 <div *ngFor="let location of locationJson.ParentLocation; let i=index" [ngClass]="LocationActiveId == i ? 'activeCellRow' : 'desactiveCellRow'" (click) = "selectParentLocation(i,location.id)">
                   <h1 [ngClass]="LocationActiveId == i ? 'textActive' : 'textDesactive'">{{location.Name}}</h1>
                   <img *ngIf="LocationActiveId != i" class="desactiveIconArrow" src="./assets/iconos/arrow-icon.png">
                   <img *ngIf="LocationActiveId == i" class="activeIconArrow" src="./assets/iconos/arrow-icon-left.png">
                 </div>
               </div>
-              <div class="contAddLocat" *ngIf="appearAllContent">
+              <div class="contAddLocat" *ngIf="appearAllContent" >
                 <input #inputVal type="text" placeholder="Nueva Ubicación" class ="myInput" (keyup)="onKeyUpShow(inputVal.value)">
                 <div class="contBtnDone">
                   <div class="contImageDone" (click)="addingNewLoc('ParentLocation',inputVal.value)"
@@ -93,7 +93,7 @@
               </div>
             </div>
             <div class="contentTable" *ngIf="viewLocationLevelTwo">
-              <div class="contentRow">  
+              <div [ngClass]="appearAllContent2 ? 'contentRowShow' : 'contentRow'">  
                 <div *ngFor="let locationLevelTwo of locationJson.LocationLevelTwo; let i=index">
                   <div *ngIf="locationLevelTwo.id == dataLocation" [ngClass]="LocationLevelTwoActiveId == i ? 'activeCellRow' : 'desactiveCellRow'" (click) = "selectLocationLevelTwo(i,locationLevelTwo.id,locationLevelTwo.idLevelTwo)">
                     <h1 [ngClass]="LocationLevelTwoActiveId == i ? 'textActive' : 'textDesactive'" *ngIf="locationLevelTwo.id == dataLocation">{{locationLevelTwo.Name}}</h1>
@@ -116,7 +116,7 @@
               </div>
             </div>
             <div class="contentTable" *ngIf="viewLocationLevelThree">
-              <div class="contentRow">    
+              <div [ngClass]="appearAllContent3 ? 'contentRowShow' : 'contentRow'">    
                 <div *ngFor="let locationLevelThree of locationJson.LocationLevelThree; let i=index;">
                   <div *ngIf="locationLevelThree.idLevelTwo == dataLocationLevelTwo" [ngClass]="LocationLevelThreeActiveId == i ? 'activeCellRow' : 'desactiveCellRow'" (click) = "selectLocationLevelThree(i,locationLevelThree.idLevelThree)">
                     <h1 [ngClass]="LocationLevelThreeActiveId == i ? 'textActive' : 'textDesactive'">{{locationLevelThree.Name}}</h1>
@@ -138,12 +138,10 @@
               </div>
             </div>
             <div class="contentTable" *ngIf="viewLocationLevelFour">
-              <div class="contentRow">    
+              <div [ngClass]="appearAllContent4 ? 'contentRowShow' : 'contentRow'">    
                 <div *ngFor="let locationLevelFour of locationJson.LocationLevelFour; let i=index;">
                   <div *ngIf="locationLevelFour.idLevelThree == dataLocationLevelThree" [ngClass]="LocationLevelFourActiveId == i ? 'activeCellRow' : 'desactiveCellRow'" (click) = "selectLocationLevelFour(i,locationLevelFour.idLevelFour)">
                     <h1 [ngClass]="LocationLevelFourActiveId == i ? 'textActive' : 'textDesactive'">{{locationLevelFour.Name}}</h1>
-                    <img *ngIf="LocationLevelFourActiveId != i" class="desactiveIconArrow" src="./assets/iconos/arrow-icon.png">
-                    <img *ngIf="LocationLevelFourActiveId == i" class="activeIconArrow" src="./assets/iconos/arrow-icon-left.png">
                   </div>
                 </div>
               </div>
