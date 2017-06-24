@@ -122,11 +122,18 @@ table, td {
   padding-left: 3%;
   font-size: 11px;
   font-family: "robotoRegular";
-  color: #8ed2ec;
   cursor: pointer;
   width: 20%;
+  color: #01CDFF;
 }
+.cellFormat > td:nth-child(5):hover {
+  color: #3674e1;
+}
+<<<<<<< HEAD
 /* Style container Add button */
+=======
+/*   Style container Add button */
+>>>>>>> e976d6b757b6bdbfbda02a7e90c92d74475caae1
 .containerBtnAdd {
   width: 105px;
   height: 80px;

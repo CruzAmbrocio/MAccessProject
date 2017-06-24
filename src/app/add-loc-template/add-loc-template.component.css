@@ -179,7 +179,6 @@
 .contentTable {
   width: 25%;
   height: 100%;
-  margin-left: 0;
   border-right: 1px solid #DCDCDC;
 }
 .contentRow {
@@ -187,13 +186,11 @@
   max-height: 335px;
   overflow-y: auto;
 }
-.margenRow {
-  margin: 0;
-}
 .activeCellRow {
   background-color: #00C6AF;
   height: 35px;
   margin-top: -20px;
+  cursor: pointer;
 }
 .textActive {
   font-family: robotoRegular;
@@ -210,6 +207,7 @@
   height: 35px;
   margin-top: -20px;
   border-bottom: 1px solid #DCDCDC;
+  cursor: pointer;
 }
 .textDesactive {
   font-family: robotoRegular;
@@ -228,7 +226,7 @@
   float: right;
   margin-right: 9%;
   position: relative;
-  top: -20%;
+  top: -14%;
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
 }
@@ -277,7 +275,7 @@
   margin-right: 33%;
 }
 .locationNew {
-  margin-top: 2%;
+  margin-top: 4%;
 }
 .locationsText {
   margin-left: 5%;
@@ -321,7 +319,76 @@
 ::-webkit-scrollbar-corner {
   background: transpar3ent;
 }
+<<<<<<< HEAD
 /* Vista registro de coordenadas */
+=======
+
+.locationNew{
+  width: 100%;
+  margin-bottom: 0px;
+}
+/*   Style input search */
+.myInput {
+  border-radius: 5px;
+  background-image: url('../../assets/iconos/icon_cerrar.png');
+  background-position:95% center;
+  background-repeat: no-repeat;
+  background-size: 10px;
+  font-size: 12px;
+  padding: 5px 5px 5px 5px;
+  border-color: white;
+  border-width: 0px;
+  border-radius: 10px; 
+  height: 25px;
+  margin-right: auto;
+  margin-left: auto;
+
+}
+::-webkit-input-placeholder { /* Chrome */
+  color: #dadada;
+}
+input {
+  font-family: "robotoRegular";
+  color: #a2a2a2;
+}
+.contAddLocat{
+  margin-top: -55px;
+}
+.contImageDone{
+  background-color: #2ecf68;
+  height: 30px;
+  width: 30px;
+  border-radius: 100%;
+  align-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.imgCheckDone{
+    height: 50%;
+    width: 50%;
+    margin-left: 22%;
+    margin-top: 20%;
+}
+/*----------------------------------------------------------------------------*/
+.centerTitleCoord {
+  text-align: center;
+  margin-top: 4%;
+}
+.coordEdit {
+  font-family: robotoBold;
+  color: #575757;
+  font-size: 12px;
+}
+.coordDesEdit {
+  font-family: robotoRegular;
+  margin-top: -5px;
+  color: #AFAFAF;
+  font-size: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+>>>>>>> e976d6b757b6bdbfbda02a7e90c92d74475caae1
 .contentDataCoord {
   display: flex;
   align-items: center;

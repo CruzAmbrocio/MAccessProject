@@ -55,6 +55,7 @@
 <!-- Vista ingreso de coordenadas para nueva ubicacion -->
 <div *ngIf="regNewLocTable" class="container">
   <div class="row">
+<<<<<<< HEAD
   <div class="col-md-2"></div>
     <div class="col-xs-12 col-md-8 col-lg-8">
       <div class="centerTitlesUbication">
@@ -64,68 +65,115 @@
       <div class="contentSubtitItle">
         <div class="boxContSub">
           <p class="editNav">Zona Pradera<img class="iconArrowNav marginText" src="./assets/iconos/arrow-icon.png"><span class="marginText">Torre 3<img class="iconArrowNav marginText" src="./assets/iconos/arrow-icon.png"></span><span class="marginText colorText">Oficina 510</span></p>
+=======
+    <div class="col-md-2"></div>
+      <div class="col-xs-12 col-md-8 col-lg-8">
+        <div class="cenTitlesLoc">
+          <p class="editLoc">EDITAR UBICACIÓN</p>
+          <p class="desEditLoc">Cambio de ubicación</p>
+>>>>>>> e976d6b757b6bdbfbda02a7e90c92d74475caae1
         </div>
-      </div>
-      <div class="contentEditLoc">
-        <div class="boxContentDataLoc"> 
-              <div class="row contentTable margenRow">
-                <div class="contentRow">
-                  <div class="activeCellRow">
-                    <h1 class="textActive">Zona Pradera</h1>
-                    <img class="activeIconArrow" src="./assets/iconos/arrow-icon-left.png">
-                  </div>
-                  <div class="desactiveCellRow">
-                    <h1 class="textDesactive">Europlaza</h1>
-                    <img class="desactiveIconArrow" src="./assets/iconos/arrow-icon.png">
-                  </div>
+        <div class="contentSubtitItle">
+          <div class="boxContSub">
+            <p class="editNav">Zona Pradera<img class="iconArrowNav marginText" src="./assets/iconos/arrow-icon.png"><span class="marginText">Torre 3<img class="iconArrowNav marginText" src="./assets/iconos/arrow-icon.png"></span><span class="marginText colorText">Oficina 510</span></p>
+          </div>
+        </div>
+        <div class="contentEditLoc">
+          <div class="boxContentDataLoc"> 
+            <div class="contentTable">
+              <div class="contentRow">
+                <div *ngFor="let location of locationJson.ParentLocation; let i=index" [ngClass]="LocationActiveId == i ? 'activeCellRow' : 'desactiveCellRow'" (click) = "selectParentLocation(i,location.id)">
+                  <h1 [ngClass]="LocationActiveId == i ? 'textActive' : 'textDesactive'">{{location.Name}}</h1>
+                  <img *ngIf="LocationActiveId != i" class="desactiveIconArrow" src="./assets/iconos/arrow-icon.png">
+                  <img *ngIf="LocationActiveId == i" class="activeIconArrow" src="./assets/iconos/arrow-icon-left.png">
                 </div>
+<<<<<<< HEAD
                 <div class="locationNew">
                   <p class="locationsText"><img class="imgAgree" src="./assets/iconos/icon_agregar.png">&nbsp;&nbsp;Nueva Ubicación</p>
+=======
+              </div>
+              <div class="contAddLocat" *ngIf="appearAllContent">
+                <input #inputVal type="text" placeholder="Nueva Ubicación" class ="myInput" (keyup)="onKeyUpShow(inputVal.value)">
+                <div class="contImageDone" (click)="addingNewLoc('ParentLocation',inputVal.value)" *ngIf="appearCheckIcon">
+                  <img class="imgCheckDone" src="./assets/iconos/icon_check.png">
+>>>>>>> e976d6b757b6bdbfbda02a7e90c92d74475caae1
                 </div>
               </div>
-              <div class="row contentTable margenRow">
-                <div class="contentRow">  
-                  <div class="desactiveCellRow">
-                    <h1 class="textDesactive">Torre 2</h1>
-                    <img class="desactiveIconArrow" src="./assets/iconos/arrow-icon.png">
+              <div class="locationNew">
+                <p class="locationsText"(click)="appearInputAddNewLoc()"><img class="imgAgree" src="./assets/iconos/icon_agregar.png" >&nbsp;&nbsp;Nueva Ubicación</p>
+              </div>
+            </div>
+            <div class="contentTable" *ngIf="viewLocationLevelTwo">
+              <div class="contentRow">  
+                <div *ngFor="let locationLevelTwo of locationJson.LocationLevelTwo; let i=index">
+                  <div *ngIf="locationLevelTwo.id == dataLocation" [ngClass]="LocationLevelTwoActiveId == i ? 'activeCellRow' : 'desactiveCellRow'" (click) = "selectLocationLevelTwo(i,locationLevelTwo.id,locationLevelTwo.idLevelTwo)">
+                    <h1 [ngClass]="LocationLevelTwoActiveId == i ? 'textActive' : 'textDesactive'" *ngIf="locationLevelTwo.id == dataLocation">{{locationLevelTwo.Name}}</h1>
+                    <img *ngIf="LocationLevelTwoActiveId != i" class="desactiveIconArrow" src="./assets/iconos/arrow-icon.png">
+                    <img *ngIf="LocationLevelTwoActiveId == i" class="activeIconArrow" src="./assets/iconos/arrow-icon-left.png">
                   </div>
-                  <div class="activeCellRow">
-                    <h1 class="textActive">Torre 3</h1>
-                    <img class="activeIconArrow" src="./assets/iconos/arrow-icon-left.png">
-                  </div>
-                  <div class="desactiveCellRow">
-                    <h1 class="textDesactive">Torre 4</h1>
-                    <img class="desactiveIconArrow" src="./assets/iconos/arrow-icon.png">
-                  </div>
-                </div>
-                <div class="locationNew">
-                  <p class="locationsText"><img class="imgAgree" src="./assets/iconos/icon_agregar.png">&nbsp;&nbsp;Nueva Ubicación</p>
                 </div>
               </div>
-              <div class="row contentTable margenRow">
-                <div class="contentRow">    
-                  <div class="desactiveCellRow">
-                    <h1 class="textDesactive">Oficina 512</h1>
-                    <img class="desactiveIconArrow" src="./assets/iconos/arrow-icon.png">
-                  </div>
-                  <div class="desactiveCellRow">
-                    <h1 class="textDesactive">Oficina 514</h1>
-                    <img class="desactiveIconArrow" src="./assets/iconos/arrow-icon.png">
-                  </div>
-                  <div class="activeCellRow">
-                    <h1 class="textActive">Oficina 510</h1>
-                    <img class="activeIconArrow" src="./assets/iconos/arrow-icon-left.png">
+              <div class="contAddLocat">
+                <input #inputValTwo type="text" placeholder="Nueva Ubicación" class ="myInput" (keyup)="onKeyUpShow(inputValTwo.value)">
+                <div class="contImageDone" (click)="addingNewLoc('LocationLevelTwo',inputValTwo.value)">
+                  <img class="imgCheckDone" src="./assets/iconos/icon_check.png">
+                </div>
+              </div>
+              <div class="locationNew">
+                <p class="locationsText"><img class="imgAgree" src="./assets/iconos/icon_agregar.png">&nbsp;&nbsp;Nueva Ubicación</p>
+              </div>
+            </div>
+            <div class="contentTable" *ngIf="viewLocationLevelThree">
+              <div class="contentRow">    
+                <div *ngFor="let locationLevelThree of locationJson.LocationLevelThree; let i=index;">
+                  <div *ngIf="locationLevelThree.idLevelTwo == dataLocationLevelTwo" [ngClass]="LocationLevelThreeActiveId == i ? 'activeCellRow' : 'desactiveCellRow'" (click) = "selectLocationLevelThree(i,locationLevelThree.idLevelThree)">
+                    <h1 [ngClass]="LocationLevelThreeActiveId == i ? 'textActive' : 'textDesactive'">{{locationLevelThree.Name}}</h1>
+                    <img *ngIf="LocationLevelThreeActiveId != i" class="desactiveIconArrow" src="./assets/iconos/arrow-icon.png">
+                    <img *ngIf="LocationLevelThreeActiveId == i" class="activeIconArrow" src="./assets/iconos/arrow-icon-left.png">
                   </div>
                 </div>
-                <div class="locationNew">
-                  <p class="locationsText"><img class="imgAgree" src="./assets/iconos/icon_agregar.png">&nbsp;&nbsp;Nueva Ubicación</p>
+              </div>
+              <div class="contAddLocat">
+                <input #inputValThree type="text" placeholder="Nueva Ubicación" class ="myInput" (keyup)="onKeyUpShow(inputValThree.value)">
+                <div class="contImageDone" (click)="addingNewLoc('LocationLevelThree',inputValThree.value)">
+                  <img class="imgCheckDone" src="./assets/iconos/icon_check.png">
                 </div>
-              </div>  
+              </div>
+              <div class="locationNew">
+                <p class="locationsText"><img class="imgAgree" src="./assets/iconos/icon_agregar.png">&nbsp;&nbsp;Nueva Ubicación</p>
+              </div>
+            </div>
+            <div class="contentTable" *ngIf="viewLocationLevelFour">
+              <div class="contentRow">    
+                <div *ngFor="let locationLevelFour of locationJson.LocationLevelFour; let i=index;">
+                  <div *ngIf="locationLevelFour.idLevelThree == dataLocationLevelThree" [ngClass]="LocationLevelFourActiveId == i ? 'activeCellRow' : 'desactiveCellRow'" (click) = "selectLocationLevelFour(i,locationLevelFour.idLevelFour)">
+                    <h1 [ngClass]="LocationLevelFourActiveId == i ? 'textActive' : 'textDesactive'">{{locationLevelFour.Name}}</h1>
+                    <img *ngIf="LocationLevelFourActiveId != i" class="desactiveIconArrow" src="./assets/iconos/arrow-icon.png">
+                    <img *ngIf="LocationLevelFourActiveId == i" class="activeIconArrow" src="./assets/iconos/arrow-icon-left.png">
+                  </div>
+                </div>
+              </div>
+              <div class="contAddLocat">
+                <input #inputValFour type="text" placeholder="Nueva Ubicación" class ="myInput" (keyup)="onKeyUpShow(inputValFour.value)">
+                <div class="contImageDone" (click)="addingNewLoc('LocationLevelFour',inputValFour.value)">
+                  <img class="imgCheckDone" src="./assets/iconos/icon_check.png">
+                </div>
+              </div>
+              <div class="locationNew">
+                <p class="locationsText"><img class="imgAgree" src="./assets/iconos/icon_agregar.png">&nbsp;&nbsp;Nueva Ubicación</p>
+              </div>
+            </div>
+          </div>  
         </div>
+        <a (click)="changeStepsAddLoc(false, false, true, false)" (click)="changeIndicatiors(false, false, true, false)" class="btnNext">Siguiente</a>
       </div>
+<<<<<<< HEAD
       <a (click)="changeStepsAddLoc(false, false, true, false)" (click)="changeIndicatiors(false, false, true, false)" class="btnCreatedCoodinates">Siguiente</a>
     </div>
   <div class="col-md-2"></div>
+=======
+    <div class="col-md-2"></div>
+>>>>>>> e976d6b757b6bdbfbda02a7e90c92d74475caae1
   </div>
 </div>
 <!-- Vista registro de coordenadas -->

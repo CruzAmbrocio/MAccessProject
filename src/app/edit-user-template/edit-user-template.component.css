@@ -123,6 +123,10 @@
   font-size: 12px;
   color: #FFF;
   cursor: pointer;
+    transition :all ease 0.3s
+}
+.btnChangesDone:hover{
+  background-color: #00A096;
 }
 .btnChangesDone:hover{
   background-color: #00A096;
