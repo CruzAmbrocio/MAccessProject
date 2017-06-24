@@ -62,10 +62,11 @@ p {
   	font-family: robotoBold;
   	font-size: 13px;
   	color: #FFF;
+  	cursor: pointer;
     transition :all ease 0.3s
 }
 .btnLogin:hover{
-  background-color: #00A096;
+	background-color: #00A096;
 }
 .txtLogin {
 	color: #565656;
@@ -80,8 +81,8 @@ span {
 	font-size: 14px;
 }
 .forgotPass{
-  cursor: pointer;
+	cursor: pointer;
 }
 .forgotPass:hover {
-  color:#3674e1; 
+	color:#3674e1; 
 }

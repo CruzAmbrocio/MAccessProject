@@ -127,12 +127,12 @@ changeIndicatiors(statOne, statTwo, statThree){
     this.shortcutAddUser = param4;
     //alert("this.takePictureUser")
   }
-    types:any[]=[
-        {id:'C-Level',Name:'C-Level'},
-        {id:'IT',Name:'IT'},
-        {id:'Marketing',Name:'Marketing'},
-        {id:'Mantenimiento',Name:'Mantenimiento'},
-        {id:'Ventas',Name:'ventasddd'}
+  types:any[]=[
+    {id:'C-Level',Name:'C-Level'},
+    {id:'IT',Name:'IT'},
+    {id:'Marketing',Name:'Marketing'},
+    {id:'Mantenimiento',Name:'Mantenimiento'},
+    {id:'Ventas',Name:'ventasddd'}
   ];
   /*item to be preselected should be in the below object which 
   *is returned by the web  service
@@ -203,8 +203,20 @@ export class EditModal implements CloseGuard, ModalComponent<CustomModalContext>
     console.log("alkdfalsdkjflaksdjflaks");
     this.shortcutEditUser = param1;
     this.shortcutUserTable = para2;
-    
-    //alert("this.takePictureUser")
+  }
+  types:any[]=[
+    {id:'C-Level',Name:'C-Level'},
+    {id:'IT',Name:'IT'},
+    {id:'Marketing',Name:'Marketing'},
+    {id:'Mantenimiento',Name:'Mantenimiento'},
+    {id:'Ventas',Name:'ventasddd'}
+  ];
+  /*item to be preselected should be in the below object which 
+  *is returned by the web  service
+  */
+  selectedElement:any= {id:'IT',Name:'IT'};
+  load(val){
+    console.log(val)
   }
 }
 //------------------------------------------------------------------------------

@@ -3,11 +3,13 @@ import { CommonModule } from '@angular/common';
 
 import { RolesRoutingModule } from './roles-routing.module';
 import { RolesComponent } from './roles.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
     CommonModule,
-    RolesRoutingModule
+    RolesRoutingModule,
+    FormsModule,
   ],
   declarations: [RolesComponent]
 })

@@ -41,8 +41,6 @@ export class AddModalLoc implements CloseGuard, ModalComponent<CustomModalContex
    BackAddLoc2: any;
    dotsIndicators: any
 
-
-
   constructor(public modal: Modal, private compiler: Compiler, private injector: Injector, public dialog: DialogRef<CustomModalContext>) {
     this.context = dialog.context;
     this.wrongAnswer = true;
