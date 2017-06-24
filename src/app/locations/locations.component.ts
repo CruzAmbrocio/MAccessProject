@@ -323,6 +323,16 @@ export class AddModalLoc implements CloseGuard, ModalComponent<CustomModalContex
     this.viewLocationLevelThree = false;
     this.viewLocationLevelFour = false;
     this.dataLocation = locationID;
+
+    if (this.indexLocationView[0] != undefined) {
+      this.indexLocationView[0] = this.locationJson.ParentLocation[index].Name;
+    } else {
+      this.indexLocationView.push(this.locationJson.ParentLocation[index].Name);
+    }
+
+    if (this.indexLocationView[1] != undefined) {
+      this.indexLocationView.splice(1);
+    }
   }
 
   selectLocationLevelTwo(index, locationID, LevelTwoId) {
@@ -332,16 +342,43 @@ export class AddModalLoc implements CloseGuard, ModalComponent<CustomModalContex
     this.viewLocationLevelFour = false;
     this.dataLocation = locationID;
     this.dataLocationLevelTwo = LevelTwoId;
+
+    if (this.indexLocationView[1] != undefined) {
+      this.indexLocationView[1] = this.locationJson.LocationLevelTwo[index].Name;
+    } else {
+      this.indexLocationView.push(this.locationJson.LocationLevelTwo[index].Name);
+    }
+
+    if (this.indexLocationView[2] != undefined) {
+      this.indexLocationView.splice(2);
+    }
   }
 
   selectLocationLevelThree(index, LevelThreeId){
     this.LocationLevelThreeActiveId = index;
     this.dataLocationLevelThree = LevelThreeId;
+    this.LocationLevelFourActiveId = -1;
     this.viewLocationLevelFour = true;
+
+    if (this.indexLocationView[2] != undefined) {
+      this.indexLocationView[2] = this.locationJson.LocationLevelThree[index].Name;
+    } else {
+      this.indexLocationView.push(this.locationJson.LocationLevelThree[index].Name);
+    }
+
+    if (this.indexLocationView[3] != undefined) {
+      this.indexLocationView.splice(3);
+    }
   }
 
   selectLocationLevelFour(index, LevelFourId){
     this.LocationLevelFourActiveId = index;
+
+    if (this.indexLocationView[3] != undefined) {
+      this.indexLocationView[3] = this.locationJson.LocationLevelFour[index].Name;
+    } else {
+      this.indexLocationView.push(this.locationJson.LocationLevelFour[index].Name);
+    }
   }
 
 
