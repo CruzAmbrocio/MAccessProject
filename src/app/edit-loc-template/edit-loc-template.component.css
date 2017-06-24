@@ -157,7 +157,9 @@
   margin-right: 35%;
   cursor: pointer;
 }
-
+.contAddLocat{
+  height: 55px;
+}
 /*----------------------------------------------------------------------------*/
 
 /* table Subheader navegation */

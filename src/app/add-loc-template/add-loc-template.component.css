@@ -202,13 +202,14 @@
   -moz-box-shadow: 0 0 8px rgba(0, 0, 0, .3);
 }
 .contentTable {
+  position: relative;
   width: 25%;
   height: 100%;
   border-right: 1px solid #DCDCDC;
 }
 .contentRow {
   height: 88%;
-  max-height: 335px;
+  max-height: 178px;
   overflow-y: auto;
 }
 .activeCellRow {
@@ -295,12 +296,15 @@
   margin-right: 33%;
 }
 .locationNew {
-  margin-top: 4%;
+  position: absolute;
+  width: 100%;
+  bottom: 0px;
 }
 .locationsText {
   margin-left: 5%;
   font-size: 11px;
   color: #01D9FE;
+  cursor: pointer;
 }
 .imgAgree {
   width: 12px;
@@ -340,10 +344,7 @@
   background: transpar3ent;
 }
 
-.locationNew{
-  width: 100%;
-  margin-bottom: 0px;
-}
+
 /*   Style input search */
 .myInput {
   border-radius: 5px;
@@ -355,10 +356,11 @@
   padding: 5px 5px 5px 5px;
   border-color: white;
   border-width: 0px;
-  border-radius: 10px; 
   height: 25px;
   margin-right: auto;
   margin-left: auto;
+  width: 100%;
+  box-shadow: 0px 0px 3px 0px #7d7d7d;
 
 }
 ::-webkit-input-placeholder { /* Chrome */
@@ -369,7 +371,10 @@ input {
   color: #a2a2a2;
 }
 .contAddLocat{
-  margin-top: -55px;
+    bottom: 0px;
+    height: 90px;
+    position: absolute;
+    width: 100%;
 }
 .contImageDone{
   background-color: #2ecf68;
@@ -385,6 +390,12 @@ input {
     width: 50%;
     margin-left: 22%;
     margin-top: 20%;
+}
+.contBtnDone{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
 }
 /*----------------------------------------------------------------------------*/
 .centerTitleCoord {

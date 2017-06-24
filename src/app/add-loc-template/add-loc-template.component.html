@@ -79,11 +79,14 @@
               </div>
               <div class="contAddLocat" *ngIf="appearAllContent">
                 <input #inputVal type="text" placeholder="Nueva Ubicación" class ="myInput" (keyup)="onKeyUpShow(inputVal.value)">
-                <div class="contImageDone" (click)="addingNewLoc('ParentLocation',inputVal.value)" *ngIf="appearCheckIcon">
-                  <img class="imgCheckDone" src="./assets/iconos/icon_check.png">
+                <div class="contBtnDone">
+                  <div class="contImageDone" (click)="addingNewLoc('ParentLocation',inputVal.value)"
+                   *ngIf="appearCheckIcon">
+                    <img class="imgCheckDone" src="./assets/iconos/icon_check.png">
+                  </div>
                 </div>
               </div>
-              <div class="locationNew">
+              <div class="locationNew" *ngIf="appearTxtNewLoc">
                 <p class="locationsText"(click)="appearInputAddNewLoc()"><img class="imgAgree" src="./assets/iconos/icon_agregar.png" >&nbsp;&nbsp;Nueva Ubicación</p>
               </div>
             </div>
@@ -97,14 +100,17 @@
                   </div>
                 </div>
               </div>
-              <div class="contAddLocat">
-                <input #inputValTwo type="text" placeholder="Nueva Ubicación" class ="myInput" (keyup)="onKeyUpShow(inputValTwo.value)">
-                <div class="contImageDone" (click)="addingNewLoc('LocationLevelTwo',inputValTwo.value)">
-                  <img class="imgCheckDone" src="./assets/iconos/icon_check.png">
+
+              <div class="contAddLocat" *ngIf="appearAllContent2">
+                <input #inputValTwo type="text" placeholder="Nueva Ubicación" class ="myInput" (keyup)="onKeyUpShow2(inputValTwo.value)">
+                <div class="contBtnDone">
+                  <div class="contImageDone" (click)="addingNewLoc('LocationLevelTwo',inputValTwo.value)" *ngIf="appearCheckIcon2">
+                    <img class="imgCheckDone" src="./assets/iconos/icon_check.png">
+                  </div>
                 </div>
               </div>
-              <div class="locationNew">
-                <p class="locationsText"><img class="imgAgree" src="./assets/iconos/icon_agregar.png">&nbsp;&nbsp;Nueva Ubicación</p>
+              <div class="locationNew" *ngIf="appearTxtNewLoc2">
+                <p class="locationsText" (click)="appearInputAddNewLoc2()"><img class="imgAgree" src="./assets/iconos/icon_agregar.png" >&nbsp;&nbsp;Nueva Ubicación</p>
               </div>
             </div>
             <div class="contentTable" *ngIf="viewLocationLevelThree">
@@ -117,14 +123,16 @@
                   </div>
                 </div>
               </div>
-              <div class="contAddLocat">
-                <input #inputValThree type="text" placeholder="Nueva Ubicación" class ="myInput" (keyup)="onKeyUpShow(inputValThree.value)">
-                <div class="contImageDone" (click)="addingNewLoc('LocationLevelThree',inputValThree.value)">
-                  <img class="imgCheckDone" src="./assets/iconos/icon_check.png">
+              <div class="contAddLocat" *ngIf="appearAllContent3">
+                <input #inputValThree type="text" placeholder="Nueva Ubicación" class ="myInput" (keyup)="onKeyUpShow3(inputValThree.value)">
+                <div class="contBtnDone">
+                  <div class="contImageDone" (click)="addingNewLoc('LocationLevelThree',inputValThree.value)" *ngIf="appearCheckIcon3">
+                    <img class="imgCheckDone" src="./assets/iconos/icon_check.png">
+                  </div>
                 </div>
               </div>
-              <div class="locationNew">
-                <p class="locationsText"><img class="imgAgree" src="./assets/iconos/icon_agregar.png">&nbsp;&nbsp;Nueva Ubicación</p>
+              <div class="locationNew" *ngIf="appearTxtNewLoc3">
+                <p class="locationsText" (click)="appearInputAddNewLoc3()"><img class="imgAgree" src="./assets/iconos/icon_agregar.png">&nbsp;&nbsp;Nueva Ubicación</p>
               </div>
             </div>
             <div class="contentTable" *ngIf="viewLocationLevelFour">
@@ -137,14 +145,16 @@
                   </div>
                 </div>
               </div>
-              <div class="contAddLocat">
-                <input #inputValFour type="text" placeholder="Nueva Ubicación" class ="myInput" (keyup)="onKeyUpShow(inputValFour.value)">
-                <div class="contImageDone" (click)="addingNewLoc('LocationLevelFour',inputValFour.value)">
-                  <img class="imgCheckDone" src="./assets/iconos/icon_check.png">
+              <div class="contAddLocat" *ngIf="appearAllContent4">
+                <input #inputValFour type="text" placeholder="Nueva Ubicación" class ="myInput" (keyup)="onKeyUpShow4(inputValFour.value)">
+                <div class="contBtnDone">
+                  <div class="contImageDone" (click)="addingNewLoc('LocationLevelFour',inputValFour.value)"  *ngIf="appearCheckIcon4">
+                    <img class="imgCheckDone" src="./assets/iconos/icon_check.png">
+                  </div>
                 </div>
               </div>
-              <div class="locationNew">
-                <p class="locationsText"><img class="imgAgree" src="./assets/iconos/icon_agregar.png">&nbsp;&nbsp;Nueva Ubicación</p>
+              <div class="locationNew" *ngIf="appearTxtNewLoc4">
+                <p class="locationsText" (click)="appearInputAddNewLoc4()"><img class="imgAgree" src="./assets/iconos/icon_agregar.png">&nbsp;&nbsp;Nueva Ubicación</p>
               </div>
             </div>
           </div>  
