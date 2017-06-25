@@ -27,6 +27,7 @@
   float: right;
   margin-top: 5%;
   display: inline-block;
+  cursor: pointer;
 }
 .dotsSlider {
   display: inline-block;
@@ -104,7 +105,6 @@
   margin-bottom: 2%;
   font-family: robotoRegular;
   font-size: 12px;
-  color: #6A6A6A;
   border-color: #F0F0F0;
   width: 80%;
 }
@@ -131,6 +131,10 @@
   font-size: 12px;
   color: #FFF;
   cursor: pointer;
+  transition :all ease 0.3s
+}
+.btnSigRol:hover{
+  background-color: #00A096;
 }
 /* VISTA TABLA DE REGISTRO DE ROLES*/
 .cenTitlesLoc {
@@ -272,6 +276,10 @@
   font-size: 12px;
   color: #FFF;
   cursor: pointer;
+  transition :all ease 0.3s
+}
+.btnNext:hover{
+  background-color: #00A096;
 }
 .iconCheck {
   width: 12px;
@@ -372,7 +380,7 @@
   color: #6E6E6E;
   font-size: 11px;
 }
-.btnLogin {
+.btnCreatedRols {
   margin-left: 42%;
   margin-top: 5%;
   display: flex;
@@ -388,4 +396,8 @@
   font-size: 12px;
   color: #FFF;
   cursor: pointer;
+  transition :all ease 0.3s
+}
+.btnCreatedRols:hover{
+  background-color: #00A096;
 }

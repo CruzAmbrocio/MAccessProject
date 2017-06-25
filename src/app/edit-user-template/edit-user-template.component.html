@@ -40,7 +40,7 @@
             </div>
             <div class="dropdown">
             <select [ngModel]="selectedElement?.id"  [ngModelOptions]="{standalone: true}" class=" form-control nameInput">
-              <option *ngFor="let type of types" [ngValue]="type.id" class="alignDrop">{{type.Name}}</option>
+              <option *ngFor="let type of types" [ngValue]="type?.id" class="alignDrop">{{type?.Name}}</option>
             </select>
           </div>
         </form>

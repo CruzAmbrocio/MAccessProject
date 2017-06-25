@@ -4,6 +4,7 @@ import { DialogRef, ModalComponent, CloseGuard } from 'angular2-modal';
 import { Compiler,  Injector, TemplateRef, ViewChild, NgModuleRef } from '@angular/core';
 import { Overlay, overlayConfigFactory } from 'angular2-modal';
 import { Router, NavigationEnd } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 //------------------------------------------------------------------------------
 export class CustomModalContext extends BSModalContext {
   public num1: number;
@@ -38,6 +39,9 @@ export class AddModalRol implements CloseGuard, ModalComponent<CustomModalContex
   BackUser: any;
   dotsIndicators: any
 
+  isActiveChecks: any;
+  isDisableChecks: any;
+
   constructor(public modal: Modal, private compiler: Compiler, private injector: Injector, public dialog: DialogRef<CustomModalContext>) {
     this.context = dialog.context;
     this.wrongAnswer = true;
@@ -68,7 +72,6 @@ export class AddModalRol implements CloseGuard, ModalComponent<CustomModalContex
     return this.wrongAnswer;
   }
   deleteWarningAddRol() {
-    console.log("asdfasdfasdfasdfasdfasdf")
     swal({
       html: `
             <div class="cirleImgDel">  
@@ -123,8 +126,8 @@ declare var swal: any;
 export class EditModalRol implements CloseGuard, ModalComponent<CustomModalContext>, OnInit {
   context: CustomModalContext;
 
-   wrongAnswer: boolean;
-   shouldUseMyClass: boolean;
+  wrongAnswer: boolean;
+  shouldUseMyClass: boolean;
 
   public roleEdit: any;
   public accessAllowed: any;
@@ -140,6 +143,11 @@ export class EditModalRol implements CloseGuard, ModalComponent<CustomModalConte
   BackUser: any;
   dotsIndicators: any
 
+  public names: any;
+  public selectedAll: any;
+  hola:any
+  holis:any;
+
   constructor(public modal: Modal, private compiler: Compiler, private injector: Injector, public dialog: DialogRef<CustomModalContext>) {
     this.context = dialog.context;
     this.wrongAnswer = true;
@@ -147,6 +155,14 @@ export class EditModalRol implements CloseGuard, ModalComponent<CustomModalConte
 
     this.changeIndicatiorsEdit = this.changeIndicatiorsEdit
     this.changeIndicatiorsEdit(true, false, false);
+
+    this.names = [
+      {name: 'Hola', selected:true},
+      {name: ':v', selected:false},
+      {name: 'xD', selected:false},
+      {name: ':c', selected:false},
+      {name: 'holis', selected:false},
+    ];
   }
   ngOnInit() {
     this.callFunctionEditRols = this.changeStepsEditeRoles;
@@ -158,6 +174,12 @@ export class EditModalRol implements CloseGuard, ModalComponent<CustomModalConte
     this.isDisabled1 = true;
     this.BackUser = false;
     this.dotsIndicators = true;
+
+    this.hola = this.selectAll;
+    this.hola();
+    this.holis = this.checkIfAllSelected;
+    this.holis();
+
   }
   closeEditRol(value) {
     this.wrongAnswer = value != 5;
@@ -173,7 +195,6 @@ export class EditModalRol implements CloseGuard, ModalComponent<CustomModalConte
   }
 
   deleteWarningEdit() {
-    console.log("asdfasdfasdfasdfasdfasdf")
     swal({
       html: `
             <div class="cirleImgDel">  
@@ -216,7 +237,16 @@ export class EditModalRol implements CloseGuard, ModalComponent<CustomModalConte
       this.dotsIndicators = false;
     }
   }
-
+  selectAll() {
+    for (var i = 0; i < this.names.length; i++) {
+      this.names[i].selected = this.selectedAll;
+    }
+  }
+  checkIfAllSelected() {
+    this.selectedAll = this.names.every(function(item:any) {
+      return item.selected == true;
+    });
+  }
 }
 //------------------------------------------------------------------------------
 @Component({

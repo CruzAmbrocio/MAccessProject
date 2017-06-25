@@ -1,3 +1,4 @@
+/* VISTA HEADER EDITAR ACCESOS */
 .headerCl{
   width: 100%;
   float: left;
@@ -27,6 +28,7 @@
   float: right;
   margin-top: 5%;
   display: inline-block;
+  cursor: pointer;
 }
 .dotsSlider {
   display: inline-block;
@@ -65,8 +67,6 @@
   background: #97E7DE;
   display: inline-block;
 }
-
-/*----------------------------------------------------------------*/
 /* VISTA EDITAR ACCESO */
 .centerTitlesAccess {
   text-align: center;
@@ -105,7 +105,6 @@
   margin-bottom: 2%;
   font-family: robotoRegular;
   font-size: 12px;
-  color: #6A6A6A;
   border-color: #F0F0F0;
   width: 80%;
 }
@@ -136,6 +135,11 @@
   font-family: robotoBold;
   font-size: 12px;
   color: #FFF;
+  cursor: pointer;
+  transition :all ease 0.3s
+}
+.btnAccessNext:hover{
+  background-color: #00A096;
 }
 .delIcon {
   width: 13px;
@@ -249,23 +253,6 @@
   font-family: robotoRegular;
   color: #9F9F9F;
   font-size: 11px;
-}
-.btnCancel {
-  display: block;
-  align-items: center;
-  justify-content: center;
-  border-radius: 15px;
-  width: 45%;
-  height: 30px;
-  background-color:#ededed;
-  text-align: center;
-  text-decoration: none;
-  font-family: robotoBold;
-  font-size: 12px;
-  color: #575757;
-  float: right;
-  padding-top: 2%;
-  cursor: pointer;
 }
 ul .buttonSelecction{
   color: #AAAAAA;
@@ -459,6 +446,10 @@ input[type=radio]:checked ~ label{
   font-size: 12px;
   color: #FFF;
   cursor: pointer;
+  transition :all ease 0.3s
+}
+.btnChangerLocation:hover{
+  background-color: #00A096;
 }
 .delIcon {
   width: 13px;
@@ -546,6 +537,10 @@ input[type=radio]:checked ~ label{
   font-size: 12px;
   color: #FFF;
   cursor: pointer;
+  transition :all ease 0.3s
+}
+.btnEditAcces:hover{
+  background-color: #00A096;
 }
 .iconCheck {
   width: 12px;
