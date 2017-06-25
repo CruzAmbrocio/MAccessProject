@@ -435,7 +435,7 @@ table, td {
 .btnNextRol:hover{
   background-color: #00A096;
 }
-input[type="checkbox"]{
+/*input[type="checkbox"]{
   appearance: none;
   -moz-appearance: none;
   -webkit-appearance: none;
@@ -450,4 +450,4 @@ input[type="checkbox"]#checkbox1:checked{
 }
 input[type="checkbox"]#checkbox1:focus{
   outline: none;
-}
+}*/

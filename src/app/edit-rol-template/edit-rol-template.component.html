@@ -74,7 +74,7 @@
       </div>
       <div class="contInside">
         <div class=" containerButtons">
-        <a (click)="off()" class="btnCheckAll">
+        <a class="btnCheckAll">
         Check all</a>
         <a (click)="off()" class="btnUnCheckAll">Uncheck all</a>
         </div>
@@ -83,15 +83,16 @@
         <div class="boxContentRol">
           <div class="containerTable">
             <table class="tableStyle">
-            
-            <!--ul>
-              <li> <input type="checkbox" [(ngModel)]="selectedAll" (change)="selectAll();"/>
-              </li>
-              <li *ngFor="let n of names"> 
-              <input type="checkbox" [(ngModel)]="n.selected" (change)="checkIfAllSelected();">
-              {{n.name}}
-              </li>
-            </ul-->
+
+              <ul>
+                <li> 
+                  <input type="checkbox" [(ngModel)]="selectedAll" (change)="selectAll();"/>
+                </li>
+                <li *ngFor="let n of names"> 
+                  <input type="checkbox" [(ngModel)]="n.selected" (change)="checkIfAllSelected();">
+                  {{n.name}}
+                </li>
+              </ul>
 
 
               <tr class="cellFormat">

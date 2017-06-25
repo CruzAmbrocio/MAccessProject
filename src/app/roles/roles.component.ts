@@ -143,8 +143,10 @@ export class EditModalRol implements CloseGuard, ModalComponent<CustomModalConte
   BackUser: any;
   dotsIndicators: any
 
-  /*public names: any;
-  public selectedAll: any;*/
+  public names: any;
+  public selectedAll: any;
+  hola:any
+  holis:any;
 
   constructor(public modal: Modal, private compiler: Compiler, private injector: Injector, public dialog: DialogRef<CustomModalContext>) {
     this.context = dialog.context;
@@ -154,13 +156,13 @@ export class EditModalRol implements CloseGuard, ModalComponent<CustomModalConte
     this.changeIndicatiorsEdit = this.changeIndicatiorsEdit
     this.changeIndicatiorsEdit(true, false, false);
 
-    /*this.names = [
-      {name: 'Hola', selected:false},
+    this.names = [
+      {name: 'Hola', selected:true},
       {name: ':v', selected:false},
       {name: 'xD', selected:false},
       {name: ':c', selected:false},
       {name: 'holis', selected:false},
-    ]*/
+    ];
   }
   ngOnInit() {
     this.callFunctionEditRols = this.changeStepsEditeRoles;
@@ -173,8 +175,11 @@ export class EditModalRol implements CloseGuard, ModalComponent<CustomModalConte
     this.BackUser = false;
     this.dotsIndicators = true;
 
-    /*this.selectAll();
-    this.checkIfAllSelected();*/
+    this.hola = this.selectAll;
+    this.hola();
+    this.holis = this.checkIfAllSelected;
+    this.holis();
+
   }
   closeEditRol(value) {
     this.wrongAnswer = value != 5;
@@ -232,7 +237,7 @@ export class EditModalRol implements CloseGuard, ModalComponent<CustomModalConte
       this.dotsIndicators = false;
     }
   }
-  /*selectAll() {
+  selectAll() {
     for (var i = 0; i < this.names.length; i++) {
       this.names[i].selected = this.selectedAll;
     }
@@ -240,8 +245,8 @@ export class EditModalRol implements CloseGuard, ModalComponent<CustomModalConte
   checkIfAllSelected() {
     this.selectedAll = this.names.every(function(item:any) {
       return item.selected == true;
-    })
-  }*/
+    });
+  }
 }
 //------------------------------------------------------------------------------
 @Component({
