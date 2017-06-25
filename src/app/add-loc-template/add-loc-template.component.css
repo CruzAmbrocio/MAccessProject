@@ -1,72 +1,81 @@
-/* VISTA HEADER DE LOCALICACION */
+
 .headerCl{
-  width: 100%;
-  float: left;
+    width: 100%;
+    float: left;
 }
+
 .btnBackUser{
-  height: 18px;
-  float: left;
-  margin-top: 5%;
-  display: inline-block;
+    height: 18px;
+    float: left;
+    margin-top: 5%;
+    display: inline-block;
 }
+
 .imgBackUser{
-  display: inline-block;
-  height: 100%;
-  width: 20px;
-  cursor: pointer;
+    display: inline-block;
+    height: 100%;
+    width: 20px;
+    cursor: pointer;
 }
+
 .txtBackUser{
-  display: inline-block;
-  font-family: robotoBold;
-  color: #b7b7b7;
-  font-size: 11px;
-  cursor: pointer;
+    display: inline-block;
+    font-family: robotoBold;
+    color: #b7b7b7;
+    font-size: 11px;
+    cursor: pointer;
 }
+
 .iconHeaderUser {
-  height: 18px;
-  width: 18px;
-  float: right;
-  margin-top: 5%;
-  display: inline-block;
-  cursor: pointer;
+    height: 18px;
+    width: 18px;
+    float: right;
+    margin-top: 5%;
+    display: inline-block;
 }
+
 .dotsSlider {
-  display: inline-block;
-  width: 100%;
-  height: 25px;
-  margin-top: 5%;
+    display: inline-block;
+    width: 100%;
+    height: 25px;
+    margin-top: 5%;
 }
+
 .contIndicators{
-  width: 40px;
-  height: 100%;
-  margin: 0 auto;
-  align-items: center;
+    width: 40px;
+    height: 100%;
+    margin: 0 auto;
+    align-items: center;
 }
+
 .DotRigth{
 }
+
 .DotLeft{
 }
 .DotCenter{
 }
+
 .circulo1 {
-  width: 8px;
-  height: 8px;
-  -moz-border-radius: 50%;
-  -webkit-border-radius: 50%;
-  border-radius: 50%;
-  background: #51CCD5;
-  display: inline-block;
+    width: 8px;
+    height: 8px;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    background: #51CCD5;
+    display: inline-block;
 }
+
 .circulo2 {
-  width: 8px;
-  height: 8px;
-  -moz-border-radius: 50%;
-  -webkit-border-radius: 50%;
-  border-radius: 50%;
-  background: #97E7DE;
-  display: inline-block;
+    width: 8px;
+    height: 8px;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    background: #97E7DE;
+    display: inline-block;
 }
-/* Vista tabla de ingreso de ubicaciones y sububicaciones */
+/*----------------------------------------------------------------------------*/
 .centerTitlesUbication {
   text-align: center;
   margin-top: 4%;
@@ -93,6 +102,7 @@
 .boxContentUbication {
   height: 140px;
   width: 55%;
+  margin-top: 4%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -106,6 +116,7 @@
   margin-bottom: 2%;
   font-family: robotoRegular;
   font-size: 12px;
+  color: #6A6A6A;
   border-color: #F0F0F0;
   width: 80%;
 }
@@ -131,24 +142,44 @@
   font-family: robotoBold;
   font-size: 12px;
   color: #FFF;
-  transition :all ease 0.3s;
   cursor: pointer;
+  transition :all ease 0.3s
 }
-.btnRegisterLocat:hover{
-  background-color: #00A096;
+
+.btnRegisterLocat:focus {
+    outline:none !important;
 }
-/* Vista tabla de ingreso de coordenadas */
+
+/*----------------------------------------------------------------------------*/
+.cenTitlesLoc {
+  text-align: center;
+  margin-top: 4%;
+}
+.editLoc {
+  font-family: robotoBold;
+  color: #575757;
+  font-size: 12px;
+}
+.desEditLoc {
+  font-family: robotoRegular;
+  margin-top: -5px;
+  color: #AFAFAF;
+  font-size: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 /* table Subheader navegation */
 .boxContSub {
   height: 18px;
-  width: 100%;
+  width: 90%;
   margin-top: 2%;
 }
 .editNav {
   font-family: robotoRegular;
   color: #989898;
   font-size: 10px;
-  margin-left: 9px;
+  margin-left: 8px;
 }
 .editNavActive {
   font-family: robotoBold;
@@ -250,7 +281,7 @@
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
 }
-.btnCreatedCoodinates {
+.btnNext {
   margin-left: auto;
   margin-right: auto;
   margin-top: 8%;
@@ -266,11 +297,6 @@
   font-family: robotoBold;
   font-size: 12px;
   color: #FFF;
-  transition :all ease 0.3s;
-  cursor: pointer;
-}
-.btnCreatedCoodinates:hover{
-  background-color: #00A096;
 }
 .iconCheck {
   width: 12px;
@@ -332,9 +358,6 @@
 ::-webkit-scrollbar-corner {
   background: transpar3ent;
 }
-<<<<<<< HEAD
-/* Vista registro de coordenadas */
-=======
 
 
 /*   Style input search */
@@ -408,7 +431,6 @@ input {
   align-items: center;
   justify-content: center;
 }
->>>>>>> e976d6b757b6bdbfbda02a7e90c92d74475caae1
 .contentDataCoord {
   display: flex;
   align-items: center;
@@ -442,9 +464,9 @@ input {
   padding: 0 15px;
   margin-left: 10%;
 }
-.btnCreatedUbication {
+.btnRegisterLocat {
   margin-left: 38%;
-  margin-top: -8%;
+  margin-top: 0%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -457,13 +479,27 @@ input {
   font-family: robotoBold;
   font-size: 12px;
   color: #FFF;
-  transition :all ease 0.3s;
-  cursor: pointer;
 }
-.btnCreatedUbication:hover{
-  background-color: #00A096;
+
+/*----------------------------------------------------------------------------*/
+.cenTitlesLoc {
+  text-align: center;
+  margin-top: 4%;
 }
-/* Vista de ubicacion creada */
+.editLoc {
+  font-family: robotoBold;
+  color: #575757;
+  font-size: 12px;
+}
+.desEditLoc {
+  font-family: robotoRegular;
+  margin-top: -5px;
+  color: #AFAFAF;
+  font-size: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .contentEditLoc {
   display: flex;
   align-items: center;
@@ -522,9 +558,4 @@ input {
   font-family: robotoBold;
   font-size: 12px;
   color: #FFF;
-  transition :all ease 0.3s;
-  cursor: pointer;
-}
-.btnAccept:hover{
-  background-color: #00A096;
 }
