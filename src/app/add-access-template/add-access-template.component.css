@@ -245,9 +245,109 @@ input[type=radio]:checked ~ label{
   width: 90%;
   margin-top: 2%;
 }
+.editNa/*----------------------------------------------------------------------------*/
+.centerTitlesUbication {
+  text-align: center;
+  margin-top: 4%;
+}
+.ubicactionEdit {
+  font-family: robotoBold;
+  color: #575757;
+  font-size: 12px;
+}
+.ubicactionDesEdit {
+  font-family: robotoRegular;
+  margin-top: -5px;
+  color: #AFAFAF;
+  font-size: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.contentDataUbication {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.boxContentUbication {
+  height: 140px;
+  width: 55%;
+  margin-top: 4%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.posInputsUbication {
+  width: 100%;
+}
+.inputName, .inputDesc, .inputCoordinate {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2%;
+  font-family: robotoRegular;
+  font-size: 12px;
+  color: #6A6A6A;
+  border-color: #F0F0F0;
+  width: 80%;
+}
+.form-group {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0 15px;
+  margin-left: 10%;
+}
+.btnRegisterLocat {
+  margin-left: 38%;
+  margin-top: 2%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px;
+  width: 22%;
+  height: 32px;
+  background-color: #00C6AF;
+  text-align: center;
+  text-decoration: none;
+  font-family: robotoBold;
+  font-size: 12px;
+  color: #FFF;
+}
+
+/*----------------------------------------------------------------------------*/
+.cenTitlesLoc {
+  text-align: center;
+  margin-top: 4%;
+}
+.editLoc {
+  font-family: robotoBold;
+  color: #575757;
+  font-size: 12px;
+}
+.desEditLoc {
+  font-family: robotoRegular;
+  margin-top: -5px;
+  color: #AFAFAF;
+  font-size: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* table Subheader navegation */
+.boxContSub {
+  height: 18px;
+  width: 90%;
+  margin-top: 2%;
+}
 .editNav {
   font-family: robotoRegular;
   color: #989898;
+  font-size: 10px;
+  margin-left: 8px;
+}
+.editNavActive {
+  font-family: robotoBold;
+  color: #000000;
   font-size: 10px;
   margin-left: 8px;
 }
@@ -269,7 +369,7 @@ input[type=radio]:checked ~ label{
 }
 .boxContentDataLoc {
   height: 270px;
-  width: 90%;
+  width: 900px;
   display: flex;
   margin-top: 1%;
   -webkit-border-radius: 1%; 
@@ -277,19 +377,25 @@ input[type=radio]:checked ~ label{
   -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .3); 
   -moz-box-shadow: 0 0 8px rgba(0, 0, 0, .3);
 }
-.contentRow {
+.contentTable {
+  position: relative;
   width: 25%;
   height: 100%;
-  margin-left: 0;
   border-right: 1px solid #DCDCDC;
 }
-.margenRow {
-  margin-left: 2%;
+.contentRow {
+  max-height: 240px;
+  overflow-y: auto;
+}
+.contentRowShow{
+  max-height: 178px;
+  overflow-y: auto;
 }
 .activeCellRow {
   background-color: #00C6AF;
-  height: 12%;
-  margin-top: -12%;
+  height: 35px;
+  margin-top: -20px;
+  cursor: pointer;
 }
 .textActive {
   font-family: robotoRegular;
@@ -303,9 +409,10 @@ input[type=radio]:checked ~ label{
   display: block;
 }
 .desactiveCellRow {
-  height: 12%;
-  margin-top: -12%;
+  height: 35px;
+  margin-top: -20px;
   border-bottom: 1px solid #DCDCDC;
+  cursor: pointer;
 }
 .textDesactive {
   font-family: robotoRegular;
@@ -337,6 +444,137 @@ input[type=radio]:checked ~ label{
   top: -14%;
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
+}
+.btnNext {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 8%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px;
+  width: 22%;
+  height: 32px;
+  background-color: #00C6AF;
+  text-align: center;
+  text-decoration: none;
+  font-family: robotoBold;
+  font-size: 12px;
+  color: #FFF;
+}
+.iconCheck {
+  width: 12px;
+  height: 10px;
+}
+.delIcon {
+  width: 13px;
+  height: 15px;
+  float: right;
+  margin-top: -3%;
+  display: flex;
+  margin-right: 33%;
+}
+.locationNew {
+  position: absolute;
+  width: 100%;
+  bottom: 0px;
+}
+.locationsText {
+  margin-left: 5%;
+  font-size: 11px;
+  color: #01D9FE;
+  cursor: pointer;
+}
+.imgAgree {
+  width: 12px;
+  height: 12px;
+}
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-button {
+  width: 0px;
+  height: 0px;
+}
+::-webkit-scrollbar-thumb {
+  background: #cfcfcf;
+  border: 0px none #ffffff;
+  border-radius: 50px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #cfcfcf;
+}
+::-webkit-scrollbar-thumb:active {
+  background: #cfcfcf;
+}
+::-webkit-scrollbar-track {
+  background: #ffffff;
+  border: 0px none #ffffff;
+  border-radius: 50px;
+}
+::-webkit-scrollbar-track:hover {
+  background: #fcfcfc;
+}
+::-webkit-scrollbar-track:active {
+  background: #f6f6f6;
+}
+::-webkit-scrollbar-corner {
+  background: transpar3ent;
+}
+
+
+/*   Style input search */
+.myInput {
+  border-radius: 5px;
+  background-image: url('../../assets/iconos/icon_cerrar.png');
+  background-position:95% center;
+  background-repeat: no-repeat;
+  background-size: 10px;
+  font-size: 12px;
+  padding: 5px 5px 5px 5px;
+  border-color: white;
+  border-width: 0px;
+  height: 25px;
+  margin-right: auto;
+  margin-left: auto;
+  width: 100%;
+  box-shadow: 0px 0px 3px 0px #7d7d7d;
+
+}
+::-webkit-input-placeholder { /* Chrome */
+  color: #dadada;
+}
+input {
+  font-family: "robotoRegular";
+  color: #a2a2a2;
+}
+.contAddLocat{
+    bottom: 0px;
+    height: 90px;
+    position: absolute;
+    width: 100%;
+}
+.contImageDone{
+  background-color: #2ecf68;
+  height: 30px;
+  width: 30px;
+  border-radius: 100%;
+  align-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.imgCheckDone{
+    height: 50%;
+    width: 50%;
+    margin-left: 22%;
+    margin-top: 20%;
+}
+.contBtnDone{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
 }
 /* Propiedades de la vista seleccion tipo de acceso*/
 .boxContentAcces {

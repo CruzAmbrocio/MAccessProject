@@ -150,7 +150,10 @@
   margin-right: 35%;
   cursor: pointer;
 }
-/* Vista de la tabla para editar ubicacion */
+.contAddLocat{
+  height: 55px;
+}
+/*----------------------------------------------------------------------------*/
 /* table Subheader navegation */
 .boxContSub {
   height: 18px;
