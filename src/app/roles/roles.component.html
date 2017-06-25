@@ -15,35 +15,35 @@
           <table class="tableStyle">
             <tr class="cellFormat">
               <td>c Level</td>
-              <td>Edit</td>
+              <td>Editar</td>
             </tr>
             <tr class="cellFormat">
               <td>Gerente L1</td>
-              <td><a [routerLink]="['/editRolView', {outlets: {editUserOutlet: ['rolEdit']}}]">Editar</a></td>
+              <td (click)="openEditRoles()">Editar</td>
             </tr>
             <tr class="cellFormat">
               <td>Gerente L2</td>
-              <td>Edit</td>
+              <td>Editar</td>
             </tr>
             <tr class="cellFormat">
               <td>Marketing</td>
-              <td>Edit</td>
+              <td>Editar</td>
             </tr>
             <tr class="cellFormat">
               <td>IT</td>
-              <td>Edit</td>
+              <td>Editar</td>
             </tr>
             <tr class="cellFormat">
               <td>Desarrollo</td>
-              <td>Edit</td>
+              <td>Editar</td>
             </tr>
             <tr class="cellFormat">
               <td>Manteniminto</td>
-              <td>Edit</td>
+              <td>Editar</td>
             </tr>
             <tr class="cellFormat">
               <td>Visitante</td>
-              <td>Edit</td>
+              <td>Editar</td>
             </tr>
           </table>
         </div>
@@ -51,14 +51,14 @@
       <div class="row">
         <div class="containerBtnAdd">
           <div class="IconPlus" >
-
-            <img [routerLink]="['/addRolView', {outlets: {editUserOutlet: ['addRoleReg']}}]" class="img-responsive imgPlus" alt="icon plus" src="./assets/iconos/floating_agregar.png">
+            <img (click)="openAddRoles()" class="img-responsive imgPlus" alt="icon plus" src="./assets/iconos/floating_agregar.png">
           </div>
-            <a class="txtAddUser" [routerLink]="['/addRolView', {outlets: {editUserOutlet: ['addRoleReg']}}]">Agregar Rol</a>
+            <a class="txtAddUser" (click)="openAddRoles()">Agregar Rol</a>
         </div>
       </div>
-
     </div>
     <div class="col-sm-4 col-md-4"></div>
   </div>
 </div>
+<span defaultOverlayTarget> 
+</span>

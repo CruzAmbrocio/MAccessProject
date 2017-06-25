@@ -28,7 +28,6 @@
 }
 input {
 	width: 70%;
-	opacity: 0.7;
 	font-family: robotoRegular;
 	font-size: 
 }
@@ -38,7 +37,6 @@ input {
 .inputEmail, .inputPass {
 	width: 80%;
 	font-family: robotoRegular;
-	opacity: 0.7;
   	margin-right: auto;
 	margin-left: auto;
 }
@@ -54,8 +52,8 @@ p {
   	margin-right: auto;
   	text-align: center;
   	display: flex;
-	align-items: center;
-	justify-content: center;
+  	align-items: center;
+  	justify-content: center;
   	border-radius: 15px;
   	width: 40%;
   	height: 33px;
@@ -64,6 +62,11 @@ p {
   	font-family: robotoBold;
   	font-size: 13px;
   	color: #FFF;
+  	cursor: pointer;
+    transition :all ease 0.3s
+}
+.btnLogin:hover{
+	background-color: #00A096;
 }
 .txtLogin {
 	color: #565656;
@@ -78,5 +81,8 @@ span {
 	font-size: 14px;
 }
 .forgotPass{
-  cursor: pointer;
+	cursor: pointer;
+}
+.forgotPass:hover {
+	color:#3674e1; 
 }

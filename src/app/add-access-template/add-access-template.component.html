@@ -1,0 +1,245 @@
+<!--VISTA HEADER acceso -->
+<div class="container">
+    <div class="row">
+        <div class="col-xs-2 col-md-2"></div>
+        <div class="col-xs-8 col-md-8">
+            <div class="headerCl">
+                <div class="btnBackUser" *ngIf="BackAddLoc" (click)="changeStepsAccessNew(true, false, false, false)" (click)="changeIndicatiors(true, false, false, false)" >
+                    <img src="./assets/iconos/icon_volver.png" class="imgBackUser">
+                    <p class="txtBackUser"> Volver</p>
+                </div>
+                <div class="btnBackUser" *ngIf="BackAddLoc2" (click)="changeStepsAccessNew(false, true, false, false)" (click)="changeIndicatiors(false, true, false, false)">
+                    <img src="./assets/iconos/icon_volver.png" class="imgBackUser">
+                    <p class="txtBackUser"> Volver</p>
+                </div>
+                <a (click)="closeAddAccess(5)" >
+                    <img src="./assets/iconos/icon_cerrar.png" class="iconHeaderUser">
+                </a>
+            </div>
+            <div class="dotsSlider">
+                <div class="contIndicators" *ngIf="dotsIndicators">
+                    <div class="DotLeft" [ngClass]="{'circulo1': isActive, 'circulo2': isDisabled}"></div>
+                    <div class="DotRigth" [ngClass]="{  'circulo1': isActive1, 'circulo2': isDisabled1}"></div>
+                   <div class="DotCenter" [ngClass]="{'circulo1': isActive2, 'circulo2': isDisabled2}"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-2 col-md-2"></div>
+    </div>
+</div>
+<!--VISTA REGISTRO NUEVO ACCESO-->
+<div *ngIf="registerAccessNew" class="container">
+  <div class="row">
+  <div class="col-md-2"></div>
+    <div class="col-xs-12 col-md-8 col-lg-8">
+      <div class="centerBoxDataAccess">
+        <p class="titleAccessViews">REGISTRAR NUEVO ACCESO</p>
+        <p class="descAccessViews">Completa la información del acceso.</p>
+      </div>
+      <div class="accessContentData">
+        <div class="boxAccessContent">
+          <form class="posAccessInputs">
+            <div class="row rowCheckbox form-group">
+              <input type="contentText" class="form-control inputRegisName" id="registerName" placeholder="Nombre">
+            </div>
+            <div class="row rowCheckbox form-group">
+                <input type="number" class="form-control inputRegistID" id="registerID" placeholder="ID">
+              </div>
+              <div class="row rowCheckbox form-group">  
+                <input type="contentText" class="form-control inputRegistDesc" id="registerDesc" placeholder="Descripción">
+              </div>
+          </form>
+          <hr class="accessLine">
+          <p class="lblAccess">¿Qué permite el acceso?</p>
+          <div class="contentSelection">
+            <div class="row">
+              <ul>
+                <li class="buttonSelecction">
+                  <input type="radio" id="f-option" name="selector">
+                  <label for="f-option">Entrada</label>
+                  
+                  <div class="check"></div>
+                </li>
+                
+                <li class="buttonSelecction">
+                  <input type="radio" id="s-option" name="selector">
+                  <label for="s-option">Salida</label>
+                  
+                  <div class="check"><div class="inside"></div></div>
+                </li>
+                <li class="buttonSelecction">
+                  <input type="radio" id="t-option" name="selector">
+                  <label for="t-option">Entrada y Salida</label>
+                  <div class="check"><div class="inside"></div></div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a (click)="changeStepsAccessNew(false, true, false, false)" (click)="changeIndicatiors(false, true, false, false)" class="btnGeneralAllAccess">Siguiente</a>
+    </div>
+  <div class="col-md-2"></div>
+  </div>
+</div>
+<!--Tabla de acceso de registro-->
+<div *ngIf="tableAccessAddData"  class="container">
+  <div class="row">
+    <div class="col-md-2"></div>
+      <div class="col-xs-12 col-md-8 col-lg-8">
+        <div class="cenTitlesLoc">
+          <p class="titleAccessViews">REGISTRAR NUEVO ACCESO</p>
+          <p class="descAccessViews">Completa la información del acceso.</p>
+        </div>
+        <div class="contentSubtitItle">
+          <div class="boxContSub">
+            <p>
+            <span *ngFor="let indexLocation of indexLocationView; let i=index;" [ngClass]="(indexLocationView?.length - 1) == i ? 'editNavActive' : 'editNav'">{{indexLocation}}<img class="iconArrowNav marginText" src="./assets/iconos/arrow-icon.png" *ngIf="(indexLocationView?.length - 1) > i"></span>
+            </p>
+          </div>
+        </div>
+        <div class="contentEditLoc">
+          <div class="boxContentDataLoc"> 
+            <div class="contentTable">
+              <div [ngClass]="appearAllContent ? 'contentRowShow' : 'contentRow'">
+                <div *ngFor="let location of locationJson.ParentLocation; let i=index" [ngClass]="LocationActiveId == i ? 'activeCellRow' : 'desactiveCellRow'" (click) = "selectParentLocation(i,location.id)">
+                  <h1 [ngClass]="LocationActiveId == i ? 'textActive' : 'textDesactive'">{{location.Name}}</h1>
+                  <img *ngIf="LocationActiveId != i" class="desactiveIconArrow" src="./assets/iconos/arrow-icon.png">
+                  <img *ngIf="LocationActiveId == i" class="activeIconArrow" src="./assets/iconos/arrow-icon-left.png">
+                </div>
+              </div>
+              <div class="contAddLocat" *ngIf="appearAllContent" >
+                <input #inputVal type="text" placeholder="Nueva Ubicación" class ="myInput" (keyup)="onKeyUpShow(inputVal.value)">
+                <div class="contBtnDone">
+                  <div class="contImageDone" (click)="addingNewLoc('ParentLocation',inputVal.value)"
+                   *ngIf="appearCheckIcon">
+                    <img class="imgCheckDone" src="./assets/iconos/icon_check.png">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="contentTable" *ngIf="viewLocationLevelTwo">
+              <div [ngClass]="appearAllContent2 ? 'contentRowShow' : 'contentRow'">  
+                <div *ngFor="let locationLevelTwo of locationJson.LocationLevelTwo; let i=index">
+                  <div *ngIf="locationLevelTwo.id == dataLocation" [ngClass]="LocationLevelTwoActiveId == i ? 'activeCellRow' : 'desactiveCellRow'" (click) = "selectLocationLevelTwo(i,locationLevelTwo.id,locationLevelTwo.idLevelTwo)">
+                    <h1 [ngClass]="LocationLevelTwoActiveId == i ? 'textActive' : 'textDesactive'" *ngIf="locationLevelTwo.id == dataLocation">{{locationLevelTwo.Name}}</h1>
+                    <img *ngIf="LocationLevelTwoActiveId != i" class="desactiveIconArrow" src="./assets/iconos/arrow-icon.png">
+                    <img *ngIf="LocationLevelTwoActiveId == i" class="activeIconArrow" src="./assets/iconos/arrow-icon-left.png">
+                  </div>
+                </div>
+              </div>
+
+              <div class="contAddLocat" *ngIf="appearAllContent2">
+                <input #inputValTwo type="text" placeholder="Nueva Ubicación" class ="myInput" (keyup)="onKeyUpShow2(inputValTwo.value)">
+                <div class="contBtnDone">
+                  <div class="contImageDone" (click)="addingNewLoc('LocationLevelTwo',inputValTwo.value)" *ngIf="appearCheckIcon2">
+                    <img class="imgCheckDone" src="./assets/iconos/icon_check.png">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="contentTable" *ngIf="viewLocationLevelThree">
+              <div [ngClass]="appearAllContent3 ? 'contentRowShow' : 'contentRow'">    
+                <div *ngFor="let locationLevelThree of locationJson.LocationLevelThree; let i=index;">
+                  <div *ngIf="locationLevelThree.idLevelTwo == dataLocationLevelTwo" [ngClass]="LocationLevelThreeActiveId == i ? 'activeCellRow' : 'desactiveCellRow'" (click) = "selectLocationLevelThree(i,locationLevelThree.idLevelThree)">
+                    <h1 [ngClass]="LocationLevelThreeActiveId == i ? 'textActive' : 'textDesactive'">{{locationLevelThree.Name}}</h1>
+                    <img *ngIf="LocationLevelThreeActiveId != i" class="desactiveIconArrow" src="./assets/iconos/arrow-icon.png">
+                    <img *ngIf="LocationLevelThreeActiveId == i" class="activeIconArrow" src="./assets/iconos/arrow-icon-left.png">
+                  </div>
+                </div>
+              </div>
+              <div class="contAddLocat" *ngIf="appearAllContent3">
+                <input #inputValThree type="text" placeholder="Nueva Ubicación" class ="myInput" (keyup)="onKeyUpShow3(inputValThree.value)">
+                <div class="contBtnDone">
+                  <div class="contImageDone" (click)="addingNewLoc('LocationLevelThree',inputValThree.value)" *ngIf="appearCheckIcon3">
+                    <img class="imgCheckDone" src="./assets/iconos/icon_check.png">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="contentTable" *ngIf="viewLocationLevelFour">
+              <div [ngClass]="appearAllContent4 ? 'contentRowShow' : 'contentRow'">    
+                <div *ngFor="let locationLevelFour of locationJson.LocationLevelFour; let i=index;">
+                  <div *ngIf="locationLevelFour.idLevelThree == dataLocationLevelThree" [ngClass]="LocationLevelFourActiveId == i ? 'activeCellRow' : 'desactiveCellRow'" (click) = "selectLocationLevelFour(i,locationLevelFour.idLevelFour)">
+                    <h1 [ngClass]="LocationLevelFourActiveId == i ? 'textActive' : 'textDesactive'">{{locationLevelFour.Name}}</h1>
+                  </div>
+                </div>
+              </div>
+              <div class="contAddLocat" *ngIf="appearAllContent4">
+                <input #inputValFour type="text" placeholder="Nueva Ubicación" class ="myInput" (keyup)="onKeyUpShow4(inputValFour.value)">
+                <div class="contBtnDone">
+                  <div class="contImageDone" (click)="addingNewLoc('LocationLevelFour',inputValFour.value)"  *ngIf="appearCheckIcon4">
+                    <img class="imgCheckDone" src="./assets/iconos/icon_check.png">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>  
+        </div>
+        <a (click)="changeStepsAccessNew(false, false, true, false)" (click)="changeIndicatiors(false, true, false, false)" class="btnGeneralAllAccess">Siguiente</a>
+      </div>
+    <div class="col-md-2"></div>
+  </div>
+</div>
+
+<!-- Vista seleccionar tipo de accesso -->
+<div *ngIf="selectionAccessType" class="container">
+  <div class="row">
+  <div class="col-md-2"></div>
+    <div class="col-xs-12 col-md-8 col-lg-8">
+      <div class="centerBoxDataAccess">
+        <p class="titleAccessViews">REGISTRAR NUEVO ACCESO</p>
+        <p class="descAccessViews">Selecciona el tipo de acceso.</p>
+      </div>
+      <div class="accessContentData">
+        <div class="boxContentAcces"> 
+          <div (click)="changeText='Crear Acceso'" class="contentDataAccess">
+            <a><img class="imgSize" src="./assets/iconos/icon_access01_off.png"></a>
+            <p class="textAccessTypeDesactive">Puerta</p>
+          </div>
+          <div class="contentDataAccess">
+            <a><img class="imgMolinete" src="./assets/iconos/icon_access02_on.png"></a>
+            <p class="textAccessTypeActive">Molinete</p>
+          </div>
+          <div class="contentDataAccess">
+            <a><img class="imgTalanquera" src="./assets/iconos/icon_access03_off.png"></a>
+            <p class="textAccessTypeDesactive">Talanquera</p>
+          </div>
+          <div class="contentDataAccess">
+            <a><img class="imgMore" src="./assets/iconos/icon_access04_off.png"></a>
+            <p class="textAccessTypeDesactive">Otros</p>
+          </div>
+        </div>
+      </div>
+      <a (click)="changeStepsAccessNew(false, false, false, true)" (click)="changeIndicatiors(false, false, false, true)" class="btnAccessCreate">{{changeText}}</a>
+    </div>
+  <div class="col-md-2"></div>
+  </div>
+</div>
+<!--VISTA EDITAR ACCESO-->
+<div *ngIf="createdAccess" class="container">
+  <div class="row">
+  <div class="col-md-2"></div>
+    <div class="col-xs-12 col-md-8 col-lg-8">
+      <div class="centerBoxDataAccess">
+        <p class="titleAccessViews">ACCESO CREADO</p>
+        <p class="descAccessViews">El acceso fue creado con éxito.</p>
+      </div>
+      <div class="accessContentData">
+        <div class="boxCreatedAccess"> 
+          <div class="contentDataImg">
+            <a><img class="imgSize" src="./assets/iconos/icon_access02_on.png"></a>
+          </div>
+          <div class="dataAccess">
+            <p class="styleTextData">Bodega 2 -&nbsp;<span class="sTextData">Molinete</span></p>
+            <p class="sTextData">Zona Pradera</p>
+            <p class="sTextData">Torre 4</p>
+            <p class="sTextData">Oficina 310</p>
+          </div>
+        </div>
+      </div>
+      <a (click)="closeAddAccess(5)" (click)="changeIndicatiors(false, true, false)" class="btnCreatedAccess">Aceptar</a>
+    </div>
+  <div class="col-md-2"></div>
+  </div>
+</div>

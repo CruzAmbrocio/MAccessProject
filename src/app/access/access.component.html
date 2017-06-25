@@ -18,73 +18,73 @@
               <td>Torre3</td> 
               <td>Oficina 512</td>
               <td>Entrada 1</td>
-              <td>Edit</td>
+              <td>Editar</td>
             </tr>
             <tr class="cellFormat">
               <td>Zona Pradera</td>
               <td>Torre3</td> 
               <td>Oficina 512</td>
               <td>Salon B5</td>
-              <td><a [routerLink]="['/editAccessView', {outlets: {editUserOutlet: ['editAccess']}}]">Editar</a></td>
+              <td (click)="openEditAccess()">Editar</td>
             </tr>
             <tr class="cellFormat">
               <td>Zona Pradera</td>
               <td>Torre3</td> 
               <td>Oficina 514</td>
               <td>Salon Control</td>
-              <td>Edit</td>
+              <td>Editar</td>
             </tr>
             <tr class="cellFormat">
               <td>Zona Pradera</td>
               <td>Torre3</td> 
               <td>Oficina 514</td>
               <td>Bodega 1</td>
-              <td>Edit</td>
+              <td>Editar</td>
             </tr>
             <tr class="cellFormat">
               <td>Zona Pradera</td>
               <td>Torre4</td> 
               <td>Oficina 310</td>
               <td>Salon C3</td>
-              <td>Edit</td>
+              <td>Editar</td>
             </tr>
             <tr class="cellFormat">
               <td>Zona Pradera</td>
               <td>Torre4</td> 
               <td>Oficina 310</td>
               <td>Recepcion</td>
-              <td>Edit</td>
+              <td>Editar</td>
             </tr>
             <tr class="cellFormat">
               <td>Europlaza</td>
               <td>Oficina 402</td> 
               <td>Recepcion</td>
               <td></td>
-              <td>Edit</td>
+              <td>Editar</td>
             </tr>
             <tr class="cellFormat">
               <td>Europlaza</td>
               <td>Oficina 402</td> 
               <td>Salon A</td>
               <td></td>
-              <td>Edit</td>
+              <td>Editar</td>
             </tr>
             <tr class="cellFormat">
               <td>Europlaza</td>
               <td>Oficina 402</td> 
               <td>Bodega</td>
               <td></td>
-              <td>Edit</td>
+              <td>Editar</td>
             </tr>
           </table>
         </div>
       </div>
       <div class="row">
         <div class="containerBtnAdd">
-          <div class="IconPlus">
+          <div class="IconPlus" (click)="openAddAccess()">
             <img class="img-responsive imgPlus" alt="icon plus" src="./assets/iconos/floating_agregar.png">
           </div>
-            <a [routerLink]="['/editAccessView', {outlets: {editUserOutlet: ['newAccess']}}]" class="txtAddUser">Agregar Acceso</a>
+            <a (click)="openAddAccess()" class="txtAddUser">Agregar Acceso</a>
 
         </div>
       </div>
@@ -93,3 +93,5 @@
     <div class="col-sm-4 col-md-4"></div>
   </div>
 </div>
+<span defaultOverlayTarget> 
+</span>

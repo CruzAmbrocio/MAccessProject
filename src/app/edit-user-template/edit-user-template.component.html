@@ -1,0 +1,88 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-2 col-md-2"></div>
+        <div class="col-xs-8 col-md-8">
+            <div class="headerCl">
+                <div class="btnBackUser" *ngIf="BackUser" [routerLink]="['/addUsers', {outlets: {editUserOutlet: ['photoUser']}}]">
+                    <img src="./assets/iconos/icon_volver.png" class="imgBackUser">
+                    <p class="txtBackUser"> Volver</p>
+                </div>
+                <a (click)="closeSecond(5)" >
+                    <img src="./assets/iconos/icon_cerrar.png" class="iconHeaderUser">
+                </a>
+            </div>
+            <div class="dotsSlider">
+                <div class="contIndicators" *ngIf="dotsIndicators">
+                    <div class="DotLeft" [ngClass]="{'circulo1': isActive, 'circulo2': isDisabled}"></div>
+                    <div class="DotRigth" [ngClass]="{'circulo1': isActive1, 'circulo2': isDisabled1}"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-2 col-md-2"></div>
+    </div>
+</div>
+<!-- Vista -->
+<div  *ngIf="shortcutEditUser" class="container">
+  <div class="row">
+  <div class="col-md-2"></div>
+    <div class="col-xs-12 col-md-8 col-lg-8">
+      <div class="centerTitles">
+        <p class="editUserReg">EDITAR USUARIO</p>
+        <p class="desEditUser" >Realizar modificaciones en la informacion.</p>
+      </div>
+      <div class="contentRegister">
+        <form class="inputForm" name="EditUser">
+          <div class="form-group">
+            <input type="name" class="form-control nameInput" id="nameUser" placeholder="Nombre">
+          </div>
+          <div class="form-group">
+              <input type="DPI" class="form-control dpiInput" id="dpiUser" placeholder="DPI">
+            </div>
+            <div class="dropdown">
+            <select [ngModel]="selectedElement?.id"  [ngModelOptions]="{standalone: true}" class=" form-control nameInput">
+              <option *ngFor="let type of types" [ngValue]="type?.id" class="alignDrop">{{type?.Name}}</option>
+            </select>
+          </div>
+        </form>
+        <img class="imgUserProfile" src="./assets/iconos/foto_previw.jpg">
+      </div>
+      <div class="contentInfoRegister">
+        <a class="titleAccess" (click)="changeStepsEditUser(false, true)" ><img class="iconAdd" src="./assets/iconos/icon_agregar.png">&nbsp;&nbsp;&nbsp;Agregar acceso directo?</a>
+        <p class="desAccessUser">El acceso directo asigna permisos de acceso independientes del<br/>rol, a un usuario especifico.</p>
+      </div>
+      <a (click)="closeSecond(5)" class="btnChangesDone">&#10004; &nbsp;&nbsp;Realizar Cambios</a>
+      <a (click)="deleteRow2()"><img class="delIcon" src="../assets/iconos/icon_eliminar.png"></a>
+    </div>
+  <div class="col-md-2"></div>
+  </div>
+</div>
+<div *ngIf="shortcutUserTable" class="container">
+    <div class="row">
+    <div class="col-md-2"></div>
+        <div class="col-xs-12 col-md-8 col-lg-8">
+            <div class="contentCenterUsers">
+                <p class="centerTitleUsers">REGISTRAR NUEVO USUARIO</p>
+                <p class="subtitlesUserViews">Agregar acceso directo para este usuario</p>
+            </div>
+            <div class="contentNewRegister">
+                <div class="boxContentData">    
+                    <div class="contentRows">
+                        <table class="table table-hover">
+                          <tbody>
+                            <tr>
+                              <td class="placedsName">Zona Pradera<img class="iconArrow" src="./assets/iconos/arrow-icon.png"></td>
+                            </tr>
+                            <tr>
+                              <td class="placedsName">Europlaza<img class="iconArrow" src="./assets/iconos/arrow-icon.png"></td>
+                            </tr>
+                            <hr class="lineRow">
+                          </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <a (click)="onKeyUp(5)" class="btnGeneralUser">Aceptar</a>
+        </div>
+    <div class="col-md-2"></div>
+    </div>
+</div>

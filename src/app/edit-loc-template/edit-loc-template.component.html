@@ -1,0 +1,119 @@
+<!-- Vista header editar ubicacion -->
+<div class="container">
+    <div class="row">
+        <div class="col-xs-2 col-md-2"></div>
+        <div class="col-xs-8 col-md-8">
+            <div class="headerCl">
+                <div class="btnBackUser" *ngIf="BackUser" [routerLink]="['/addUsers', {outlets: {editUserOutlet: ['photoUser']}}]">
+                    <img src="./assets/iconos/icon_volver.png" class="imgBackUser">
+                    <p class="txtBackUser"> Volver</p>
+                </div>
+                <a (click)="closeEditLoc(5)" >
+                    <img src="./assets/iconos/icon_cerrar.png" class="iconHeaderUser">
+                </a>
+            </div>
+            <div class="dotsSlider">
+                <div class="contIndicators" *ngIf="dotsIndicators">
+                    <div class="DotLeft" [ngClass]="{'circulo1': isActive, 'circulo2': isDisabled}"></div>
+                    <div class="DotRigth" [ngClass]="{'circulo1': isActive1, 'circulo2': isDisabled1}"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-2 col-md-2"></div>
+    </div>
+</div>
+<!-- Vista editar ubicacion -->
+<div *ngIf="enterlocation"  class="container">
+  <div class="row">
+  <div class="col-md-2"></div>
+    <div class="col-xs-12 col-md-8 col-lg-8">
+      <div class="centerTitlesLocations">
+        <p class="locationTxtTitle">EDITAR UBICACIÓN</p>
+        <p class="locationTxtDesc">Realizar modifícaciones en la información</p>
+      </div>
+      <div class="contentDataUbication">
+        <div class="boxContentUbication">
+          <form class="posInputsUbication">
+            <div class="row form-group">
+              <p class="lblInputLocat">Nombre</p>
+              <input type="contentText" class="form-control inputName" id="name" placeholder="Oficinas IT">
+            </div>
+            <div class="row form-group">
+              <p class="lblInputLocat">Descripción</p>
+                <input type="contentText" class="form-control inputDesc" id="desc" placeholder="Descripción">
+              </div>
+              <div class="row form-group">  
+                <p class="lblInputLocat">Coordenadas</p>
+                <input type="contentText" class="form-control inputCoordinate" id="coord" placeholder="14.581608, -90.495403">
+              </div>
+          </form>
+        </div>
+      </div>
+      <a (click)="changeStepsEditLoc(false,true)" (click)="changeIndicatiors(false, true, false)" class="btnNextEditLocation">Siguiente</a>
+      <a (click)="deleteWarningEdit()"><img class="delIcon" src="../assets/iconos/icon_eliminar.png"></a>
+    </div>
+  <div class="col-md-2"></div>
+  </div>
+</div>
+<!-- Vista editar ubicacion -->
+<div *ngIf="selectLocation"  class="container">
+  <div class="row">
+  <div class="col-md-2"></div>
+    <div class="col-xs-12 col-md-8 col-lg-8">
+      <div class="centerTitlesLocations">
+        <p class="locationTxtTitle">EDITAR UBICACIÓN</p>
+        <p class="locationTxtDesc">Cambio de ubicación</p>
+      </div>
+      <div class="contentSubtitItle">
+        <div class="boxContSub">
+          <p class="editNav">Zona Pradera<img class="iconArrowNav marginText" src="./assets/iconos/arrow-icon.png"><span class="marginText">Torre 3<img class="iconArrowNav marginText" src="./assets/iconos/arrow-icon.png"></span><span class="marginText colorText">Oficina 510</span></p>
+        </div>
+      </div>
+      <div class="contentEditLoc">
+        <div class="boxContentDataLoc"> 
+              <div class="contentRow">  
+                <div class="activeCellRow">
+                  <h1 class="textActive">Zona Pradera</h1>
+                  <img class="activeIconArrow" src="./assets/iconos/arrow-icon-left.png">
+                </div>
+                <div class="desactiveCellRow">
+                  <h1 class="textDesactive">Europlaza</h1>
+                  <img class="desactiveIconArrow" src="./assets/iconos/arrow-icon.png">
+                </div>
+              </div>
+              <div class="contentRow">  
+                <div class="desactiveCellRow">
+                  <h1 class="textDesactive">Torre 2</h1>
+                  <img class="desactiveIconArrow" src="./assets/iconos/arrow-icon.png">
+                </div>
+                <div class="activeCellRow">
+                  <h1 class="textActive">Torre 3</h1>
+                  <img class="activeIconArrow" src="./assets/iconos/arrow-icon-left.png">
+                </div>
+                <div class="desactiveCellRow">
+                  <h1 class="textDesactive">Torre 4</h1>
+                  <img class="desactiveIconArrow" src="./assets/iconos/arrow-icon.png">
+                </div>
+              </div>
+              <div class="contentRow">  
+                <div class="desactiveCellRow">
+                  <h1 class="textDesactive">Oficina 512</h1>
+                  <img class="desactiveIconArrow" src="./assets/iconos/arrow-icon.png">
+                </div>
+                <div class="desactiveCellRow">
+                  <h1 class="textDesactive">Oficina 514</h1>
+                  <img class="desactiveIconArrow" src="./assets/iconos/arrow-icon.png">
+                </div>
+                <div class="activeCellRow">
+                  <h1 class="textActive">Oficina 510</h1>
+                  <img class="activeIconArrow" src="./assets/iconos/arrow-icon-left.png">
+                </div>
+              </div>  
+        </div>
+      </div>
+      <a (click)="closeEditLoc(5)" (click)="changeIndicatiors(true, false, false)" class="btnChangerLocation"><img class="iconCheck" src="./assets/iconos/icon_check.png">&nbsp;&nbsp;Realizar Cambios</a>
+      <a href=""><img (click)="deleteWarningEdit()" class="delIcon" src="../assets/iconos/icon_eliminar.png"></a>
+    </div>
+  <div class="col-md-2"></div>
+  </div>
+</div>
