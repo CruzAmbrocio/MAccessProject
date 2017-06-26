@@ -55,7 +55,6 @@ export class CustomModal implements CloseGuard, ModalComponent<CustomModalContex
 
   constructor(public modal: Modal, private compiler: Compiler, private injector: Injector, public dialog: DialogRef<CustomModalContext>) {
     this.context = dialog.context;
-    this.wrongAnswer = true;
     dialog.setCloseGuard(this);
       this.changeIndicator = this.changeIndicatiors
       this.changeIndicator(true, false, false);
@@ -73,14 +72,7 @@ export class CustomModal implements CloseGuard, ModalComponent<CustomModalContex
 
   }
   onKeyUp(value) {
-    this.wrongAnswer = value != 5;
     this.dialog.close();
-  }
-  beforeDismiss(): boolean {
-    return true;
-  }
-  beforeClose(): boolean {
-    return this.wrongAnswer;
   }
   deleteRow() {
     console.log("asdfasdfasdfasdfasdfasdf")

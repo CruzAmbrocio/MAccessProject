@@ -405,7 +405,6 @@ export class EditModalRol implements CloseGuard, ModalComponent<CustomModalConte
 ////////////////////
   constructor(public modal: Modal, private compiler: Compiler, private injector: Injector, public dialog: DialogRef<CustomModalContext>) {
     this.context = dialog.context;
-    this.wrongAnswer = true;
     dialog.setCloseGuard(this);
 
     this.changeIndicatiorsEdit = this.changeIndicatiorsEdit
@@ -441,7 +440,6 @@ export class EditModalRol implements CloseGuard, ModalComponent<CustomModalConte
     this.deselectionCheck();
   }
   closeEditRol(value) {
-    this.wrongAnswer = value != 5;
     this.dialog.close();
   }
 
