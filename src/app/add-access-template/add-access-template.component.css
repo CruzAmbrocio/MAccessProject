@@ -619,8 +619,8 @@ input {
   align-items: center;
 }
 .contentDataAccess {
-  height: 100%;
-  width: 25%;
+  height: 110px;
+  width: 110px;
   cursor: pointer;
 }
 .imgSize {
@@ -656,12 +656,14 @@ input {
   margin-top: 32%;
 }
 .textEditActive {
+  font-family: "robotoRegular";
   text-align: center;
   font-size: 11px;
   padding-top: 10%;
   color: #00C6AF; 
 }
 .textEditDesactive {
+  font-family: "robotoRegular";
   text-align: center;
   font-size: 11px;
   padding-top: 10%;

@@ -4,7 +4,7 @@
   min-height: 100vh;
 }
 .contentMainViews {
-  margin-top: 170px;
+  margin-top: 180px;
 }
 /* Aling the title container */
 .containerTitle {
@@ -46,7 +46,7 @@ input {
 }
 /* Size container table */
 .containerTable {
-  max-height: 335px;
+  max-height: 315px;
   overflow-y: auto;
   margin-top: 10px;
 }
@@ -122,6 +122,7 @@ table, td {
 }
 /* Style container Add button */
 .containerBtnAdd {
+  margin-top: 25px;
   width: 105px;
   height: 80px;
   margin-left: auto;
@@ -152,8 +153,10 @@ table, td {
   margin-right: auto;
 }
 .txtAddUser {
+  cursor: pointer;
   text-decoration: none;
   font-family: robotoBold;
   font-size: 12px;
   color: #5B5B5B;
+  line-height: 40px;
 }

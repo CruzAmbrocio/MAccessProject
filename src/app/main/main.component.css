@@ -214,25 +214,29 @@ hr{
 
 /* Description properties of the menu buttons */
 .descButonActive {
-    margin-top: -10%;
+    cursor: pointer;
+    margin-top: -3%;
     font-family: robotoRegular;
     font-size: 12px;
     color: #00C6AF;
 }
 
 .descButonInactive {
-    margin-top: -10%;
+    cursor: pointer;
+    margin-top: -3%;
     font-family: robotoRegular;
     font-size: 12px;
-    color: #7A7979;
+    color: #878787;
 }
 
 .imgArrowButtons {
+    cursor: pointer;
     height: 8%;
     width: 12%;
     margin-right: auto;
     margin-left: auto;
     margin-top: -25%;
+    margin-bottom: 5px;
 }
 
 .rolInput {
