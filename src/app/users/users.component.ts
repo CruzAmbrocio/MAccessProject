@@ -227,7 +227,7 @@ export class CustomModal implements CloseGuard, ModalComponent<CustomModalContex
       'Cancelar'
     })
   }
-changeIndicatiors(statOne, statTwo, statThree){
+changeIndicatiors(statOne, statTwo, statThree, statFour){
     if (statOne){
       this.isActive = true;
       this.isDisabled = false;
@@ -245,6 +245,13 @@ changeIndicatiors(statOne, statTwo, statThree){
     } else if(statThree){
       this.BackUser = false;
       this.dotsIndicators = false;
+    }else if (statFour) {
+      this.isActive = false;
+      this.isDisabled = true;
+      this.isActive1 = true;
+      this.isDisabled1 = false;
+      this.BackUser = true;
+      this.dotsIndicators = true;
     }
   }
   changeStepsAddUser(param1, param2, param3, param4, addShortCut) {

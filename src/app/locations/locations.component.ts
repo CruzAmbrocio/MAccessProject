@@ -252,10 +252,8 @@ export class AddModalLoc implements CloseGuard, ModalComponent<CustomModalContex
       showCancelButton: true,
       confirmButtonClass: "btnDelete",
       cancelButtonClass: "btnCancel",
-      confirmButtonText:
-      'Eliminar',
-      cancelButtonText:
-      'Cancelar'
+      confirmButtonText: 'Eliminar',
+      cancelButtonText: 'Cancelar'
     })
   }
 //-------------------------------------------------------------
@@ -268,7 +266,6 @@ export class AddModalLoc implements CloseGuard, ModalComponent<CustomModalContex
     this.appearCheckIcon2=false;
   }
   appearInputAddNewLoc3(){
-    console.log("asfasdf")
     this.appearAllContent3= true;
     this.appearCheckIcon3=false;
   }
@@ -655,7 +652,6 @@ export class EditModalLoc implements CloseGuard, ModalComponent<CustomModalConte
     this.appearCheckIcon2=false;
   }
   appearInputAddNewLoc3(){
-    console.log("asfasdf")
     this.appearAllContent3= true;
     this.appearCheckIcon3=false;
   }

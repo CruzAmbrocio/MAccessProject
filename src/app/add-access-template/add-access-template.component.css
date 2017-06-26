@@ -230,18 +230,25 @@ ul .buttonSelecction .check::before {
   transition: background 0.25s linear;
   -webkit-transition: background 0.25s linear;
 }
+input[type=radio]:checked ~ .check {
 
-input[type=radio][_ngcontent-c3]:checked ~ .check[_ngcontent-c3]::before {
-    background: #00C6AF ;
+  border: 2px solid #00C6AF ;
+
+}
+
+input[type=radio]:checked ~ .check::before{
+
+    background: #00C6AF;
     height: 9px;
     width: 9px;
     border-radius: 10px;
 }
 
-input[type=radio][_ngcontent-c3]:checked ~ .check[_ngcontent-c3] {
-    border: 2px solid #00C6AF ;
-}
+input[type=radio]:checked ~ label{
 
+  color: #00C6AF ;
+
+}
 /* Tabla de acceso de registro */
 .btnAccessCreate {
   margin-left: auto;

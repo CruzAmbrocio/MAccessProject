@@ -523,11 +523,10 @@ input {
   align-items: center;
   justify-content: center;
 }
-.contentEditLoc {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.contentEditLoc{
+  margin-top: 22px!important;
 }
+
 .boxContentDataLocmap{
   height: 280px;
   width: 35%;
@@ -542,7 +541,7 @@ input {
   height: 30%;
 }
 .mapSize {
-  width: 238px;
+  width: 90%;
   height: 190px;
   display: flex;
   align-items: center;
