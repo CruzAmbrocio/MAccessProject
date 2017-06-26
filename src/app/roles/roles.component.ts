@@ -398,10 +398,11 @@ export class EditModalRol implements CloseGuard, ModalComponent<CustomModalConte
   dotsIndicators: any
 
   public names: any;
-  public selectedAll: any;
-  hola:any
-  holis:any;
+  deviceFiltered:any;
+  selectionCheck:any;
+  deselectionCheck:any;
 
+////////////////////
   constructor(public modal: Modal, private compiler: Compiler, private injector: Injector, public dialog: DialogRef<CustomModalContext>) {
     this.context = dialog.context;
     this.wrongAnswer = true;
@@ -411,12 +412,16 @@ export class EditModalRol implements CloseGuard, ModalComponent<CustomModalConte
     this.changeIndicatiorsEdit(true, false, false);
 
     this.names = [
-      {name: 'Hola', selected:true},
-      {name: ':v', selected:false},
-      {name: 'xD', selected:false},
-      {name: ':c', selected:false},
-      {name: 'holis', selected:false},
+      {placeds:'Zona Pradera', name:'Torre 3', office:'Oficina 512', accessPlaces:'Entrada 1', selected:false},
+      {placeds:'Zona Pradera', name:'Torre 3', office:'Oficina 512', accessPlaces:'Salón B5', selected:false},
+      {placeds:'Zona Pradera', name:'Torre 3', office:'Oficina 514', accessPlaces:'Salón Control', selected:false},
+      {placeds:'Zona Pradera', name:'Torre 3', office:'Oficina 514', accessPlaces:'Bodega 1', selected:false},
+      {placeds:'Zona Pradera', name:'Torre 4', office:'Oficina 310', accessPlaces:'Salón C3', selected:false},
+      {placeds:'Europlaza', name:'Oficina 402', accessPlaces:'Salón C3', selected:false},
+      {placeds:'Europlaza', name:'Oficina 402', accessPlaces:'Salón A', selected:false},
+      {placeds:'Europlaza', name:'Oficina 402', accessPlaces:'Bodega', selected:false},
     ];
+    this.deviceFiltered = this.names.slice(0);
   }
   ngOnInit() {
     this.callFunctionEditRols = this.changeStepsEditeRoles;
@@ -429,11 +434,11 @@ export class EditModalRol implements CloseGuard, ModalComponent<CustomModalConte
     this.BackUser = false;
     this.dotsIndicators = true;
 
-    this.hola = this.selectAll;
-    this.hola();
-    this.holis = this.checkIfAllSelected;
-    this.holis();
+    this.selectionCheck = this.selectAllCheck;
+    this.selectionCheck();
 
+    this.deselectionCheck = this.deselectAllCheck;
+    this.deselectionCheck();
   }
   closeEditRol(value) {
     this.wrongAnswer = value != 5;
@@ -491,16 +496,15 @@ export class EditModalRol implements CloseGuard, ModalComponent<CustomModalConte
       this.dotsIndicators = false;
     }
   }
-  selectAll() {
-    for (var i = 0; i < this.names.length; i++) {
-      this.names[i].selected = this.selectedAll;
-    }
+  /* Seleccion de todos los checkbox */
+  selectAllCheck(){
+    this.deviceFiltered.forEach(i=>i.checked=true);
   }
-  checkIfAllSelected() {
-    this.selectedAll = this.names.every(function(item:any) {
-      return item.selected == true;
-    });
+  /* deseleccion de todos los checkbox */
+  deselectAllCheck(){
+    this.deviceFiltered.forEach(i=>i.checked=false);
   }
+
 }
 //------------------------------------------------------------------------------
 @Component({

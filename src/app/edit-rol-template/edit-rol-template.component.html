@@ -74,126 +74,22 @@
       </div>
       <div class="contInside">
         <div class=" containerButtons">
-        <a class="btnCheckAll">
+        <a (click)="selectAllCheck()" class="btnCheckAll">
         Check all</a>
-        <a (click)="off()" class="btnUnCheckAll">Uncheck all</a>
+        <a (click)="deselectAllCheck()" class="btnUnCheckAll">Uncheck all</a>
         </div>
       </div>
       <div class="contentDataRol">
         <div class="boxContentRol">
-          <div class="containerTable">
+          <div class="containerTable"> 
             <table class="tableStyle">
-
-              <ul>
-                <li> 
-                  <input type="checkbox" [(ngModel)]="selectedAll" (change)="selectAll();"/>
-                </li>
-                <li *ngFor="let n of names"> 
-                  <input type="checkbox" [(ngModel)]="n.selected" (change)="checkIfAllSelected();">
-                  {{n.name}}
-                </li>
-              </ul>
-
-
-              <tr class="cellFormat">
+              <tr *ngFor="let i of deviceFiltered" class="cellFormat">
                 <td>
-                  <input type="checkbox" name="ZPradera1" id="checkbox1" value="ZPradera1">
-                  Zona Pradera
+                  <input class="styleCheck" type="checkbox" [(ngModel)]="i.checked" name="ZPradera1" id="checkbox1" value="ZPradera1">{{i.name}}
                 </td>
-                <td>Torre 3</td> 
-                <td>Oficina 512</td>
-                <td>Entrada 1</td>
-              </tr>
-
-              <tr class="cellFormat">
-                <td>
-                  <input type="checkbox" name="ZPradera1" id="checkbox1" value="ZPradera1">
-                  Zona Pradera
-                </td>
-                <td>Torre 3</td> 
-                <td>Oficina 512</td>
-                <td>Entrada 1</td>
-              </tr>
-              <tr class="cellFormat">
-                <td>
-                  <input type="checkbox" name="ZPradera1" id="checkbox1" value="ZPradera1">
-                    Zona Pradera
-                </td>
-                <td>Torre 3</td> 
-                <td>Oficina 512</td>
-                <td>Salón B5</td>
-              </tr>
-              <tr class="cellFormat">
-                <td>
-                  <input type="checkbox" name="ZPradera1" id="checkbox1" value="ZPradera1">
-                    Zona Pradera
-                </td>
-                <td>Torre 3</td> 
-                <td>Oficina 514</td>
-                <td>Salón Control</td>
-              </tr>
-              <tr class="cellFormat">
-                <td>
-                  <input type="checkbox" name="ZPradera1" id="checkbox1" value="ZPradera1">
-                    Zona Pradera
-                </td>
-                <td>Torre3</td> 
-                <td>Oficina 512</td>
-                <td>Entrada 1</td>
-              </tr>
-              <tr class="cellFormat">
-                <td>
-                  <input type="checkbox" name="ZPradera1" id="checkbox1" value="ZPradera1">
-                    Zona Pradera
-                </td>
-                <td>Torre 3</td> 
-                <td>Oficina 514</td>
-                <td>Bodega 1</td>
-              </tr>
-              <tr class="cellFormat">
-                <td>
-                  <input type="checkbox" name="ZPradera1" id="checkbox1" value="ZPradera1">
-                    Zona Pradera
-                </td>
-                <td>Torre 4</td> 
-                <td>Oficina 310</td>
-                <td>Salón C3</td>
-              </tr>
-              <tr class="cellFormat">
-                <td>
-                  <input type="checkbox" name="ZPradera1" id="checkbox1" value="ZPradera1">
-                    Zona Pradera
-                </td>
-                <td>Torre 4</td> 
-                <td>Oficina 310</td>
-                <td>Recepción</td>
-              </tr>
-              <tr class="cellFormat">
-                <td>
-                  <input type="checkbox" name="ZPradera1" id="checkbox1" value="ZPradera1">
-                    Europlaza
-                </td>
-                <td>Oficina 402</td>
-                <td></td> 
-                <td>Recepción</td>
-              </tr>
-              <tr class="cellFormat">
-                <td>
-                  <input type="checkbox" name="ZPradera1" id="checkbox1" value="ZPradera1">
-                    Europlaza
-                </td> 
-                <td>Oficina 512</td>
-                <td></td>
-                <td>Salón A</td>
-              </tr>
-              <tr class="cellFormat">
-                <td>
-                  <input type="checkbox" name="ZPradera1" id="checkbox1" value="ZPradera1">
-                    Europlaza
-                </td>
-                <td>Oficina 402</td>
-                <td></td> 
-                <td>Bodega</td>
+                <td>{{i.name}}</td> 
+                <td>{{i.office}}</td> 
+                <td>{{i.accessPlaces}}</td> 
               </tr>
             </table>
           </div>
