@@ -566,6 +566,7 @@ input[type=radio]:checked ~ label{
 .contentDataAccess {
   height: 100%;
   width: 25%;
+  cursor: pointer;
 }
 .imgSize {
   height: 40%;
@@ -601,13 +602,13 @@ input[type=radio]:checked ~ label{
 }
 .textEditActive {
   text-align: center;
-  font-size: 10px;
+  font-size: 11px;
   padding-top: 10%;
-  color: #01D9FE; 
+  color: #00C6AF; 
 }
 .textEditDesactive {
   text-align: center;
-  font-size: 10px;
+  font-size: 11px;
   padding-top: 10%;
   color: #AFAFAF; 
 }

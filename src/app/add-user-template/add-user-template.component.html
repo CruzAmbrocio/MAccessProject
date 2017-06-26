@@ -3,7 +3,7 @@
         <div class="col-xs-2 col-md-2"></div>
         <div class="col-xs-8 col-md-8">
             <div class="headerCl">
-                <div class="btnBackUser" *ngIf="BackUser" (click)="changeIndicatiors(false, false, true)" (click)="callFunctionUsers(true, false, false, false)" >
+                <div class="btnBackUser" *ngIf="BackUser" (click)="changeIndicatiors(true, false, false)" (click)="changeStepsAddUser(true, false, false, false, shortcutAddUser)" >
                     <img src="./assets/iconos/icon_volver.png" class="imgBackUser">
                     <p class="txtBackUser"> Volver</p>
                 </div>
@@ -109,23 +109,91 @@
                 <p class="centerTitleUsers">REGISTRAR NUEVO USUARIO</p>
                 <p class="subtitlesUserViews">Agregar acceso directo para este usuario</p>
             </div>
-            <div class="contentNewRegister">
-                <div class="boxContentData">    
-                    <div class="contentRows">
-                        <table class="table table-hover">
-                          <tbody>
-                            <tr>
-                              <td class="placedsName">Zona Pradera<img class="iconArrow" src="./assets/iconos/arrow-icon.png"></td>
-                            </tr>
-                            <tr>
-                              <td class="placedsName">Europlaza<img class="iconArrow" src="./assets/iconos/arrow-icon.png"></td>
-                            </tr>
-                            <hr class="lineRow">
-                          </tbody>
-                        </table>
-                    </div>
+        <div class="contentSubtitItle">
+          <div class="boxContSub">
+            <p>
+            <span *ngFor="let indexLocation of indexLocationView; let i=index;" [ngClass]="(indexLocationView?.length - 1) == i ? 'editNavActive' : 'editNav'">{{indexLocation}}<img class="iconArrowNav marginText" src="./assets/iconos/arrow-icon.png" *ngIf="(indexLocationView?.length - 1) > i"></span>
+            </p>
+          </div>
+        </div>
+        <div class="contentEditLoc">
+          <div class="boxContentDataLoc"> 
+            <div class="contentTable">
+              <div [ngClass]="appearAllContent ? 'contentRowShow' : 'contentRow'">
+                <div *ngFor="let location of locationJson.ParentLocation; let i=index" [ngClass]="LocationActiveId == i ? 'activeCellRow' : 'desactiveCellRow'" (click) = "selectParentLocation(i,location.id)">
+                  <h1 [ngClass]="LocationActiveId == i ? 'textActive' : 'textDesactive'">{{location.Name}}</h1>
+                  <img *ngIf="LocationActiveId != i" class="desactiveIconArrow" src="./assets/iconos/arrow-icon.png">
+                  <img *ngIf="LocationActiveId == i" class="activeIconArrow" src="./assets/iconos/arrow-icon-left.png">
                 </div>
+              </div>
+              <div class="contAddLocat" *ngIf="appearAllContent" >
+                <input #inputVal type="text" placeholder="Nueva Ubicación" class ="myInput" (keyup)="onKeyUpShow(inputVal.value)">
+                <div class="contBtnDone">
+                  <div class="contImageDone" (click)="addingNewLoc('ParentLocation',inputVal.value)"
+                   *ngIf="appearCheckIcon">
+                    <img class="imgCheckDone" src="./assets/iconos/icon_check.png">
+                  </div>
+                </div>
+              </div>
             </div>
+            <div class="contentTable" *ngIf="viewLocationLevelTwo">
+              <div [ngClass]="appearAllContent2 ? 'contentRowShow' : 'contentRow'">  
+                <div *ngFor="let locationLevelTwo of locationJson.LocationLevelTwo; let i=index">
+                  <div *ngIf="locationLevelTwo.id == dataLocation" [ngClass]="LocationLevelTwoActiveId == i ? 'activeCellRow' : 'desactiveCellRow'" (click) = "selectLocationLevelTwo(i,locationLevelTwo.id,locationLevelTwo.idLevelTwo)">
+                    <h1 [ngClass]="LocationLevelTwoActiveId == i ? 'textActive' : 'textDesactive'" *ngIf="locationLevelTwo.id == dataLocation">{{locationLevelTwo.Name}}</h1>
+                    <img *ngIf="LocationLevelTwoActiveId != i" class="desactiveIconArrow" src="./assets/iconos/arrow-icon.png">
+                    <img *ngIf="LocationLevelTwoActiveId == i" class="activeIconArrow" src="./assets/iconos/arrow-icon-left.png">
+                  </div>
+                </div>
+              </div>
+
+              <div class="contAddLocat" *ngIf="appearAllContent2">
+                <input #inputValTwo type="text" placeholder="Nueva Ubicación" class ="myInput" (keyup)="onKeyUpShow2(inputValTwo.value)">
+                <div class="contBtnDone">
+                  <div class="contImageDone" (click)="addingNewLoc('LocationLevelTwo',inputValTwo.value)" *ngIf="appearCheckIcon2">
+                    <img class="imgCheckDone" src="./assets/iconos/icon_check.png">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="contentTable" *ngIf="viewLocationLevelThree">
+              <div [ngClass]="appearAllContent3 ? 'contentRowShow' : 'contentRow'">    
+                <div *ngFor="let locationLevelThree of locationJson.LocationLevelThree; let i=index;">
+                  <div *ngIf="locationLevelThree.idLevelTwo == dataLocationLevelTwo" [ngClass]="LocationLevelThreeActiveId == i ? 'activeCellRow' : 'desactiveCellRow'" (click) = "selectLocationLevelThree(i,locationLevelThree.idLevelThree)">
+                    <h1 [ngClass]="LocationLevelThreeActiveId == i ? 'textActive' : 'textDesactive'">{{locationLevelThree.Name}}</h1>
+                    <img *ngIf="LocationLevelThreeActiveId != i" class="desactiveIconArrow" src="./assets/iconos/arrow-icon.png">
+                    <img *ngIf="LocationLevelThreeActiveId == i" class="activeIconArrow" src="./assets/iconos/arrow-icon-left.png">
+                  </div>
+                </div>
+              </div>
+              <div class="contAddLocat" *ngIf="appearAllContent3">
+                <input #inputValThree type="text" placeholder="Nueva Ubicación" class ="myInput" (keyup)="onKeyUpShow3(inputValThree.value)">
+                <div class="contBtnDone">
+                  <div class="contImageDone" (click)="addingNewLoc('LocationLevelThree',inputValThree.value)" *ngIf="appearCheckIcon3">
+                    <img class="imgCheckDone" src="./assets/iconos/icon_check.png">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="contentTable" *ngIf="viewLocationLevelFour">
+              <div [ngClass]="appearAllContent4 ? 'contentRowShow' : 'contentRow'">    
+                <div *ngFor="let locationLevelFour of locationJson.LocationLevelFour; let i=index;">
+                  <div *ngIf="locationLevelFour.idLevelThree == dataLocationLevelThree" [ngClass]="LocationLevelFourActiveId == i ? 'activeCellRow' : 'desactiveCellRow'" (click) = "selectLocationLevelFour(i,locationLevelFour.idLevelFour)">
+                    <h1 [ngClass]="LocationLevelFourActiveId == i ? 'textActive' : 'textDesactive'">{{locationLevelFour.Name}}</h1>
+                  </div>
+                </div>
+              </div>
+              <div class="contAddLocat" *ngIf="appearAllContent4">
+                <input #inputValFour type="text" placeholder="Nueva Ubicación" class ="myInput" (keyup)="onKeyUpShow4(inputValFour.value)">
+                <div class="contBtnDone">
+                  <div class="contImageDone" (click)="addingNewLoc('LocationLevelFour',inputValFour.value)"  *ngIf="appearCheckIcon4">
+                    <img class="imgCheckDone" src="./assets/iconos/icon_check.png">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>  
+        </div>
             <a (click)="onKeyUp(5)" class="btnGeneralUser">Aceptar</a>
         </div>
     <div class="col-md-2"></div>

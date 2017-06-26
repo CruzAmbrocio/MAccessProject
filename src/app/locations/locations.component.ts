@@ -574,12 +574,20 @@ export class EditModalLoc implements CloseGuard, ModalComponent<CustomModalConte
     this.context = dialog.context;
     this.wrongAnswer = true;
     dialog.setCloseGuard(this);
+
     this.changeIndicator = this.changeIndicatiors
     this.changeIndicator(true, false, false);
   }
   ngOnInit() {
     this.callFunctionAddLoc = this.changeStepsEditLoc;
     this.callFunctionAddLoc(true, false);
+
+    this.isActive = true;
+    this.isDisabled = false;
+    this.isActive1 = false;
+    this.isDisabled1 = true;
+    this.BackUser = false;
+    this.dotsIndicators = true;
   }
   closeEditLoc(value) {
     this.wrongAnswer = value != 5;

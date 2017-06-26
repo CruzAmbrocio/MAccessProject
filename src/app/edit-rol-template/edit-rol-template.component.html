@@ -3,13 +3,13 @@
         <div class="col-xs-2 col-md-2"></div>
         <div class="col-xs-8 col-md-8">
             <div class="headerCl">
-                <div class="btnBackUser" *ngIf="BackUser" (click)="changeIndicatiorsEdit(false, false, true)" (click)="changeStepsEditeRoles(true, false, false, false)" >
-                    <img src="./assets/iconos/icon_volver.png" class="imgBackUser">
-                    <p class="txtBackUser"> Volver</p>
-                </div>
-                <a (click)="closeEditRol()">
-                    <img src="./assets/iconos/icon_cerrar.png" class="iconHeaderUser">
-                </a>
+              <div class="btnBackUser" *ngIf="BackUser" (click)="changeIndicatiors(true, false, false)" (click)="changeStepsEditeRoles(true, false, false, false, shortcutAddUser)" >
+                  <img src="./assets/iconos/icon_volver.png" class="imgBackUser">
+                  <p class="txtBackUser"> Volver</p>
+              </div>
+              <a (click)="closeEditRol()">
+                  <img src="./assets/iconos/icon_cerrar.png" class="iconHeaderUser">
+              </a>
             </div>
             <div class="dotsSlider">
                 <div class="contIndicators" *ngIf="dotsIndicators">
@@ -57,7 +57,7 @@
           </form>
         </div>
       </div>
-      <a (click)="changeStepsEditeRoles(false, true, false, false)" (click)="changeIndicatiorsEdit(false, true, false)" class="btnNewRole">Siguiente</a>
+      <a (click)="changeStepsEditeRoles(false, true, false, false)" (click)="changeIndicatiors(false, true, false)"  class="btnNewRole">Siguiente</a>
       <a (click)="deleteWarningEdit()"><img class="delIcon" src="../assets/iconos/icon_eliminar.png"></a>
     </div>
   <div class="col-md-2"></div>

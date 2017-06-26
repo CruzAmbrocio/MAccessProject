@@ -180,6 +180,10 @@ export class AddModalAccess implements CloseGuard, ModalComponent<CustomModalCon
 
     this.changeIndicator = this.changeIndicatiors
     this.changeIndicator(true, false, false);
+
+    this.statusTypeAccessVar=this.statusTypeAccessVar
+    this.statusTypeAccess(false, true, false, true, false, true, false, true);
+
   }
   ngOnInit() {
     this.callFunctionAccess = this.changeStepsAccessNew;
@@ -198,9 +202,38 @@ export class AddModalAccess implements CloseGuard, ModalComponent<CustomModalCon
   beforeClose(): boolean {
     return this.wrongAnswer;
   }
+/*
+    this.statusTypeAccessVar=this.statusTypeAccessVar
+    this.statusTypeAccess(false, true, false, true, false, true, false, true);
+*/
+  public statusTypeAccessVar:any;
+  public imagenOne:any;
+  public imagenTwo:any;
+
+  public imagenThree:any;
+  public imagenFour:any;
+
+  public imagenFive:any;
+  public imagenSix:any;
+
+  public imagenSeven:any;
+  public imagenEight:any;
+  
+  statusTypeAccess(one, two, three, four, five, six, seven, eight){
+  this.imagenOne=one;
+  this.imagenTwo=two;
+
+  this.imagenThree=three;
+  this.imagenFour=four;
+
+  this.imagenFive=five;
+  this.imagenSix=six;
+
+  this.imagenSeven=seven;
+  this.imagenEight=eight;
+  }
 
   deleteWarningEdit() {
-    console.log("asdfasdfasdfasdfasdfasdf")
     swal({
       html: `
             <div class="cirleImgDel">  
@@ -558,6 +591,8 @@ export class editModalAccess implements CloseGuard, ModalComponent<CustomModalCo
 
     this.changeIndicator = this.changeIndicatiors
     this.changeIndicator(true, false, false);
+    this.statusTypeAccessVar=this.statusTypeAccessVar
+    this.statusTypeAccess(false, true, false, true, false, true, false, true);
   }
   ngOnInit() {
     this.callFunctionAccessEdit = this.changeStepsAccessEdit;
@@ -575,9 +610,40 @@ export class editModalAccess implements CloseGuard, ModalComponent<CustomModalCo
   beforeClose(): boolean {
     return this.wrongAnswer;
   }
+/*
+    this.statusTypeAccessVar=this.statusTypeAccessVar
+    this.statusTypeAccess(false, true, false, true, false, true, false, true);
+*/
+  public statusTypeAccessVar:any;
+  public imagenOne:any;
+  public imagenTwo:any;
+
+  public imagenThree:any;
+  public imagenFour:any;
+
+  public imagenFive:any;
+  public imagenSix:any;
+
+  public imagenSeven:any;
+  public imagenEight:any;
+  
+  statusTypeAccess(one, two, three, four, five, six, seven, eight){
+  this.imagenOne=one;
+  this.imagenTwo=two;
+
+  this.imagenThree=three;
+  this.imagenFour=four;
+
+  this.imagenFive=five;
+  this.imagenSix=six;
+
+  this.imagenSeven=seven;
+  this.imagenEight=eight;
+  }
+
+
 
   deleteWarningEdit() {
-    console.log("asdfasdfasdfasdfasdfasdf")
     swal({
       html: `
             <div class="cirleImgDel">  

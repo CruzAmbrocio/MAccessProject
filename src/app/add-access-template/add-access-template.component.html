@@ -193,21 +193,25 @@
       </div>
       <div class="accessContentData">
         <div class="boxContentAcces"> 
-          <div (click)="changeText='Crear Acceso'" class="contentDataAccess">
-            <a><img class="imgSize" src="./assets/iconos/icon_access01_off.png"></a>
-            <p class="textAccessTypeDesactive">Puerta</p>
+          <div class="contentDataAccess"(click)="statusTypeAccess(true, false, false, true, false, true, false, true)">
+            <a  *ngIf="imagenOne"><img class="imgSize" src="./assets/iconos/icon_access01_on.png"></a>
+            <a *ngIf="imagenTwo"><img class="imgSize" src="./assets/iconos/icon_access01_off.png"></a>
+            <p [ngClass]="imagenOne? 'textEditActive' : 'textEditDesactive'">Puerta</p>
           </div>
-          <div class="contentDataAccess">
-            <a><img class="imgMolinete" src="./assets/iconos/icon_access02_on.png"></a>
-            <p class="textAccessTypeActive">Molinete</p>
+          <div class="contentDataAccess" (click)="statusTypeAccess(false, true, true, false, false, true, false, true)">
+            <a *ngIf="imagenThree"><img class="imgMolinete" src="./assets/iconos/icon_access02_on.png"></a>
+            <a *ngIf="imagenFour"><img class="imgMolinete" src="./assets/iconos/icon_access02_off.png"></a>
+            <p [ngClass]="imagenThree? 'textEditActive' : 'textEditDesactive'">Molinete</p>
           </div>
-          <div class="contentDataAccess">
-            <a><img class="imgTalanquera" src="./assets/iconos/icon_access03_off.png"></a>
-            <p class="textAccessTypeDesactive">Talanquera</p>
+          <div class="contentDataAccess" (click)="statusTypeAccess(false, true, false, true, true, false, false, true)">
+            <a *ngIf="imagenFive"><img class="imgTalanquera" src="./assets/iconos/icon_access03_on.png"></a>
+            <a *ngIf="imagenSix"><img class="imgTalanquera" src="./assets/iconos/icon_access03_off.png"></a>
+            <p [ngClass]="imagenFive? 'textEditActive' : 'textEditDesactive'">Talanquera</p>
           </div>
-          <div class="contentDataAccess">
-            <a><img class="imgMore" src="./assets/iconos/icon_access04_off.png"></a>
-            <p class="textAccessTypeDesactive">Otros</p>
+          <div class="contentDataAccess" (click)="statusTypeAccess(false, true, false, true, false, true, true, false)">
+            <a *ngIf="imagenSeven"><img class="imgMore" src="./assets/iconos/icon_access04_on.png"></a>
+            <a *ngIf="imagenEight"><img class="imgMore" src="./assets/iconos/icon_access04_off.png"></a>
+            <p [ngClass]="imagenSeven? 'textEditActive' : 'textEditDesactive'">Otros</p>
           </div>
         </div>
       </div>
