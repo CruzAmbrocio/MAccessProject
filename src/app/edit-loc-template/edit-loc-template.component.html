@@ -1,4 +1,3 @@
-<!-- Vista header editar ubicacion -->
 <div class="container">
     <div class="row">
         <div class="col-xs-2 col-md-2"></div>
@@ -22,7 +21,7 @@
         <div class="col-xs-2 col-md-2"></div>
     </div>
 </div>
-<!-- Vista editar ubicacion -->
+
 <div *ngIf="enterlocation"  class="container">
   <div class="row">
   <div class="col-md-2"></div>
@@ -49,68 +48,104 @@
           </form>
         </div>
       </div>
-      <a (click)="changeStepsEditLoc(false,true)" (click)="changeIndicatiors(false, true, false)" class="btnNextEditLocation">Siguiente</a>
+      <a (click)="changeStepsEditLoc(false,true)" (click)="changeIndicatiors(false, true, false)" class="btnChangerLocation">Siguiente</a>
       <a (click)="deleteWarningEdit()"><img class="delIcon" src="../assets/iconos/icon_eliminar.png"></a>
     </div>
   <div class="col-md-2"></div>
   </div>
 </div>
-<!-- Vista editar ubicacion -->
+
 <div *ngIf="selectLocation"  class="container">
   <div class="row">
   <div class="col-md-2"></div>
     <div class="col-xs-12 col-md-8 col-lg-8">
       <div class="centerTitlesLocations">
         <p class="locationTxtTitle">EDITAR UBICACIÓN</p>
-        <p class="locationTxtDesc">Cambio de ubicación</p>
+        <p class="desEditLoc">Cambio de ubicación</p>
       </div>
       <div class="contentSubtitItle">
         <div class="boxContSub">
           <p class="editNav">Zona Pradera<img class="iconArrowNav marginText" src="./assets/iconos/arrow-icon.png"><span class="marginText">Torre 3<img class="iconArrowNav marginText" src="./assets/iconos/arrow-icon.png"></span><span class="marginText colorText">Oficina 510</span></p>
         </div>
       </div>
-      <div class="contentEditLoc">
-        <div class="boxContentDataLoc"> 
-              <div class="contentRow">  
-                <div class="activeCellRow">
-                  <h1 class="textActive">Zona Pradera</h1>
-                  <img class="activeIconArrow" src="./assets/iconos/arrow-icon-left.png">
-                </div>
-                <div class="desactiveCellRow">
-                  <h1 class="textDesactive">Europlaza</h1>
-                  <img class="desactiveIconArrow" src="./assets/iconos/arrow-icon.png">
+        <div class="contentEditLoc">
+          <div class="boxContentDataLoc"> 
+            <div class="contentTable">
+              <div [ngClass]="appearAllContent ? 'contentRowShow' : 'contentRow'">
+                <div *ngFor="let location of locationJson.ParentLocation; let i=index" [ngClass]="LocationActiveId == i ? 'activeCellRow' : 'desactiveCellRow'" (click) = "selectParentLocation(i,location.id)">
+                  <h1 [ngClass]="LocationActiveId == i ? 'textActive' : 'textDesactive'">{{location.Name}}</h1>
+                  <img *ngIf="LocationActiveId != i" class="desactiveIconArrow" src="./assets/iconos/arrow-icon.png">
+                  <img *ngIf="LocationActiveId == i" class="activeIconArrow" src="./assets/iconos/arrow-icon-left.png">
                 </div>
               </div>
-              <div class="contentRow">  
-                <div class="desactiveCellRow">
-                  <h1 class="textDesactive">Torre 2</h1>
-                  <img class="desactiveIconArrow" src="./assets/iconos/arrow-icon.png">
-                </div>
-                <div class="activeCellRow">
-                  <h1 class="textActive">Torre 3</h1>
-                  <img class="activeIconArrow" src="./assets/iconos/arrow-icon-left.png">
-                </div>
-                <div class="desactiveCellRow">
-                  <h1 class="textDesactive">Torre 4</h1>
-                  <img class="desactiveIconArrow" src="./assets/iconos/arrow-icon.png">
+              <div class="contAddLocat" *ngIf="appearAllContent" >
+                <input #inputVal type="text" placeholder="Nueva Ubicación" class ="myInput" (keyup)="onKeyUpShow(inputVal.value)">
+                <div class="contBtnDone">
+                  <div class="contImageDone" (click)="addingNewLoc('ParentLocation',inputVal.value)"
+                   *ngIf="appearCheckIcon">
+                    <img class="imgCheckDone" src="./assets/iconos/icon_check.png">
+                  </div>
                 </div>
               </div>
-              <div class="contentRow">  
-                <div class="desactiveCellRow">
-                  <h1 class="textDesactive">Oficina 512</h1>
-                  <img class="desactiveIconArrow" src="./assets/iconos/arrow-icon.png">
+            </div>
+            <div class="contentTable" *ngIf="viewLocationLevelTwo">
+              <div [ngClass]="appearAllContent2 ? 'contentRowShow' : 'contentRow'">  
+                <div *ngFor="let locationLevelTwo of locationJson.LocationLevelTwo; let i=index">
+                  <div *ngIf="locationLevelTwo.id == dataLocation" [ngClass]="LocationLevelTwoActiveId == i ? 'activeCellRow' : 'desactiveCellRow'" (click) = "selectLocationLevelTwo(i,locationLevelTwo.id,locationLevelTwo.idLevelTwo)">
+                    <h1 [ngClass]="LocationLevelTwoActiveId == i ? 'textActive' : 'textDesactive'" *ngIf="locationLevelTwo.id == dataLocation">{{locationLevelTwo.Name}}</h1>
+                    <img *ngIf="LocationLevelTwoActiveId != i" class="desactiveIconArrow" src="./assets/iconos/arrow-icon.png">
+                    <img *ngIf="LocationLevelTwoActiveId == i" class="activeIconArrow" src="./assets/iconos/arrow-icon-left.png">
+                  </div>
                 </div>
-                <div class="desactiveCellRow">
-                  <h1 class="textDesactive">Oficina 514</h1>
-                  <img class="desactiveIconArrow" src="./assets/iconos/arrow-icon.png">
+              </div>
+
+              <div class="contAddLocat" *ngIf="appearAllContent2">
+                <input #inputValTwo type="text" placeholder="Nueva Ubicación" class ="myInput" (keyup)="onKeyUpShow2(inputValTwo.value)">
+                <div class="contBtnDone">
+                  <div class="contImageDone" (click)="addingNewLoc('LocationLevelTwo',inputValTwo.value)" *ngIf="appearCheckIcon2">
+                    <img class="imgCheckDone" src="./assets/iconos/icon_check.png">
+                  </div>
                 </div>
-                <div class="activeCellRow">
-                  <h1 class="textActive">Oficina 510</h1>
-                  <img class="activeIconArrow" src="./assets/iconos/arrow-icon-left.png">
+              </div>
+            </div>
+            <div class="contentTable" *ngIf="viewLocationLevelThree">
+              <div [ngClass]="appearAllContent3 ? 'contentRowShow' : 'contentRow'">    
+                <div *ngFor="let locationLevelThree of locationJson.LocationLevelThree; let i=index;">
+                  <div *ngIf="locationLevelThree.idLevelTwo == dataLocationLevelTwo" [ngClass]="LocationLevelThreeActiveId == i ? 'activeCellRow' : 'desactiveCellRow'" (click) = "selectLocationLevelThree(i,locationLevelThree.idLevelThree)">
+                    <h1 [ngClass]="LocationLevelThreeActiveId == i ? 'textActive' : 'textDesactive'">{{locationLevelThree.Name}}</h1>
+                    <img *ngIf="LocationLevelThreeActiveId != i" class="desactiveIconArrow" src="./assets/iconos/arrow-icon.png">
+                    <img *ngIf="LocationLevelThreeActiveId == i" class="activeIconArrow" src="./assets/iconos/arrow-icon-left.png">
+                  </div>
                 </div>
-              </div>  
+              </div>
+              <div class="contAddLocat" *ngIf="appearAllContent3">
+                <input #inputValThree type="text" placeholder="Nueva Ubicación" class ="myInput" (keyup)="onKeyUpShow3(inputValThree.value)">
+                <div class="contBtnDone">
+                  <div class="contImageDone" (click)="addingNewLoc('LocationLevelThree',inputValThree.value)" *ngIf="appearCheckIcon3">
+                    <img class="imgCheckDone" src="./assets/iconos/icon_check.png">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="contentTable" *ngIf="viewLocationLevelFour">
+              <div [ngClass]="appearAllContent4 ? 'contentRowShow' : 'contentRow'">    
+                <div *ngFor="let locationLevelFour of locationJson.LocationLevelFour; let i=index;">
+                  <div *ngIf="locationLevelFour.idLevelThree == dataLocationLevelThree" [ngClass]="LocationLevelFourActiveId == i ? 'activeCellRow' : 'desactiveCellRow'" (click) = "selectLocationLevelFour(i,locationLevelFour.idLevelFour)">
+                    <h1 [ngClass]="LocationLevelFourActiveId == i ? 'textActive' : 'textDesactive'">{{locationLevelFour.Name}}</h1>
+                  </div>
+                </div>
+              </div>
+              <div class="contAddLocat" *ngIf="appearAllContent4">
+                <input #inputValFour type="text" placeholder="Nueva Ubicación" class ="myInput" (keyup)="onKeyUpShow4(inputValFour.value)">
+                <div class="contBtnDone">
+                  <div class="contImageDone" (click)="addingNewLoc('LocationLevelFour',inputValFour.value)"  *ngIf="appearCheckIcon4">
+                    <img class="imgCheckDone" src="./assets/iconos/icon_check.png">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>  
         </div>
-      </div>
       <a (click)="closeEditLoc(5)" (click)="changeIndicatiors(true, false, false)" class="btnChangerLocation"><img class="iconCheck" src="./assets/iconos/icon_check.png">&nbsp;&nbsp;Realizar Cambios</a>
       <a href=""><img (click)="deleteWarningEdit()" class="delIcon" src="../assets/iconos/icon_eliminar.png"></a>
     </div>

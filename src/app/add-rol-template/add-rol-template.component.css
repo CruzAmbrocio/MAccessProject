@@ -1,3 +1,5 @@
+/*----------------------------------------------------------------------------*/
+/*Style for the general header Add rol*/
 .headerCl{
   width: 100%;
   float: left;
@@ -64,7 +66,8 @@
   background: #97E7DE;
   display: inline-block;
 }
-/* PROPIEDADES DE LA VISTA DE ROLES */
+/*----------------------------------------------------------------------------*/
+/* Style for register new rol inputs*/
 .centerTitlesView {
   text-align: center;
   margin-top: 4%;
@@ -136,6 +139,7 @@
 .btnSigRol:hover{
   background-color: #00A096;
 }
+/*----------------------------------------------------------------------------*/
 /* VISTA TABLA DE REGISTRO DE ROLES*/
 .cenTitlesLoc {
   text-align: center;
@@ -167,6 +171,12 @@
   font-size: 10px;
   margin-left: 8px;
 }
+.editNavActive {
+  font-family: robotoBold;
+  color: #000000;
+  font-size: 10px;
+  margin-left: 8px;
+}
 .marginText {
   margin-left: 4px;
 }
@@ -185,7 +195,7 @@
 }
 .boxContentDataLoc {
   height: 270px;
-  width: 90%;
+  width: 900px;
   display: flex;
   margin-top: 1%;
   -webkit-border-radius: 1%; 
@@ -194,23 +204,24 @@
   -moz-box-shadow: 0 0 8px rgba(0, 0, 0, .3);
 }
 .contentTable {
+  position: relative;
   width: 25%;
   height: 100%;
-  margin-left: 0;
   border-right: 1px solid #DCDCDC;
 }
 .contentRow {
-  height: 88%;
-  max-height: 335px;
+  max-height: 240px;
   overflow-y: auto;
 }
-.margenRow {
-  margin-left: 2%;
+.contentRowShow{
+  max-height: 178px;
+  overflow-y: auto;
 }
 .activeCellRow {
   background-color: #00C6AF;
-  height: 13%;
-  margin-top: -12%;
+  height: 35px;
+  margin-top: -20px;
+  cursor: pointer;
 }
 .textActive {
   font-family: robotoRegular;
@@ -224,20 +235,63 @@
   display: block;
 }
 .desactiveCellRow {
-  height: 12%;
-  margin-top: -12%;
+  height: 35px;
+  margin-top: -20px;
   border-bottom: 1px solid #DCDCDC;
+  cursor: pointer;
 }
 .textDesactive {
   font-family: robotoRegular;
   font-size: 11px;
-  color: #575757;;
+  color: #575757;
   position: relative;
   top: 50%;
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
   padding-left: 5%;
   display: block;
+}
+.txtBoxTable{
+  font-family: robotoRegular;
+  font-size: 10px;
+  color: #575757;;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  padding-left: 5%;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  display: block;
+}
+.styleCheck{
+  display: inline-block;
+}
+label .label-text {
+  font-family: robotoRegular;
+  font-size: 11px;
+  color: #575757;
+}
+
+label input.check:checked + .label-text {
+}
+
+.styleCheck[type="checkbox"] {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  border: 1px solid #00C6AF ;
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  margin: 0 7px 0 0;
+}
+.styleCheck[type="checkbox"]:checked{
+  background: #00C6AF;
+
+}
+.styleCheck[type="checkbox"]:focus{
+  outline: none;
 }
 .activeIconArrow {
   height: 7px;
@@ -275,11 +329,6 @@
   font-family: robotoBold;
   font-size: 12px;
   color: #FFF;
-  cursor: pointer;
-  transition :all ease 0.3s
-}
-.btnNext:hover{
-  background-color: #00A096;
 }
 .iconCheck {
   width: 12px;
@@ -294,12 +343,15 @@
   margin-right: 33%;
 }
 .locationNew {
-  margin-top: 2%;
+  position: absolute;
+  width: 100%;
+  bottom: 0px;
 }
 .locationsText {
   margin-left: 5%;
   font-size: 11px;
   color: #01D9FE;
+  cursor: pointer;
 }
 .imgAgree {
   width: 12px;
@@ -338,6 +390,59 @@
 ::-webkit-scrollbar-corner {
   background: transpar3ent;
 }
+/*   Style input search */
+.myInput {
+  border-radius: 5px;
+  background-image: url('../../assets/iconos/icon_cerrar.png');
+  background-position:95% center;
+  background-repeat: no-repeat;
+  background-size: 10px;
+  font-size: 12px;
+  padding: 5px 5px 5px 5px;
+  border-color: white;
+  border-width: 0px;
+  height: 25px;
+  margin-right: auto;
+  margin-left: auto;
+  width: 100%;
+  box-shadow: 0px 0px 3px 0px #7d7d7d;
+
+}
+::-webkit-input-placeholder { /* Chrome */
+  color: #dadada;
+}
+input {
+  font-family: "robotoRegular";
+  color: #a2a2a2;
+}
+.contAddLocat{
+    bottom: 0px;
+    height: 90px;
+    position: absolute;
+    width: 100%;
+}
+.contImageDone{
+  background-color: #2ecf68;
+  height: 30px;
+  width: 30px;
+  border-radius: 100%;
+  align-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.imgCheckDone{
+    height: 50%;
+    width: 50%;
+    margin-left: 22%;
+    margin-top: 20%;
+}
+.contBtnDone{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+/*----------------------------------------------------------------------------*/
 /* VISTA DE ROL CREADA */
 .contentRegistered {
   display: flex;

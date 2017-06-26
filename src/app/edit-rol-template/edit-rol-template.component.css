@@ -435,7 +435,7 @@ table, td {
 .btnNextRol:hover{
   background-color: #00A096;
 }
-/*input[type="checkbox"]{
+.styleCheck[type="checkbox"] {
   appearance: none;
   -moz-appearance: none;
   -webkit-appearance: none;
@@ -445,9 +445,9 @@ table, td {
   border-radius: 2px;
   margin: 0 7px 0 0;
 }
-input[type="checkbox"]#checkbox1:checked{
+.styleCheck[type="checkbox"]#checkbox1:checked{
   background: #00C6AF;
 }
-input[type="checkbox"]#checkbox1:focus{
+.styleCheck[type="checkbox"]#checkbox1:focus{
   outline: none;
-}*/
+}

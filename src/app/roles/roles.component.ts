@@ -28,6 +28,12 @@ export class AddModalRol implements CloseGuard, ModalComponent<CustomModalContex
   public registerNewRol: any;
   public createdRol: any;
   public callFunctionRols: any;
+//------------------------------------------------------------------------------
+  public regNewLoc: any;
+  public regNewLocTable: any;
+  public regNewLocCoord: any;
+  public NewLocCreated: any;
+//------------------------------------------------------------------------------
 
   isActive: any;
   isDisabled: any;
@@ -42,6 +48,141 @@ export class AddModalRol implements CloseGuard, ModalComponent<CustomModalContex
   isActiveChecks: any;
   isDisableChecks: any;
 
+
+  /*------------------------------------------------------------------------*/
+
+   public appearAllContent: any;
+   public appearCheckIcon: any;
+   public appearTxtNewLoc:boolean=true;
+
+   public appearAllContent2:any
+   public appearCheckIcon2: any;
+   public appearTxtNewLoc2:boolean=true;
+
+   public appearAllContent3:any
+   public appearCheckIcon3: any;
+   public appearTxtNewLoc3:boolean=true;
+
+  public appearAllContent4:any
+   public appearCheckIcon4: any;
+   public appearTxtNewLoc4:boolean=true;
+
+   // Almacenan IDS
+   public LocationActiveId:any;
+   public LocationLevelTwoActiveId:any;   
+   public LocationLevelThreeActiveId:any;
+   public arrayToPush:any;
+
+   //Visualizar los niveles
+   public viewLocationLevelTwo = false;
+   public viewLocationLevelThree = false;
+   public viewLocationLevelFour = false;
+
+   public dataLocation: string;
+   public dataLocationLevelTwo:string;
+   public dataLocationLevelThree:string;
+   public dataLocationLevelFour:string;
+   public lengthLocArray:any;
+
+   public locationJson = {
+    "ParentLocation": [
+        {
+          id: "Location1",
+          Name:"Zona Pradera"
+        },
+        {
+          id: "Location2",
+          Name:"Europlaza"
+        }
+      ],
+    "LocationLevelTwo" : [
+        {
+          id: "Location1",
+          idLevelTwo: "LevelTwo1",
+          Name:"Torre 1"
+        },
+        {
+          id: "Location1",
+          idLevelTwo: "LevelTwo2",
+          Name:"Torre 2"
+        },
+        {
+          id: "Location1",
+          idLevelTwo: "LevelTwo3",
+          Name:"Torre 3"
+        },
+        {
+          id: "Location1",
+          idLevelTwo: "LevelTwo4",
+          Name:"Torre 4"
+        },
+        {
+          id: "Location1",
+          idLevelTwo: "LevelTwo5",
+          Name:"Torre 5"
+        }
+    ],
+
+    "LocationLevelThree" : [
+      {
+        idLevelTwo: "LevelTwo1",
+        idLevelThree: "LevelThree1",
+        Name:"Oficina 101"
+      },
+      {
+        idLevelTwo: "LevelTwo1",
+        idLevelThree: "LevelThree2",
+        Name:"Oficina 102"
+      },
+      {
+        idLevelTwo: "LevelTwo1",
+        idLevelThree: "LevelThree3",
+        Name:"Oficina 103"
+      },
+      {
+        idLevelTwo: "LevelTwo2",
+        idLevelThree: "LevelThree4",
+        Name:"Oficina 201"
+      },
+      {
+        idLevelTwo: "LevelTwo2",
+        idLevelThree: "LevelThree5",
+        Name:"Oficina 202"
+      }
+    ],
+
+    "LocationLevelFour" : [
+      {
+        idLevelThree: "LevelThree1",
+        idLevelFour: "LevelFour1",
+        Name:"Salon 1"
+      },
+      {
+        idLevelThree: "LevelThree1",
+        idLevelFour: "LevelFour2",
+        Name:"Salon 2"
+      },
+      {
+        idLevelThree: "LevelThree1",
+        idLevelFour: "LevelFour3",
+        Name:"Bodega"
+      },
+      {
+        idLevelThree: "LevelThree1",
+        idLevelFour: "LevelFour4",
+        Name:"Salon Control"
+      },
+      {
+        idLevelThree: "LevelThree1",
+        idLevelFour: "LevelFour5",
+        Name:"Sala Reuniones Principal"
+      }
+    ]
+  };
+
+  public indexLocationView = [];
+
+/*---------------------------------------------------------------------------*/
   constructor(public modal: Modal, private compiler: Compiler, private injector: Injector, public dialog: DialogRef<CustomModalContext>) {
     this.context = dialog.context;
     this.wrongAnswer = true;
@@ -114,7 +255,120 @@ export class AddModalRol implements CloseGuard, ModalComponent<CustomModalContex
       this.dotsIndicators = false;
     }
   }
+
+//-------------------------------------------------------------
+  appearInputAddNewLoc(){
+    this.appearAllContent= true;
+    this.appearCheckIcon=false;
+  }
+  appearInputAddNewLoc2(){
+    this.appearAllContent2= true;
+    this.appearCheckIcon2=false;
+  }
+  appearInputAddNewLoc3(){
+    console.log("asfasdf")
+    this.appearAllContent3= true;
+    this.appearCheckIcon3=false;
+  }
+  appearInputAddNewLoc4(){
+    this.appearAllContent4= true;
+    this.appearCheckIcon4=false;
+  }
+  onKeyUpShow(value){
+    if(value == ''){
+      this.appearCheckIcon= false;
+    }else{
+      this.appearCheckIcon= true;
+      this.appearTxtNewLoc=false;
+    }
+  }
+  onKeyUpShow2(value){
+    if(value == ''){
+      this.appearCheckIcon2= false;
+    }else{
+      this.appearCheckIcon2= true;
+      this.appearTxtNewLoc2=false;
+    }
+  }
+  onKeyUpShow3(value){
+    if(value == ''){
+      this.appearCheckIcon3= false;
+    }else{
+      this.appearCheckIcon3= true;
+      this.appearTxtNewLoc3=false;
+    }
+  }
+  onKeyUpShow4(value){
+    if(value == ''){
+      this.appearCheckIcon4= false;
+    }else{
+      this.appearCheckIcon4= true;
+      this.appearTxtNewLoc4=false;
+    }
+  }
+  changeStepsAddLoc(param1, param2, param3, param4) {
+    this.regNewLoc = param1;
+    this.regNewLocTable = param2;
+    this.regNewLocCoord = param3;
+    this.NewLocCreated = param4;
+  }
+
+  selectParentLocation(index, locationID) {
+    this.LocationActiveId = index;
+    this.LocationLevelTwoActiveId = -1;
+    this.LocationLevelThreeActiveId = -1;
+    this.viewLocationLevelTwo = true;
+    this.viewLocationLevelThree = false;
+    this.viewLocationLevelFour = false;
+    this.dataLocation = locationID;
+
+    if (this.indexLocationView[0] != undefined) {
+      this.indexLocationView[0] = this.locationJson.ParentLocation[index].Name;
+    } else {
+      this.indexLocationView.push(this.locationJson.ParentLocation[index].Name);
+    }
+
+    if (this.indexLocationView[1] != undefined) {
+      this.indexLocationView.splice(1);
+    }
+  }
+
+  selectLocationLevelTwo(index, locationID, LevelTwoId) {
+    this.LocationLevelTwoActiveId = index;
+    this.LocationLevelThreeActiveId = -1;
+    this.viewLocationLevelThree = true;
+    this.viewLocationLevelFour = false;
+    this.dataLocation = locationID;
+    this.dataLocationLevelTwo = LevelTwoId;
+
+    if (this.indexLocationView[1] != undefined) {
+      this.indexLocationView[1] = this.locationJson.LocationLevelTwo[index].Name;
+    } else {
+      this.indexLocationView.push(this.locationJson.LocationLevelTwo[index].Name);
+    }
+
+    if (this.indexLocationView[2] != undefined) {
+      this.indexLocationView.splice(2);
+    }
+  }
+
+  selectLocationLevelThree(index, LevelThreeId){
+    this.LocationLevelThreeActiveId = index;
+    this.dataLocationLevelThree = LevelThreeId;
+    this.viewLocationLevelFour = true;
+
+    if (this.indexLocationView[2] != undefined) {
+      this.indexLocationView[2] = this.locationJson.LocationLevelThree[index].Name;
+    } else {
+      this.indexLocationView.push(this.locationJson.LocationLevelThree[index].Name);
+    }
+
+    if (this.indexLocationView[3] != undefined) {
+      this.indexLocationView.splice(3);
+    }
+  }
 }
+//------------------------------------------------------------------------------
 //------------------------------------------------------------------------------
 declare var swal: any;
 @Component({
@@ -144,10 +398,11 @@ export class EditModalRol implements CloseGuard, ModalComponent<CustomModalConte
   dotsIndicators: any
 
   public names: any;
-  public selectedAll: any;
-  hola:any
-  holis:any;
+  deviceFiltered:any;
+  selectionCheck:any;
+  deselectionCheck:any;
 
+////////////////////
   constructor(public modal: Modal, private compiler: Compiler, private injector: Injector, public dialog: DialogRef<CustomModalContext>) {
     this.context = dialog.context;
     this.wrongAnswer = true;
@@ -157,12 +412,16 @@ export class EditModalRol implements CloseGuard, ModalComponent<CustomModalConte
     this.changeIndicatiorsEdit(true, false, false);
 
     this.names = [
-      {name: 'Hola', selected:true},
-      {name: ':v', selected:false},
-      {name: 'xD', selected:false},
-      {name: ':c', selected:false},
-      {name: 'holis', selected:false},
+      {placeds:'Zona Pradera', name:'Torre 3', office:'Oficina 512', accessPlaces:'Entrada 1', selected:false},
+      {placeds:'Zona Pradera', name:'Torre 3', office:'Oficina 512', accessPlaces:'Salón B5', selected:false},
+      {placeds:'Zona Pradera', name:'Torre 3', office:'Oficina 514', accessPlaces:'Salón Control', selected:false},
+      {placeds:'Zona Pradera', name:'Torre 3', office:'Oficina 514', accessPlaces:'Bodega 1', selected:false},
+      {placeds:'Zona Pradera', name:'Torre 4', office:'Oficina 310', accessPlaces:'Salón C3', selected:false},
+      {placeds:'Europlaza', name:'Oficina 402', accessPlaces:'Salón C3', selected:false},
+      {placeds:'Europlaza', name:'Oficina 402', accessPlaces:'Salón A', selected:false},
+      {placeds:'Europlaza', name:'Oficina 402', accessPlaces:'Bodega', selected:false},
     ];
+    this.deviceFiltered = this.names.slice(0);
   }
   ngOnInit() {
     this.callFunctionEditRols = this.changeStepsEditeRoles;
@@ -175,11 +434,11 @@ export class EditModalRol implements CloseGuard, ModalComponent<CustomModalConte
     this.BackUser = false;
     this.dotsIndicators = true;
 
-    this.hola = this.selectAll;
-    this.hola();
-    this.holis = this.checkIfAllSelected;
-    this.holis();
+    this.selectionCheck = this.selectAllCheck;
+    this.selectionCheck();
 
+    this.deselectionCheck = this.deselectAllCheck;
+    this.deselectionCheck();
   }
   closeEditRol(value) {
     this.wrongAnswer = value != 5;
@@ -237,16 +496,15 @@ export class EditModalRol implements CloseGuard, ModalComponent<CustomModalConte
       this.dotsIndicators = false;
     }
   }
-  selectAll() {
-    for (var i = 0; i < this.names.length; i++) {
-      this.names[i].selected = this.selectedAll;
-    }
+  /* Seleccion de todos los checkbox */
+  selectAllCheck(){
+    this.deviceFiltered.forEach(i=>i.checked=true);
   }
-  checkIfAllSelected() {
-    this.selectedAll = this.names.every(function(item:any) {
-      return item.selected == true;
-    });
+  /* deseleccion de todos los checkbox */
+  deselectAllCheck(){
+    this.deviceFiltered.forEach(i=>i.checked=false);
   }
+
 }
 //------------------------------------------------------------------------------
 @Component({
