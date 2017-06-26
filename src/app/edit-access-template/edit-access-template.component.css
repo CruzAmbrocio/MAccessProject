@@ -342,6 +342,12 @@ input[type=radio]:checked ~ label{
   font-size: 10px;
   margin-left: 8px;
 }
+.editNavActive {
+  font-family: robotoBold;
+  color: #000000;
+  font-size: 10px;
+  margin-left: 8px;
+}
 .marginText {
   margin-left: 4px;
 }
@@ -360,7 +366,7 @@ input[type=radio]:checked ~ label{
 }
 .boxContentDataLoc {
   height: 270px;
-  width: 90%;
+  width: 900px;
   display: flex;
   margin-top: 1%;
   -webkit-border-radius: 1%; 
@@ -368,19 +374,25 @@ input[type=radio]:checked ~ label{
   -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .3); 
   -moz-box-shadow: 0 0 8px rgba(0, 0, 0, .3);
 }
-.contentRow {
+.contentTable {
+  position: relative;
   width: 25%;
   height: 100%;
-  margin-left: 0;
   border-right: 1px solid #DCDCDC;
 }
-.margenRow {
-  margin-left: 2%;
+.contentRow {
+  max-height: 240px;
+  overflow-y: auto;
+}
+.contentRowShow{
+  max-height: 178px;
+  overflow-y: auto;
 }
 .activeCellRow {
   background-color: #00C6AF;
-  height: 12%;
-  margin-top: -12%;
+  height: 35px;
+  margin-top: -20px;
+  cursor: pointer;
 }
 .textActive {
   font-family: robotoRegular;
@@ -394,9 +406,10 @@ input[type=radio]:checked ~ label{
   display: block;
 }
 .desactiveCellRow {
-  height: 12%;
-  margin-top: -12%;
+  height: 35px;
+  margin-top: -20px;
   border-bottom: 1px solid #DCDCDC;
+  cursor: pointer;
 }
 .textDesactive {
   font-family: robotoRegular;
@@ -429,6 +442,84 @@ input[type=radio]:checked ~ label{
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
 }
+.btnNext {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 8%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px;
+  width: 22%;
+  height: 32px;
+  background-color: #00C6AF;
+  text-align: center;
+  text-decoration: none;
+  font-family: robotoBold;
+  font-size: 12px;
+  color: #FFF;
+}
+.iconCheck {
+  width: 12px;
+  height: 10px;
+}
+.delIcon {
+  width: 13px;
+  height: 15px;
+  float: right;
+  margin-top: -3%;
+  display: flex;
+  margin-right: 33%;
+}
+.locationNew {
+  position: absolute;
+  width: 100%;
+  bottom: 0px;
+}
+.locationsText {
+  margin-left: 5%;
+  font-size: 11px;
+  color: #01D9FE;
+  cursor: pointer;
+}
+.imgAgree {
+  width: 12px;
+  height: 12px;
+}
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-button {
+  width: 0px;
+  height: 0px;
+}
+::-webkit-scrollbar-thumb {
+  background: #cfcfcf;
+  border: 0px none #ffffff;
+  border-radius: 50px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #cfcfcf;
+}
+::-webkit-scrollbar-thumb:active {
+  background: #cfcfcf;
+}
+::-webkit-scrollbar-track {
+  background: #ffffff;
+  border: 0px none #ffffff;
+  border-radius: 50px;
+}
+::-webkit-scrollbar-track:hover {
+  background: #fcfcfc;
+}
+::-webkit-scrollbar-track:active {
+  background: #f6f6f6;
+}
+::-webkit-scrollbar-corner {
+  background: transpar3ent;
+}
+
 .btnChangerLocation {
   margin-left: auto;
   margin-right: auto;
