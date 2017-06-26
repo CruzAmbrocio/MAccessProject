@@ -216,12 +216,6 @@
   align-items: center;
   justify-content: center;
 }
-.containerButtons{
-  width: 70%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 10%;
-}
 .btnDelete {
   display: block;
   align-items: center;
@@ -282,6 +276,7 @@
   width: 200px;
   margin-right: auto;
   margin-left: auto;
+  margin-top: 1px!important;
 }
 .btnCheckAll {
   display: block;
@@ -347,7 +342,7 @@
 }
 /*  Style of the table */
 table, td {
-  border-bottom: 5px solid #f6f6f6;
+  border-bottom: 3px solid #f6f6f6;
   background-color: #ffffff;
   height: 35px;
 }
@@ -416,7 +411,7 @@ table, td {
 }
 .btnNextRol {
   margin-left: 38%;
-  margin-top: 5%;
+  margin-top: 3%;
   display: flex;
   align-items: center;
   justify-content: center;

@@ -252,10 +252,8 @@ export class AddModalLoc implements CloseGuard, ModalComponent<CustomModalContex
       showCancelButton: true,
       confirmButtonClass: "btnDelete",
       cancelButtonClass: "btnCancel",
-      confirmButtonText:
-      'Eliminar',
-      cancelButtonText:
-      'Cancelar'
+      confirmButtonText: 'Eliminar',
+      cancelButtonText: 'Cancelar'
     })
   }
 //-------------------------------------------------------------
@@ -268,7 +266,6 @@ export class AddModalLoc implements CloseGuard, ModalComponent<CustomModalContex
     this.appearCheckIcon2=false;
   }
   appearInputAddNewLoc3(){
-    console.log("asfasdf")
     this.appearAllContent3= true;
     this.appearCheckIcon3=false;
   }
@@ -574,12 +571,20 @@ export class EditModalLoc implements CloseGuard, ModalComponent<CustomModalConte
     this.context = dialog.context;
     this.wrongAnswer = true;
     dialog.setCloseGuard(this);
+
     this.changeIndicator = this.changeIndicatiors
     this.changeIndicator(true, false, false);
   }
   ngOnInit() {
     this.callFunctionAddLoc = this.changeStepsEditLoc;
     this.callFunctionAddLoc(true, false);
+
+    this.isActive = true;
+    this.isDisabled = false;
+    this.isActive1 = false;
+    this.isDisabled1 = true;
+    this.BackUser = false;
+    this.dotsIndicators = true;
   }
   closeEditLoc(value) {
     this.wrongAnswer = value != 5;
@@ -647,7 +652,6 @@ export class EditModalLoc implements CloseGuard, ModalComponent<CustomModalConte
     this.appearCheckIcon2=false;
   }
   appearInputAddNewLoc3(){
-    console.log("asfasdf")
     this.appearAllContent3= true;
     this.appearCheckIcon3=false;
   }

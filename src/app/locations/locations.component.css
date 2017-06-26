@@ -35,6 +35,10 @@
   border-color: white;
   border-width: 0px;
   height: 20px;
+  color: 
+}
+::-webkit-input-placeholder { /* Chrome */
+  color: #dadada;
 }
 input {
   font-family: "robotoRegular";

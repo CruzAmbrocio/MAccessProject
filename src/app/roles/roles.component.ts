@@ -34,17 +34,6 @@ export class AddModalRol implements CloseGuard, ModalComponent<CustomModalContex
   public regNewLocCoord: any;
   public NewLocCreated: any;
 //------------------------------------------------------------------------------
-
-  isActive: any;
-  isDisabled: any;
-  isActive1: any;
-  isDisabled1: any;
-  currentRoute: any;
-  changeIndicator: any;
-  changeIndicatorInit: any;
-  BackUser: any;
-  dotsIndicators: any
-
   isActiveChecks: any;
   isDisableChecks: any;
 
@@ -181,8 +170,17 @@ export class AddModalRol implements CloseGuard, ModalComponent<CustomModalContex
   };
 
   public indexLocationView = [];
-
 /*---------------------------------------------------------------------------*/
+  isActive: any;
+  isDisabled: any;
+  isActive1: any;
+  isDisabled1: any;
+  currentRoute: any;
+  changeIndicator: any;
+  changeIndicatorInit: any;
+  BackUser: any;
+  dotsIndicators: any
+
   constructor(public modal: Modal, private compiler: Compiler, private injector: Injector, public dialog: DialogRef<CustomModalContext>) {
     this.context = dialog.context;
     this.wrongAnswer = true;
@@ -236,13 +234,13 @@ export class AddModalRol implements CloseGuard, ModalComponent<CustomModalContex
     //alert("this.takePictureUser")
   }
   changeIndicatiors(statOne, statTwo, statThree){
-    this.currentRoute = "hola"
     if (statOne){
       this.isActive = true;
       this.isDisabled = false;
       this.isActive1 = false;
       this.isDisabled1 = true;
       this.dotsIndicators = true;
+      this.BackUser = false;
     } else if(statTwo){
       this.isActive = false;
       this.isDisabled = true;
@@ -387,6 +385,12 @@ export class EditModalRol implements CloseGuard, ModalComponent<CustomModalConte
   public accessAllowed: any;
   public callFunctionEditRols: any;
 
+  public names: any;
+  deviceFiltered:any;
+  selectionCheck:any;
+  deselectionCheck:any;
+
+////////////////////
   isActive: any;
   isDisabled: any;
   isActive1: any;
@@ -397,18 +401,12 @@ export class EditModalRol implements CloseGuard, ModalComponent<CustomModalConte
   BackUser: any;
   dotsIndicators: any
 
-  public names: any;
-  deviceFiltered:any;
-  selectionCheck:any;
-  deselectionCheck:any;
-
-////////////////////
   constructor(public modal: Modal, private compiler: Compiler, private injector: Injector, public dialog: DialogRef<CustomModalContext>) {
     this.context = dialog.context;
     dialog.setCloseGuard(this);
 
-    this.changeIndicatiorsEdit = this.changeIndicatiorsEdit
-    this.changeIndicatiorsEdit(true, false, false);
+    this.changeIndicator = this.changeIndicatiors
+    this.changeIndicator(true, false, false);
 
     this.names = [
       {placeds:'Zona Pradera', name:'Torre 3', office:'Oficina 512', accessPlaces:'Entrada 1', selected:false},
@@ -474,14 +472,14 @@ export class EditModalRol implements CloseGuard, ModalComponent<CustomModalConte
     this.callFunctionEditRols = paramEditRol;
     //alert("this.takePictureUser")
   }
-  changeIndicatiorsEdit(statOne, statTwo, statThree){
-    this.currentRoute = "hola"
+  changeIndicatiors(statOne, statTwo, statThree){
     if (statOne){
       this.isActive = true;
       this.isDisabled = false;
       this.isActive1 = false;
       this.isDisabled1 = true;
       this.dotsIndicators = true;
+      this.BackUser = false;
     } else if(statTwo){
       this.isActive = false;
       this.isDisabled = true;

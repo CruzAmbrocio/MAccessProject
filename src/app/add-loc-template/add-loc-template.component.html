@@ -27,7 +27,6 @@
         <div class="col-xs-2 col-md-2"></div>
     </div>
 </div>
-
 <div *ngIf="regNewLoc" class="container">
   <div class="row">
   <div class="col-md-2"></div>
@@ -39,10 +38,10 @@
       <div class="contentDataUbication">
         <div class="boxContentUbication">
           <form class="posInputsUbication">
-            <div class="row form-group">
+            <div class="row centerBox form-group">
               <input type="contentText" class="form-control inputName" id="name" placeholder="Nombre de ubicación">
             </div>
-            <div class="row form-group">
+            <div class="row centerBox form-group">
                 <input type="contentText" class="form-control inputDesc" id="desc" placeholder="Descripción">
               </div>
           </form>
@@ -182,7 +181,7 @@
           </form>
         </div>
       </div>
-      <a (click)="changeStepsAddLoc(false, false, false, true)" (click)="changeIndicatiors(false, false, false, true)" class="btnRegisterLocat">Crear Ubicación</a>
+      <a (click)="changeStepsAddLoc(false, false, false, true)" (click)="changeIndicatiors(false, false, false, true)" class="btnUbicationNew">Crear Ubicación</a>
     </div>
   <div class="col-md-2"></div>
   </div>
