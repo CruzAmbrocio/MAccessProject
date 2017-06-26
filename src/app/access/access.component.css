@@ -16,20 +16,17 @@
   align-items: center;
   justify-content: center;
 }
-
 .nameTable {
   font-family: "robotoBold";
   color: #5B5B5B;
   font-size: 13px;
 }
-
 .search {
   display: inline-block;
   float: right;
   position: relative;
 }
-
-/*   Style input search */
+/* Style input search */
 .myInput {
   border-radius: 5px;
   background-image: url('../../assets/iconos/icon_buscar.png');
@@ -40,8 +37,11 @@
   border-color: white;
   border-width: 0px;
   height: 20px;
+  color: 
 }
-
+::-webkit-input-placeholder { /* Chrome */
+  color: #dadada;
+}
 input {
   font-family: "robotoRegular";
   color: #a2a2a2;
