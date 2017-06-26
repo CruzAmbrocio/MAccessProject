@@ -67,6 +67,28 @@
   background: #97E7DE;
   display: inline-block;
 }
+.btnTableNewAccess {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 8%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px;
+  width: 22%;
+  height: 32px;
+  background-color: #00C6AF;
+  text-align: center;
+  text-decoration: none;
+  font-family: robotoBold;
+  font-size: 12px;
+  color: #FFF;
+  cursor: pointer;
+  transition :all ease 0.3s
+}
+.btnTableNewAccess:hover{
+  background-color: #00A096;
+}
 /* VISTA DE REGISTRO DE NUEVO ACCESO */
 /* Clases generales que se utilizan en todas las vistas de access */
 .centerBoxDataAccess {
@@ -148,8 +170,7 @@
   background-color: #00A096;
 }
 .accessLine {
-  margin-left: 3%;
-  width: 105%;
+  width: 100%;
 }
 .lblAccess {
   display: flex;
@@ -166,7 +187,8 @@ ul .buttonSelecction{
   position: relative;
   float: left;
   margin-top: -5%;
-  margin-left: -7%;
+    width: 33.33%;
+    margin-left: -5px;
 }
 ul .buttonSelecction input[type=radio]{
   position: absolute;
@@ -178,8 +200,8 @@ ul .buttonSelecction label{
   font-family: robotoBold;
   color: #747474;
   font-size: 11px;
-  padding: 25px 8px 25px 80px;
-  margin: 9px auto;
+  padding: 34px 0px 25px 0px;
+  margin-left: 25px;
   z-index: 9;
   cursor: pointer;
   -webkit-transition: all 0.25s linear;
@@ -192,7 +214,7 @@ ul .buttonSelecction .check{
   height: 15px;
   width: 15px;
   top: 34px;
-  left: 55px;
+  left: 0px;
   z-index: 5;
   transition: border .25s linear;
   -webkit-transition: border .25s linear;
@@ -208,15 +230,18 @@ ul .buttonSelecction .check::before {
   transition: background 0.25s linear;
   -webkit-transition: background 0.25s linear;
 }
-input[type=radio]:checked ~ .check {
-  border: 5px solid #0DFF92;
+
+input[type=radio][_ngcontent-c3]:checked ~ .check[_ngcontent-c3]::before {
+    background: #00C6AF ;
+    height: 9px;
+    width: 9px;
+    border-radius: 10px;
 }
-input[type=radio]:checked ~ .check::before{
-  background: #0DFF92;
+
+input[type=radio][_ngcontent-c3]:checked ~ .check[_ngcontent-c3] {
+    border: 2px solid #00C6AF ;
 }
-input[type=radio]:checked ~ label{
-  color: #0DFF92;
-}
+
 /* Tabla de acceso de registro */
 .btnAccessCreate {
   margin-left: auto;
@@ -290,13 +315,7 @@ input[type=radio]:checked ~ label{
   border-color: #F0F0F0;
   width: 80%;
 }
-.form-group {
-  display: flex;
-  align-items: center;
-  margin: 0;
-  padding: 0 15px;
-  margin-left: 10%;
-}
+
 .btnRegisterLocat {
   margin-left: 38%;
   margin-top: 2%;
@@ -548,6 +567,9 @@ input[type=radio]:checked ~ label{
 input {
   font-family: "robotoRegular";
   color: #a2a2a2;
+}
+.holis {
+  background-color: red;
 }
 .contAddLocat{
     bottom: 0px;

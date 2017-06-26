@@ -31,54 +31,53 @@
 <div *ngIf="registerAccessNew" class="container">
   <div class="row">
   <div class="col-md-2"></div>
-    <div class="col-xs-12 col-md-8 col-lg-8">
-      <div class="centerBoxDataAccess">
-        <p class="titleAccessViews">REGISTRAR NUEVO ACCESO</p>
-        <p class="descAccessViews">Completa la información del acceso.</p>
-      </div>
-      <div class="accessContentData">
-        <div class="boxAccessContent">
-          <form class="posAccessInputs">
-            <div class="row rowCheckbox form-group">
-              <input type="contentText" class="form-control inputRegisName" id="registerName" placeholder="Nombre">
+  <div class="col-xs-12 col-md-8 col-lg-8">
+    <div class="centerBoxDataAccess">
+      <p class="titleAccessViews">REGISTRAR NUEVO ACCESO</p>
+      <p class="descAccessViews">Completa la información del acceso.</p>
+    </div>
+    <div class="accessContentData">
+      <div class="boxAccessContent">
+        <form class="posAccessInputs">
+          <div class="row rowCheckbox form-group">
+            <input type="contentText" class="form-control inputRegisName" id="registerName" placeholder="Nombre">
+          </div>
+          <div class="row rowCheckbox form-group">
+              <input type="number" class="form-control inputRegistID" id="registerID" placeholder="ID">
             </div>
-            <div class="row rowCheckbox form-group">
-                <input type="number" class="form-control inputRegistID" id="registerID" placeholder="ID">
-              </div>
-              <div class="row rowCheckbox form-group">  
-                <input type="contentText" class="form-control inputRegistDesc" id="registerDesc" placeholder="Descripción">
-              </div>
-          </form>
-          <hr class="accessLine">
-          <p class="lblAccess">¿Qué permite el acceso?</p>
-          <div class="contentSelection">
-            <div class="row">
-              <ul>
-                <li class="buttonSelecction">
-                  <input type="radio" id="f-option" name="selector">
-                  <label for="f-option">Entrada</label>
-                  
-                  <div class="check"></div>
-                </li>
-                
-                <li class="buttonSelecction">
-                  <input type="radio" id="s-option" name="selector">
-                  <label for="s-option">Salida</label>
-                  
-                  <div class="check"><div class="inside"></div></div>
-                </li>
-                <li class="buttonSelecction">
-                  <input type="radio" id="t-option" name="selector">
-                  <label for="t-option">Entrada y Salida</label>
-                  <div class="check"><div class="inside"></div></div>
-                </li>
-              </ul>
+            <div class="row rowCheckbox form-group">  
+              <input type="contentText" class="form-control inputRegistDesc" id="registerDesc" placeholder="Descripción">
             </div>
+        </form>
+        <hr class="accessLine">
+        <p class="lblAccess">¿Qué permite el acceso?</p>
+        <div class="contentSelection">
+          <div class="row">
+            <ul>
+
+              <li class="buttonSelecction">
+                <input type="radio" id="f-option" name="selector">
+                <label for="f-option">Entrada</label>
+                <div class="check"></div>
+              </li>
+
+              <li class="buttonSelecction">
+                <input type="radio" id="s-option" name="selector">
+                <label for="s-option">Salida</label>
+                <div class="check"><div class="inside"></div></div>
+              </li>
+              <li class="buttonSelecction">
+                <input type="radio" id="t-option" name="selector">
+                <label for="t-option">Entrada y Salida</label>
+                <div class="check"><div class="inside"></div></div>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
-      <a (click)="changeStepsAccessNew(false, true, false, false)" (click)="changeIndicatiors(false, true, false, false)" class="btnGeneralAllAccess">Siguiente</a>
     </div>
+    <a (click)="changeStepsAccessNew(false, true, false, false)" (click)="changeIndicatiors(false, true, false, false)" class="btnGeneralAllAccess">Siguiente</a>
+  </div>
   <div class="col-md-2"></div>
   </div>
 </div>
@@ -176,7 +175,7 @@
             </div>
           </div>  
         </div>
-        <a (click)="changeStepsAccessNew(false, false, true, false)" (click)="changeIndicatiors(false, true, false, false)" class="btnGeneralAllAccess">Siguiente</a>
+        <a (click)="changeStepsAccessNew(false, false, true, false)" (click)="changeIndicatiors(false, true, false, false)" class="btnTableNewAccess">Siguiente</a>
       </div>
     <div class="col-md-2"></div>
   </div>
