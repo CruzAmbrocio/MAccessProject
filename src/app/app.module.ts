@@ -6,7 +6,7 @@ import { RouterModule } from '@angular/router';
 //route of the component -- main
 import { MainComponent } from './main/main.component';
 //route of the component -- login
-import { LoginComponent } from './login/login.component';
+import { LoginComponent, forgotPassModal } from './login/login.component';
 //route of the component -- users
 import { UsersComponent, CustomModal, EditModal } from './users/users.component';
 //route of the component -- locations
@@ -21,6 +21,9 @@ import { GlobalDataService } from './global.service';
 import { AddUserTemplateComponent } from './add-user-template/add-user-template.component';
 //route of the component -- control
 import { ControlComponent } from './control/control.component';
+
+//route of the component -- forgot-password
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -50,7 +53,9 @@ import { BootstrapModalModule } from 'angular2-modal/plugins/bootstrap';
     AddModalAccess,
     editModalAccess,
     AddModalRol,
-    EditModalRol
+    EditModalRol,
+    ForgotPasswordComponent,
+    forgotPassModal
 
   ],
   imports: [
@@ -62,8 +67,7 @@ import { BootstrapModalModule } from 'angular2-modal/plugins/bootstrap';
     JsonpModule,
     NgbModule.forRoot(),
     ModalModule.forRoot(),
-    BootstrapModalModule,
-    
+    BootstrapModalModule, 
   ],
   providers: [
     GlobalDataService,
@@ -76,9 +80,10 @@ import { BootstrapModalModule } from 'angular2-modal/plugins/bootstrap';
     EditModalLoc,
     AddModalLoc,
     AddModalAccess,
-  editModalAccess,
-  AddModalRol,
-  EditModalRol
+    editModalAccess,
+    AddModalRol,
+    EditModalRol,
+    forgotPassModal
   ],
   bootstrap: [
     AppComponent
@@ -91,7 +96,8 @@ import { BootstrapModalModule } from 'angular2-modal/plugins/bootstrap';
     AddModalAccess,
     editModalAccess,
     AddModalRol,
-    EditModalRol
+    EditModalRol,
+    forgotPassModal
   ],
 })
 export class AppModule { }

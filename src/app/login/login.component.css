@@ -82,6 +82,7 @@ span {
 }
 .forgotPass{
 	cursor: pointer;
+  outline: none !important;
 }
 .forgotPass:hover {
 	color:#3674e1; 

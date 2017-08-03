@@ -34,10 +34,14 @@
                 <img class="imgOpacity" src="./assets/iconos/opacity_circle.png">
             </div>
             <div>
-                <p class="titlePhoto centerTitle" (click)="changeStepsAddUser()">Fotografía</p>
-                <p class="desPhoto">Pide al nuevo usuario que voltee a la cámara.</p>
-                <p class="desPhoto topDesPhoto">Cuando este listo, toma la fotogría.</p>
+<input type="file" id="files" name="files[]" multiple />
+<output id="list"></output>
+
+                <!--<p class="titlePhoto centerTitle" (click)="changeStepsAddUser()">Fotografía</p>-->
+                <!--<p class="desPhoto">Pide al nuevo usuario que voltee a la cámara.</p>-->
+                <!--<p class="desPhoto topDesPhoto">Cuando este listo, toma la fotogría.</p>-->
                 <a (click)="changeStepsAddUser(false, true, false, false)" (click)="changeIndicatiors(false, true, false, shortcutAddUser)" class="btnGeneralUser"><img class="iconCamera" src="../assets/iconos/icon_camara.png">Tomar Fotografía</a>
+                <a (click)="changeStepsAddUser(false, true, false, false)" (click)="changeIndicatiors(false, true, false, shortcutAddUser)" class="btnGeneralSecondary"><img class="iconCamera" src="../assets/iconos/icon_upload.png">Subir Fotografía</a>
             </div>
         </div>
     <div class="col-md-2"></div>
