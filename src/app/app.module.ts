@@ -25,6 +25,9 @@ import { ControlComponent } from './control/control.component';
 //route of the component -- forgot-password
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { UploadModule } from '@progress/kendo-angular-upload';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -67,7 +70,9 @@ import { BootstrapModalModule } from 'angular2-modal/plugins/bootstrap';
     JsonpModule,
     NgbModule.forRoot(),
     ModalModule.forRoot(),
-    BootstrapModalModule, 
+    BootstrapModalModule,
+    BrowserAnimationsModule,
+    UploadModule
   ],
   providers: [
     GlobalDataService,

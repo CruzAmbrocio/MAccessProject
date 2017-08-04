@@ -1,11 +1,10 @@
-import { Component, OnInit, NgModule, Input, ViewContainerRef, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ElementRef, NgModule, Input, ViewContainerRef, ViewEncapsulation } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { JsonpModule } from '@angular/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgbModal, NgbActiveModal, ModalDismissReasons, } from '@ng-bootstrap/ng-bootstrap';
 import { AddUserTemplateComponent } from '../add-user-template/add-user-template.component';
-
 
 import { Overlay, overlayConfigFactory } from 'angular2-modal';
 import { Modal, BSModalContext } from 'angular2-modal/plugins/bootstrap';
@@ -42,6 +41,8 @@ export class CustomModal implements CloseGuard, ModalComponent<CustomModalContex
   public createdUser: any;
   public callFunctionUsers: any;
   public shortcutAddUser:any;
+
+
 //------------------------------------------------------------------------------
 
 
@@ -187,7 +188,13 @@ export class CustomModal implements CloseGuard, ModalComponent<CustomModalContex
   changeIndicatorInit: any;
   BackUser: any;
   dotsIndicators: any
+  public width:any 
+  public height:any
+  public archivo:any
 
+
+  public url:any
+  public result:any
   constructor(public modal: Modal, private compiler: Compiler, private injector: Injector, public dialog: DialogRef<CustomModalContext>) {
     this.context = dialog.context;
     dialog.setCloseGuard(this);
@@ -253,7 +260,7 @@ changeIndicatiors(statOne, statTwo, statThree, statFour){
       this.BackUser = true;
       this.dotsIndicators = true;
     }
-  }
+  }  
   changeStepsAddUser(param1, param2, param3, param4, addShortCut) {
     if (addShortCut){
       this.takePictureUser = false;
@@ -268,6 +275,7 @@ changeIndicatiors(statOne, statTwo, statThree, statFour){
     }
     //alert("this.takePictureUser")
   }
+
   types:any[]=[
     {id:'C-Level',Name:'C-Level'},
     {id:'IT',Name:'IT'},
@@ -398,6 +406,17 @@ changeIndicatiors(statOne, statTwo, statThree, statFour){
     }
   }
 
+  readUrl(event) {
+
+    if (event.target.files && event.target.files[0]) {
+      var reader = new FileReader();
+      reader.onload = (event) => {
+        this.url = event.target["result"];
+      }
+      reader.readAsDataURL(event.target.files[0]);
+    }
+
+  }
 //------------------------------------------------------------------------------
 
 }

@@ -30,18 +30,28 @@
                 <p class="centerTitleUsers">REGISTRAR NUEVO USUARIO</p>
             </div>
             <div class="imgContent">
-                <img class="imgPerfil" src="./assets/iconos/fotd-miamibeach.jpg">
+                <img class="imgPerfil" src="./assets/iconos/no_camera.jpg">
+                <!--<img class="imgPerfil" [src]="url">-->
                 <img class="imgOpacity" src="./assets/iconos/opacity_circle.png">
             </div>
             <div>
-<input type="file" id="files" name="files[]" multiple />
-<output id="list"></output>
+              <a (click)="changeStepsAddUser(false, true, false, false)" (click)="changeIndicatiors(false, true, false, shortcutAddUser)" class="btnGeneralUser"><img class="iconCamera" src="../assets/iconos/icon_camara.png">Tomar Fotografía</a>
 
-                <!--<p class="titlePhoto centerTitle" (click)="changeStepsAddUser()">Fotografía</p>-->
-                <!--<p class="desPhoto">Pide al nuevo usuario que voltee a la cámara.</p>-->
-                <!--<p class="desPhoto topDesPhoto">Cuando este listo, toma la fotogría.</p>-->
-                <a (click)="changeStepsAddUser(false, true, false, false)" (click)="changeIndicatiors(false, true, false, shortcutAddUser)" class="btnGeneralUser"><img class="iconCamera" src="../assets/iconos/icon_camara.png">Tomar Fotografía</a>
-                <a (click)="changeStepsAddUser(false, true, false, false)" (click)="changeIndicatiors(false, true, false, shortcutAddUser)" class="btnGeneralSecondary"><img class="iconCamera" src="../assets/iconos/icon_upload.png">Subir Fotografía</a>
+<!--
+<form id="form1" runat="server">
+    <input type='file' id="imgInp" />
+    <img id="blah" src="#" alt="your image" />
+</form>
+-->
+              <div class="fileUpload">
+                <img class="iconCamera" src="../assets/iconos/icon_upload.png">
+                <span>Subir Fotografía</span>
+                <input  class="upload" accept="images/*" type='file' (change)="readUrl($event)">
+              </div>
+
+
+            <a (click)="changeStepsAddUser(false, true, false, false)" (click)="changeIndicatiors(false, true, false, shortcutAddUser)"  class="btnGeneralUser">Siguiente</a>
+
             </div>
         </div>
     <div class="col-md-2"></div>
@@ -71,6 +81,7 @@
                     </div>
                 </form>
                 <img class="imgNewUser" src="./assets/iconos/foto_previw.jpg">
+                <a class="textEditPhoto" (click)="changeIndicatiors(takePictureUser, registerUserAdd, createdUser, shortcutAddUser)" (click)="changeStepsAddUser(true, false, false, false, shortcutAddUser)">Editar</a>
             </div>
             <div class="contentInfoRegister">
                 <a (click)="changeStepsAddUser(false, false, false, true)" class="titleAccess nounderLine"><img class="iconAdd" src="./assets/iconos/icon_agregar.png">&nbsp;&nbsp;&nbsp;Agregar acceso directo?</a>
@@ -82,6 +93,7 @@
     <div class="col-md-2"></div>
     </div>
 </div>
+<!-- Vista usario creado -->
 <div *ngIf="createdUser" class="container">
     <div class="row">
     <div class="col-md-2"></div>
@@ -105,6 +117,7 @@
     <div class="col-md-2"></div>
     </div>
 </div>
+<!-- Vista agregar acceso directo al usuario-->
 <div *ngIf="shortcutAddUser" class="container">
     <div class="row">
     <div class="col-md-2"></div>

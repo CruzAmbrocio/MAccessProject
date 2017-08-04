@@ -5,6 +5,8 @@ import { Compiler,  Injector, TemplateRef, ViewChild, NgModuleRef } from '@angul
 import { Overlay, overlayConfigFactory } from 'angular2-modal';
 import { Router, NavigationEnd } from '@angular/router';
 
+import { ImageUploadModule } from "angular2-image-upload";
+
 //------------------------------------------------------------------------------
 export class CustomModalContext extends BSModalContext {
   public num1: number;
@@ -72,34 +74,7 @@ export class forgotPassModal implements CloseGuard, ModalComponent<CustomModalCo
     this.stepTwo= two;
     this.stepThree= three;
   }
- handleFileSelect(evt) {
-  var files = evt.target.files; // FileList object
 
-  // Loop through the FileList and render image files as thumbnails.
-  for (var i = 0, f; f = files[i]; i++) {
-
-    // Only process image files.
-    if (!f.type.match('image.*')) {
-      continue;
-    }
-
-    var reader = new FileReader();
-
-    // Closure to capture the file information.
-    reader.onload = (function(theFile) {
-      return function(e) {
-        // Render thumbnail.
-        var span = document.createElement('span');
-        this.span.innerHTML = ['<img class="thumb" src="', this.e.target.result,'"/>'].join('');
-        document.getElementById('list').insertBefore(this.span, null);
-        console.log(this.span)
-      };
-    })(f);
-
-    // Read in the image file as a data URL.
-    reader.readAsDataURL(f);
-  }
-}
 }
 
 @Component({
