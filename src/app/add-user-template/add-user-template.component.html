@@ -31,9 +31,14 @@
             </div>
             <div class="imgContent">
 
-                <video muted #video width="640" height="480" autoplay></video>
+                <video muted #video class="imgOpacity" autoplay width="640" height="480"></video>
                 <img id="snap">
-
+    <div class="controls">
+      <a id="delete-photo" title="Delete Photo" class="disabled" (click)="deletePhoto()"><i class="material-icons">delete</i></a>
+      <a id="take-photo" title="Take Photo" (click)="takePhotos()"><i class="material-icons">camera_alt</i></a>
+      <a id="download-photo" download="selfie.png" title="Save Photo" class="disabled"><i class="material-icons">file_download</i></a>  
+    </div>
+        <canvas></canvas>
                 <img *ngIf="unusedPhoto" class="imgPerfil" src="./assets/iconos/no_camera.jpg">
                 <img  *ngIf="takedPhoto" class="imgPerfil" [src]="url">
                 <img *ngIf="activeNextBtn" class="imgOpacity" src="./assets/iconos/opacity_circle.png">
@@ -42,7 +47,7 @@
 
 
             <div>
-              <a *ngIf="inactiveNextBtn" (click)="takePhoto()" class="btnGeneralUser"><img class="iconCamera" src="../assets/iconos/icon_camara.png">Tomar xxxFotografía</a>
+              <a *ngIf="inactiveNextBtn" (click)="takePhoto()" class="btnGeneralUser"><img class="iconCamera" src="../assets/iconos/icon_camara.png">Tomar Fotografía</a>
               <div class="fileUpload" *ngIf="inactiveNextBtn">
                 <img class="iconCamera" src="../assets/iconos/icon_upload.png">
                 <span>Subir Fotografía</span>

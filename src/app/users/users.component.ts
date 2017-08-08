@@ -202,12 +202,22 @@ export class CustomModal implements CloseGuard, ModalComponent<CustomModalContex
   public inactiveNextBtn:any
   public takedPhoto:any
   public unusedPhoto:any
+
+public hideUIF:any
+public showVideoF:any
+
+
+
+
+
+
   constructor(  public modal: Modal, private compiler: Compiler, private injector: Injector, public dialog: DialogRef<CustomModalContext>) {
     this.context = dialog.context;
     dialog.setCloseGuard(this);
 
       this.changeIndicator = this.changeIndicatiors
       this.changeIndicator(true, false, false);
+
   }
   ngOnInit() {
     this.callFunctionUsers = this.changeStepsAddUser;
@@ -440,11 +450,130 @@ changeIndicatiors(statOne, statTwo, statThree, statFour){
         .then(stream => {
           _video.src = window.URL.createObjectURL(stream);
           _video.play();
+          _video.onplay = function() {
+                this.showVideoF = this.showVideo;
+                this.showVideoF()
+                  };
         }).catch(function (e) {
            console.log("There was an error" + + Error.name, Error);
         });
     }
   }
+takePhotos(){
+    // References to all the element we will need.
+    var video = document.querySelector('video'),
+        image = document.querySelector('#snap'),
+        start_camera = document.querySelector('#start-camera'),
+        controls = document.querySelector('.controls'),
+        take_photo_btn = document.querySelector('#take-photo'),
+        delete_photo_btn = document.querySelector('#delete-photo'),
+        download_photo_btn = document.querySelector('#download-photo'),
+        error_message = document.querySelector('#error-message');
+
+        var snap = this.takeSnapshot();
+
+        // Show image. 
+        image.setAttribute('src', snap);
+        image.classList.add("visible");
+
+        // Enable delete and save buttons
+        delete_photo_btn.classList.remove("disabled");
+        download_photo_btn.classList.remove("disabled");
+
+        // Set the href attribute of the download button to the snap url.
+        download_photo_btn["href"] = snap;
+        // Pause video playback of stream.
+        video.pause();
+   } 
+
+
+    takeSnapshot() {
+    // References to all the element we will need.
+    var video = document.querySelector('video'),
+        image = document.querySelector('#snap'),
+        start_camera = document.querySelector('#start-camera'),
+        controls = document.querySelector('.controls'),
+        take_photo_btn = document.querySelector('#take-photo'),
+        delete_photo_btn = document.querySelector('#delete-photo'),
+        download_photo_btn = document.querySelector('#download-photo'),
+        error_message = document.querySelector('#error-message');
+
+        // Here we're using a trick that involves a hidden canvas element.  
+
+        var hidden_canvas = document.querySelector('canvas'),
+            context = hidden_canvas.getContext('2d');
+
+        var width = video.videoWidth;
+        var height = video.videoHeight;
+
+        if (width && height) {
+
+            // Setup a canvas with the same dimensions as the video.
+            hidden_canvas.width = width;
+            hidden_canvas.height = height;
+
+
+
+            // Turn the canvas image into a dataURL that can be used as a src for our photo.
+            return hidden_canvas.toDataURL('image/png');
+        }
+    }
+
+deletePhoto(){
+    // References to all the element we will need.
+    var video = document.querySelector('video'),
+        image = document.querySelector('#snap'),
+        start_camera = document.querySelector('#start-camera'),
+        controls = document.querySelector('.controls'),
+        take_photo_btn = document.querySelector('#take-photo'),
+        delete_photo_btn = document.querySelector('#delete-photo'),
+        download_photo_btn = document.querySelector('#download-photo'),
+        error_message = document.querySelector('#error-message');
+        // Hide image.
+        image.setAttribute('src', "");
+        image.classList.remove("visible");
+
+        // Disable delete and save buttons
+        delete_photo_btn.classList.add("disabled");
+        download_photo_btn.classList.add("disabled");
+
+        // Resume playback of stream.
+        video.play();
+}
+
+  showVideo() {
+    // References to all the element we will need.
+    var video = document.querySelector('video'),
+        image = document.querySelector('#snap'),
+        start_camera = document.querySelector('#start-camera'),
+        controls = document.querySelector('.controls'),
+        take_photo_btn = document.querySelector('#take-photo'),
+        delete_photo_btn = document.querySelector('#delete-photo'),
+        download_photo_btn = document.querySelector('#download-photo'),
+        error_message = document.querySelector('#error-message');
+        this.hideUIF = this.hideUI;
+        this.hideUIF();
+        video.classList.add("visible");
+        controls.classList.add("visible");
+  }
+
+  hideUI() {
+     // References to all the element we will need.
+    var video = document.querySelector('video'),
+        image = document.querySelector('#snap'),
+        start_camera = document.querySelector('#start-camera'),
+        controls = document.querySelector('.controls'),
+        take_photo_btn = document.querySelector('#take-photo'),
+        delete_photo_btn = document.querySelector('#delete-photo'),
+        download_photo_btn = document.querySelector('#download-photo'),
+        error_message = document.querySelector('#error-message');
+        // Helper function for clearing the app UI.
+
+        controls.classList.remove("visible");
+        start_camera.classList.remove("visible");
+        video.classList.remove("visible");
+        error_message.classList.remove("visible");
+    }
 
   tryAgainPhoto(){
     this.activeNextBtn = false;
