@@ -426,7 +426,7 @@ changeIndicatiors(statOne, statTwo, statThree, statFour){
         this.activeNextBtn = true;
         this.inactiveNextBtn = false;
         this.takedPhoto = true;
-        this.unusedPhoto = false;
+        this.unusedPhoto = false;  
       }
       reader.readAsDataURL(event.target.files[0]);
     }
@@ -440,10 +440,12 @@ changeIndicatiors(statOne, statTwo, statThree, statFour){
         .then(stream => {
           _video.src = window.URL.createObjectURL(stream);
           _video.play();
-        })
+        }).catch(function (e) {
+           console.log("There was an error" + + Error.name, Error);
+        });
     }
-
   }
+
   tryAgainPhoto(){
     this.activeNextBtn = false;
     this.inactiveNextBtn = true;

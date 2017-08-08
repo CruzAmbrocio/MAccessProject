@@ -30,21 +30,14 @@
                 <p class="centerTitleUsers">REGISTRAR NUEVO USUARIO</p>
             </div>
             <div class="imgContent">
+
+                <video muted #video width="640" height="480" autoplay></video>
+                <img id="snap">
+
                 <img *ngIf="unusedPhoto" class="imgPerfil" src="./assets/iconos/no_camera.jpg">
                 <img  *ngIf="takedPhoto" class="imgPerfil" [src]="url">
                 <img *ngIf="activeNextBtn" class="imgOpacity" src="./assets/iconos/opacity_circle.png">
             </div>
-
-
-
-
-
-
-
-
-  <h2>Video</h2>
-  <video #video width="640" height="480" autoplay></video>
-
 
 
 
