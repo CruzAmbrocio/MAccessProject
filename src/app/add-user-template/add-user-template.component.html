@@ -34,8 +34,22 @@
                 <img  *ngIf="takedPhoto" class="imgPerfil" [src]="url">
                 <img *ngIf="activeNextBtn" class="imgOpacity" src="./assets/iconos/opacity_circle.png">
             </div>
+
+
+
+
+
+
+
+
+  <h2>Video</h2>
+  <video #video width="640" height="480" autoplay></video>
+
+
+
+
             <div>
-              <a *ngIf="inactiveNextBtn" (click)="changeStepsAddUser(false, true, false, false)" (click)="changeIndicatiors(false, true, false, shortcutAddUser)" class="btnGeneralUser"><img class="iconCamera" src="../assets/iconos/icon_camara.png">Tomar Fotografía</a>
+              <a *ngIf="inactiveNextBtn" (click)="takePhoto()" class="btnGeneralUser"><img class="iconCamera" src="../assets/iconos/icon_camara.png">Tomar xxxFotografía</a>
               <div class="fileUpload" *ngIf="inactiveNextBtn">
                 <img class="iconCamera" src="../assets/iconos/icon_upload.png">
                 <span>Subir Fotografía</span>

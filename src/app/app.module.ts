@@ -55,7 +55,7 @@ import { BootstrapModalModule } from 'angular2-modal/plugins/bootstrap';
     AddModalRol,
     EditModalRol,
     ForgotPasswordComponent,
-    forgotPassModal
+    forgotPassModal,
 
   ],
   imports: [

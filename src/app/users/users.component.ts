@@ -10,13 +10,13 @@ import { Overlay, overlayConfigFactory } from 'angular2-modal';
 import { Modal, BSModalContext } from 'angular2-modal/plugins/bootstrap';
 
 import { DialogRef, ModalComponent, CloseGuard } from 'angular2-modal';
-import { Compiler,  Injector, TemplateRef, ViewChild, NgModuleRef } from '@angular/core';
+import {
+  Compiler, Injector, TemplateRef, ViewChild, ViewChildren, QueryList, NgModuleRef } from '@angular/core';
 
 export class CustomModalContext extends BSModalContext {
   public num1: number;
   public num2: number;
 }
-
 /**
  * A Sample of how simple it is to create a new window, with its own injects.
  */ 
@@ -26,7 +26,11 @@ export class CustomModalContext extends BSModalContext {
   templateUrl: '../add-user-template/add-user-template.component.html'
 })
 
-export class CustomModal implements CloseGuard, ModalComponent<CustomModalContext>, OnInit{
+export class CustomModal implements CloseGuard, ModalComponent<CustomModalContext>, OnInit {
+  @ViewChild('myname') input: ElementRef;
+  @ViewChild('video') video: ElementRef;
+
+  @ViewChildren('div1,div2,div3') divs: QueryList<ElementRef>;
   context: CustomModalContext;
 
 
@@ -198,7 +202,7 @@ export class CustomModal implements CloseGuard, ModalComponent<CustomModalContex
   public inactiveNextBtn:any
   public takedPhoto:any
   public unusedPhoto:any
-  constructor(public modal: Modal, private compiler: Compiler, private injector: Injector, public dialog: DialogRef<CustomModalContext>) {
+  constructor(  public modal: Modal, private compiler: Compiler, private injector: Injector, public dialog: DialogRef<CustomModalContext>) {
     this.context = dialog.context;
     dialog.setCloseGuard(this);
 
@@ -426,6 +430,19 @@ changeIndicatiors(statOne, statTwo, statThree, statFour){
       }
       reader.readAsDataURL(event.target.files[0]);
     }
+  }
+
+
+  ngAfterViewInit() {
+    let _video = this.video.nativeElement;
+    if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+      navigator.mediaDevices.getUserMedia({ video: true })
+        .then(stream => {
+          _video.src = window.URL.createObjectURL(stream);
+          _video.play();
+        })
+    }
+
   }
   tryAgainPhoto(){
     this.activeNextBtn = false;

@@ -8,7 +8,6 @@ import { UsersComponent } from './users/users.component';
 import { LocationsComponent } from './locations/locations.component';
 import { AccessComponent } from './access/access.component';
 import { RolesComponent } from './roles/roles.component';
-//route of the component -- forgot-password
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 
 const routes: Routes = [
