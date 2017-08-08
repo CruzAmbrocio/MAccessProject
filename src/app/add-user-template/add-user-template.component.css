@@ -212,6 +212,19 @@ p {
     align-items: center;
     justify-content: center;
 }
+.txtAddUser {
+  cursor: pointer;
+  text-decoration: none;
+  font-family: robotoBold;
+  font-size: 12px;
+  color: #5B5B5B;
+  line-height: 40px;
+}
+.tryAgainCont {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 /* VISTA INGRESO DE REGISTRO DE DATOS DE NUEVO USUARIO PASO 2 */
 /* Propiedades que se encarga de dejar espacio entre el titulo y el contenedor 
 de los inputs de registro de usuario */

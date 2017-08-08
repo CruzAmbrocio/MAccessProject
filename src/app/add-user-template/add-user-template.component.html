@@ -30,28 +30,21 @@
                 <p class="centerTitleUsers">REGISTRAR NUEVO USUARIO</p>
             </div>
             <div class="imgContent">
-                <img class="imgPerfil" src="./assets/iconos/no_camera.jpg">
-                <!--<img class="imgPerfil" [src]="url">-->
-                <img class="imgOpacity" src="./assets/iconos/opacity_circle.png">
+                <img *ngIf="unusedPhoto" class="imgPerfil" src="./assets/iconos/no_camera.jpg">
+                <img  *ngIf="takedPhoto" class="imgPerfil" [src]="url">
+                <img *ngIf="activeNextBtn" class="imgOpacity" src="./assets/iconos/opacity_circle.png">
             </div>
             <div>
-              <a (click)="changeStepsAddUser(false, true, false, false)" (click)="changeIndicatiors(false, true, false, shortcutAddUser)" class="btnGeneralUser"><img class="iconCamera" src="../assets/iconos/icon_camara.png">Tomar Fotografía</a>
-
-<!--
-<form id="form1" runat="server">
-    <input type='file' id="imgInp" />
-    <img id="blah" src="#" alt="your image" />
-</form>
--->
-              <div class="fileUpload">
+              <a *ngIf="inactiveNextBtn" (click)="changeStepsAddUser(false, true, false, false)" (click)="changeIndicatiors(false, true, false, shortcutAddUser)" class="btnGeneralUser"><img class="iconCamera" src="../assets/iconos/icon_camara.png">Tomar Fotografía</a>
+              <div class="fileUpload" *ngIf="inactiveNextBtn">
                 <img class="iconCamera" src="../assets/iconos/icon_upload.png">
                 <span>Subir Fotografía</span>
                 <input  class="upload" accept="images/*" type='file' (change)="readUrl($event)">
               </div>
-
-
-            <a (click)="changeStepsAddUser(false, true, false, false)" (click)="changeIndicatiors(false, true, false, shortcutAddUser)"  class="btnGeneralUser">Siguiente</a>
-
+            <a *ngIf="activeNextBtn" (click)="changeStepsAddUser(false, true, false, false)" (click)="changeIndicatiors(false, true, false, shortcutAddUser)"  class="btnGeneralUser">Siguiente</a>
+            <div *ngIf="activeNextBtn" class="tryAgainCont">
+              <a (click)="tryAgainPhoto()" class="txtAddUser">Intentar de nuevo</a>
+            </div>
             </div>
         </div>
     <div class="col-md-2"></div>

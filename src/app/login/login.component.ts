@@ -5,8 +5,6 @@ import { Compiler,  Injector, TemplateRef, ViewChild, NgModuleRef } from '@angul
 import { Overlay, overlayConfigFactory } from 'angular2-modal';
 import { Router, NavigationEnd } from '@angular/router';
 
-import { ImageUploadModule } from "angular2-image-upload";
-
 //------------------------------------------------------------------------------
 export class CustomModalContext extends BSModalContext {
   public num1: number;
@@ -24,17 +22,17 @@ declare var swal: any;
 export class forgotPassModal implements CloseGuard, ModalComponent<CustomModalContext>, OnInit {
   context: CustomModalContext;
 
-   wrongAnswer: boolean;
-   shouldUseMyClass: boolean;
+  wrongAnswer: boolean;
+  shouldUseMyClass: boolean;
 
-   stepOne: boolean;
-   stepTwo: boolean;
-   stepThree: boolean;
+  stepOne: boolean;
+  stepTwo: boolean;
+  stepThree: boolean;
 
   constructor(public modal: Modal, private compiler: Compiler, private injector: Injector, public dialog: DialogRef<CustomModalContext>) {
-    this.stepOne= true;
-    this.stepTwo= false;
-    this.stepThree= false;
+    this.stepOne = true;
+    this.stepTwo = false;
+    this.stepThree = false;
   }
   ngOnInit() {
 
@@ -70,24 +68,26 @@ export class forgotPassModal implements CloseGuard, ModalComponent<CustomModalCo
   }
 
   changeStepForgotPass(one, two, three){
-    this.stepOne= one;
-    this.stepTwo= two;
-    this.stepThree= three;
+    this.stepOne = one;
+    this.stepTwo = two;
+    this.stepThree = three;
   }
-
 }
 
+//------------------------------------------------------------------------------
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
+
 export class LoginComponent implements OnInit {
 
   constructor(public modal: Modal) { }
 
   ngOnInit() {
   }
+
   openForgotPassword() {
     this.modal.open(forgotPassModal, overlayConfigFactory({ num1: 2, num2: 3 }));
   }

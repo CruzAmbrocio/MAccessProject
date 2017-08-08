@@ -161,8 +161,30 @@
 .btnDelete,.btnCancel:focus{
     outline: none !important;
 }
+
 textarea:focus, input:focus, input[type]:focus, .uneditable-input:focus {   
     border-color: #00C6AF;
     box-shadow: 0 0px 1px #00C6AF inset, 0 0 1px #00C6AF;
     outline: 0 none;
 }
+
+/*----------------------------------------------------------------------------*/
+/*Global style for green buttons*/
+.btnMainAction{
+  border-radius: 15px;
+  background-color: #00C6AF;
+  text-decoration: none;
+  font-family: robotoBold;
+  font-size: 13px;
+  color: #FFF;
+  cursor: pointer;
+  transition :all ease 0.3s;
+}
+
+/*Global style for focus status green buttons*/
+.btnMainAction:hover{
+  background-color: #00A096;
+  color: #FFF;
+  text-decoration: none;
+}
+/*----------------------------------------------------------------------------*/

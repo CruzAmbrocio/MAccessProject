@@ -9,8 +9,6 @@ import { AddUserTemplateComponent } from '../add-user-template/add-user-template
 import { Overlay, overlayConfigFactory } from 'angular2-modal';
 import { Modal, BSModalContext } from 'angular2-modal/plugins/bootstrap';
 
-//import { AdditionCalculateWindow, AdditionCalculateWindowData } from '../add-user-template/add-user-template.component';
-
 import { DialogRef, ModalComponent, CloseGuard } from 'angular2-modal';
 import { Compiler,  Injector, TemplateRef, ViewChild, NgModuleRef } from '@angular/core';
 
@@ -195,6 +193,11 @@ export class CustomModal implements CloseGuard, ModalComponent<CustomModalContex
 
   public url:any
   public result:any
+
+  public activeNextBtn:any
+  public inactiveNextBtn:any
+  public takedPhoto:any
+  public unusedPhoto:any
   constructor(public modal: Modal, private compiler: Compiler, private injector: Injector, public dialog: DialogRef<CustomModalContext>) {
     this.context = dialog.context;
     dialog.setCloseGuard(this);
@@ -212,6 +215,11 @@ export class CustomModal implements CloseGuard, ModalComponent<CustomModalContex
     this.isDisabled1 = true;
     this.BackUser = false;
     this.dotsIndicators = true;
+
+    this.activeNextBtn = false;
+    this.inactiveNextBtn = true;
+    this.takedPhoto = false;
+    this.unusedPhoto = true;
 
   }
   onKeyUp(value) {
@@ -407,15 +415,23 @@ changeIndicatiors(statOne, statTwo, statThree, statFour){
   }
 
   readUrl(event) {
-
     if (event.target.files && event.target.files[0]) {
       var reader = new FileReader();
       reader.onload = (event) => {
         this.url = event.target["result"];
+        this.activeNextBtn = true;
+        this.inactiveNextBtn = false;
+        this.takedPhoto = true;
+        this.unusedPhoto = false;
       }
       reader.readAsDataURL(event.target.files[0]);
     }
-
+  }
+  tryAgainPhoto(){
+    this.activeNextBtn = false;
+    this.inactiveNextBtn = true;
+    this.takedPhoto = true;
+    this.unusedPhoto = false;
   }
 //------------------------------------------------------------------------------
 
