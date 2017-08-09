@@ -30,33 +30,33 @@
                 <p class="centerTitleUsers">REGISTRAR NUEVO USUARIO</p>
             </div>
             <div class="imgContent">
-
-                <video muted #video class="imgOpacity" autoplay width="640" height="480"></video>
-                <img id="snap">
-    <div class="controls">
-      <a id="delete-photo" title="Delete Photo" class="disabled" (click)="deletePhoto()"><i class="material-icons">delete</i></a>
-      <a id="take-photo" title="Take Photo" (click)="takePhotos()"><i class="material-icons">camera_alt</i></a>
-      <a id="download-photo" download="selfie.png" title="Save Photo" class="disabled"><i class="material-icons">file_download</i></a>  
-    </div>
-        <canvas></canvas>
-                <img *ngIf="unusedPhoto" class="imgPerfil" src="./assets/iconos/no_camera.jpg">
-                <img  *ngIf="takedPhoto" class="imgPerfil" [src]="url">
-                <img *ngIf="activeNextBtn" class="imgOpacity" src="./assets/iconos/opacity_circle.png">
+              <video muted #video class="sizeVideoTag" autoplay ></video>
+              <img *ngIf="shadowVideo" class="imgOpacity" src="./assets/iconos/opacity_circle.png">
+              <img *ngIf="imgSnap" id="snap">
+              <canvas *ngIf="canvasVideoTag" ></canvas>
+              <img *ngIf="unusedPhoto" class="imgPerfil" src="./assets/iconos/no_camera.jpg">
+              <img  *ngIf="takedPhoto" class="imgPerfil" [src]="url">
+              <img *ngIf="activeNextBtn" class="imgOpacity" src="./assets/iconos/opacity_circle.png">
+              <div *ngIf="controlsCont" class="controls">
+                <div class="contIconCamera">  
+                  <img class="iconCameraTake" id="take-photo" (click)="takePhotos()" src="../assets/iconos/camera.png" >
+                </div>
+                <div class="contIconCamera">  
+                  <img class="iconCameraTake" id="delete-photo" (click)="deletePhoto()" src="../assets/iconos/recyclebin.png">
+                </div>
+              </div>
             </div>
-
-
-
             <div>
-              <a *ngIf="inactiveNextBtn" (click)="takePhoto()" class="btnGeneralUser"><img class="iconCamera" src="../assets/iconos/icon_camara.png">Tomar Fotografía</a>
+              <a *ngIf="inactiveNextBtn" (click)="ableCamera()" class="btnGeneralUser"><img class="iconCamera" src="../assets/iconos/icon_camara.png">Tomar Fotografía</a>
               <div class="fileUpload" *ngIf="inactiveNextBtn">
                 <img class="iconCamera" src="../assets/iconos/icon_upload.png">
                 <span>Subir Fotografía</span>
                 <input  class="upload" accept="images/*" type='file' (change)="readUrl($event)">
               </div>
-            <a *ngIf="activeNextBtn" (click)="changeStepsAddUser(false, true, false, false)" (click)="changeIndicatiors(false, true, false, shortcutAddUser)"  class="btnGeneralUser">Siguiente</a>
-            <div *ngIf="activeNextBtn" class="tryAgainCont">
+              <a *ngIf="activeNextBtn" (click)="changeStepsAddUser(false, true, false, false)" (click)="changeIndicatiors(false, true, false, shortcutAddUser)"  class="btnGeneralUser">Siguiente</a>
+              <div *ngIf="activeNextBtn" class="tryAgainCont">
               <a (click)="tryAgainPhoto()" class="txtAddUser">Intentar de nuevo</a>
-            </div>
+              </div>
             </div>
         </div>
     <div class="col-md-2"></div>

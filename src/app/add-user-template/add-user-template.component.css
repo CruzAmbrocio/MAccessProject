@@ -85,24 +85,50 @@ p {
 }
 /* Contenedor de la imagen principal de la vista de registro de usuarios */
 .imgContent {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 250px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 250px;
 }
 /* Propiedades de la imagen de perfil del usuario */
 .imgPerfil {
-
-    width: 28%;
-    margin-top: 10px;
-    border-radius: 2%;
+  width: 28%;
+  margin-top: 10px;
+  border-radius: 2%;
 }
+
+/*Style for video*/
+.sizeVideoTag {
+  position: absolute;
+  height: 100%;
+  width: 54%;
+}
+
 /* Propiedades de la imagen que contiene la opacidad de la foto de perfil del usuario */
 .imgOpacity {
-    position: absolute;
-    height: 110%;
-    width: 28%;
+  position: absolute;
+  height: 110%;
+}
+
+.controls {
+  position: absolute; 
+  bottom: 0px;
+  z-index: 2;
+  width: 50px;
+  margin-top: 30px;
+}
+
+.contIconCamera{
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+}
+
+.iconCameraTake{
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
 }
 
 .inputfile {
@@ -113,6 +139,7 @@ p {
   position: absolute;
   z-index: -1;
 }
+
 .inputfile + label {
     font-size: 1.25em;
     font-weight: 700;
