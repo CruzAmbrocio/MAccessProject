@@ -471,7 +471,7 @@ de los inputs de registro de usuario */
     cursor: pointer;
 }
 /*----------------------------------------------------------------------------*/
-
+/* VISTA TABLA DE REGISTRO DE ROLES*/
 .cenTitlesLoc {
   text-align: center;
   margin-top: 4%;
@@ -574,13 +574,61 @@ de los inputs de registro de usuario */
 .textDesactive {
   font-family: robotoRegular;
   font-size: 11px;
-  color: #575757;;
+  color: #575757;
   position: relative;
   top: 50%;
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
   padding-left: 5%;
   display: block;
+}
+.txtBoxTable{
+  font-family: robotoRegular;
+  font-size: 10px;
+  color: #575757;;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  padding-left: 5%;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  display: block;
+}
+.styleCheck{
+  display: inline-block;
+}
+label .label-text {
+  font-family: robotoRegular;
+  font-size: 11px;
+  color: #575757;
+  cursor: pointer;
+  transition :all ease 0.3s
+}
+
+label .label-text:hover{
+  color: #00C6AF;
+}
+
+label input.check:checked + .label-text {
+}
+
+.styleCheck[type="checkbox"] {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  border: 1px solid #00C6AF ;
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  margin: 0 7px 0 0;
+}
+.styleCheck[type="checkbox"]:checked{
+  background: #00C6AF;
+
+}
+.styleCheck[type="checkbox"]:focus{
+  outline: none;
 }
 .activeIconArrow {
   height: 7px;

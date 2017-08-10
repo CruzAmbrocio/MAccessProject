@@ -473,6 +473,7 @@ changeIndicatiors(statOne, statTwo, statThree, statFour){
       if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
         navigator.mediaDevices.getUserMedia({ video: true })
         .then(stream => {
+          console.log(stream)
           _video.src = window.URL.createObjectURL(stream);
           _video.play();
           _video.onplay = function() {
@@ -489,6 +490,8 @@ changeIndicatiors(statOne, statTwo, statThree, statFour){
   }
 
   takePhotos(){
+
+    let _video = this.video.nativeElement;
     // References to all the element we will need.
     var video = document.querySelector('video'),
         image = document.querySelector('#snap')
@@ -497,10 +500,16 @@ changeIndicatiors(statOne, statTwo, statThree, statFour){
 
     // Show image. 
     image.setAttribute('src', snap);
-
     // Pause video playback of stream.
-    video.pause();
-  } 
+    _video.pause(); 
+    navigator.mediaDevices.getUserMedia({ video: true })
+      .then(stream => {
+        stream.stop();
+
+      }).catch(function(e) {
+        console.log("There was an error" + + Error.name, Error);
+      });
+  }  
 
   takeSnapshot() {
     // References to all the element we will need.
