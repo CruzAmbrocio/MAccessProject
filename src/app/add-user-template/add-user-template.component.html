@@ -36,8 +36,8 @@
                 <img  class="imgOpacity" src="./assets/iconos/opacity_circle.png">
                 <img *ngIf="imgSnap" class="imgPerfil" id="snap">
                 <canvas class="imgPerfil"></canvas>
-                <img *ngIf="noCameraAble" class="imgPerfil" src="./assets/iconos/no_camera.jpg">
-                <div class="controls">
+                <img *ngIf="ableCamera" class="imgPerfil" src="./assets/iconos/no_camera.jpg">
+                <div *ngIf="showControl" class="controls">
                   <div class="contIconCamera">  
                     <img class="iconCameraTake" id="take-photo" (click)="takePhotos()" src="../assets/iconos/camera.png" >
                   </div>

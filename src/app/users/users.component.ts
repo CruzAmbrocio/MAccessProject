@@ -208,6 +208,8 @@ export class CustomModal implements CloseGuard, ModalComponent<CustomModalContex
   public contVideo:any
   public imgSnap:any
   public contLocal:any
+  public noCameraAble:any
+  public showControl:any
 //--------------------------------------------
 
 
@@ -248,6 +250,7 @@ export class CustomModal implements CloseGuard, ModalComponent<CustomModalContex
     this.contVideo = true;
     this.imgSnap = true
     this.contLocal = false;
+    this.noCameraAble = false;
 //--------------------------------------------
 
   }
@@ -485,10 +488,14 @@ changeIndicatiors(statOne, statTwo, statThree, statFour){
   initCameraRecord() {
     try {
       let _video = this.video.nativeElement;
+      let ableCamera = this.noCameraAble;
+      let showControlVar = this.showControl;
+
       console.log("it's working")
       if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
         navigator.mediaDevices.getUserMedia({ video: true })
           .then(stream => {
+            ableCamera = false;
             console.log(stream)
             _video.src = window.URL.createObjectURL(stream);
             _video.play();
@@ -497,6 +504,8 @@ changeIndicatiors(statOne, statTwo, statThree, statFour){
             };
           }).catch(function(e) {
             console.log("There was an error" + + Error.name, Error);
+            ableCamera = true;
+            showControlVar= false
           });
       }
     }
