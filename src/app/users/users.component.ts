@@ -496,6 +496,8 @@ changeIndicatiors(statOne, statTwo, statThree, statFour){
         navigator.mediaDevices.getUserMedia({ video: true })
           .then(stream => {
             ableCamera = false;
+            this.showControl= true;
+            console.log(ableCamera)
             console.log(stream)
             _video.src = window.URL.createObjectURL(stream);
             _video.play();
@@ -534,7 +536,12 @@ changeIndicatiors(statOne, statTwo, statThree, statFour){
       }).catch(function(e) {
         console.log("There was an error" + + Error.name, Error);
       });
+        this.activeNextBtn = true;
+        this.inactiveNextBtn = false;
+        this.takedPhoto = true;
+        this.unusedPhoto = false;  
   }  
+
 
   takeSnapshot() {
     // References to all the element we will need.
@@ -563,9 +570,12 @@ changeIndicatiors(statOne, statTwo, statThree, statFour){
     image = document.querySelector('#snap')
 
     // Hide image.
-    image.setAttribute('src', "");
+    image.setAttribute('src', "./assets/iconos/opacity_circle.png");
     image.classList.remove("visible");
-
+    this.activeNextBtn = false;
+    this.inactiveNextBtn = true;
+    this.takedPhoto = true;
+    this.unusedPhoto = false;
     // Resume playback of stream.
     video.play();
   }

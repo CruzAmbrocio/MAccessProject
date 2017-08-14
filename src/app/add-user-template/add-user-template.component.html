@@ -34,9 +34,9 @@
               <div *ngIf="contVideo" class="videoImgCont centerContent">
                 <video  muted #video class="sizeVideoTag" ></video>
                 <img  class="imgOpacity" src="./assets/iconos/opacity_circle.png">
-                <img *ngIf="imgSnap" class="imgPerfil" id="snap">
+                <img *ngIf="imgSnap" src="./assets/iconos/opacity_circle.png" class="imgPerfil" id="snap">
                 <canvas class="imgPerfil"></canvas>
-                <img *ngIf="ableCamera" class="imgPerfil" src="./assets/iconos/no_camera.jpg">
+                <img *ngIf="ableCamera == true|| noCameraAble == true" class="imgPerfil" src="./assets/iconos/no_camera.jpg">
                 <div *ngIf="showControl" class="controls">
                   <div class="contIconCamera">  
                     <img class="iconCameraTake" id="take-photo" (click)="takePhotos()" src="../assets/iconos/camera.png" >
@@ -62,7 +62,7 @@
               </div>
               <a *ngIf="activeNextBtn" (click)="changeStepsAddUser(false, true, false, false)" (click)="changeIndicatiors(false, true, false, shortcutAddUser)"  class="btnGeneralUser">Siguiente</a>
               <div *ngIf="activeNextBtn" class="tryAgainCont">
-              <a (click)="tryAgainPhoto()" class="txtAddUser">Intentar de nuevo</a>
+              <a (click)="tryAgainPhoto()" (click)="deletePhoto()"  class="txtAddUser">Intentar de nuevo</a>
               </div>
             </div>
         </div>
