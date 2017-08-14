@@ -85,30 +85,45 @@ p {
 }
 /* Contenedor de la imagen principal de la vista de registro de usuarios */
 .imgContent {
+  height: 250px;
+}
+.centerContent{
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 250px;
+  height: 100%;
 }
 /* Propiedades de la imagen de perfil del usuario */
 .imgPerfil {
-  width: 28%;
-  margin-top: 10px;
+  height: 230px;
+  width: 175px;
+  position: absolute;
+  margin-top: 25px;
   border-radius: 2%;
 }
 
+.hiddenElement{
+  visibility: hidden;
+}
+.visibleElement{
+  visibility: visible;
+}
 /*Style for video*/
 .sizeVideoTag {
+  width: 300px;
   position: absolute;
-  height: 100%;
-  width: 54%;
+  margin-top: 25px;
+  border-radius: 2%;
 }
 
 /* Propiedades de la imagen que contiene la opacidad de la foto de perfil del usuario */
 .imgOpacity {
+  height: 230px;
+  width: 175px;
   position: absolute;
-  height: 110%;
+  margin-top: 25px;
+  border-radius: 2%;
 }
 
 .controls {

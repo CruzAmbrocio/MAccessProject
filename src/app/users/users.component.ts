@@ -203,11 +203,14 @@ export class CustomModal implements CloseGuard, ModalComponent<CustomModalContex
   public takedPhoto:any
   public unusedPhoto:any
 
-  public videoTag:any;
-  public imgSnap:any;
-  public controlsCont:any;
-  public canvasVideoTag:any;
-  public shadowVideo:any;
+//--------------------------------------------
+//  for show and hide video or local image
+  public contVideo:any
+  public imgSnap:any
+  public contLocal:any
+//--------------------------------------------
+
+
 
   public activeCamera:any;
   public _video:any
@@ -221,11 +224,8 @@ export class CustomModal implements CloseGuard, ModalComponent<CustomModalContex
       this.changeIndicator = this.changeIndicatiors
       this.changeIndicator(true, false, false);
 
-      this.videoTag = false;
-      this.imgSnap = false;
-      this.controlsCont = false;
-      this.canvasVideoTag = false;
-      this.shadowVideo = false;
+
+
   }
   ngOnInit() {
     this.callFunctionUsers = this.changeStepsAddUser;
@@ -242,6 +242,13 @@ export class CustomModal implements CloseGuard, ModalComponent<CustomModalContex
     this.inactiveNextBtn = true;
     this.takedPhoto = false;
     this.unusedPhoto = true;
+
+//--------------------------------------------
+//  for show and hide video or local image
+    this.contVideo = true;
+    this.imgSnap = true
+    this.contLocal = false;
+//--------------------------------------------
 
   }
   onKeyUp(value) {
@@ -436,7 +443,11 @@ changeIndicatiors(statOne, statTwo, statThree, statFour){
     }
   }
 
+//------------------------------------------------------------------------------
+// upload an image from file finder 
   readUrl(event) {
+    this.contVideo = false;
+    this.contLocal = true;
     if (event.target.files && event.target.files[0]) {
       var reader = new FileReader();
       reader.onload = (event) => {
@@ -449,43 +460,48 @@ changeIndicatiors(statOne, statTwo, statThree, statFour){
       reader.readAsDataURL(event.target.files[0]);
     }
   }
+//------------------------------------------------------------------------------
 
+//------------------------------------------------------------------------------
+// use the video camera when is possible
   ableCamera(){
     this.activeNextBtn = false;
     this.inactiveNextBtn = true;
     this.takedPhoto = false;
     this.unusedPhoto = false;
 
-    this.videoTag = true;
-    this.imgSnap = true;
-    this.controlsCont = true;
-    this.canvasVideoTag = true;
-    this.shadowVideo = true;
-
+    this.contVideo = true;
+    this.contLocal = false;
     this.activeCamera = this.initCameraRecord;
     this.activeCamera();
   }
 
+  ngAfterViewInit() {
+    this.activeCamera = this.initCameraRecord;
+    this.activeCamera();
+  }
+
+
   initCameraRecord() {
     try {
       let _video = this.video.nativeElement;
-      console.log("funciona")
+      console.log("it's working")
       if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
         navigator.mediaDevices.getUserMedia({ video: true })
-        .then(stream => {
-          console.log(stream)
-          _video.src = window.URL.createObjectURL(stream);
-          _video.play();
-          _video.onplay = function() {
+          .then(stream => {
+            console.log(stream)
+            _video.src = window.URL.createObjectURL(stream);
+            _video.play();
+            _video.onplay = function() {
 
-          };
-        }).catch(function (e) {
-          console.log("There was an error" + + Error.name, Error);
-        });
-      }     
+            };
+          }).catch(function(e) {
+            console.log("There was an error" + + Error.name, Error);
+          });
+      }
     }
-    catch(err) {
-      console.log("doesnt work")
+    catch (err) {
+      console.log("doesn't work")
     }
   }
 
@@ -544,13 +560,19 @@ changeIndicatiors(statOne, statTwo, statThree, statFour){
     // Resume playback of stream.
     video.play();
   }
+//------------------------------------------------------------------------------
 
+//------------------------------------------------------------------------------
+// try again take photo or upload photo
   tryAgainPhoto(){
     this.activeNextBtn = false;
     this.inactiveNextBtn = true;
     this.takedPhoto = true;
     this.unusedPhoto = false;
   }
+//------------------------------------------------------------------------------
+
+
 //------------------------------------------------------------------------------
 
 }

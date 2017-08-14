@@ -30,21 +30,28 @@
                 <p class="centerTitleUsers">REGISTRAR NUEVO USUARIO</p>
             </div>
             <div class="imgContent">
-              <video muted #video class="sizeVideoTag" ></video>
-              <img *ngIf="shadowVideo" class="imgOpacity" src="./assets/iconos/opacity_circle.png">
-              <img *ngIf="imgSnap" id="snap">
-              <canvas *ngIf="canvasVideoTag" ></canvas>
-              <img *ngIf="unusedPhoto" class="imgPerfil" src="./assets/iconos/no_camera.jpg">
-              <img  *ngIf="takedPhoto" class="imgPerfil" [src]="url">
-              <img *ngIf="activeNextBtn" class="imgOpacity" src="./assets/iconos/opacity_circle.png">
-              <div *ngIf="controlsCont" class="controls">
-                <div class="contIconCamera">  
-                  <img class="iconCameraTake" id="take-photo" (click)="takePhotos()" src="../assets/iconos/camera.png" >
-                </div>
-                <div class="contIconCamera">  
-                  <img class="iconCameraTake" id="delete-photo" (click)="deletePhoto()" src="../assets/iconos/recyclebin.png">
+
+              <div *ngIf="contVideo" class="videoImgCont centerContent">
+                <video  muted #video class="sizeVideoTag" ></video>
+                <img  class="imgOpacity" src="./assets/iconos/opacity_circle.png">
+                <img *ngIf="imgSnap" class="imgPerfil" id="snap">
+                <canvas class="imgPerfil"></canvas>
+                <img *ngIf="noCameraAble" class="imgPerfil" src="./assets/iconos/no_camera.jpg">
+                <div class="controls">
+                  <div class="contIconCamera">  
+                    <img class="iconCameraTake" id="take-photo" (click)="takePhotos()" src="../assets/iconos/camera.png" >
+                  </div>
+                  <div class="contIconCamera">  
+                    <img class="iconCameraTake" id="delete-photo" (click)="deletePhoto()" src="../assets/iconos/recyclebin.png">
+                  </div>
                 </div>
               </div>
+
+              <div *ngIf="contLocal" class="localImgCont centerContent">
+                <img class="imgPerfil" [src]="url">
+                <img class="imgOpacity" src="./assets/iconos/opacity_circle.png">
+              </div>
+
             </div>
             <div>
               <a *ngIf="inactiveNextBtn" (click)="ableCamera()" class="btnGeneralUser"><img class="iconCamera" src="../assets/iconos/icon_camara.png">Tomar Fotografía</a>
