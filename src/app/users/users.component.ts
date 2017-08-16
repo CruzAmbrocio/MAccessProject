@@ -212,7 +212,12 @@ export class CustomModal implements CloseGuard, ModalComponent<CustomModalContex
   public showControl:any
 //--------------------------------------------
 
-
+//--------------------------------------------
+//  default profile image
+  public dinamicalSrc:any
+  public lastDinamSrc:any
+  public snap:any
+//-------------------------------------------
 
   public activeCamera:any;
   public _video:any
@@ -251,6 +256,11 @@ export class CustomModal implements CloseGuard, ModalComponent<CustomModalContex
     this.imgSnap = true
     this.contLocal = false;
     this.noCameraAble = false;
+//--------------------------------------------
+
+//--------------------------------------------
+    this.dinamicalSrc = "./assets/iconos/foto_previw.jpg";
+    this.lastDinamSrc = "./assets/iconos/foto_previw.jpg";
 //--------------------------------------------
 
   }
@@ -453,8 +463,11 @@ changeIndicatiors(statOne, statTwo, statThree, statFour){
     this.contLocal = true;
     if (event.target.files && event.target.files[0]) {
       var reader = new FileReader();
+      console.log("this.url")
       reader.onload = (event) => {
         this.url = event.target["result"];
+        this.lastDinamSrc = event.target["result"];
+        this.dinamicalSrc = event.target["result"];
         this.activeNextBtn = true;
         this.inactiveNextBtn = false;
         this.takedPhoto = true;
@@ -497,8 +510,6 @@ changeIndicatiors(statOne, statTwo, statThree, statFour){
           .then(stream => {
             ableCamera = false;
             this.showControl= true;
-            console.log(ableCamera)
-            console.log(stream)
             _video.src = window.URL.createObjectURL(stream);
             _video.play();
             _video.onplay = function() {
@@ -523,10 +534,12 @@ changeIndicatiors(statOne, statTwo, statThree, statFour){
     var video = document.querySelector('video'),
         image = document.querySelector('#snap')
 
-    var snap = this.takeSnapshot();
+    this.snap = this.takeSnapshot();
 
     // Show image. 
-    image.setAttribute('src', snap);
+    image.setAttribute('src', this.snap)
+    this.dinamicalSrc = this.snap;
+    this.lastDinamSrc = this.snap;
     // Pause video playback of stream.
     _video.pause(); 
     navigator.mediaDevices.getUserMedia({ video: true })

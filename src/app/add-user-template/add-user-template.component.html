@@ -92,7 +92,7 @@
                     </select>
                     </div>
                 </form>
-                <img class="imgNewUser" src="./assets/iconos/foto_previw.jpg">
+                <img class="imgNewUser"  [src]="dinamicalSrc">
                 <a class="textEditPhoto" (click)="changeIndicatiors(takePictureUser, registerUserAdd, createdUser, shortcutAddUser)" (click)="changeStepsAddUser(true, false, false, false, shortcutAddUser)">Editar</a>
             </div>
             <div class="contentInfoRegister">
@@ -116,7 +116,7 @@
             </div>
             <div class="contentRegistered">
                 <div class="boxContent">
-                    <img class="imgCreatedUser" src="./assets/iconos/foto_previw.jpg">  
+                    <img class="imgCreatedUser" [src]="lastDinamSrc">  
                     <div class="contentText">
                         <p class="namePerson">Regina Doe</p>
                         <p class="infoPerson">2071-25842-0101</p>
