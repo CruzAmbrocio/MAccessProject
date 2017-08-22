@@ -8,11 +8,19 @@ import { UsersComponent } from './users/users.component';
 import { LocationsComponent } from './locations/locations.component';
 import { AccessComponent } from './access/access.component';
 import { RolesComponent } from './roles/roles.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 
 const routes: Routes = [
   {
     path: 'login',
-    component : LoginComponent
+    component : LoginComponent,
+    children : [
+        {
+          path: 'forgot_password',
+          component : ForgotPasswordComponent,
+          outlet: 'login_aside'
+        }
+    ]
   },
   {
     path: 'main',

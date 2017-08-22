@@ -266,12 +266,20 @@
 }
 .styleCheck{
   display: inline-block;
+  cursor: pointer;
 }
 label .label-text {
   font-family: robotoRegular;
   font-size: 11px;
   color: #575757;
+  cursor: pointer;
+  transition :all ease 0.3s
 }
+
+label .label-text:hover{
+  color: #00C6AF;
+}
+
 
 label input.check:checked + .label-text {
 }

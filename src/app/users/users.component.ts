@@ -1,4 +1,4 @@
-import { Component, OnInit, NgModule, Input, ViewContainerRef, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ElementRef, NgModule, Input, ViewContainerRef, ViewEncapsulation } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { JsonpModule } from '@angular/http';
@@ -6,20 +6,17 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgbModal, NgbActiveModal, ModalDismissReasons, } from '@ng-bootstrap/ng-bootstrap';
 import { AddUserTemplateComponent } from '../add-user-template/add-user-template.component';
 
-
 import { Overlay, overlayConfigFactory } from 'angular2-modal';
 import { Modal, BSModalContext } from 'angular2-modal/plugins/bootstrap';
 
-//import { AdditionCalculateWindow, AdditionCalculateWindowData } from '../add-user-template/add-user-template.component';
-
 import { DialogRef, ModalComponent, CloseGuard } from 'angular2-modal';
-import { Compiler,  Injector, TemplateRef, ViewChild, NgModuleRef } from '@angular/core';
+import {
+  Compiler, Injector, TemplateRef, ViewChild, ViewChildren, QueryList, NgModuleRef } from '@angular/core';
 
 export class CustomModalContext extends BSModalContext {
   public num1: number;
   public num2: number;
 }
-
 /**
  * A Sample of how simple it is to create a new window, with its own injects.
  */ 
@@ -29,7 +26,11 @@ export class CustomModalContext extends BSModalContext {
   templateUrl: '../add-user-template/add-user-template.component.html'
 })
 
-export class CustomModal implements CloseGuard, ModalComponent<CustomModalContext>, OnInit{
+export class CustomModal implements CloseGuard, ModalComponent<CustomModalContext>, OnInit {
+  @ViewChild('myname') input: ElementRef;
+  @ViewChild('video') video: ElementRef;
+
+  @ViewChildren('div1,div2,div3') divs: QueryList<ElementRef>;
   context: CustomModalContext;
 
 
@@ -42,6 +43,8 @@ export class CustomModal implements CloseGuard, ModalComponent<CustomModalContex
   public createdUser: any;
   public callFunctionUsers: any;
   public shortcutAddUser:any;
+
+
 //------------------------------------------------------------------------------
 
 
@@ -187,13 +190,49 @@ export class CustomModal implements CloseGuard, ModalComponent<CustomModalContex
   changeIndicatorInit: any;
   BackUser: any;
   dotsIndicators: any
+  public width:any 
+  public height:any
+  public archivo:any
 
-  constructor(public modal: Modal, private compiler: Compiler, private injector: Injector, public dialog: DialogRef<CustomModalContext>) {
+
+  public url:any
+  public result:any
+
+  public activeNextBtn:any
+  public inactiveNextBtn:any
+  public takedPhoto:any
+  public unusedPhoto:any
+
+//--------------------------------------------
+//  for show and hide video or local image
+  public contVideo:any
+  public imgSnap:any
+  public contLocal:any
+  public noCameraAble:any
+  public showControl:any
+//--------------------------------------------
+
+//--------------------------------------------
+//  default profile image
+  public dinamicalSrc:any
+  public lastDinamSrc:any
+  public snap:any
+//-------------------------------------------
+
+  public activeCamera:any;
+  public _video:any
+
+  public countActive:any
+
+  constructor(  public modal: Modal, private compiler: Compiler, private injector: Injector, public dialog: DialogRef<CustomModalContext>) {
     this.context = dialog.context;
     dialog.setCloseGuard(this);
 
       this.changeIndicator = this.changeIndicatiors
       this.changeIndicator(true, false, false);
+
+
+
   }
   ngOnInit() {
     this.callFunctionUsers = this.changeStepsAddUser;
@@ -205,6 +244,24 @@ export class CustomModal implements CloseGuard, ModalComponent<CustomModalContex
     this.isDisabled1 = true;
     this.BackUser = false;
     this.dotsIndicators = true;
+
+    this.activeNextBtn = false;
+    this.inactiveNextBtn = true;
+    this.takedPhoto = false;
+    this.unusedPhoto = true;
+
+//--------------------------------------------
+//  for show and hide video or local image
+    this.contVideo = true;
+    this.imgSnap = true
+    this.contLocal = false;
+    this.noCameraAble = false;
+//--------------------------------------------
+
+//--------------------------------------------
+    this.dinamicalSrc = "./assets/iconos/foto_previw.jpg";
+    this.lastDinamSrc = "./assets/iconos/foto_previw.jpg";
+//--------------------------------------------
 
   }
   onKeyUp(value) {
@@ -253,7 +310,7 @@ changeIndicatiors(statOne, statTwo, statThree, statFour){
       this.BackUser = true;
       this.dotsIndicators = true;
     }
-  }
+  }  
   changeStepsAddUser(param1, param2, param3, param4, addShortCut) {
     if (addShortCut){
       this.takePictureUser = false;
@@ -268,6 +325,7 @@ changeIndicatiors(statOne, statTwo, statThree, statFour){
     }
     //alert("this.takePictureUser")
   }
+
   types:any[]=[
     {id:'C-Level',Name:'C-Level'},
     {id:'IT',Name:'IT'},
@@ -397,6 +455,156 @@ changeIndicatiors(statOne, statTwo, statThree, statFour){
       this.indexLocationView.push(this.locationJson.LocationLevelFour[index].Name);
     }
   }
+
+//------------------------------------------------------------------------------
+// upload an image from file finder 
+  readUrl(event) {
+    this.contVideo = false;
+    this.contLocal = true;
+    if (event.target.files && event.target.files[0]) {
+      var reader = new FileReader();
+      console.log("this.url")
+      reader.onload = (event) => {
+        this.url = event.target["result"];
+        this.lastDinamSrc = event.target["result"];
+        this.dinamicalSrc = event.target["result"];
+        this.activeNextBtn = true;
+        this.inactiveNextBtn = false;
+        this.takedPhoto = true;
+        this.unusedPhoto = false;  
+      }
+      reader.readAsDataURL(event.target.files[0]);
+    }
+  }
+//------------------------------------------------------------------------------
+
+//------------------------------------------------------------------------------
+// use the video camera when is possible
+  ableCamera(){
+    this.activeNextBtn = false;
+    this.inactiveNextBtn = true;
+    this.takedPhoto = false;
+    this.unusedPhoto = false;
+
+    this.contVideo = true;
+    this.contLocal = false;
+    this.activeCamera = this.initCameraRecord;
+    this.activeCamera();
+  }
+
+  ngAfterViewInit() {
+    this.activeCamera = this.initCameraRecord;
+    this.activeCamera();
+  }
+
+
+  initCameraRecord() {
+    try {
+      let _video = this.video.nativeElement;
+      let ableCamera = this.noCameraAble;
+      let showControlVar = this.showControl;
+
+      console.log("it's working")
+      if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+        navigator.mediaDevices.getUserMedia({ video: true })
+          .then(stream => {
+            ableCamera = false;
+            this.showControl= true;
+            _video.src = window.URL.createObjectURL(stream);
+            _video.play();
+            _video.onplay = function() {
+
+            };
+          }).catch(function(e) {
+            console.log("There was an error" + + Error.name, Error);
+            ableCamera = true;
+            console.log(ableCamera)
+            showControlVar= false;
+          });
+      }
+    }
+    catch (err) {
+      console.log("doesn't work")
+    }
+  }
+
+  takePhotos(){
+
+    let _video = this.video.nativeElement;
+    // References to all the element we will need.
+    var video = document.querySelector('video'),
+        image = document.querySelector('#snap')
+
+    this.snap = this.takeSnapshot();
+
+    // Show image. 
+    image.setAttribute('src', this.snap)
+    this.dinamicalSrc = this.snap;
+    this.lastDinamSrc = this.snap;
+    // Pause video playback of stream.
+    _video.pause(); 
+    navigator.mediaDevices.getUserMedia({ video: true })
+      .then(stream => {
+        stream.stop();
+
+      }).catch(function(e) {
+        console.log("There was an error" + + Error.name, Error);
+      });
+        this.activeNextBtn = true;
+        this.inactiveNextBtn = false;
+        this.takedPhoto = true;
+        this.unusedPhoto = false;  
+  }  
+
+
+  takeSnapshot() {
+    // References to all the element we will need.
+    var video = document.querySelector('video')
+
+    // Here we're using a trick that involves a hidden canvas element.  
+    var hidden_canvas = document.querySelector('canvas'),
+    context = hidden_canvas.getContext('2d');
+
+    var width = video.videoWidth;
+    var height = video.videoHeight;
+
+    if (width && height) {
+      // Setup a canvas with the same dimensions as the video.
+      hidden_canvas.width = width;
+      hidden_canvas.height = height;
+
+      // Turn the canvas image into a dataURL that can be used as a src for our photo.
+      return hidden_canvas.toDataURL('image/png');
+    }
+  }
+
+  deletePhoto(){
+    // References to all the element we will need.
+    var video = document.querySelector('video'),
+    image = document.querySelector('#snap')
+
+    // Hide image.
+    image.setAttribute('src', "./assets/iconos/opacity_circle.png");
+    image.classList.remove("visible");
+    this.activeNextBtn = false;
+    this.inactiveNextBtn = true;
+    this.takedPhoto = true;
+    this.unusedPhoto = false;
+    // Resume playback of stream.
+    video.play();
+  }
+//------------------------------------------------------------------------------
+
+//------------------------------------------------------------------------------
+// try again take photo or upload photo
+  tryAgainPhoto(){
+    this.activeNextBtn = false;
+    this.inactiveNextBtn = true;
+    this.takedPhoto = true;
+    this.unusedPhoto = false;
+  }
+//------------------------------------------------------------------------------
+
 
 //------------------------------------------------------------------------------
 

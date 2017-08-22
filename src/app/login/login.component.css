@@ -1,88 +1,87 @@
 /* Properties of the main login container */
 .contentLogin {
-	width: 50%;
-	margin-right: auto;
-	margin-left: auto;
-	min-height: 100vh;
-	display: flex;
-	align-items: center;
-	justify-content: center;
+  width: 50%;
+  margin-right: auto;
+  margin-left: auto;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+/*size login elements*/
 .login {
-	width: 100%;
+  width: 100%;
 }
+
 /* Image properties for the login view */
 .szImgLogin {
-	height: 75%;
-	width: 75%;
-	display:block;
-  	margin-left: auto;
-  	margin-right: auto;
+  height: 75%;
+  width: 75%;
+  display:block;
+  margin-left: auto;
+  margin-right: auto;
 }
+
 /* Login subtitle properties */
 .subAdmin {
-	font-family: robotoRegular;
-	font-size: 15px;
-	color: #868686;
-	text-align: center;
+  font-family: robotoRegular;
+  font-size: 15px;
+  color: #868686;
+  text-align: center;
 }
-input {
-	width: 70%;
-	font-family: robotoRegular;
-	font-size: 
-}
+
+/*margin top for form tag*/
 .posInputs {
-	padding-top: 10%;
+  padding-top: 10%;
 }
+
+/*properties for inputs Login*/
 .inputEmail, .inputPass {
-	width: 80%;
-	font-family: robotoRegular;
-  	margin-right: auto;
-	margin-left: auto;
+  width: 80%;
+  margin-right: auto;
+  margin-left: auto;
 }
-p {
-	font-size: 11px;
-	font-family: robotoBoldItalic;
-	color: #33A0D9;
-	text-align: right;
-	margin: 0 10% 8% 0;	
-}
+
+/*size button Login*/
 .btnLogin {
-  	margin-left: auto;
-  	margin-right: auto;
-  	text-align: center;
-  	display: flex;
-  	align-items: center;
-  	justify-content: center;
-  	border-radius: 15px;
-  	width: 40%;
-  	height: 33px;
-  	background-color: #00C6AF;
-  	text-decoration: none;
-  	font-family: robotoBold;
-  	font-size: 13px;
-  	color: #FFF;
-  	cursor: pointer;
-    transition :all ease 0.3s
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40%;
+  height: 33px;
 }
-.btnLogin:hover{
-	background-color: #00A096;
-}
+
+/*Hide section discarded
 .txtLogin {
-	color: #565656;
-	font-size: 11px;
-	font-family: robotoRegular;
-	text-align: center;
-	padding-top: 5%;
+  color: #565656;
+  font-size: 11px;
+  font-family: robotoRegular;
+  text-align: center;
+  padding-top: 5%;
 }
+
 span {
-	color: #33A0D9;
-	font-family: robotoBoldItalic;
-	font-size: 14px;
+  color: #33A0D9;
+  font-family: robotoBoldItalic;
+  font-size: 14px;
 }
+*/
+
 .forgotPass{
-	cursor: pointer;
+  font-size: 11px;
+  font-family: robotoBoldItalic;
+  color: #33A0D9;
+  text-align: right;
+  margin: 0 10% 8% 0; 
+  cursor: pointer;
+  outline: none !important;
+  transition :all ease 0.3s;
 }
+
 .forgotPass:hover {
-	color:#3674e1; 
+  color:#3674e1;
 }
