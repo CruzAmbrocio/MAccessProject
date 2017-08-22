@@ -518,7 +518,8 @@ changeIndicatiors(statOne, statTwo, statThree, statFour){
           }).catch(function(e) {
             console.log("There was an error" + + Error.name, Error);
             ableCamera = true;
-            showControlVar= false
+            console.log(ableCamera)
+            showControlVar= false;
           });
       }
     }

@@ -36,11 +36,11 @@
                 <img  class="imgOpacity" src="./assets/iconos/opacity_circle.png">
                 <img *ngIf="imgSnap" src="./assets/iconos/opacity_circle.png" class="imgPerfil" id="snap">
                 <canvas class="imgPerfil"></canvas>
-                <img *ngIf="ableCamera == true|| noCameraAble == true" class="imgPerfil" src="./assets/iconos/no_camera.jpg">
+                <img  class="imgPerfil" src="./assets/iconos/no_camera.jpg">
                 <div *ngIf="showControl" class="controls">
                   <div class="contIconCamera">  
                     <img class="iconCameraTake" id="take-photo" (click)="takePhotos()" src="../assets/iconos/camera.png" >
-                  </div>
+                  </div>    
                   <div class="contIconCamera">  
                     <img class="iconCameraTake" id="delete-photo" (click)="deletePhoto()" src="../assets/iconos/recyclebin.png">
                   </div>
